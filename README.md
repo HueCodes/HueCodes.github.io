@@ -3,7 +3,7 @@
 Hi. Welcome to my developer portfolio.
 
 ## About me
-I'm an engineer who is interested in cybersecurity, networking, robotics and machine learning. 
+I'm an engineer who is interested in cybersecurity, networking, robotics and machine learning. I am currently pursuing a math degree. 
 
 ## Projects
 - HTTP reverse proxy built in Rust
