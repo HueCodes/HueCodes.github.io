@@ -16,5 +16,13 @@ I'm passionate about cybersecurity, machine learning and robotics. I like probel
 - Rust
 - TypeScript
 
+## WorkFlow
+Macbook Air M2
+-Ghostyy and loop window manager 
+
+Thinkpad T480
+-Debian, i3, terminator 
+
+
 ## Contact
 huecodes@proton.me
