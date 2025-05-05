@@ -1,8 +1,8 @@
 # HueCodes.github.io
-Hi. I am HueCodes and this is my developer portfolio.
+Hi. Im an engineer learning C 
 
 ## About me
-Interested in cyber security, networking, robotics and machine learning. I like Python, Rust and GO. I am working on a lightweight and fast engine to be an affordable cyber and network security solution for small businiesses.
+Interested in cyber security, networking, robotics and machine learning. I am learning C and I like Python, Rust and GO. I am working on a lightweight and fast engine to be an affordable cyber and network security solution for small businiesses.
 
 ## Projects
 - HTTP reverse proxy built in Rust
