@@ -1,20 +1,21 @@
 # HueCodes.github.io
-Hi. Im an engineer learning C 
+
 
 ## About me
-Interested in cyber security, networking, robotics and machine learning. I am learning C and I like Python, Rust and GO. I am working on a lightweight and fast engine to be an affordable cyber and network security solution for small businiesses.
+I like math, cybersecurity and AI. Using Pytorch to make GPUs faster 
 
 ## Projects
 - HTTP reverse proxy built in Rust
-- GO EDR tool 
-- ESP drone
-- Python windows network traffic firewall with packet inspection
+- Python Chess Engine 
+- HTTP C Server 
+- Python GNN used to track blockchain acitivity 
+- Network Proxy in GO 
 
 ## Languages
 - Python
-- Go
+- C
 - Rust
-- TypeScript
+- GO
 
 ## WorkFlow
 Macbook Air M2
