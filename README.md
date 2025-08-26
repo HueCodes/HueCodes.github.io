@@ -5,11 +5,11 @@
 I like math, cybersecurity and AI. Using Pytorch to make GPUs faster 
 
 ## Projects
-- HTTP reverse proxy built in Rust
+- HTTP/TCP reverse proxy built in Rust
 - Python Chess Engine 
 - HTTP C Server 
-- Python GNN used to track blockchain acitivity 
-- Network Proxy in GO 
+- Matmul in Rust
+-Cybersecurity hardware Project
 
 ## Languages
 - Python
