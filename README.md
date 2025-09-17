@@ -2,14 +2,16 @@
 
 
 ## About me
-I like math, cybersecurity and AI. Using Pytorch to make GPUs faster 
+I like math, cybersecurity and systems programming. Working towards mastering Systems Programming
 
 ## Projects
 - HTTP/TCP reverse proxy built in Rust
+- Lexical Analyzer in GO
 - Python Chess Engine 
 - HTTP C Server 
 - Matmul in Rust
 -Cybersecurity hardware Project
+
 
 ## Languages
 - Python
