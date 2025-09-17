@@ -2,7 +2,7 @@
 
 
 ## About me
-Engineer living in Seattle. I am interested in math, cybersecurity and robotics. Working towards mastering systems programming
+Math Student and Software engineer living in Seattle. I am interested in math, cybersecurity and robotics. Working towards mastering systems programming
 
 ## Projects
 - HTTP/TCP reverse proxy built in Rust
