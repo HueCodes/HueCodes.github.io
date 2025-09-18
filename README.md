@@ -20,7 +20,7 @@ Math Student and Software engineer living in Seattle. I am passionate about prob
 - GO
 
 ## Skills
--Proficient in Docker and Kubernetes 
+- Proficient in Docker and Kubernetes 
 - Familiar with with Cloud platforms Azure, GCP, AWS
 - General Cybersecurity (Studying for CISSP)
 - PostgreSQL and NoSQL
