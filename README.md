@@ -2,7 +2,7 @@
 
 
 ## About me
-Math Student and Software engineer living in Seattle. I am interested in math, cybersecurity and robotics. Working towards mastering systems programming
+Math Student and Software engineer living in Seattle. I am passionate about problem solving and am interested in math, cybersecurity and robotics. Working towards mastering low level systems programming
 
 ## Projects
 - HTTP/TCP reverse proxy built in Rust
@@ -18,6 +18,12 @@ Math Student and Software engineer living in Seattle. I am interested in math, c
 - C
 - Rust
 - GO
+
+## Skills
+-Proficient in Docker and Kubernetes 
+- Familiar with with Cloud platforms Azure, GCP, AWS
+- General Cybersecurity (Studying for CISSP)
+- PostgreSQL and NoSQL
 
 ## WorkFlow
 Macbook Air M2
