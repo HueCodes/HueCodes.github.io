@@ -10,7 +10,7 @@ Math Student and Software engineer living in Seattle. I am passionate about prob
 - Python Chess Engine 
 - HTTP C Server 
 - Matmul in Rust
--Cybersecurity hardware Project
+- Cybersecurity hardware Projects
 
 
 ## Languages
