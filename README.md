@@ -26,8 +26,8 @@ Math/CS Student who loves programming and problem solving. I am interested in Lo
 ## Skills and Frameworks
 - Proficient in Docker and Kubernetes
 - React, Django, NextJS
-- Familiar with with Cloud platforms Azure, GCP, AWS
-- General Cybersecurity
+- Familiar with with Cloud platforms: Azure, GCP, AWS
+- General Cybersecurity Knowledge
 - PostgreSQL and NoSQL as well as MongoDB
 
 ## Home Lab
