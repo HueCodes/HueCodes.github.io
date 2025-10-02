@@ -5,10 +5,10 @@
 Math/CS Student who loves programming and problem solving. I am interested in Low level systems, cyber security, robotics and ML. In my spare time I like to read, trail run and be with my family.
 
 ## Cerifications and Education
--Studying Math and CS at UW 
--CompTIA Sec+
--Linux Red Hat Certified System Admin (RHCSA)
--Karpathy's Zero to Hero Deep Learning Course
+- Studying Math and CS at UW 
+- CompTIA Sec+
+- Linux Red Hat Certified System Admin (RHCSA)
+- Karpathy's Zero to Hero Deep Learning Course
 
 ## Projects
 - Cloud Native Time series Database in Rust 
