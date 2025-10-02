@@ -4,6 +4,12 @@
 ## About me
 Math/CS Student who loves programming and problem solving. I am interested in Low level systems, cyber security, robotics and ML. In my spare time I like to read, trail run and be with my family.
 
+## Cerifications and Education
+-Studying Math and CS at UW 
+-CompTIA Sec+
+-Linux Red Hat Certified System Admin (RHCSA)
+-Karpathy's Zero to Hero Deep Learning Course
+
 ## Projects
 - Cloud Native Time series Database in Rust 
 - Lexical Analyzer in GO
@@ -17,11 +23,12 @@ Math/CS Student who loves programming and problem solving. I am interested in Lo
 - GO
 - Python
 
-## Skills
-- Proficient in Docker and Kubernetes 
+## Skills and Frameworks
+- Proficient in Docker and Kubernetes
+- React, Django, NextJS
 - Familiar with with Cloud platforms Azure, GCP, AWS
-- General Cybersecurity (Studying for CISSP)
-- PostgreSQL and NoSQL
+- General Cybersecurity
+- PostgreSQL and NoSQL as well as MongoDB
 
 ## Home Lab
 - Raspberry Pi as a DNS server on home network 
