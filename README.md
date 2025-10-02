@@ -2,16 +2,14 @@
 
 
 ## About me
-Math Student and Software engineer living in Seattle. I am passionate about problem solving and am interested in math, cybersecurity and robotics. Working towards mastering low level systems programming
+Math/CS Student who loves programming and problem solving. I am interested in Low level systems, cyber security, robotics and ML. In my spare time I like to read, trail run and be with my family.
 
 ## Projects
-- HTTP/TCP reverse proxy built in Rust
+- Cloud Native Time series Database in Rust 
 - Lexical Analyzer in GO
-- Python Chess Engine 
+- KV Cache DB in GO
 - HTTP C Server 
 - Matmul in Rust
-- Cybersecurity hardware Projects
-
 
 ## Languages
 - C/C++
