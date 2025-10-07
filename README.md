@@ -8,7 +8,6 @@ Math/CS Student who loves programming and problem solving. I am interested in Lo
 - Studying Math and CS at UW 
 - CompTIA Sec+
 - Linux Red Hat Certified System Admin (RHCSA)
-- Karpathy's Zero to Hero Deep Learning Course
 
 ## Projects
 - Cloud Native Time series Database in Rust 
@@ -30,7 +29,7 @@ Math/CS Student who loves programming and problem solving. I am interested in Lo
 - General Cybersecurity Knowledge
 - PostgreSQL and NoSQL as well as MongoDB
 
-## Home Lab
+## Home Lab Projects
 - Raspberry Pi as a DNS server on home network 
 - Raspberry Pi used as an ad blokcer (pi-hole)
 - Using Ollama to run a quantised llm locally on a raspberry pi 
