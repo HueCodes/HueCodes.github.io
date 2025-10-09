@@ -2,12 +2,18 @@
 
 
 ## About me
-Math/CS Student who loves programming and problem solving. I am interested in Low level systems, cyber security, robotics and ML. In my spare time I like to read, trail run and be with my family.
+Math/CS Student. I like to solve complex problems and build software. Im interested in Systems programming, robotics, cyber/cloud security, and ml. In my spare time I like to be in the mountains, do jiu jitsu and read.
 
 ## Cerifications and Education
 - Studying Math and CS at UW 
 - CompTIA Sec+
 - Linux Red Hat Certified System Admin (RHCSA)
+
+## Languages
+- C/C++
+- Rust
+- GO
+- Python
 
 ## Projects
 - Cloud Native Time series Database in Rust 
@@ -15,12 +21,6 @@ Math/CS Student who loves programming and problem solving. I am interested in Lo
 - KV Cache DB in GO
 - HTTP C Server 
 - Matmul in Rust
-
-## Languages
-- C/C++
-- Rust
-- GO
-- Python
 
 ## Skills and Frameworks
 - Proficient in Docker and Kubernetes
@@ -38,11 +38,10 @@ Math/CS Student who loves programming and problem solving. I am interested in Lo
 
 ## WorkFlow
 Macbook Air M2
--Ghostyy and loop window manager 
+- Ghostyy and loop window manager 
 
 Thinkpad T480
 -Debian, i3, terminator terminal
-
 
 ## Contact
 huecodes@proton.me
