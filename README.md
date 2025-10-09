@@ -41,7 +41,7 @@ Macbook Air M2
 - Ghostyy and loop window manager 
 
 Thinkpad T480
--Debian, i3, terminator terminal
+- Debian, i3, terminator terminal
 
 ## Contact
 huecodes@proton.me
