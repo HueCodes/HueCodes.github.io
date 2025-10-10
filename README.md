@@ -2,9 +2,9 @@
 
 
 ## About me
-Math/CS Student. I like to solve complex problems and build software. Im interested in Systems programming, robotics, cyber/cloud security, and ml. In my spare time I like to be in the mountains, do jiu jitsu and read.
+Math/CS Student. I am eager to learn as much as I can and I love solving complex problems. Im currently focused on Systems programming and CUDA. 
 
-## Cerifications and Education
+## Education
 - Studying Math and CS at UW 
 - CompTIA Sec+
 - Linux Red Hat Certified System Admin (RHCSA)
