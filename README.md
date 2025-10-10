@@ -23,6 +23,7 @@ Math/CS Student. I like to solve complex problems and build software. Im interes
 - Matmul in Rust
 
 ## Skills and Frameworks
+- Deeply familiar with Linux 
 - Proficient in Docker and Kubernetes
 - React, Django, NextJS
 - Familiar with with Cloud platforms: Azure, GCP, AWS
@@ -38,10 +39,12 @@ Math/CS Student. I like to solve complex problems and build software. Im interes
 
 ## WorkFlow
 Macbook Air M2
-- Ghostyy and loop window manager 
+- Ghostyy and loop window manager
+- Obsidian for notes, Raycat for everything
+- Tailscale for SSH'ing.
 
 Thinkpad T480
-- Debian, i3, terminator terminal
+- Debian, i3.
 
 ## Contact
 huecodes@proton.me
