@@ -40,11 +40,12 @@ Math/CS Student. I am eager to learn as much as I can and I love solving complex
 ## WorkFlow
 Macbook Air M2
 - Ghostyy and loop window manager
-- Obsidian for notes, Raycat for everything
-- Tailscale for SSH'ing.
+- Obsidian for notes, Raycast for everything
+- Tailscale for SSH and vpn.
 
 Thinkpad T480
-- Debian, i3.
+- Debian with i3 and xfce 
+- upgraded SSD, new screen, external battery.
 
 ## Contact
 huecodes@proton.me
