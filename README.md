@@ -4,6 +4,17 @@
 ## About me
 Math/CS Student. I am eager to learn as much as I can and I love solving complex problems. Im currently focused on Systems programming and CUDA. 
 
+## why you should hire me as a backend engineer
+- DB
+- ﻿﻿System Design
+﻿﻿- Algorithms
+﻿﻿- API design
+﻿﻿- API Security
+﻿﻿- CI/CD
+﻿﻿- DS
+﻿﻿- Docker/ Kubernetes
+﻿﻿- Caching
+
 ## Education
 - Studying Math and CS at UW 
 - CompTIA Sec+
