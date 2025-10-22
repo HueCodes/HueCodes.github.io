@@ -2,7 +2,7 @@
 
 
 ## About me
-Math/CS Student. I am eager to learn as much as I can and I love solving complex problems. Im currently focused on Systems programming and CUDA. 
+Math/CS Student. I like solving challenging problems and working with smart people.
 
 ## why you should hire me as a backend engineer
 - DB
