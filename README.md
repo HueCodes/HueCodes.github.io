@@ -4,7 +4,7 @@
 ## About me
 Math/CS Student. I like solving challenging problems and working with smart people.
 
-## why you should hire me as a backend engineer
+## Why you should hire me as a backend engineer
 - DB
 - ﻿﻿System Design
 - ﻿﻿Algorithms
