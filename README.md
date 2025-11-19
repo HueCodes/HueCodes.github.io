@@ -2,18 +2,7 @@
 
 
 ## About me
-Math/CS Student. I like solving challenging problems and working with smart people.
-
-## Why you should hire me as a backend engineer
-- DB
-- ﻿﻿System Design
-- ﻿﻿Algorithms
-﻿﻿- API design
-﻿﻿- API Security
-﻿﻿- CI/CD
-﻿﻿- DS
-﻿﻿- Docker/ Kubernetes
-﻿﻿- Caching
+Math/CS Student. I like solving challenging problems and working with smart people. 
 
 ## Education
 - Studying Math and CS at UW 
@@ -21,9 +10,9 @@ Math/CS Student. I like solving challenging problems and working with smart peop
 - Linux Red Hat Certified System Admin (RHCSA)
 
 ## Languages
-- C/C++
+- Go
 - Rust
-- GO
+- C/C++
 - Python
 
 ## Projects
@@ -43,7 +32,7 @@ Math/CS Student. I like solving challenging problems and working with smart peop
 
 ## Home Lab Projects
 - Raspberry Pi as a DNS server on home network 
-- Raspberry Pi used as an ad blokcer (pi-hole)
+- Raspberry Pi used as an ad blocker (pi-hole)
 - Using Ollama to run a quantised llm locally on a raspberry pi 
 - Misc. Robotics and circuit projects on Arduino 
 - Setting up a linux server on an old Xeon workstation 
