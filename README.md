@@ -6,8 +6,6 @@ Math/CS Student. I like solving challenging problems and working with smart peop
 
 ## Education
 - Studying Math and CS at UW 
-- CompTIA Sec+
-- Linux Red Hat Certified System Admin (RHCSA)
 
 ## Languages
 - Go
