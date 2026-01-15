@@ -71,8 +71,8 @@ nav a:hover {
 }
 
 .intro-header p {
-  font-size: 14px;
-  color: var(--text-secondary);
+  font-size: 15px;
+  color: var(--text);
   margin: 0 0 0.75rem 0;
 }
 
@@ -96,6 +96,7 @@ nav a:hover {
 
 .section p {
   font-size: 14px;
+  color: var(--text-secondary);
 }
 
 .section a {
