@@ -14,11 +14,13 @@ title: home
     <img src="/assets/DSCN1683.jpeg" alt="photo" class="photo">
     <div>
       <h1>hey, i'm hugh</h1>
-      <p>math + ml + robotics + networking + security.<br>diving into hardware and security research.</p>
+      <p><strong>math + ml + robotics + networking + security.</strong><br>diving into hardware and security research.</p>
       <p>currently working on devtools, cloud security, inference engines, and databases.</p>
     </div>
   </div>
 </div>
+
+<hr class="divider">
 
 <div class="section">
   <p>i enjoy spending time with my family, friends, and dog, being in the mountains, and doing math and physics. trail running and grappling. based in seattle.</p>

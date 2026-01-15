@@ -80,6 +80,13 @@ nav a:hover {
   margin-bottom: 0;
 }
 
+/* Divider */
+.divider {
+  border: none;
+  border-top: 1px solid #e5e5e5;
+  margin: 1.5rem 0;
+}
+
 /* Sections */
 .section {
   margin-bottom: 1.75rem;
