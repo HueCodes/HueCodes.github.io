@@ -45,7 +45,6 @@ title: home
 </div>
 
 <div class="section">
-  <h2>contact</h2>
   <p class="links">
     <a href="mailto:huecodes@proton.me">email</a>
   </p>
