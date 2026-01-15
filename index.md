@@ -17,7 +17,7 @@ title: home
       <h1>hey, i'm hugh</h1>
       <p><strong>math + ml + robotics + networking + security.</strong><br>diving into hardware and security research.</p>
       <p>currently working on devtools, cloud security, inference engines, and databases.</p>
-      <p>i ship fast and care deeply about building solid systems with great people.</p>
+      <p><strong>i ship fast.</strong></p>
     </div>
   </div>
 </div>
