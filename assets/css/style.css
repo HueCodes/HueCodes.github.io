@@ -110,6 +110,25 @@ nav a:hover {
   margin-right: 0.75rem;
 }
 
+/* Projects */
+.project {
+  margin-bottom: 0.5rem;
+  font-size: 14px;
+}
+
+.project a {
+  font-weight: 500;
+}
+
+.project span {
+  color: var(--text-secondary);
+  margin-left: 0.25rem;
+}
+
+.project span::before {
+  content: "— ";
+}
+
 /* Links section */
 .links {
   font-size: 14px;
