@@ -9,7 +9,9 @@ title: blog
   <a href="https://github.com/HueCodes">github</a>
 </nav>
 
-# blog
+<div class="intro">
+  <h1>blog</h1>
+</div>
 
 {% if site.posts.size > 0 %}
 <ul class="post-list">
@@ -21,5 +23,5 @@ title: blog
   {% endfor %}
 </ul>
 {% else %}
-nothing here yet. check back soon.
+<p>nothing here yet.</p>
 {% endif %}
