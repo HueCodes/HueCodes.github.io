@@ -15,8 +15,7 @@ title: home
   <img src="/assets/DSCN1683.jpeg" alt="photo" class="photo">
   <div>
     <h1>hey, i'm hue</h1>
-    <p>math + cs @ uw. i like building things that are fast and reliable.</p>
-    <p>currently into systems programming, databases, and infrastructure.</p>
+    <p>math + ml + robotics + networking + security. diving into hardware and security research.</p>
   </div>
 </div>
 
@@ -26,9 +25,11 @@ title: home
 
 ## projects
 
-- **[keel](https://github.com/HueCodes/keel)** — dockerfile linter and optimizer in go
-- **tsdb** — cloud-native time series database in rust
-- **kv cache** — key-value cache database in go
+<p class="projects">
+  <a href="https://github.com/HueCodes/keel">keel</a> ·
+  <a href="https://github.com/HueCodes/Scuttle">scuttle</a> ·
+  <a href="https://github.com/HueCodes/sudoku-vision">sudoku-vision</a>
+</p>
 
 </div>
 
