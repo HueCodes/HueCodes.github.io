@@ -16,9 +16,9 @@ body {
   line-height: 1.65;
   color: var(--text);
   background: var(--bg);
-  max-width: 520px;
+  max-width: 720px;
   margin: 0 auto;
-  padding: 3rem 1.25rem;
+  padding: 3rem 2rem;
 }
 
 a {
