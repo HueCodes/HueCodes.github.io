@@ -73,7 +73,11 @@ nav a:hover {
 .intro-header p {
   font-size: 14px;
   color: var(--text-secondary);
-  margin: 0;
+  margin: 0 0 0.75rem 0;
+}
+
+.intro-header p:last-child {
+  margin-bottom: 0;
 }
 
 /* Sections */
