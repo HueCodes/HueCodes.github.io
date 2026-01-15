@@ -58,8 +58,8 @@ nav a:hover {
 }
 
 .photo {
-  width: 72px;
-  height: 72px;
+  width: 110px;
+  height: 110px;
   border-radius: 3px;
   object-fit: cover;
 }
