@@ -1,22 +1,8 @@
 ---
-layout: default
+layout: research
 title: Indirect Prompt Injection in Small Language Models
+date: January 2026
 ---
-
-<nav>
-  <a href="/">home</a>
-  <a href="/blog">blog</a>
-  <a href="/research">research</a>
-  <a href="/oss">open source</a>
-  <a href="https://github.com/HueCodes">github</a>
-</nav>
-
-<article class="post">
-
-<header>
-<h1>Indirect Prompt Injection in Small Language Models</h1>
-<p class="research-meta">Attack Taxonomy and Size Analysis · January 2026</p>
-</header>
 
 ## Abstract
 
@@ -198,5 +184,3 @@ Better capability does not imply better security. Security requires adversarial 
 **Practical implications:** Small models require external safeguards for agentic deployment. Model size is not a reliable security indicator. For injection resistance, use models with adversarial training.
 
 Framework available at [agent-injection-bench](https://github.com/HueCodes/agent-injection-bench).
-
-</article>
