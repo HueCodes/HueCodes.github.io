@@ -180,6 +180,13 @@ nav a:hover {
   font-size: 14px;
 }
 
+/* Research */
+.research-meta {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
 /* Code */
 code {
   font-family: "SF Mono", Menlo, monospace;
