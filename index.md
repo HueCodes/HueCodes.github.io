@@ -24,7 +24,7 @@ title: home
 <hr class="divider">
 
 <div class="section">
-  <p>i enjoy spending time with my family, friends, and dog, being in the mountains, and doing math and physics. trail running and grappling. based in seattle.</p>
+  <p>i enjoy spending time with my family, friends, and dog, being in the mountains, and doing math and physics. i also enjoy trail running, grappling, reading, and watching movies. based in seattle.</p>
 </div>
 
 <div class="section">
