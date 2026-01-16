@@ -15,9 +15,8 @@ title: home
     <img src="/assets/DSCN1683.jpeg" alt="Hugh's profile photo" class="photo">
     <div>
       <h1>hey, i'm hugh</h1>
-      <p><strong>math + ml + robotics + networking + security.</strong><br>diving into hardware and security research.</p>
-      <p>currently working on devtools, cloud security, inference engines, and databases.</p>
-      <p>i ship fast and want to solve hard problems with smart people.</p>
+      <p><strong>math + ml + robotics + networking + security.</strong><br>diving into hardware and security research — currently working on devtools, cloud security, inference engines, and databases.</p>
+      <p class="tagline">i ship fast and want to solve hard problems with smart people.</p>
     </div>
   </div>
 </div>

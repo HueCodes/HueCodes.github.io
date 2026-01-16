@@ -80,6 +80,11 @@ nav a:hover {
   margin-bottom: 0;
 }
 
+.intro-header .tagline {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
 /* Divider */
 .divider {
   border: none;
