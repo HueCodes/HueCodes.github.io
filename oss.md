@@ -19,6 +19,10 @@ title: open source
 <div class="section">
   <h2>contributions</h2>
   <div class="project">
+    <a href="https://github.com/rust-lang/rust-clippy/pull/16402">rust-clippy</a>
+    <span>skip elidable_lifetime_names lint for proc-macro generated code</span>
+  </div>
+  <div class="project">
     <a href="https://github.com/RustPython/RustPython/pull/6661">RustPython</a>
     <span>fix set in-place operators with self argument</span>
   </div>
