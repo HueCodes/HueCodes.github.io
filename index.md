@@ -40,8 +40,8 @@ title: home
     <span>high-performance data plane proxy with HTTP/2, TLS, load balancing, circuit breaking, and rate limiting</span>
   </div>
   <div class="project">
-    <a href="https://github.com/HueCodes/Network-Beacon">network beacon</a>
-    <span>real-time C2 beacon detection using statistical traffic analysis and TLS fingerprinting</span>
+    <a href="https://github.com/HueCodes/Sensor-Bridge">sensor-bridge</a>
+    <span>real-time sensor data pipeline in Rust</span>
   </div>
   <div class="project">
     <a href="https://github.com/HueCodes/sudoku-vision">sudoku-vision</a>
