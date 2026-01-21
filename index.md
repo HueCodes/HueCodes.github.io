@@ -26,7 +26,7 @@ title: home
 
 <div class="section">
   <h2>currently</h2>
-  <p>diving into robotics and getting my hands on hardware with Rust on an STM32. exploring math and physics, especially RF and linear algebra. contributing to Rust and other open source projects I care about.</p>
+  <p>diving into robotics with Rust on an STM32 and designing an autonomous UUV. exploring math and physics, especially RF and linear algebra. contributing to Rust and other open source projects I care about.</p>
 </div>
 
 <div class="section">
