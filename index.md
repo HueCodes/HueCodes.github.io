@@ -25,12 +25,13 @@ title: home
 <hr class="divider">
 
 <div class="section">
-  <h2>currently</h2>
-  <p>building an autonomous UUV and learning embedded Rust on STM32. exploring math and physics, especially RF and linear algebra. contributing to Rust and other open source projects I care about.</p>
+  <h2>about</h2>
+  <p>i enjoy spending time with my family and my dog, being in the mountains, doing math and physics, ultra running, grappling, reading, and watching movies. based in seattle.</p>
 </div>
 
 <div class="section">
-  <p>i enjoy spending time with my family and my dog, being in the mountains, doing math and physics, ultra running, grappling, reading, and watching movies. based in seattle.</p>
+  <h2>currently</h2>
+  <p>building an autonomous UUV and learning embedded Rust on STM32. exploring math and physics, especially RF and linear algebra. contributing to Rust and other open source projects I care about.</p>
 </div>
 
 <div class="section">
