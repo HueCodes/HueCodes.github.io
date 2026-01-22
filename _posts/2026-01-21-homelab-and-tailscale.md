@@ -10,7 +10,7 @@ I run a homelab based around a refurbished ThinkPad. I was going to rebuild an o
 
 I used to think VPNs meant dedicated servers, port forwarding, certificates, and headaches. Tailscale made that irrelevant. Install it, authenticate in a browser, and your devices can talk to each other from anywhere. It builds a mesh network using WireGuard underneath, so devices connect directly rather than routing through some central server.
 
-My ThinkPad has a stable IP on my tailnet. I can SSH into it from anywhere.
+My ThinkPad has a stable IP on my tailnet. I can SSH into it from anywhere. I use it to access files, push updates, monitor projects, and sometimes just remote into my desktop when I'm away from home. It's basically always available to me now regardless of what network I'm on. I've SSH'd into my homelab from airplane wifi. That still feels like magic.
 
 ## What's Running
 
