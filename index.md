@@ -7,6 +7,7 @@ title: home
   <a href="/">home</a>
   <a href="/blog">blog</a>
   <a href="/research">research</a>
+  <a href="/hardware">hardware</a>
   <a href="https://github.com/HueCodes">github</a>
 </nav>
 
@@ -30,7 +31,7 @@ title: home
 
 <div class="section">
   <h2>currently</h2>
-  <p>diving into robotics and hardware—building an underwater robot and learning embedded Rust on STM32. interested in SLAM, sensor fusion, and RF.</p>
+  <p>writing Rust and contributing to open source projects I care about. diving into robotics and hardware—building an underwater robot and learning embedded Rust on STM32. interested in SLAM, sensor fusion, and RF.</p>
 </div>
 
 <div class="section">
