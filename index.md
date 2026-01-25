@@ -31,7 +31,7 @@ title: home
 
 <div class="section">
   <h2>currently</h2>
-  <p>writing Rust and contributing to open source projects I care about. diving into robotics and hardware—building an underwater robot and learning embedded Rust on STM32. interested in SLAM, sensor fusion, and RF.</p>
+  <p>writing Rust and contributing to open source projects I care about. learning hardware by building an underwater robot.</p>
 </div>
 
 <div class="section">
@@ -46,7 +46,7 @@ title: home
   </div>
   <div class="project">
     <a href="https://github.com/HueCodes/sudoku-vision">sudoku-vision</a>
-    <span>camera-to-solution sudoku scanner—PyTorch CNN for digit recognition, OpenCV grid detection, C solver compiled to WebAssembly</span>
+    <span>camera-to-solution sudoku scanner, PyTorch CNN for digit recognition, OpenCV grid detection, C solver compiled to WebAssembly</span>
   </div>
 </div>
 
