@@ -17,5 +17,8 @@ title: hardware
 </div>
 
 <div class="section">
-  <p>coming soon.</p>
+  <div class="project">
+    <a href="/hardware/spectrum-analyzer/">ESP32 Spectrum Analyzer</a>
+    <span>portable RF spectrum analyzer for learning radio fundamentals</span>
+  </div>
 </div>

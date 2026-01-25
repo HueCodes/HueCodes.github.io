@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<nav>
+  <a href="/">home</a>
+  <a href="/blog">blog</a>
+  <a href="/research">research</a>
+  <a href="/hardware">hardware</a>
+  <a href="https://github.com/HueCodes">github</a>
+</nav>
+
+<article class="post">
+  <header>
+    <h1>{{ page.title }}</h1>
+    <time>{{ page.status }}</time>
+  </header>
+
+  {{ content }}
+
+  {% if page.github %}
+  <p><a href="{{ page.github }}">view on github &rarr;</a></p>
+  {% endif %}
+
+  <footer>
+    <a href="{{ '/hardware' | relative_url }}">&larr; back to hardware</a>
+  </footer>
+</article>
