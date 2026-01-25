@@ -16,7 +16,7 @@ title: home
     <img src="/assets/DSCN1683.jpeg" alt="Hugh's profile photo" class="photo">
     <div>
       <h1>hey, i'm hugh</h1>
-      <p><strong>math + ml + robotics + networking + security.</strong><br>building systems in Rust.</p>
+      <p>building systems in Rust.</p>
       <p class="tagline">i ship fast and want to solve hard problems with smart people.</p>
     </div>
   </div>
