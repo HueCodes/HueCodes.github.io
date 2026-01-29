@@ -26,7 +26,7 @@ title: home
 
 <div class="section">
   <h2>about</h2>
-  <p>i enjoy spending time with my family and my dog, being in the mountains, doing math and physics, ultra running, grappling, reading, and watching movies. based in seattle.</p>
+  <p>outside of computers i like being in the mountains, grappling, and running ultra marathons. based in seattle.</p>
 </div>
 
 <div class="section">
