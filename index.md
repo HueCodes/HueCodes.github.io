@@ -31,7 +31,7 @@ title: home
 
 <div class="section">
   <h2>currently</h2>
-  <p>writing Rust and distributed systems. contributing to open source projects that I like. learning hardware by building an autonomous UUV. interested in RF and math/ml.</p>
+  <p>writing Rust and Go for distributed systems and networking. diving into hardware. contributing to Cloudflare, Cilium, Hyper, and other open source projects I like.</p>
 </div>
 
 <div class="section">
