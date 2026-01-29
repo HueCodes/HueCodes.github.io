@@ -26,7 +26,7 @@ title: home
 
 <div class="section">
   <h2>about</h2>
-  <p>outside of computers i like being in the mountains, grappling, and running ultra marathons. based in seattle.</p>
+  <p>outside of computers and engineering i like being in the mountains, grappling, and running ultra marathons. based in seattle.</p>
 </div>
 
 <div class="section">
