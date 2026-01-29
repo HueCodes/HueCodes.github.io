@@ -61,6 +61,10 @@ title: home
     <span>fixed set in-place operators with self argument (merged)</span>
   </div>
   <div class="project">
+    <a href="https://github.com/cloudflare/agents/pull/781">cloudflare/agents</a>
+    <span>fix: properly type tool error content in getAITools (merged)</span>
+  </div>
+  <div class="project">
     <a href="https://github.com/dimforge/rapier/pull/806">rapier</a>
     <span>GeometricMean coefficient combine rule for friction simulation (open, passes checks)</span>
   </div>
