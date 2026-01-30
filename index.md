@@ -37,20 +37,20 @@ title: home
 <div class="section">
   <h2>projects</h2>
   <div class="project">
-    <a href="https://github.com/HueCodes/Go-Hunter">go-hunter</a>
-    <span>multi-cloud attack surface management. concurrent discovery across AWS/GCP/Azure/Cloudflare/DO at 1K assets/min, SHA256-based drift detection, multi-tenant SaaS. 16K LOC Go</span>
-  </div>
-  <div class="project">
-    <a href="https://github.com/HueCodes/Rust-ServiceMesh">rust-servicemesh</a>
-    <span>L7 proxy with circuit breakers, HTTP/2, gRPC. lock-free atomics + DashMap achieve 52M ops/sec. Prometheus metrics, graceful shutdown, connection pooling</span>
-  </div>
-  <div class="project">
     <a href="https://github.com/HueCodes/Sensor-Bridge">sensor-bridge</a>
     <span>lock-free 4-stage pipeline for IMU/LIDAR fusion. cache-padded SPSC buffers, 100K items/sec, ~50ns p50 latency, 99% object reuse. no_std compatible. 17K LOC Rust</span>
   </div>
   <div class="project">
     <a href="https://github.com/HueCodes/forge-db">forge-db</a>
     <span>SIMD-accelerated vector database. IVF-PQ + HNSW indexing, AVX2/AVX-512 runtime detection, 13K QPS at 75µs, 32x memory compression. pure Rust, no external deps</span>
+  </div>
+  <div class="project">
+    <a href="https://github.com/HueCodes/Go-Hunter">go-hunter</a>
+    <span>multi-cloud attack surface management. concurrent discovery across AWS/GCP/Azure/Cloudflare/DO at 1K assets/min, SHA256-based drift detection, multi-tenant SaaS. 16K LOC Go</span>
+  </div>
+  <div class="project">
+    <a href="https://github.com/HueCodes/Rust-ServiceMesh">rust-servicemesh</a>
+    <span>L7 proxy with circuit breakers, HTTP/2, gRPC. lock-free atomics + DashMap achieve 52M ops/sec. Prometheus metrics, graceful shutdown, connection pooling</span>
   </div>
 </div>
 
