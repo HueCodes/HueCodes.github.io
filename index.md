@@ -37,16 +37,20 @@ title: home
 <div class="section">
   <h2>projects</h2>
   <div class="project">
-    <a href="https://github.com/HueCodes/Rust-ServiceMesh">rust service mesh</a>
-    <span>service mesh data plane with HTTP/2, TLS, circuit breaker, rate limiting, L7 routing. Tokio + Hyper + Tower</span>
+    <a href="https://github.com/HueCodes/Go-Hunter">go-hunter</a>
+    <span>multi-cloud attack surface management. concurrent discovery across AWS/GCP/Azure/Cloudflare/DO at 1K assets/min, SHA256-based drift detection, multi-tenant SaaS. 16K LOC Go</span>
+  </div>
+  <div class="project">
+    <a href="https://github.com/HueCodes/Rust-ServiceMesh">rust-servicemesh</a>
+    <span>L7 proxy with circuit breakers, HTTP/2, gRPC. lock-free atomics + DashMap achieve 52M ops/sec. Prometheus metrics, graceful shutdown, connection pooling</span>
   </div>
   <div class="project">
     <a href="https://github.com/HueCodes/Sensor-Bridge">sensor-bridge</a>
-    <span>real-time sensor pipeline with lock-free SPSC buffer, ~50ns latency, timestamp sync for multi-sensor fusion</span>
+    <span>lock-free 4-stage pipeline for IMU/LIDAR fusion. cache-padded SPSC buffers, 100K items/sec, ~50ns p50 latency, 99% object reuse. no_std compatible. 17K LOC Rust</span>
   </div>
   <div class="project">
-    <a href="https://github.com/HueCodes/sudoku-vision">sudoku-vision</a>
-    <span>camera-to-solution sudoku scanner, PyTorch CNN for digit recognition, OpenCV grid detection, C solver compiled to WebAssembly</span>
+    <a href="https://github.com/HueCodes/forge-db">forge-db</a>
+    <span>SIMD-accelerated vector database. IVF-PQ + HNSW indexing, AVX2/AVX-512 runtime detection, 13K QPS at 75µs, 32x memory compression. pure Rust, no external deps</span>
   </div>
 </div>
 
