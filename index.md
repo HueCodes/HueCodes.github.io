@@ -38,7 +38,7 @@ title: home
   <h2>projects</h2>
   <div class="project">
     <a href="https://github.com/HueCodes/Sensor-Bridge">sensor-bridge</a>
-    <span>lock-free 4-stage pipeline for IMU/LIDAR fusion. cache-padded SPSC buffers, 100K items/sec, ~50ns p50 latency, 99% object reuse. no_std compatible. 17K LOC Rust</span>
+    <span>lock-free 4-stage pipeline for IMU/LIDAR fusion. cache-padded SPSC buffers, 2.2B items/sec, ~20ns latency, sub-nanosecond ring buffer ops. no_std compatible. 17K LOC Rust</span>
   </div>
   <div class="project">
     <a href="https://github.com/HueCodes/forge-db">forge-db</a>
