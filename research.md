@@ -17,10 +17,6 @@ title: research
 
 <div class="section">
   <div class="project">
-    <a href="/research/caex/">CAEX: Exploiting Cloud-Integrated LLM Agents via Prompt Injection</a>
-    <span>attack taxonomy, six-layer defense pipeline, 100% detection across AWS/GCP/Azure</span>
-  </div>
-  <div class="project">
     <a href="/research/prompt-injection">Indirect Prompt Injection in Small Language Models</a>
     <span>attack taxonomy and size analysis for 0.5B-3B models</span>
   </div>
