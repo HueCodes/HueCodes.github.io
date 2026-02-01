@@ -77,6 +77,10 @@ title: home
     <span>case-insensitive trailer field matching per RFC 9110 (open, passes checks)</span>
   </div>
   <div class="project">
+    <a href="https://github.com/tokio-rs/tokio/pull/7874">tokio</a>
+    <span>lock-free is_cancelled via AtomicBool for CancellationToken, fixing >2ms mutex delays (open)</span>
+  </div>
+  <div class="project">
     <a href="https://github.com/jeremyfix/torchcvnn/pull/47">torchcvnn</a>
     <span>added input validation to normalization layers (open, passes checks)</span>
   </div>
