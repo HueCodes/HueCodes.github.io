@@ -37,8 +37,8 @@ title: home
 <div class="section">
   <h2>projects</h2>
   <div class="project">
-    <a href="https://github.com/HueCodes/Sensor-Bridge">sensor-bridge</a>
-    <span>lock-free 4-stage pipeline for IMU/LIDAR fusion. cache-padded SPSC buffers, 2.2B items/sec, ~20ns latency, sub-nanosecond ring buffer ops. no_std compatible. Rust</span>
+    <a href="https://github.com/HueCodes/nodix">nodix</a>
+    <span>real-time compute graph engine for robotics. DAG execution with EDF/Rate Monotonic scheduling, 5K+ iter/sec, <1ms p99 latency, zero-copy data flow. Rust</span>
   </div>
   <div class="project">
     <a href="https://github.com/HueCodes/forge-db">forge-db</a>
@@ -49,8 +49,16 @@ title: home
     <span>multi-cloud attack surface management. concurrent discovery across AWS/GCP/Azure/Cloudflare/DO at 1K assets/min, SHA256-based drift detection, multi-tenant SaaS. Go</span>
   </div>
   <div class="project">
+    <a href="https://github.com/HueCodes/Sensor-Bridge">sensor-bridge</a>
+    <span>lock-free 4-stage pipeline for IMU/LIDAR fusion. cache-padded SPSC buffers, 2.2B items/sec, ~20ns latency, sub-nanosecond ring buffer ops. no_std compatible. Rust</span>
+  </div>
+  <div class="project">
     <a href="https://github.com/HueCodes/Rust-ServiceMesh">rust-servicemesh</a>
     <span>L7 proxy with circuit breakers, HTTP/2, gRPC. lock-free atomics + DashMap achieve 52M ops/sec. Prometheus metrics, graceful shutdown, connection pooling</span>
+  </div>
+  <div class="project">
+    <a href="https://github.com/HueCodes/gretun">gretun</a>
+    <span>GRE tunnel management CLI. create, probe, and manage site-to-site tunnels for cloud VPC interconnection via netlink. Go</span>
   </div>
 </div>
 
