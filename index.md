@@ -78,7 +78,7 @@ title: home
   </div>
   <div class="project">
     <a href="https://github.com/tokio-rs/tokio/pull/7874">tokio</a>
-    <span>lock-free is_cancelled via AtomicBool for CancellationToken, fixing >2ms mutex delays (open)</span>
+    <span>lock-free is_cancelled via AtomicBool for CancellationToken, fixing >2ms mutex delays (open, passes checks)</span>
   </div>
   <div class="project">
     <a href="https://github.com/jeremyfix/torchcvnn/pull/47">torchcvnn</a>
