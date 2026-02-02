@@ -78,19 +78,19 @@ title: home
   </div>
   <div class="project">
     <a href="https://github.com/cilium/ebpf/pull/1945">cilium/ebpf</a>
-    <span>add poller and eventRing interfaces (open, passes checks)</span>
+    <span>add poller and eventRing interfaces</span>
   </div>
   <div class="project">
     <a href="https://github.com/dimforge/rapier/pull/806">rapier</a>
-    <span>GeometricMean coefficient combine rule for friction simulation</span>
+    <span>GeometricMean coefficient combine rule for friction simulation (open, passes checks)</span>
   </div>
   <div class="project">
     <a href="https://github.com/hyperium/hyper/pull/4011">hyper</a>
-    <span>case-insensitive trailer field matching per RFC 9110</span>
+    <span>case-insensitive trailer field matching per RFC 9110 (open, passes checks)</span>
   </div>
   <div class="project">
     <a href="https://github.com/tokio-rs/tokio/pull/7874">tokio</a>
-    <span>lock-free is_cancelled via AtomicBool for CancellationToken, fixing >2ms mutex delays</span>
+    <span>lock-free is_cancelled via AtomicBool for CancellationToken, fixing >2ms mutex delays (open, passes checks)</span>
   </div>
   <div class="project">
     <a href="https://github.com/jeremyfix/torchcvnn/pull/47">torchcvnn</a>
