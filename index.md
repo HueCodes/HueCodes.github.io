@@ -81,6 +81,10 @@ title: home
     <span>add poller and eventRing interfaces</span>
   </div>
   <div class="project">
+    <a href="https://github.com/lapce/floem/pull/1025">floem</a>
+    <span>cache whitespace TextLayouts in editor paint</span>
+  </div>
+  <div class="project">
     <a href="https://github.com/dimforge/rapier/pull/806">rapier</a>
     <span>GeometricMean coefficient combine rule for friction simulation (open, passes checks)</span>
   </div>
