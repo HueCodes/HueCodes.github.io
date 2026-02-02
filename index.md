@@ -66,31 +66,35 @@ title: home
   <h2>open source</h2>
   <div class="project">
     <a href="https://github.com/rust-lang/rust-clippy/pull/16402">rust-clippy</a>
-    <span>fixed false positive lint for proc-macro generated code (merged)</span>
+    <span>fixed false positive lint for proc-macro generated code</span>
   </div>
   <div class="project">
     <a href="https://github.com/RustPython/RustPython/pull/6661">rustpython</a>
-    <span>fixed set in-place operators with self argument (merged)</span>
+    <span>fixed set in-place operators with self argument</span>
   </div>
   <div class="project">
     <a href="https://github.com/cloudflare/agents/pull/781">cloudflare/agents</a>
-    <span>fix: properly type tool error content in getAITools (merged)</span>
+    <span>fix: properly type tool error content in getAITools</span>
+  </div>
+  <div class="project">
+    <a href="https://github.com/cilium/ebpf/pull/1945">cilium/ebpf</a>
+    <span>add poller and eventRing interfaces (open, passes checks)</span>
   </div>
   <div class="project">
     <a href="https://github.com/dimforge/rapier/pull/806">rapier</a>
-    <span>GeometricMean coefficient combine rule for friction simulation (open, passes checks)</span>
+    <span>GeometricMean coefficient combine rule for friction simulation</span>
   </div>
   <div class="project">
     <a href="https://github.com/hyperium/hyper/pull/4011">hyper</a>
-    <span>case-insensitive trailer field matching per RFC 9110 (open, passes checks)</span>
+    <span>case-insensitive trailer field matching per RFC 9110</span>
   </div>
   <div class="project">
     <a href="https://github.com/tokio-rs/tokio/pull/7874">tokio</a>
-    <span>lock-free is_cancelled via AtomicBool for CancellationToken, fixing >2ms mutex delays (open, passes checks)</span>
+    <span>lock-free is_cancelled via AtomicBool for CancellationToken, fixing >2ms mutex delays</span>
   </div>
   <div class="project">
     <a href="https://github.com/jeremyfix/torchcvnn/pull/47">torchcvnn</a>
-    <span>added input validation to normalization layers (open, passes checks)</span>
+    <span>added input validation to normalization layers</span>
   </div>
 </div>
 
