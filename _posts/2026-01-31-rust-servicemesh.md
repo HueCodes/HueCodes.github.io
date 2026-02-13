@@ -9,13 +9,11 @@ Service mesh data plane with circuit breakers, rate limiting, and gRPC support. 
 
 ![Proxy Architecture](/assets/images/projects/servicemesh-architecture.png)
 
-## What It Does
-
-A service mesh proxy sits between your services, handling cross-cutting concerns: retries, timeouts, circuit breaking, load balancing, observability. Instead of implementing this in every service, you deploy a proxy sidecar that handles it transparently. 
+A service mesh proxy sits between your services, handling cross-cutting concerns: retries, timeouts, circuit breaking, load balancing, observability. Instead of implementing this in every service, you deploy a proxy sidecar that handles it transparently.
 
 This project is the data plane—the proxy itself. It handles HTTP/1.1, HTTP/2, and gRPC traffic with sub-millisecond overhead.
 
-This seemed like a no-brainer to imrpove my grasp on Networking.
+This seemed like a no-brainer to improve my grasp on Networking.
 
 
 ## Request Flow
@@ -28,6 +26,10 @@ This seemed like a no-brainer to imrpove my grasp on Networking.
 6. **Upstream connection**: Forward request, stream response back
 
 Each step is a Tower middleware layer. Layers compose cleanly—add or remove functionality without touching other code.
+
+HTTP/2 multiplexing was complex. Multiple requests share one connection. Backpressure, flow control, and stream prioritization all needed handling. Hyper does the heavy lifting but configuration matters.
+
+Tower's service trait took time to internalize. Everything is `Service<Request, Response=Response, Error=Error>`. Once it clicks, composition is powerful. Before it clicks, the type errors are cryptic.
 
 ## Circuit Breaker
 
@@ -56,14 +58,6 @@ The proxy handles thousands of concurrent connections. Traditional locking creat
 
 Result: 52M ops/sec on the circuit breaker path. Locking would cap around 5M.
 
-## Challenges & Lessons
-
-HTTP/2 multiplexing was complex. Multiple requests share one connection. Backpressure, flow control, and stream prioritization all needed handling. Hyper does the heavy lifting but configuration matters.
-
-Tower's service trait took time to internalize. Everything is `Service<Request, Response=Response, Error=Error>`. Once it clicks, composition is powerful. Before it clicks, the type errors are cryptic.
-
-Testing concurrent behavior required property-based testing. Random request sequences, random failures, assert invariants hold. Found several edge cases unit tests missed.
-
 ## Performance
 
 | Component | Throughput |
@@ -72,7 +66,7 @@ Testing concurrent behavior required property-based testing. Random request sequ
 | Rate limiter | 20M ops/sec |
 | Router (exact) | 30M ops/sec |
 
-## What I'd Do Differently
+Testing concurrent behavior required property-based testing. Random request sequences, random failures, assert invariants hold. Found several edge cases unit tests missed.
 
 The configuration system is basic. YAML files work but hot reloading would help. An xDS-compatible control plane interface would enable integration with Istio/Envoy ecosystems.
 

@@ -26,8 +26,6 @@ I bought a Samsung A15 to use as a mobile terminal. It runs Termux with a full L
 
 The phone also connects to hardware over USB-C: logic analyzer for debugging signals, Arduino terminal for serial output, USB console for networking gear. It's become my portable lab for both software and hardware.
 
-## What I Learned
-
 Setting this up taught me more than any networking tutorial I've watched. I learned a lot just from booting Linux on a ThinkPad and eventually turning it into a server I SSH into from anywhere.
 
 The ThinkPad cost less than a year of cloud hosting. A cheap way to actually learn networking and Linux fundamentals.

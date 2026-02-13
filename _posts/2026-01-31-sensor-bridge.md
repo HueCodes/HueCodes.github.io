@@ -9,8 +9,6 @@ High-throughput sensor processing pipeline with lock-free SPSC buffers and sub-m
 
 ![Pipeline Architecture](/assets/images/projects/sensor-bridge-pipeline.png)
 
-## What It Does
-
 Robotics sensors produce data at high rates. An IMU outputs 1000 samples/second. A LiDAR pushes 300K points/second. This data needs filtering, fusion, and forwarding—without blocking the sensor or dropping samples.
 
 Sensor-Bridge is a 4-stage pipeline optimized for this workload. Each stage runs on its own thread. Stages communicate through lock-free ring buffers. No mutexes, no syscalls, no jitter.
@@ -38,6 +36,10 @@ Implementation details:
 
 Why lock-free? Mutexes cause priority inversion. A high-priority thread blocks waiting for a low-priority thread holding the lock. In real-time systems, this means missed deadlines. Lock-free structures eliminate this class of bugs.
 
+Debugging lock-free code is painful. Race conditions are intermittent. The fix: extensive stress testing with ThreadSanitizer, plus formal reasoning about memory ordering.
+
+Memory ordering took multiple iterations to get right. Relaxed ordering is fast but wrong. SeqCst is correct but slow. Acquire-release hits the sweet spot for SPSC.
+
 ## Backpressure Handling
 
 When a downstream stage can't keep up, the buffer fills. Three strategies:
@@ -50,14 +52,6 @@ When a downstream stage can't keep up, the buffer fills. Three strategies:
 
 The choice depends on your application. IMU data for state estimation needs continuity—drop oldest. Event streams might need drop newest to avoid stale processing.
 
-## Challenges & Lessons
-
-Debugging lock-free code is painful. Race conditions are intermittent. The fix: extensive stress testing with ThreadSanitizer, plus formal reasoning about memory ordering.
-
-Memory ordering took multiple iterations to get right. Relaxed ordering is fast but wrong. SeqCst is correct but slow. Acquire-release hits the sweet spot for SPSC.
-
-Benchmarking required care. Measuring nanosecond operations means cache effects dominate. Warm-up runs, pinned cores, and isolated CPUs were necessary for stable numbers.
-
 ## Performance
 
 | Metric | Result |
@@ -66,7 +60,7 @@ Benchmarking required care. Measuring nanosecond operations means cache effects 
 | Stage processing | 2.2B items/sec |
 | Channel latency | ~20ns |
 
-## What I'd Do Differently
+Benchmarking required care. Measuring nanosecond operations means cache effects dominate. Warm-up runs, pinned cores, and isolated CPUs were necessary for stable numbers.
 
 SPSC limits you to one producer and one consumer. An MPMC (multi-producer, multi-consumer) variant would enable fan-in/fan-out patterns. The tradeoff is complexity—MPMC lock-free queues are significantly harder to implement correctly.
 
