@@ -18,7 +18,15 @@ title: hardware
 
 <div class="section">
   <div class="project">
+    <a href="/hardware/lorawan-mesh/">LoRaWAN Mesh Network</a>
+    <span>long-range agricultural IoT mesh network for distributed sensor deployment</span>
+  </div>
+  <div class="project">
     <a href="/hardware/spectrum-analyzer/">ESP32 Spectrum Analyzer</a>
     <span>portable RF spectrum analyzer for learning radio fundamentals</span>
+  </div>
+  <div class="project">
+    <a href="/hardware/stm32-dev/">STM32 Development</a>
+    <span>bare-metal microcontroller programming and embedded systems</span>
   </div>
 </div>
