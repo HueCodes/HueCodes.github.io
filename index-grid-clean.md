@@ -8,6 +8,7 @@ title: home
   <a href="/blog">blog</a>
   <a href="/research">research</a>
   <a href="/hardware">hardware</a>
+  <a href="/opensource">opensource</a>
   <a href="https://github.com/HueCodes">github</a>
 </nav>
 
@@ -141,9 +142,9 @@ title: home
     </article>
   </section>
 
-  <!-- Open Source -->
+  <!-- Open Source Highlights -->
   <section class="oss">
-    <h2>Open Source</h2>
+    <h2>Open Source Highlights</h2>
     <div class="oss-grid">
       <div class="oss-item">
         <a href="https://github.com/cilium/ebpf/pull/1945"><strong>cilium/ebpf</strong></a>
@@ -157,19 +158,10 @@ title: home
         <a href="https://github.com/hyperium/hyper/pull/4011"><strong>hyper</strong></a>
         <p>RFC 9110 trailer compliance</p>
       </div>
-      <div class="oss-item">
-        <a href="https://github.com/rust-lang/rust-clippy/pull/16402"><strong>clippy</strong></a>
-        <p>Proc-macro lint fix</p>
-      </div>
-      <div class="oss-item">
-        <a href="https://github.com/dimforge/rapier/pull/806"><strong>rapier</strong></a>
-        <p>Friction simulation algorithm</p>
-      </div>
-      <div class="oss-item">
-        <a href="https://github.com/RustPython/RustPython/pull/6661"><strong>rustpython</strong></a>
-        <p>Set operators bugfix</p>
-      </div>
     </div>
+    <p style="text-align: center; margin-top: 20px;">
+      <a href="/opensource" style="color: #0066cc; text-decoration: none; font-size: 14px;">View all contributions →</a>
+    </p>
   </section>
 
   <footer>
