@@ -17,18 +17,13 @@ title: home
     <img src="/assets/DSCN1683.jpeg" alt="Hugh's profile photo" class="photo">
     <div>
       <h1>hey, i'm hugh</h1>
-      <p>Go developer building cloud infrastructure and distributed systems.</p>
+      <p>Go developer building cloud infrastructure and distributed systems. outside of engineering i like being in the mountains, grappling, and running ultra marathons. based in seattle.</p>
       <p class="tagline">i ship fast and want to solve hard problems with smart people.</p>
     </div>
   </div>
 </div>
 
 <hr class="divider">
-
-<div class="section">
-  <h2>about</h2>
-  <p>outside of computers and engineering i like being in the mountains, grappling, and running ultra marathons. based in seattle.</p>
-</div>
 
 <div class="section">
   <h2>currently</h2>
