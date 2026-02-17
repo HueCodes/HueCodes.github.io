@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Entropy in Packet Analysis"
-date: 2026-02-03
+date: 2026-02-16
 category: posts
 ---
 
