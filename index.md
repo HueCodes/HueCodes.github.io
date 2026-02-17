@@ -54,20 +54,20 @@ title: home
       </div>
     </article>
 
-    <!-- Forge-DB -->
+    <!-- Gretun -->
     <article class="project-card">
-      <img src="/assets/images/projects/forge-db-architecture.png" alt="Forge-DB">
+      <img src="/assets/images/projects/gretun-tunnel.png" alt="Gretun">
       <div class="card-content">
-        <h3><a href="https://github.com/HueCodes/forge-db">Forge-DB</a></h3>
-        <p class="tagline">SIMD-accelerated vector database</p>
+        <h3><a href="https://github.com/HueCodes/gretun">Gretun</a></h3>
+        <p class="tagline">GRE tunnel management CLI</p>
         <ul>
-          <li><strong>Performance:</strong> 13K QPS at 75µs latency with AVX2/AVX-512 optimization</li>
-          <li><strong>Efficiency:</strong> 32x memory compression via 8-bit quantization, 95%+ recall</li>
-          <li><strong>Portability:</strong> Pure Rust, zero external dependencies, no_std compatible</li>
-          <li><strong>Algorithms:</strong> IVF-PQ indexing + HNSW graph search for similarity queries</li>
+          <li><strong>Networking:</strong> Site-to-site VPN tunnels for cloud VPC interconnection</li>
+          <li><strong>Low-level:</strong> Direct netlink integration for kernel network configuration</li>
+          <li><strong>Features:</strong> Tunnel creation, health probing (ICMP), route table manipulation</li>
+          <li><strong>Cloud-native:</strong> Multi-cloud support (AWS, GCP, Azure virtual networks)</li>
         </ul>
-        <p class="tech">`Rust` `SIMD` `AVX-512` `HNSW` `Vector DB`</p>
-        <p class="blog-link"><a href="/2026/01/31/forge-db.html">→ read more</a></p>
+        <p class="tech">`Go` `Netlink` `GRE` `VPN` `Cloud Networking`</p>
+        <p class="blog-link"><a href="/2026/01/31/gretun.html">→ read more</a></p>
       </div>
     </article>
 
@@ -85,39 +85,6 @@ title: home
         </ul>
         <p class="tech">`Rust` `Real-time` `DAG` `Lock-free` `Robotics`</p>
         <p class="blog-link"><a href="/2026/01/31/nodix.html">→ read more</a></p>
-      </div>
-    </article>
-
-    <!-- ServiceMesh -->
-    <article class="project-card">
-      <img src="/assets/images/projects/servicemesh-architecture.png" alt="ServiceMesh">
-      <div class="card-content">
-        <h3><a href="https://github.com/HueCodes/Rust-ServiceMesh">ServiceMesh</a></h3>
-        <p class="tagline">L7 proxy with circuit breakers</p>
-        <ul>
-          <li><strong>Throughput:</strong> 52M ops/sec using lock-free atomics + DashMap</li>
-          <li><strong>Protocols:</strong> HTTP/2 and gRPC with full streaming support (Hyper/Tonic)</li>
-          <li><strong>Reliability:</strong> Circuit breaker with configurable thresholds, exponential backoff</li>
-          <li><strong>Observability:</strong> Prometheus metrics, graceful shutdown, connection pooling</li>
-        </ul>
-        <p class="tech">`Rust` `Tokio` `gRPC` `HTTP/2` `Prometheus`</p>
-      </div>
-    </article>
-
-    <!-- Gretun -->
-    <article class="project-card">
-      <img src="/assets/images/projects/gretun-tunnel.png" alt="Gretun">
-      <div class="card-content">
-        <h3><a href="https://github.com/HueCodes/gretun">Gretun</a></h3>
-        <p class="tagline">GRE tunnel management CLI</p>
-        <ul>
-          <li><strong>Networking:</strong> Site-to-site VPN tunnels for cloud VPC interconnection</li>
-          <li><strong>Low-level:</strong> Direct netlink integration for kernel network configuration</li>
-          <li><strong>Features:</strong> Tunnel creation, health probing (ICMP), route table manipulation</li>
-          <li><strong>Cloud-native:</strong> Multi-cloud support (AWS, GCP, Azure virtual networks)</li>
-        </ul>
-        <p class="tech">`Go` `Netlink` `GRE` `VPN` `Cloud Networking`</p>
-        <p class="blog-link"><a href="/2026/01/31/gretun.html">→ read more</a></p>
       </div>
     </article>
 
@@ -151,6 +118,39 @@ title: home
         </ul>
         <p class="tech">`C++17` `Smart Pointers` `Priority Queue` `RAII`</p>
         <p class="blog-link"><a href="/2026/02/16/huffman-cpp.html">→ read more</a></p>
+      </div>
+    </article>
+
+    <!-- ServiceMesh -->
+    <article class="project-card">
+      <img src="/assets/images/projects/servicemesh-architecture.png" alt="ServiceMesh">
+      <div class="card-content">
+        <h3><a href="https://github.com/HueCodes/Rust-ServiceMesh">ServiceMesh</a></h3>
+        <p class="tagline">L7 proxy with circuit breakers</p>
+        <ul>
+          <li><strong>Throughput:</strong> 52M ops/sec using lock-free atomics + DashMap</li>
+          <li><strong>Protocols:</strong> HTTP/2 and gRPC with full streaming support (Hyper/Tonic)</li>
+          <li><strong>Reliability:</strong> Circuit breaker with configurable thresholds, exponential backoff</li>
+          <li><strong>Observability:</strong> Prometheus metrics, graceful shutdown, connection pooling</li>
+        </ul>
+        <p class="tech">`Rust` `Tokio` `gRPC` `HTTP/2` `Prometheus`</p>
+      </div>
+    </article>
+
+    <!-- Forge-DB -->
+    <article class="project-card">
+      <img src="/assets/images/projects/forge-db-architecture.png" alt="Forge-DB">
+      <div class="card-content">
+        <h3><a href="https://github.com/HueCodes/forge-db">Forge-DB</a></h3>
+        <p class="tagline">SIMD-accelerated vector database</p>
+        <ul>
+          <li><strong>Performance:</strong> 13K QPS at 75µs latency with AVX2/AVX-512 optimization</li>
+          <li><strong>Efficiency:</strong> 32x memory compression via 8-bit quantization, 95%+ recall</li>
+          <li><strong>Portability:</strong> Pure Rust, zero external dependencies, no_std compatible</li>
+          <li><strong>Algorithms:</strong> IVF-PQ indexing + HNSW graph search for similarity queries</li>
+        </ul>
+        <p class="tech">`Rust` `SIMD` `AVX-512` `HNSW` `Vector DB`</p>
+        <p class="blog-link"><a href="/2026/01/31/forge-db.html">→ read more</a></p>
       </div>
     </article>
   </section>
