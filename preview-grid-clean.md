@@ -3,19 +3,30 @@ layout: grid
 title: home
 ---
 
-<div class="grid-portfolio">
-  <!-- Header -->
-  <header class="header">
-    <h1>Hugh</h1>
-    <p>Go · Cloud Infrastructure · Distributed Systems · Seattle</p>
-    <nav>
-      <a href="/blog">writing</a>
-      <a href="https://github.com/HueCodes">github</a>
-      <a href="mailto:huecodes@proton.me">email</a>
-    </nav>
-  </header>
+<nav>
+  <a href="/">home</a>
+  <a href="/blog">blog</a>
+  <a href="/research">research</a>
+  <a href="/hardware">hardware</a>
+  <a href="https://github.com/HueCodes">github</a>
+</nav>
 
-  <!-- Projects Grid -->
+<div class="intro">
+  <div class="intro-header">
+    <img src="/assets/DSCN1683.jpeg" alt="Hugh's profile photo" class="photo">
+    <div>
+      <h1>hey, i'm hugh</h1>
+      <p>Go developer building cloud infrastructure and distributed systems.</p>
+      <p class="tagline">i ship fast and want to solve hard problems with smart people.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="grid-portfolio">
+
+  <!-- Projects -->
   <section class="projects-grid">
     <!-- Go-Hunter -->
     <article class="project-card">
