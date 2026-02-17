@@ -1,0 +1,81 @@
+<svg width="800" height="350" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="400" y="30" font-family="monospace" font-size="18" text-anchor="middle" font-weight="bold" fill="#333">
+    Compression Comparison: "hello world"
+  </text>
+
+  <!-- Define styles -->
+  <defs>
+    <style>
+      .box-before { fill: #E74C3C; stroke: #C0392B; stroke-width: 2; }
+      .box-after { fill: #7ED321; stroke: #5A9C18; stroke-width: 2; }
+      .title-text { fill: white; font-family: monospace; font-size: 14px; font-weight: bold; }
+      .data-text { fill: white; font-family: monospace; font-size: 11px; }
+      .binary-text { fill: #333; font-family: 'Courier New', monospace; font-size: 10px; }
+      .label-text { fill: #666; font-family: monospace; font-size: 11px; }
+    </style>
+  </defs>
+
+  <!-- Before: Uncompressed -->
+  <rect x="50" y="60" width="300" height="240" rx="8" class="box-before"/>
+  <text x="200" y="85" text-anchor="middle" class="title-text">Uncompressed (ASCII)</text>
+
+  <!-- ASCII representation -->
+  <text x="60" y="115" class="data-text">h = 01101000 (8 bits)</text>
+  <text x="60" y="135" class="data-text">e = 01100101 (8 bits)</text>
+  <text x="60" y="155" class="data-text">l = 01101100 (8 bits)</text>
+  <text x="60" y="175" class="data-text">l = 01101100 (8 bits)</text>
+  <text x="60" y="195" class="data-text">o = 01101111 (8 bits)</text>
+  <text x="60" y="215" class="data-text">... (6 more chars)</text>
+
+  <rect x="60" y="230" width="270" height="55" fill="rgba(255,255,255,0.2)" rx="4"/>
+  <text x="195" y="250" text-anchor="middle" class="title-text">Total: 88 bits</text>
+  <text x="195" y="270" text-anchor="middle" class="data-text">11 chars × 8 bits/char</text>
+
+  <!-- Arrow -->
+  <g>
+    <defs>
+      <marker id="arrowgreen" markerWidth="12" markerHeight="12" refX="10" refY="3" orient="auto">
+        <polygon points="0 0, 12 3, 0 6" fill="#7ED321" />
+      </marker>
+    </defs>
+    <path d="M 360 180 L 440 180" fill="none" stroke="#7ED321" stroke-width="4" marker-end="url(#arrowgreen)"/>
+    <text x="400" y="170" text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold" fill="#7ED321">
+      Huffman
+    </text>
+    <text x="400" y="200" text-anchor="middle" font-family="monospace" font-size="11" font-weight="bold" fill="#7ED321">
+      56.8% reduction
+    </text>
+  </g>
+
+  <!-- After: Compressed -->
+  <rect x="450" y="60" width="300" height="240" rx="8" class="box-after"/>
+  <text x="600" y="85" text-anchor="middle" class="title-text">Huffman Compressed</text>
+
+  <!-- Huffman codes -->
+  <text x="460" y="115" class="data-text">h = 1100 (4 bits)</text>
+  <text x="460" y="135" class="data-text">e = 1101 (4 bits)</text>
+  <text x="460" y="155" class="data-text">l = 10 (2 bits) × 3</text>
+  <text x="460" y="175" class="data-text">o = 01 (2 bits) × 2</text>
+  <text x="460" y="195" class="data-text">space = 1110 (4 bits)</text>
+  <text x="460" y="215" class="data-text">w,r,d = 4,3,3 bits</text>
+
+  <rect x="460" y="230" width="270" height="55" fill="rgba(255,255,255,0.2)" rx="4"/>
+  <text x="595" y="250" text-anchor="middle" class="title-text">Total: 38 bits</text>
+  <text x="595" y="270" text-anchor="middle" class="data-text">Variable-length codes</text>
+
+  <!-- Encoded bit string visualization -->
+  <text x="400" y="330" text-anchor="middle" class="label-text">Encoded output (first 40 bits):</text>
+  <rect x="100" y="340" width="600" height="25" fill="#F5F5F5" stroke="#999" stroke-width="1" rx="3"/>
+  <text x="110" y="357" class="binary-text">1100110110100111111011110000100111111000</text>
+
+  <!-- Character markers -->
+  <text x="110" y="335" font-family="monospace" font-size="8" fill="#E74C3C">h</text>
+  <text x="150" y="335" font-family="monospace" font-size="8" fill="#E74C3C">e</text>
+  <text x="190" y="335" font-family="monospace" font-size="8" fill="#E74C3C">l</text>
+  <text x="210" y="335" font-family="monospace" font-size="8" fill="#E74C3C">l</text>
+  <text x="230" y="335" font-family="monospace" font-size="8" fill="#E74C3C">o</text>
+
+  <!-- Key insight box -->
+  <rect x="200" y="320" width="400" height="1" fill="#999" opacity="0.3"/>
+</svg>

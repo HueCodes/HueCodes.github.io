@@ -7,9 +7,15 @@ category: projects
 
 A C++17 implementation of Huffman coding for lossless data compression, demonstrating priority queue-based tree construction, smart pointer memory management, and comprehensive error handling.
 
+![Huffman Tree](/assets/images/projects/huffman-tree.svg)
+
 Huffman coding solves the lossless compression problem by assigning variable-length binary codes to characters based on their frequency. Characters that appear more often get shorter codes, creating optimal prefix-free encoding. The algorithm matters because it underpins common compression formats like GZIP and JPEG. For a concrete example, "hello world" compresses from 88 bits to 38 bits, a 56.82% reduction. Understanding the implementation details reveals important patterns in algorithm design, memory management, and edge case handling that apply broadly to systems programming.
 
+![Compression Comparison](/assets/images/projects/huffman-compression.svg)
+
 The implementation centers on three phases: frequency analysis, tree construction, and code generation. Frequency analysis counts character occurrences in a single linear pass through the input. Tree construction uses a min-heap priority queue to greedily merge the two lowest-frequency nodes repeatedly until only the root remains. Code generation traverses the tree depth-first, assigning '0' for left edges and '1' for right edges. Each phase demonstrates different algorithmic patterns. Frequency counting shows hash map usage for O(1) lookups. Priority queue operations demonstrate heap-based sorting with O(log k) insertions and deletions. Tree traversal shows recursive depth-first search with backtracking.
+
+![Algorithm Flow](/assets/images/projects/huffman-algorithm-flow.svg)
 
 Memory management uses C++17 smart pointers throughout. Each Node contains two std::unique_ptr children, making ownership explicit and automatic. When nodes merge during tree construction, std::move transfers ownership without copying. The tree destructor becomes trivial because unique_ptr handles recursive cleanup automatically. This is RAII in practice. No manual delete calls, no memory leaks, no double-free bugs. The tradeoff is handling std::priority_queue's const-correctness. The priority queue returns const references to prevent modifications that would violate heap invariants. Extracting elements requires const_cast because we immediately call pop(), making the const qualification overly restrictive. The alternative would be using std::make_heap with manual heap operations on a vector. The current approach is idiomatic and safe given the immediate pop().
 

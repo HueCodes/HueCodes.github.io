@@ -1,0 +1,144 @@
+<svg width="900" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="450" y="30" font-family="monospace" font-size="18" text-anchor="middle" font-weight="bold" fill="#333">
+    Huffman Coding Algorithm - Three Phase Pipeline
+  </text>
+
+  <!-- Define styles -->
+  <defs>
+    <style>
+      .phase-box { fill: #4A90E2; stroke: #2E5C8A; stroke-width: 2; rx: 8; }
+      .data-box { fill: #F5F5F5; stroke: #999; stroke-width: 2; rx: 5; }
+      .phase-title { fill: white; font-family: monospace; font-size: 14px; font-weight: bold; }
+      .phase-desc { fill: white; font-family: monospace; font-size: 11px; }
+      .data-text { fill: #333; font-family: monospace; font-size: 11px; }
+      .arrow { fill: none; stroke: #E74C3C; stroke-width: 3; marker-end: url(#arrowhead); }
+      .complexity { fill: #7ED321; font-family: monospace; font-size: 10px; font-weight: bold; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#E74C3C" />
+    </marker>
+  </defs>
+
+  <!-- Input -->
+  <rect x="30" y="100" width="120" height="80" class="data-box"/>
+  <text x="90" y="125" text-anchor="middle" class="data-text" font-weight="bold">Input Text</text>
+  <text x="90" y="145" text-anchor="middle" class="data-text">"hello world"</text>
+  <text x="90" y="165" text-anchor="middle" class="data-text" font-size="10">11 characters</text>
+
+  <!-- Arrow to Phase 1 -->
+  <path d="M 150 140 L 190 140" class="arrow"/>
+
+  <!-- Phase 1: Frequency Analysis -->
+  <rect x="190" y="80" width="160" height="120" class="phase-box"/>
+  <text x="270" y="105" text-anchor="middle" class="phase-title">Phase 1</text>
+  <text x="270" y="125" text-anchor="middle" class="phase-title">Frequency Analysis</text>
+  <text x="270" y="145" text-anchor="middle" class="phase-desc">Count character</text>
+  <text x="270" y="160" text-anchor="middle" class="phase-desc">occurrences</text>
+  <text x="270" y="180" text-anchor="middle" class="complexity">O(n)</text>
+  <text x="270" y="195" text-anchor="middle" class="phase-desc" font-size="9">n = text length</text>
+
+  <!-- Arrow to Frequency Map -->
+  <path d="M 350 140 L 390 140" class="arrow"/>
+
+  <!-- Frequency Map -->
+  <rect x="390" y="85" width="110" height="110" class="data-box"/>
+  <text x="445" y="105" text-anchor="middle" class="data-text" font-weight="bold">Frequency Map</text>
+  <text x="445" y="125" text-anchor="middle" class="data-text" font-size="10">l: 3</text>
+  <text x="445" y="140" text-anchor="middle" class="data-text" font-size="10">o: 2</text>
+  <text x="445" y="155" text-anchor="middle" class="data-text" font-size="10">h: 1, e: 1</text>
+  <text x="445" y="170" text-anchor="middle" class="data-text" font-size="10">w: 1, r: 1</text>
+  <text x="445" y="185" text-anchor="middle" class="data-text" font-size="10">d: 1, _: 1</text>
+
+  <!-- Arrow to Phase 2 -->
+  <path d="M 445 200 L 445 220 L 580 220 L 580 200" class="arrow"/>
+
+  <!-- Phase 2: Tree Construction -->
+  <rect x="500" y="80" width="160" height="120" class="phase-box"/>
+  <text x="580" y="105" text-anchor="middle" class="phase-title">Phase 2</text>
+  <text x="580" y="125" text-anchor="middle" class="phase-title">Tree Construction</text>
+  <text x="580" y="145" text-anchor="middle" class="phase-desc">Priority queue</text>
+  <text x="580" y="160" text-anchor="middle" class="phase-desc">merge nodes</text>
+  <text x="580" y="180" text-anchor="middle" class="complexity">O(k log k)</text>
+  <text x="580" y="195" text-anchor="middle" class="phase-desc" font-size="9">k = unique chars</text>
+
+  <!-- Arrow to Huffman Tree -->
+  <path d="M 660 140 L 700 140" class="arrow"/>
+
+  <!-- Huffman Tree -->
+  <rect x="700" y="85" width="110" height="110" class="data-box"/>
+  <text x="755" y="105" text-anchor="middle" class="data-text" font-weight="bold">Huffman Tree</text>
+  <text x="755" y="125" text-anchor="middle" class="data-text" font-size="10">Binary tree</text>
+  <text x="755" y="140" text-anchor="middle" class="data-text" font-size="10">Leaf nodes:</text>
+  <text x="755" y="155" text-anchor="middle" class="data-text" font-size="10">characters</text>
+  <text x="755" y="170" text-anchor="middle" class="data-text" font-size="10">Internal nodes:</text>
+  <text x="755" y="185" text-anchor="middle" class="data-text" font-size="10">frequencies</text>
+
+  <!-- Arrow to Phase 3 -->
+  <path d="M 755 200 L 755 230 L 270 230 L 270 250" class="arrow"/>
+
+  <!-- Phase 3: Code Generation -->
+  <rect x="190" y="250" width="160" height="120" class="phase-box"/>
+  <text x="270" y="275" text-anchor="middle" class="phase-title">Phase 3</text>
+  <text x="270" y="295" text-anchor="middle" class="phase-title">Code Generation</text>
+  <text x="270" y="315" text-anchor="middle" class="phase-desc">DFS traversal</text>
+  <text x="270" y="330" text-anchor="middle" class="phase-desc">assign codes</text>
+  <text x="270" y="350" text-anchor="middle" class="complexity">O(k)</text>
+  <text x="270" y="365" text-anchor="middle" class="phase-desc" font-size="9">k = unique chars</text>
+
+  <!-- Arrow to Code Map -->
+  <path d="M 350 310 L 390 310" class="arrow"/>
+
+  <!-- Code Map -->
+  <rect x="390" y="255" width="110" height="110" class="data-box"/>
+  <text x="445" y="275" text-anchor="middle" class="data-text" font-weight="bold">Huffman Codes</text>
+  <text x="445" y="295" text-anchor="middle" class="data-text" font-size="10">l: 10</text>
+  <text x="445" y="310" text-anchor="middle" class="data-text" font-size="10">o: 01</text>
+  <text x="445" y="325" text-anchor="middle" class="data-text" font-size="10">h: 1100</text>
+  <text x="445" y="340" text-anchor="middle" class="data-text" font-size="10">e: 1101</text>
+  <text x="445" y="355" text-anchor="middle" class="data-text" font-size="10">w: 1111, ...</text>
+
+  <!-- Arrow to Encode -->
+  <path d="M 500 310 L 540 310" class="arrow"/>
+
+  <!-- Encode Operation -->
+  <rect x="540" y="270" width="100" height="80" class="data-box"/>
+  <text x="590" y="295" text-anchor="middle" class="data-text" font-weight="bold">Encode</text>
+  <text x="590" y="315" text-anchor="middle" class="data-text" font-size="10">Lookup each</text>
+  <text x="590" y="330" text-anchor="middle" class="data-text" font-size="10">character</text>
+  <text x="590" y="345" text-anchor="middle" class="complexity">O(n)</text>
+
+  <!-- Arrow to Output -->
+  <path d="M 640 310 L 680 310" class="arrow"/>
+
+  <!-- Output -->
+  <rect x="680" y="270" width="120" height="80" class="data-box"/>
+  <text x="740" y="295" text-anchor="middle" class="data-text" font-weight="bold">Compressed</text>
+  <text x="740" y="315" text-anchor="middle" class="data-text" font-size="9">01010111001...</text>
+  <text x="740" y="335" text-anchor="middle" class="data-text" font-size="10">38 bits</text>
+  <text x="740" y="350" text-anchor="middle" class="data-text" font-weight="bold" fill="#7ED321">56.8% smaller</text>
+
+  <!-- Summary box -->
+  <rect x="30" y="240" width="140" height="130" fill="#FFF9E6" stroke="#F39C12" stroke-width="2" rx="5"/>
+  <text x="100" y="260" text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold" fill="#333">
+    Complexity
+  </text>
+  <text x="100" y="280" text-anchor="middle" font-family="monospace" font-size="11" fill="#333">
+    Total: O(n log k)
+  </text>
+  <text x="100" y="300" text-anchor="middle" font-family="monospace" font-size="10" fill="#666">
+    Frequency: O(n)
+  </text>
+  <text x="100" y="315" text-anchor="middle" font-family="monospace" font-size="10" fill="#666">
+    Tree Build: O(k log k)
+  </text>
+  <text x="100" y="330" text-anchor="middle" font-family="monospace" font-size="10" fill="#666">
+    Code Gen: O(k)
+  </text>
+  <text x="100" y="345" text-anchor="middle" font-family="monospace" font-size="10" fill="#666">
+    Encode: O(n)
+  </text>
+  <text x="100" y="365" text-anchor="middle" font-family="monospace" font-size="9" fill="#999">
+    Space: O(k)
+  </text>
+</svg>
