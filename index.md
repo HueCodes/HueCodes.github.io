@@ -50,6 +50,7 @@ title: home
           <li><strong>Security:</strong> SHA256 drift detection, age encryption, row-level tenant isolation</li>
         </ul>
         <p class="tech">`Go` `PostgreSQL` `Redis` `AWS` `GCP` `Azure`</p>
+        <p class="blog-link"><a href="/2026/01/31/go-hunter.html">→ read more</a></p>
       </div>
     </article>
 
@@ -66,6 +67,7 @@ title: home
           <li><strong>Algorithms:</strong> IVF-PQ indexing + HNSW graph search for similarity queries</li>
         </ul>
         <p class="tech">`Rust` `SIMD` `AVX-512` `HNSW` `Vector DB`</p>
+        <p class="blog-link"><a href="/2026/01/31/forge-db.html">→ read more</a></p>
       </div>
     </article>
 
@@ -82,6 +84,7 @@ title: home
           <li><strong>Correctness:</strong> DAG validation with topological sort and cycle detection</li>
         </ul>
         <p class="tech">`Rust` `Real-time` `DAG` `Lock-free` `Robotics`</p>
+        <p class="blog-link"><a href="/2026/01/31/nodix.html">→ read more</a></p>
       </div>
     </article>
 
@@ -114,6 +117,7 @@ title: home
           <li><strong>Cloud-native:</strong> Multi-cloud support (AWS, GCP, Azure virtual networks)</li>
         </ul>
         <p class="tech">`Go` `Netlink` `GRE` `VPN` `Cloud Networking`</p>
+        <p class="blog-link"><a href="/2026/01/31/gretun.html">→ read more</a></p>
       </div>
     </article>
 
@@ -146,6 +150,7 @@ title: home
           <li><strong>Best practices:</strong> Const-correctness, noexcept, [[nodiscard]] attributes</li>
         </ul>
         <p class="tech">`C++17` `Smart Pointers` `Priority Queue` `RAII`</p>
+        <p class="blog-link"><a href="/2026/02/16/huffman-cpp.html">→ read more</a></p>
       </div>
     </article>
   </section>
