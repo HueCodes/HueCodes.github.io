@@ -50,7 +50,7 @@ title: home
           <li><strong>Security:</strong> SHA256 drift detection, age encryption, row-level tenant isolation</li>
         </ul>
         <p class="tech">`Go` `PostgreSQL` `Redis` `AWS` `GCP` `Azure`</p>
-        <p class="blog-link"><a href="/2026/01/31/go-hunter.html">→ read more</a></p>
+        <p class="blog-link"><a href="/blog/go-hunter/">→ read more</a></p>
       </div>
     </article>
 
@@ -67,7 +67,7 @@ title: home
           <li><strong>Cloud-native:</strong> Multi-cloud support (AWS, GCP, Azure virtual networks)</li>
         </ul>
         <p class="tech">`Go` `Netlink` `GRE` `VPN` `Cloud Networking`</p>
-        <p class="blog-link"><a href="/2026/01/31/gretun.html">→ read more</a></p>
+        <p class="blog-link"><a href="/blog/gretun/">→ read more</a></p>
       </div>
     </article>
 
@@ -84,7 +84,7 @@ title: home
           <li><strong>Correctness:</strong> DAG validation with topological sort and cycle detection</li>
         </ul>
         <p class="tech">`Rust` `Real-time` `DAG` `Lock-free` `Robotics`</p>
-        <p class="blog-link"><a href="/2026/01/31/nodix.html">→ read more</a></p>
+        <p class="blog-link"><a href="/blog/nodix/">→ read more</a></p>
       </div>
     </article>
 
@@ -101,6 +101,7 @@ title: home
           <li><strong>Embedded:</strong> no_std compatible for bare-metal environments</li>
         </ul>
         <p class="tech">`Rust` `Lock-free` `SPSC` `Atomics` `Embedded`</p>
+        <p class="blog-link"><a href="/blog/sensor-bridge/">→ read more</a></p>
       </div>
     </article>
 
@@ -117,7 +118,7 @@ title: home
           <li><strong>Best practices:</strong> Const-correctness, noexcept, [[nodiscard]] attributes</li>
         </ul>
         <p class="tech">`C++17` `Smart Pointers` `Priority Queue` `RAII`</p>
-        <p class="blog-link"><a href="/2026/02/16/huffman-cpp.html">→ read more</a></p>
+        <p class="blog-link"><a href="/blog/huffman-cpp/">→ read more</a></p>
       </div>
     </article>
 
@@ -134,6 +135,7 @@ title: home
           <li><strong>Observability:</strong> Prometheus metrics, graceful shutdown, connection pooling</li>
         </ul>
         <p class="tech">`Rust` `Tokio` `gRPC` `HTTP/2` `Prometheus`</p>
+        <p class="blog-link"><a href="/blog/rust-servicemesh/">→ read more</a></p>
       </div>
     </article>
 
@@ -150,7 +152,7 @@ title: home
           <li><strong>Algorithms:</strong> IVF-PQ indexing + HNSW graph search for similarity queries</li>
         </ul>
         <p class="tech">`Rust` `SIMD` `AVX-512` `HNSW` `Vector DB`</p>
-        <p class="blog-link"><a href="/2026/01/31/forge-db.html">→ read more</a></p>
+        <p class="blog-link"><a href="/blog/forge-db/">→ read more</a></p>
       </div>
     </article>
   </section>
