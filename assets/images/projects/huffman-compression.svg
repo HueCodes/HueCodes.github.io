@@ -65,17 +65,8 @@
   <text x="595" y="270" text-anchor="middle" class="data-text">Variable-length codes</text>
 
   <!-- Encoded bit string visualization -->
-  <text x="400" y="330" text-anchor="middle" class="label-text">Encoded output (first 40 bits):</text>
-  <rect x="100" y="340" width="600" height="25" fill="#F5F5F5" stroke="#999" stroke-width="1" rx="3"/>
-  <text x="110" y="357" class="binary-text">1100110110100111111011110000100111111000</text>
-
-  <!-- Character markers -->
-  <text x="110" y="335" font-family="monospace" font-size="8" fill="#E74C3C">h</text>
-  <text x="150" y="335" font-family="monospace" font-size="8" fill="#E74C3C">e</text>
-  <text x="190" y="335" font-family="monospace" font-size="8" fill="#E74C3C">l</text>
-  <text x="210" y="335" font-family="monospace" font-size="8" fill="#E74C3C">l</text>
-  <text x="230" y="335" font-family="monospace" font-size="8" fill="#E74C3C">o</text>
-
-  <!-- Key insight box -->
-  <rect x="200" y="320" width="400" height="1" fill="#999" opacity="0.3"/>
+  <rect x="80" y="315" width="640" height="50" fill="#2C3E50" stroke="#34495E" stroke-width="2" rx="5"/>
+  <text x="400" y="335" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#ECF0F1">Encoded output (first 40 bits):</text>
+  <rect x="100" y="345" width="600" height="30" fill="#ECF0F1" stroke="#34495E" stroke-width="2" rx="3"/>
+  <text x="400" y="365" text-anchor="middle" font-family="'Courier New', monospace" font-size="13" font-weight="bold" fill="#2C3E50" letter-spacing="2">1100 1101 1010 0111 1110 1111 0000 1001 1111 1000</text>
 </svg>
