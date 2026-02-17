@@ -167,10 +167,16 @@ title: home
 </div>
 
 <style>
+/* Override narrow body width for grid layout */
+body {
+  max-width: 1400px !important;
+  padding: 50px 30px !important;
+}
+
 .grid-portfolio {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 50px 30px;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .header {
