@@ -25,6 +25,18 @@ title: home
 
 <hr class="divider">
 
+<div class="section">
+  <h2>about</h2>
+  <p>outside of computers and engineering i like being in the mountains, grappling, and running ultra marathons. based in seattle.</p>
+</div>
+
+<div class="section">
+  <h2>currently</h2>
+  <p>focused on Go development for cloud infrastructure and networking. contributing to production open source projects like Cilium eBPF. diving into hardware.</p>
+</div>
+
+<hr class="divider">
+
 <div class="grid-portfolio">
 
   <!-- Projects -->
