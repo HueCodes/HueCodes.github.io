@@ -28,7 +28,7 @@ title: home
 
 <div class="section">
   <h2>currently</h2>
-  <p>focused on systems programming and cloud infrastructure with Go and Rust. contributing to production open source projects like Cilium eBPF, tokio, and hyper. building cloud networking tools and exploring distributed systems patterns. also working on hardware projects (Doppler radar, custom STM32 flight controller) to deepen understanding of low-level systems, concurrency, and real-time constraints.</p>
+  <p>focused on systems programming and cloud infrastructure with Go and Rust. contributing to production open source projects like Cilium eBPF, tokio, and hyper. building cloud networking tools and exploring distributed systems patterns. also building Doppler radar and custom STM32 flight controller.</p>
 </div>
 
 <hr class="divider">
