@@ -17,7 +17,8 @@ title: home
     <img src="/assets/DSCN1683.jpeg" alt="Hugh's profile photo" class="photo">
     <div>
       <h1>hey, i'm hugh</h1>
-      <p>Go developer building cloud infrastructure and distributed systems. outside of engineering i like being in the mountains, grappling, and running ultra marathons. based in seattle.</p>
+      <p>Go developer building cloud infrastructure and distributed systems.</p>
+      <p>outside of engineering i like being in the mountains, grappling, and running ultra marathons. based in seattle.</p>
       <p class="tagline">i ship fast and want to solve hard problems with smart people.</p>
     </div>
   </div>
@@ -27,7 +28,7 @@ title: home
 
 <div class="section">
   <h2>currently</h2>
-  <p>focused on Go development for cloud infrastructure and networking. contributing to production open source projects like Cilium eBPF. diving into hardware.</p>
+  <p>focused on systems programming and cloud infrastructure with Go and Rust. contributing to production open source projects like Cilium eBPF, tokio, and hyper. building cloud networking tools and exploring distributed systems patterns. also working on hardware projects (Doppler radar, custom STM32 flight controller) to deepen understanding of low-level systems, concurrency, and real-time constraints.</p>
 </div>
 
 <hr class="divider">
