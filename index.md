@@ -122,6 +122,23 @@ title: home
       </div>
     </article>
 
+    <!-- UART-Cpp -->
+    <article class="project-card">
+      <img src="/assets/images/projects/uart-cpp-architecture.svg" alt="UART-Cpp">
+      <div class="card-content">
+        <h3><a href="https://github.com/HueCodes/UART-cpp">UART-Cpp</a></h3>
+        <p class="tagline">Bare-metal UART driver for STM32F4</p>
+        <ul>
+          <li><strong>No HAL:</strong> Direct register access via CMSIS only, ~200 lines replacing 20,000+ of generated code</li>
+          <li><strong>Interrupt-driven:</strong> Non-blocking TX via on-demand TXEIE, ISR-driven RX with ring buffers</li>
+          <li><strong>Lock-free:</strong> SPSC ring buffers with volatile index semantics, no atomics or critical sections</li>
+          <li><strong>Clocks:</strong> 8 MHz HSE to 84 MHz SYSCLK via PLL with correct flash latency ordering</li>
+        </ul>
+        <p class="tech">`C++17` `STM32F4` `Bare-metal` `CMSIS` `NVIC`</p>
+        <p class="blog-link"><a href="/blog/bare-metal-uart-stm32/">→ read more</a></p>
+      </div>
+    </article>
+
     <!-- ServiceMesh -->
     <article class="project-card">
       <img src="/assets/images/projects/servicemesh-architecture.png" alt="ServiceMesh">
