@@ -2,10 +2,12 @@
 layout: post
 title: "Bare-Metal UART on STM32F4 Without the HAL"
 date: 2026-02-24
-category: posts
+category: projects
 ---
 
 Interrupt-driven UART driver for the STM32F401xE Nucleo in C++17. No HAL, no RTOS, no heap.
+
+![UART-Cpp architecture diagram](/assets/images/projects/uart-cpp-architecture.svg)
 
 CubeMX and the ST HAL work. They also generate 20,000 lines of code before you write a single line of your own. Replacing all of it with direct register access takes about 200 lines and makes every decision visible. The full source is on [GitHub](https://github.com/HueCodes/UART-cpp).
 
