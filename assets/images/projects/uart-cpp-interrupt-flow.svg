@@ -1,0 +1,117 @@
+<svg width="860" height="370" xmlns="http://www.w3.org/2000/svg" font-family="monospace">
+  <defs>
+    <style>
+      .app-box  { fill: #4A90E2; stroke: #2E5C8A; stroke-width: 2; }
+      .buf-box  { fill: #F5F5F5; stroke: #999;    stroke-width: 1.5; }
+      .isr-box  { fill: #F39C12; stroke: #C87F0A; stroke-width: 2; }
+      .hw-box   { fill: #7ED321; stroke: #5A9C18; stroke-width: 2; }
+      .white-txt { fill: white;  font-size: 12px; font-weight: bold; }
+      .sub-txt  { fill: white;  font-size: 10px; }
+      .dark-txt { fill: #333;   font-size: 11px; }
+      .dim-txt  { fill: #666;   font-size: 10px; }
+      .tx-arrow { fill: none; stroke: #2E5C8A; stroke-width: 2.5; marker-end: url(#tx-ah); }
+      .rx-arrow { fill: none; stroke: #5A9C18; stroke-width: 2.5; marker-end: url(#rx-ah); }
+      .en-arrow { fill: none; stroke: #E74C3C; stroke-width: 1.5;
+                  stroke-dasharray: 5,3; marker-end: url(#en-ah); }
+    </style>
+    <marker id="tx-ah" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto">
+      <polygon points="0 0,9 3,0 6" fill="#2E5C8A"/>
+    </marker>
+    <marker id="rx-ah" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto">
+      <polygon points="0 0,9 3,0 6" fill="#5A9C18"/>
+    </marker>
+    <marker id="en-ah" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto">
+      <polygon points="0 0,9 3,0 6" fill="#E74C3C"/>
+    </marker>
+  </defs>
+
+  <text x="430" y="26" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">
+    Interrupt-Driven TX / RX Flow
+  </text>
+
+  <!-- ─── TX ROW ──────────────────────────────────────────────────── -->
+  <text x="10" y="90" font-size="11" font-weight="bold" fill="#2E5C8A">TX</text>
+
+  <!-- send() -->
+  <rect x="25" y="55" width="120" height="60" rx="6" class="app-box"/>
+  <text x="85" y="78"  text-anchor="middle" class="white-txt">send(byte)</text>
+  <text x="85" y="95"  text-anchor="middle" class="sub-txt">spin if full</text>
+  <text x="85" y="110" text-anchor="middle" class="sub-txt">push to TX buf</text>
+
+  <!-- TXEIE enable arrow (dashed, downward to ISR) -->
+  <path d="M 85 115 Q 85 158 265 175" class="en-arrow"/>
+  <text x="118" y="158" font-size="9" fill="#E74C3C">enable TXEIE</text>
+
+  <!-- TX ring buffer -->
+  <rect x="185" y="55" width="140" height="60" rx="6" class="buf-box"/>
+  <text x="255" y="76"  text-anchor="middle" font-size="12" font-weight="bold" fill="#333">TX RingBuffer</text>
+  <text x="255" y="93"  text-anchor="middle" class="dim-txt">uint8_t[256]  SPSC</text>
+  <text x="255" y="108" text-anchor="middle" class="dim-txt">volatile head / tail</text>
+
+  <!-- TX buf -> ISR arrow -->
+  <path d="M 325 85 L 358 85" class="tx-arrow"/>
+
+  <!-- ISR box (shared) -->
+  <rect x="360" y="145" width="175" height="100" rx="6" class="isr-box"/>
+  <text x="447" y="168" text-anchor="middle" class="white-txt">USART2_IRQHandler</text>
+  <text x="447" y="185" text-anchor="middle" class="sub-txt">IRQ38  NVIC priority 5</text>
+  <line x1="370" y1="192" x2="525" y2="192" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+  <text x="447" y="207" text-anchor="middle" class="sub-txt">TXE: pop TX buf -> DR</text>
+  <text x="447" y="222" text-anchor="middle" class="sub-txt">RXNE: DR -> push RX buf</text>
+  <text x="447" y="237" text-anchor="middle" class="sub-txt">ORE/FE/NE: SR+DR clear</text>
+
+  <!-- ISR -> USART2 DR (TX) arrow -->
+  <path d="M 535 175 L 568 175" class="tx-arrow"/>
+
+  <!-- USART2 / Hardware -->
+  <rect x="570" y="55" width="155" height="215" rx="6" class="hw-box"/>
+  <text x="647" y="78"  text-anchor="middle" class="white-txt">USART2</text>
+  <text x="647" y="95"  text-anchor="middle" class="sub-txt">APB1 42 MHz</text>
+  <line x1="580" y1="103" x2="715" y2="103" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <text x="647" y="119" text-anchor="middle" class="sub-txt">DR (data register)</text>
+  <text x="647" y="136" text-anchor="middle" class="sub-txt">BRR = 115200</text>
+  <text x="647" y="153" text-anchor="middle" class="sub-txt">SR: TXE / RXNE</text>
+  <text x="647" y="170" text-anchor="middle" class="sub-txt">CR1: TXEIE / RXNEIE</text>
+  <line x1="580" y1="178" x2="715" y2="178" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <text x="647" y="196" text-anchor="middle" class="sub-txt">PA2  TX  AF7</text>
+  <text x="647" y="213" text-anchor="middle" class="sub-txt">PA3  RX  AF7</text>
+  <line x1="580" y1="220" x2="715" y2="220" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <text x="647" y="238" text-anchor="middle" class="sub-txt">ST-Link USB</text>
+  <text x="647" y="255" text-anchor="middle" class="sub-txt">115200 8N1</text>
+
+  <!-- ─── RX ROW ──────────────────────────────────────────────────── -->
+  <text x="10" y="305" font-size="11" font-weight="bold" fill="#5A9C18">RX</text>
+
+  <!-- USART2 -> ISR (RX) arrow -->
+  <path d="M 535 215 L 535 240 L 358 240" class="rx-arrow"/>
+
+  <!-- RX ring buffer -->
+  <rect x="185" y="270" width="140" height="60" rx="6" class="buf-box"/>
+  <text x="255" y="291" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">RX RingBuffer</text>
+  <text x="255" y="308" text-anchor="middle" class="dim-txt">uint8_t[256]  SPSC</text>
+  <text x="255" y="323" text-anchor="middle" class="dim-txt">volatile head / tail</text>
+
+  <!-- ISR -> RX buf arrow -->
+  <path d="M 360 245 L 325 300" class="rx-arrow"/>
+
+  <!-- RX buf -> receive() arrow -->
+  <path d="M 185 300 L 147 300" class="rx-arrow"/>
+
+  <!-- receive() -->
+  <rect x="25" y="270" width="120" height="60" rx="6" class="app-box"/>
+  <text x="85" y="293" text-anchor="middle" class="white-txt">receive()</text>
+  <text x="85" y="310" text-anchor="middle" class="sub-txt">spin on empty</text>
+  <text x="85" y="325" text-anchor="middle" class="sub-txt">rx_ready() poll</text>
+
+  <!-- TX buf -> ISR arc -->
+  <path d="M 255 115 Q 255 165 360 195" class="tx-arrow"/>
+
+  <!-- Legend -->
+  <rect x="20" y="342" width="820" height="22" rx="4" fill="#f8f9fa" stroke="#ddd"/>
+  <line x1="30"  y1="353" x2="58"  y2="353" stroke="#2E5C8A" stroke-width="2.5"/>
+  <text x="65"  y="357" font-size="10" fill="#333">TX path (non-blocking)</text>
+  <line x1="220" y1="353" x2="248" y2="353" stroke="#5A9C18" stroke-width="2.5"/>
+  <text x="255" y="357" font-size="10" fill="#333">RX path (ISR pushes, app polls)</text>
+  <line x1="460" y1="353" x2="488" y2="353" stroke="#E74C3C" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="495" y="357" font-size="10" fill="#333">TXEIE on-demand enable (disabled by ISR when buffer drains)</text>
+</svg>

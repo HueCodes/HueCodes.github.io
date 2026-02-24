@@ -1,0 +1,94 @@
+<svg width="800" height="280" xmlns="http://www.w3.org/2000/svg" font-family="monospace">
+  <defs>
+    <style>
+      .layer-box  { fill: #4A90E2; stroke: #2E5C8A; stroke-width: 2; }
+      .hw-box     { fill: #7ED321; stroke: #5A9C18; stroke-width: 2; }
+      .data-box   { fill: #F5F5F5; stroke: #999;    stroke-width: 1.5; }
+      .title-txt  { fill: white;  font-size: 13px; font-weight: bold; }
+      .sub-txt    { fill: white;  font-size: 10px; }
+      .label-txt  { fill: #333;   font-size: 11px; }
+      .arrow      { fill: none; stroke: #E74C3C; stroke-width: 2.5; marker-end: url(#ah); }
+      .arrow-bi   { fill: none; stroke: #E74C3C; stroke-width: 2.5;
+                    marker-end: url(#ah); marker-start: url(#ahs); }
+    </style>
+    <marker id="ah"  markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto">
+      <polygon points="0 0,9 3,0 6" fill="#E74C3C"/>
+    </marker>
+    <marker id="ahs" markerWidth="9" markerHeight="9" refX="1" refY="3" orient="auto">
+      <polygon points="9 0,0 3,9 6" fill="#E74C3C"/>
+    </marker>
+  </defs>
+
+  <text x="400" y="26" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">
+    UART-Cpp System Overview
+  </text>
+
+  <!-- Application layer -->
+  <rect x="20"  y="50" width="155" height="180" rx="6" class="layer-box"/>
+  <text x="97"  y="74"  text-anchor="middle" class="title-txt">Application</text>
+  <text x="97"  y="92"  text-anchor="middle" class="sub-txt">main.cpp</text>
+  <line x1="30" y1="100" x2="165" y2="100" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <text x="97"  y="117" text-anchor="middle" class="sub-txt">rcc_init()</text>
+  <text x="97"  y="134" text-anchor="middle" class="sub-txt">uart.init()</text>
+  <text x="97"  y="155" text-anchor="middle" class="sub-txt">uart.send(str)</text>
+  <text x="97"  y="172" text-anchor="middle" class="sub-txt">uart.receive()</text>
+  <text x="97"  y="193" text-anchor="middle" class="sub-txt">uart.rx_ready()</text>
+  <text x="97"  y="214" text-anchor="middle" class="sub-txt">get_and_clear_errors()</text>
+
+  <!-- Arrow app -> driver -->
+  <path d="M 175 140 L 208 140" class="arrow-bi"/>
+
+  <!-- Driver layer -->
+  <rect x="210" y="50" width="175" height="180" rx="6" class="layer-box"/>
+  <text x="297" y="74"  text-anchor="middle" class="title-txt">UART Driver</text>
+  <text x="297" y="92"  text-anchor="middle" class="sub-txt">uart.cpp / uart.hpp</text>
+  <line x1="220" y1="100" x2="375" y2="100" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <text x="297" y="117" text-anchor="middle" class="sub-txt">TX RingBuffer[256]</text>
+  <text x="297" y="134" text-anchor="middle" class="sub-txt">RX RingBuffer[256]</text>
+  <text x="297" y="151" text-anchor="middle" class="sub-txt">USART2_IRQHandler</text>
+  <text x="297" y="168" text-anchor="middle" class="sub-txt">TXEIE on-demand</text>
+  <text x="297" y="185" text-anchor="middle" class="sub-txt">RXNEIE always on</text>
+  <text x="297" y="202" text-anchor="middle" class="sub-txt">NVIC priority 5</text>
+  <text x="297" y="219" text-anchor="middle" class="sub-txt">SPSC lock-free</text>
+
+  <!-- Arrow driver -> hardware -->
+  <path d="M 385 140 L 418 140" class="arrow-bi"/>
+
+  <!-- Hardware layer -->
+  <rect x="420" y="50" width="170" height="180" rx="6" class="hw-box"/>
+  <text x="505" y="74"  text-anchor="middle" class="title-txt">STM32F401xE</text>
+  <text x="505" y="92"  text-anchor="middle" class="sub-txt">CMSIS only, no HAL</text>
+  <line x1="430" y1="100" x2="580" y2="100" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <text x="505" y="117" text-anchor="middle" class="sub-txt">USART2  APB1 42 MHz</text>
+  <text x="505" y="134" text-anchor="middle" class="sub-txt">PA2 TX  AF7 push-pull</text>
+  <text x="505" y="151" text-anchor="middle" class="sub-txt">PA3 RX  AF7 push-pull</text>
+  <text x="505" y="168" text-anchor="middle" class="sub-txt">PLL 8 -> 84 MHz</text>
+  <text x="505" y="185" text-anchor="middle" class="sub-txt">Flash latency 2WS</text>
+  <text x="505" y="202" text-anchor="middle" class="sub-txt">Vector table 98 entries</text>
+  <text x="505" y="219" text-anchor="middle" class="sub-txt">Reset_Handler in C++</text>
+
+  <!-- Arrow hardware -> host -->
+  <path d="M 590 140 L 623 140" class="arrow-bi"/>
+
+  <!-- Host layer -->
+  <rect x="625" y="50" width="150" height="180" rx="6" class="data-box"/>
+  <text x="700" y="74"  text-anchor="middle" font-size="13" font-weight="bold" fill="#333">Host</text>
+  <text x="700" y="92"  text-anchor="middle" font-size="10" fill="#666">ST-Link USB bridge</text>
+  <line x1="635" y1="100" x2="765" y2="100" stroke="#ccc" stroke-width="1"/>
+  <text x="700" y="117" text-anchor="middle" class="label-txt">Virtual COM port</text>
+  <text x="700" y="134" text-anchor="middle" class="label-txt">115200 baud 8N1</text>
+  <text x="700" y="155" text-anchor="middle" font-size="10" fill="#666">/dev/tty.usbmodem*</text>
+  <text x="700" y="171" text-anchor="middle" font-size="10" fill="#666">/dev/ttyACM0</text>
+  <text x="700" y="196" text-anchor="middle" class="label-txt">screen / minicom</text>
+  <text x="700" y="213" text-anchor="middle" class="label-txt">echo demo</text>
+
+  <!-- Bottom legend -->
+  <rect x="20" y="244" width="760" height="30" rx="4" fill="#f8f9fa" stroke="#ddd"/>
+  <rect x="30"  y="253" width="12" height="12" rx="2" fill="#4A90E2"/>
+  <text x="48"  y="263" class="label-txt">Software layers</text>
+  <rect x="180" y="253" width="12" height="12" rx="2" fill="#7ED321"/>
+  <text x="198" y="263" class="label-txt">Hardware (direct register access)</text>
+  <rect x="430" y="253" width="12" height="12" rx="2" fill="#F5F5F5" stroke="#999"/>
+  <text x="448" y="263" class="label-txt">Host interface</text>
+  <text x="620" y="263" font-size="10" fill="#E74C3C" font-weight="bold">&#8596; bidirectional UART</text>
+</svg>

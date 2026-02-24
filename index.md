@@ -124,7 +124,7 @@ title: home
 
     <!-- UART-Cpp -->
     <article class="project-card">
-      <img src="/assets/images/projects/uart-cpp-architecture.svg" alt="UART-Cpp">
+      <img src="/assets/images/projects/uart-cpp-system.svg" alt="UART-Cpp">
       <div class="card-content">
         <h3><a href="https://github.com/HueCodes/UART-cpp">UART-Cpp</a></h3>
         <p class="tagline">Bare-metal UART driver for STM32F4</p>

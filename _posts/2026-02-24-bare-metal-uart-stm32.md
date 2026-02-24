@@ -7,7 +7,7 @@ category: projects
 
 Interrupt-driven UART driver for the STM32F401xE Nucleo in C++17. No HAL, no RTOS, no heap.
 
-![UART-Cpp architecture diagram](/assets/images/projects/uart-cpp-architecture.svg)
+![UART-Cpp system overview](/assets/images/projects/uart-cpp-system.svg)
 
 CubeMX and the ST HAL work. They also generate 20,000 lines of code before you write a single line of your own. Replacing all of it with direct register access takes about 200 lines and makes every decision visible. The full source is on [GitHub](https://github.com/HueCodes/UART-cpp).
 
@@ -31,6 +31,8 @@ FLASH->ACR = FLASH_ACR_PRFTEN | FLASH_ACR_ICEN | FLASH_ACR_DCEN | 2u;
 ```
 
 Set latency, then enable the PLL, then switch. APB1 runs at SYSCLK/2 (42 MHz) because its 45 MHz maximum is below SYSCLK. USART2 sits on APB1, which matters for baud rate.
+
+![Clock tree: HSE to USART2](/assets/images/projects/uart-cpp-clock-tree.svg)
 
 ## GPIO and USART2 Init
 
@@ -61,6 +63,8 @@ USART2->BRR = (pclk1 + baud_ / 2u) / baud_;
 ## Interrupt-Driven Design
 
 Polling TXE and RXNE directly burns CPU time waiting on peripheral timing. Both directions use interrupts instead.
+
+![Interrupt-driven TX/RX flow](/assets/images/projects/uart-cpp-interrupt-flow.svg)
 
 **RX**: RXNEIE is always enabled after init. Every received byte gets pushed into a ring buffer inside the ISR. The application calls `receive()`, which spins until the buffer has data, or polls with `rx_ready()` for non-blocking use.
 
@@ -180,6 +184,6 @@ The driver covers basic use. For production contexts:
 - Hardware flow control (RTS/CTS) for slow receivers
 - Receive timeout to avoid blocking indefinitely on a lost packet
 
-Source: [github.com/HueCodes/UART-cpp](https://github.com/HueCodes/UART-cpp)
-
 ---
+
+[View on GitHub](https://github.com/HueCodes/UART-cpp)

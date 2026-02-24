@@ -1,0 +1,114 @@
+<svg width="800" height="320" xmlns="http://www.w3.org/2000/svg" font-family="monospace">
+  <defs>
+    <style>
+      .src-box  { fill: #4A90E2; stroke: #2E5C8A; stroke-width: 2; }
+      .pll-box  { fill: #F39C12; stroke: #C87F0A; stroke-width: 2; }
+      .clk-box  { fill: #7ED321; stroke: #5A9C18; stroke-width: 2; }
+      .per-box  { fill: #F5F5F5; stroke: #999;    stroke-width: 1.5; }
+      .crit-box { fill: #FDECEA; stroke: #E74C3C; stroke-width: 1.5; }
+      .white-txt { fill: white; font-size: 12px; font-weight: bold; }
+      .sub-w    { fill: white; font-size: 10px; }
+      .dark-txt { fill: #333;  font-size: 11px; }
+      .dim-txt  { fill: #666;  font-size: 10px; }
+      .clk-val  { fill: #333;  font-size: 13px; font-weight: bold; }
+      .arrow    { fill: none; stroke: #E74C3C; stroke-width: 2.5; marker-end: url(#ah); }
+      .div-arrow { fill: none; stroke: #999; stroke-width: 2; marker-end: url(#ah-g); }
+    </style>
+    <marker id="ah"   markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto">
+      <polygon points="0 0,9 3,0 6" fill="#E74C3C"/>
+    </marker>
+    <marker id="ah-g" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto">
+      <polygon points="0 0,9 3,0 6" fill="#999"/>
+    </marker>
+  </defs>
+
+  <text x="400" y="26" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">
+    Clock Tree: HSE to USART2
+  </text>
+
+  <!-- HSE source -->
+  <rect x="20" y="55" width="110" height="60" rx="6" class="src-box"/>
+  <text x="75" y="78"  text-anchor="middle" class="white-txt">HSE</text>
+  <text x="75" y="95"  text-anchor="middle" class="sub-w">8 MHz</text>
+  <text x="75" y="110" text-anchor="middle" class="sub-w">external xtal</text>
+
+  <!-- HSE -> PLL -->
+  <path d="M 130 85 L 163 85" class="arrow"/>
+  <text x="146" y="78" text-anchor="middle" font-size="9" fill="#333">PLLSRC</text>
+
+  <!-- PLL block -->
+  <rect x="165" y="40" width="165" height="130" rx="6" class="pll-box"/>
+  <text x="247" y="63"  text-anchor="middle" class="white-txt">PLL</text>
+  <line x1="175" y1="70" x2="320" y2="70" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <text x="247" y="87"  text-anchor="middle" class="sub-w">PLLM = 8</text>
+  <text x="247" y="103" text-anchor="middle" class="sub-w">VCO_in = 1 MHz</text>
+  <line x1="175" y1="110" x2="320" y2="110" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <text x="247" y="127" text-anchor="middle" class="sub-w">PLLN = 336</text>
+  <text x="247" y="143" class="sub-w" text-anchor="middle">VCO_out = 336 MHz</text>
+  <line x1="175" y1="150" x2="320" y2="150" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <text x="247" y="163" text-anchor="middle" class="sub-w">PLLP = 4  (bits = 01)</text>
+
+  <!-- PLL -> SYSCLK -->
+  <path d="M 330 105 L 368 105" class="arrow"/>
+  <text x="349" y="98" text-anchor="middle" font-size="9" fill="#333">SW=PLL</text>
+
+  <!-- SYSCLK -->
+  <rect x="370" y="70" width="130" height="70" rx="6" class="clk-box"/>
+  <text x="435" y="93"  text-anchor="middle" class="white-txt">SYSCLK</text>
+  <text x="435" y="112" text-anchor="middle" class="sub-w" font-size="14">84 MHz</text>
+  <text x="435" y="130" text-anchor="middle" class="sub-w">HCLK = /1</text>
+
+  <!-- Critical note: flash latency -->
+  <rect x="370" y="152" width="130" height="44" rx="4" class="crit-box"/>
+  <text x="435" y="168" text-anchor="middle" font-size="10" fill="#E74C3C" font-weight="bold">Flash latency</text>
+  <text x="435" y="182" text-anchor="middle" font-size="10" fill="#E74C3C">2 WS before switch</text>
+  <text x="435" y="195" text-anchor="middle" font-size="9"  fill="#999">ACR |= PRFTEN|ICEN|DCEN|2</text>
+
+  <!-- SYSCLK -> APB1 -->
+  <path d="M 500 95 L 548 95 L 548 155 L 565 155" class="div-arrow"/>
+  <text x="530" y="138" text-anchor="middle" font-size="10" fill="#666">/2</text>
+
+  <!-- SYSCLK -> APB2 -->
+  <path d="M 500 115 L 548 115 L 548 245 L 565 245" class="div-arrow"/>
+  <text x="530" y="238" text-anchor="middle" font-size="10" fill="#666">/1</text>
+
+  <!-- APB1 box -->
+  <rect x="567" y="130" width="130" height="55" rx="6" class="per-box"/>
+  <text x="632" y="150" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">APB1</text>
+  <text x="632" y="167" text-anchor="middle" class="dim-txt">PCLK1 = 42 MHz</text>
+  <text x="632" y="180" text-anchor="middle" class="dim-txt">max 45 MHz</text>
+
+  <!-- APB2 box -->
+  <rect x="567" y="220" width="130" height="55" rx="6" class="per-box"/>
+  <text x="632" y="240" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">APB2</text>
+  <text x="632" y="257" text-anchor="middle" class="dim-txt">PCLK2 = 84 MHz</text>
+  <text x="632" y="270" text-anchor="middle" class="dim-txt">max 84 MHz</text>
+
+  <!-- APB1 -> USART2 -->
+  <path d="M 697 157 L 730 157" class="div-arrow"/>
+
+  <!-- USART2 box -->
+  <rect x="732" y="115" width="52" height="80" rx="6" class="clk-box"/>
+  <text x="758" y="145" text-anchor="middle" class="white-txt" font-size="10">USART2</text>
+  <text x="758" y="163" text-anchor="middle" class="sub-w">42 MHz</text>
+  <text x="758" y="178" text-anchor="middle" class="sub-w">BRR=</text>
+  <text x="758" y="191" text-anchor="middle" class="sub-w">364</text>
+
+  <!-- BRR formula -->
+  <rect x="20" y="215" width="330" height="80" rx="6" class="per-box"/>
+  <text x="185" y="235" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">BRR Calculation</text>
+  <text x="185" y="255" text-anchor="middle" class="dark-txt">BRR = (PCLK1 + baud/2) / baud</text>
+  <text x="185" y="273" text-anchor="middle" class="dark-txt">BRR = (42,000,000 + 57,600) / 115,200</text>
+  <text x="185" y="291" text-anchor="middle" font-size="12" font-weight="bold" fill="#4A90E2">= 364  (0.016% error)</text>
+
+  <!-- Legend -->
+  <rect x="20"  y="305" width="760" height="12" rx="3" fill="#f8f9fa" stroke="#ddd"/>
+  <rect x="30"  y="307" width="10" height="8" rx="1" fill="#4A90E2"/>
+  <text x="46"  y="315" font-size="9" fill="#333">Clock source</text>
+  <rect x="130" y="307" width="10" height="8" rx="1" fill="#F39C12"/>
+  <text x="146" y="315" font-size="9" fill="#333">PLL</text>
+  <rect x="195" y="307" width="10" height="8" rx="1" fill="#7ED321"/>
+  <text x="211" y="315" font-size="9" fill="#333">Output clocks</text>
+  <rect x="310" y="307" width="10" height="8" rx="1" fill="#FDECEA" stroke="#E74C3C"/>
+  <text x="326" y="315" font-size="9" fill="#E74C3C">Critical ordering: set flash latency before switching SYSCLK</text>
+</svg>
