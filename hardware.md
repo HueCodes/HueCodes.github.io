@@ -19,6 +19,10 @@ title: hardware
 
 <div class="section">
   <div class="project">
+    <a href="/hardware/esp32-s3-rf-board/">ESP32-S3 RF Development Board</a>
+    <span>4-layer RF board with bare ESP32-S3 die, 50-ohm feedline, and chip antenna — designed in KiCAD</span>
+  </div>
+  <div class="project">
     <a href="/hardware/lorawan-mesh/">LoRaWAN Mesh Network</a>
     <span>long-range agricultural IoT mesh network for distributed sensor deployment</span>
   </div>
