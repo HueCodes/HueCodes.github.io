@@ -9,7 +9,7 @@ github:
 
 ## Introduction
 
-In this post, I'll walk through designing a **4-layer ESP32-S3 RF development board** in **KiCAD 8**. The board uses the bare **ESP32-S3 QFN56** die instead of a module, which means the RF path — trace impedance, antenna keepout, and ground plane — had to be designed from scratch. I also wrote a **Python script** to generate the KiCAD project files rather than placing everything by hand.
+In this post, I'll walk through designing a **4-layer ESP32-S3 RF development board** in **KiCAD 8**. The board uses the bare **ESP32-S3 QFN56** die instead of a module, which means the RF path (trace impedance, antenna keepout, and ground plane) had to be designed from scratch. I also wrote a **Python script** to generate the KiCAD project files rather than placing everything by hand.
 
 ---
 
@@ -29,7 +29,7 @@ Board: **50 x 40 mm**. Manufactured on the **JLC04161H-7628** 4-layer stackup.
 
 ## Why Bare Die?
 
-ESP32 modules like the WROOM handle the RF design for you — shielded enclosure, integrated antenna, pre-certified. Using the bare QFN56 die means:
+ESP32 modules like the WROOM handle the RF design for you: shielded enclosure, integrated antenna, pre-certified. Using the bare QFN56 die means:
 
 - Designing the **50-ohm feedline** from the chip RF pin to the antenna
 - Managing copper keepouts on every layer around the antenna
@@ -71,7 +71,7 @@ Er = 4.4
 Z0 ≈ 50 ohm
 ```
 
-Trace width: **0.6mm**. All bends are 45 degrees — 90-degree corners create impedance discontinuities at 2.4GHz.
+Trace width: **0.6mm**. All bends are 45 degrees. 90-degree corners create impedance discontinuities at 2.4GHz.
 
 ### 3. Antenna Keepout
 
@@ -81,7 +81,7 @@ The In1.Cu keepout is the most critical. A solid GND plane directly under the an
 
 ### 4. GND Stitching Vias
 
-Stitching vias connect the F.Cu ground pour to the In1.Cu GND plane along both sides of the RF trace, spaced at **~6mm intervals**. At 2.4GHz, lambda in FR4 ≈ 60mm, so 6mm is lambda/10 — the point above which gaps start to behave as resonant slots.
+Stitching vias connect the F.Cu ground pour to the In1.Cu GND plane along both sides of the RF trace, spaced at **~6mm intervals**. At 2.4GHz, lambda in FR4 is ~60mm, so 6mm is lambda/10. Above that spacing, gaps start to behave as resonant slots.
 
 ### 5. Component Placement
 
@@ -94,7 +94,7 @@ Stitching vias connect the F.Cu ground pour to the In1.Cu GND plane along both s
 
 ## Power Supply
 
-The AP2112K-3.3V converts USB 5V to 3.3V at up to 600mA. The ESP32-S3 peaks at ~350mA during WiFi TX — about 250mA of headroom.
+The AP2112K-3.3V converts USB 5V to 3.3V at up to 600mA. The ESP32-S3 peaks at ~350mA during WiFi TX, leaving ~250mA of headroom.
 
 - **C7, C8**: 10uF X5R 0805 bulk caps on LDO input and output
 - **C1–C11**: 100nF X5R 0402 local decoupling on each IC VCC pin
@@ -103,7 +103,7 @@ The AP2112K-3.3V converts USB 5V to 3.3V at up to 600mA. The ESP32-S3 peaks at ~
 
 ## Generating the Board with Python
 
-Instead of routing by hand, I wrote `generate_board.py` — a script that emits the complete KiCAD 8 `.kicad_pcb`, `.kicad_pro`, and `.kicad_sch` files in **S-expression format**. Every parameter — trace width, component position, keepout radius — is a named constant at the top of the file.
+Instead of routing by hand, I wrote `generate_board.py`, a script that emits the complete KiCAD 8 `.kicad_pcb`, `.kicad_pro`, and `.kicad_sch` files in **S-expression format**. Every parameter (trace width, component position, keepout radius) is a named constant at the top of the file.
 
 ```sh
 python generate_board.py --output ./esp32-s3-rf-board
@@ -115,7 +115,7 @@ This makes the design fully reproducible and keeps layout decisions in version c
 
 ## Firmware
 
-The bring-up firmware uses **ESP-IDF v5**. It runs a WiFi scan every 10 seconds and prints results over UART at 115200 baud — the simplest confirmation that the RF path is functional after assembly.
+The bring-up firmware uses **ESP-IDF v5**. It runs a WiFi scan every 10 seconds and prints results over UART at 115200 baud, which confirms the RF path is functional after assembly.
 
 ```
 I (352) rf-board: ESP32-S3 RF Board - firmware v1.0.0
@@ -131,4 +131,4 @@ The status LED on **GPIO48** blinks at 1Hz as a basic alive indicator. Source in
 
 ## Conclusion
 
-Using the bare ESP32-S3 die means every RF decision — stackup, trace width, keepout geometry, stitching via spacing — has to be made deliberately. That's the point. All source files and firmware are on GitHub.
+Using the bare ESP32-S3 die means every RF decision (stackup, trace width, keepout geometry, stitching via spacing) has to be made deliberately. That's the point. All source files and firmware are on GitHub.
