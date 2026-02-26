@@ -7,106 +7,128 @@ github:
 
 ![ESP32-S3 RF Board layout](/assets/images/projects/esp32-s3-rf-board.jpg)
 
-## Overview
+## Introduction
 
-A 4-layer ESP32-S3 development board designed from scratch using the bare die — not a module. The goal is full control over the RF path, power architecture, and layout, producing a clean portfolio-quality board that demonstrates real RF and mixed-signal PCB design.
+In this post, I'll walk through designing a **4-layer ESP32-S3 RF development board** in **KiCAD 8**. The board uses the bare **ESP32-S3 QFN56** die instead of a module, which means the RF path — trace impedance, antenna keepout, and ground plane — had to be designed from scratch. I also wrote a **Python script** to generate the KiCAD project files rather than placing everything by hand.
 
-The board targets 2.4GHz dual-mode WiFi and Bluetooth, with a 50-ohm controlled-impedance feedline from the ESP32-S3 RF pin to a Johanson chip antenna, plus a u.FL connector for VNA testing.
+---
 
-## Why a bare chip instead of a module?
+## Components
 
-Using a pre-certified module like the ESP32-S3-WROOM abstracts away all the RF work. A bare die requires designing the antenna feedline, setting up impedance-controlled traces, managing the ground plane, and understanding the electrical constraints that make wireless actually work. That's the point.
+| Ref | Part | Purpose |
+|-----|------|---------|
+| U1 | ESP32-S3 QFN56 | Dual-core LX7, 2.4GHz WiFi/BT5 |
+| U2 | AP2112K-3.3V | 600mA LDO |
+| U3 | CP2102-GMR | USB to UART bridge |
+| ANT1 | Johanson 2450AT18A100 | 2.4GHz chip antenna |
+| J2 | u.FL SMD | RF test port |
 
-| Approach | RF knowledge required | Portfolio value |
-|----------|----------------------|-----------------|
-| Module (e.g. WROOM) | Minimal | Low |
-| Bare chip (this board) | Substantial | High |
+Board: **50 x 40 mm**. Manufactured on the **JLC04161H-7628** 4-layer stackup.
 
-## Board Specifications
+---
 
-| Parameter | Value |
-|-----------|-------|
-| Dimensions | 50mm × 40mm |
-| Layers | 4 (JLC04161H-7628 stackup) |
-| Manufacturer | JLCPCB |
-| MCU | ESP32-S3 QFN56 bare die |
-| Wireless | 2.4GHz WiFi 802.11b/g/n + Bluetooth 5.0 |
-| Antenna | Johanson 2450AT18A100 chip antenna |
-| RF test port | u.FL connector |
-| Power input | USB-C (5V) |
-| Power regulation | AP2112K-3.3V LDO (600mA) |
-| USB bridge | CP2102 USB-to-UART |
+## Why Bare Die?
 
-## Layer Stackup
+ESP32 modules like the WROOM handle the RF design for you — shielded enclosure, integrated antenna, pre-certified. Using the bare QFN56 die means:
 
-| Layer | Role | Constraint |
-|-------|------|-----------|
-| L1 (F.Cu) | RF feedline, components, signals | 50Ω microstrip: 0.6mm trace over 0.2mm 7628 prepreg |
-| L2 (In1.Cu) | Solid GND plane | No traces, no cuts — unbroken reference plane |
-| L3 (In2.Cu) | 3.3V power distribution | Poured zone covering most of board |
-| L4 (B.Cu) | Secondary signals, passives | |
+- Designing the **50-ohm feedline** from the chip RF pin to the antenna
+- Managing copper keepouts on every layer around the antenna
+- Getting the GND plane geometry right so impedance calculations hold
 
-The 0.2mm prepreg thickness between L1 and L2 (with Er = 4.4) gives a 50-ohm characteristic impedance at 0.6mm trace width — verified against JLCPCB's impedance calculator.
+It's harder, but it's where the actual RF design work is.
 
-## RF Design
+---
 
-The RF path from ESP32-S3 to antenna is the most critical part of the board:
+## PCB Design in KiCAD 8
 
-- **Feedline:** 0.6mm microstrip on F.Cu, 0.6mm trace width (50Ω, ±10%)
-- **Routing:** 45-degree bends only, no 90-degree corners
-- **Stitching vias:** GND vias every 6mm along both sides of the feedline (lambda/10 at 2.4GHz in FR4 ≈ 60mm)
-- **Keepout zone:** 5mm copper-free radius around the antenna radiating element on all 4 layers
-- **Ground plane:** Solid In1.Cu pour with 9-via grid under the ESP32-S3 exposed thermal pad
+### 1. Stackup
 
-## Peripherals
+| Layer | Function | Thickness |
+|-------|----------|-----------|
+| L1 F.Cu | Signals, RF trace, components | 0.035mm Cu |
+| Prepreg | JLC4161H 7628 | 0.2mm, Er = 4.4 |
+| L2 In1.Cu | Solid GND plane | 0.035mm Cu |
+| Core | FR4 | 1.065mm |
+| L3 In2.Cu | 3.3V power plane | 0.035mm Cu |
+| L4 B.Cu | Secondary signals | 0.035mm Cu |
 
-| Interface | Connector | Pins |
-|-----------|-----------|------|
-| UART debug | 4-pin 2.54mm header | VCC, GND, TX, RX |
-| I2C | 4-pin 2.54mm header | VCC, GND, SDA, SCL |
-| SPI | 6-pin 2.54mm header | VCC, GND, MOSI, MISO, SCK, CS |
-| USB | USB-C receptacle | Power + serial via CP2102 |
-| Reset | Tactile button | EN pin |
-| Boot | Tactile button | GPIO0 |
-| Status LED | 0402 red + 330Ω | GPIO48 |
-| Power LED | 0402 green + 1kΩ | 3.3V rail |
+The 0.2mm prepreg between L1 and L2 is what sets the RF trace impedance. L2 is a solid, unbroken GND plane across the entire board.
 
-## Bill of Materials
+### 2. RF Trace
 
-All components sourced from JLCPCB Basic Parts Library where possible.
+The RF trace runs from the ESP32-S3 RF pin to ANT1 on L1. Target impedance: **50 ohms**.
 
-| Reference | Value | JLCPCB Part | Notes |
-|-----------|-------|-------------|-------|
-| U1 | ESP32-S3 QFN56 | C2913202 | Bare die, not module |
-| U2 | AP2112K-3.3TRG1 | C51118 | 600mA LDO |
-| U3 | CP2102-GMR | C6568 | USB-to-UART bridge |
-| ANT1 | Johanson 2450AT18A100 | C167687 | 2.4GHz chip antenna |
-| J2 | u.FL/IPEX SMD | C88374 | RF test connector |
-| J1 | USB-C 16P | C165948 | Power + data |
-| C1–C6, C9–C11 | 100nF 0402 | C1525 | Decoupling, per VCC pin |
-| C7, C8 | 10uF 0805 | C17024 | LDO bulk input/output |
-| R1 | 330Ω 0402 | C23197 | Status LED current limit |
-| R2 | 1kΩ 0402 | C11702 | Power LED current limit |
+Using the IPC-2141A microstrip formula:
 
-## Build Log
+```
+Z0 = (87 / sqrt(Er + 1.41)) * ln(5.98h / (0.8w + t))
 
-### v1.1 layout — Feb 2026
+h = 0.2mm   prepreg thickness
+w = 0.6mm   trace width
+t = 0.035mm 1 oz copper
+Er = 4.4
 
-The board is divided into three zones.
+Z0 ≈ 50 ohm
+```
 
-**RF section (right side).** The ESP32-S3 RF pin connects to the Johanson 2450AT18A100 via a 0.6mm 50-ohm microstrip on F.Cu. Bends are 45 degrees only. GND stitching vias run at 6mm intervals along both sides of the feedline. A 5mm copper-free keepout zone covers the antenna on all four layers. The u.FL connector taps into the RF net for VNA access.
+Trace width: **0.6mm**. All bends are 45 degrees — 90-degree corners create impedance discontinuities at 2.4GHz.
 
-**Power section (bottom left).** USB-C feeds 5V to the AP2112K LDO over a short trace. The LDO outputs 3.3V to the ESP32-S3, CP2102, and headers. 10uF bulk caps sit at the LDO input and output. The CP2102 is placed between USB-C and the ESP32-S3, keeping the D+/D- pair short.
+### 3. Antenna Keepout
 
-**Debug peripherals (left edge).** UART, I2C, and SPI headers stack vertically. All header signals route on B.Cu with via transitions at each end. This keeps F.Cu clear outside the RF path. Reset and boot buttons connect to EN and GPIO0 on the left side of the ESP32-S3. Status and power LEDs with current-limiting resistors sit along the bottom edge.
+The Johanson 2450AT18A100 requires a copper-free zone around the antenna. I implemented a **5mm radius keepout on F.Cu, B.Cu, and In1.Cu**.
 
-Next steps: run DRC, fix any clearance violations, export Gerbers, order from JLCPCB.
+The In1.Cu keepout is the most critical. A solid GND plane directly under the antenna loads its near-field and shifts the resonant frequency off 2.4GHz.
 
-## What I'm Learning
+### 4. GND Stitching Vias
 
-RF design on a 4-layer board requires understanding the physics behind every design decision. Some of the more interesting constraints this project forced me to engage with:
+Stitching vias connect the F.Cu ground pour to the In1.Cu GND plane along both sides of the RF trace, spaced at **~6mm intervals**. At 2.4GHz, lambda in FR4 ≈ 60mm, so 6mm is lambda/10 — the point above which gaps start to behave as resonant slots.
 
-- **Microstrip impedance** depends on the dielectric height to the reference plane — moving the LDO away from the USB-C connector was necessary to keep the 5V trace short, but the more interesting constraint is that every trace on F.Cu uses In1.Cu as its return path, which is why that plane must stay completely unbroken
-- **GND stitching vias** exist because at 2.4GHz the wavelength in FR4 is ~60mm — vias spaced at lambda/10 (6mm) prevent the ground reference from developing resonant behavior
-- **Decoupling capacitor placement** is about inductance, not just capacitance — the via connecting the cap's GND pad to the ground plane must be within 0.5mm of the pad, otherwise the parasitic inductance defeats the purpose at RF frequencies
-- **Via-in-pad** for the ESP32-S3 exposed pad is technically ideal but requires ENIG finish; used a via grid just outside the pad edge instead for HASL compatibility
+### 5. Component Placement
+
+- **Antenna**: at the board edge, away from digital switching noise
+- **Decoupling caps**: within 2mm of every IC VCC pin
+- **LDO**: beside the USB connector for short power distribution
+- **CP2102**: beside the ESP32-S3 for short UART runs
+
+---
+
+## Power Supply
+
+The AP2112K-3.3V converts USB 5V to 3.3V at up to 600mA. The ESP32-S3 peaks at ~350mA during WiFi TX — about 250mA of headroom.
+
+- **C7, C8**: 10uF X5R 0805 bulk caps on LDO input and output
+- **C1–C11**: 100nF X5R 0402 local decoupling on each IC VCC pin
+
+---
+
+## Generating the Board with Python
+
+Instead of routing by hand, I wrote `generate_board.py` — a script that emits the complete KiCAD 8 `.kicad_pcb`, `.kicad_pro`, and `.kicad_sch` files in **S-expression format**. Every parameter — trace width, component position, keepout radius — is a named constant at the top of the file.
+
+```sh
+python generate_board.py --output ./esp32-s3-rf-board
+```
+
+This makes the design fully reproducible and keeps layout decisions in version control alongside the source.
+
+---
+
+## Firmware
+
+The bring-up firmware uses **ESP-IDF v5**. It runs a WiFi scan every 10 seconds and prints results over UART at 115200 baud — the simplest confirmation that the RF path is functional after assembly.
+
+```
+I (352) rf-board: ESP32-S3 RF Board - firmware v1.0.0
+I (362) rf-board: Starting WiFi scan...
+I (2512) rf-board: --- WiFi Scan: 8 networks found ---
+I (2512) rf-board:   [ 1] RSSI  -42 dBm  CH  6  MyNetwork
+I (2512) rf-board:   [ 2] RSSI  -67 dBm  CH 11  Neighbour_2G
+```
+
+The status LED on **GPIO48** blinks at 1Hz as a basic alive indicator. Source in `firmware/`.
+
+---
+
+## Conclusion
+
+Using the bare ESP32-S3 die means every RF decision — stackup, trace width, keepout geometry, stitching via spacing — has to be made deliberately. That's the point. All source files and firmware are on GitHub.
