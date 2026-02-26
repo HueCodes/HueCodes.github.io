@@ -101,18 +101,6 @@ The AP2112K-3.3V converts USB 5V to 3.3V at up to 600mA. The ESP32-S3 peaks at ~
 
 ---
 
-## Generating the Board with Python
-
-Instead of routing by hand, I wrote `generate_board.py`, a script that emits the complete KiCAD 8 `.kicad_pcb`, `.kicad_pro`, and `.kicad_sch` files in **S-expression format**. Every parameter (trace width, component position, keepout radius) is a named constant at the top of the file.
-
-```sh
-python generate_board.py --output ./esp32-s3-rf-board
-```
-
-This makes the design fully reproducible and keeps layout decisions in version control alongside the source.
-
----
-
 ## Firmware
 
 The bring-up firmware uses **ESP-IDF v5**. It runs a WiFi scan every 10 seconds and prints results over UART at 115200 baud, which confirms the RF path is functional after assembly.
