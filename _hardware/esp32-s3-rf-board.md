@@ -9,7 +9,7 @@ github:
 
 ## Introduction
 
-In this post, I'll walk through designing a **4-layer ESP32-S3 RF development board** in **KiCAD 8**. The board uses the bare **ESP32-S3 QFN56** die instead of a module, which means the RF path (trace impedance, antenna keepout, and ground plane) had to be designed from scratch. I also wrote a **Python script** to generate the KiCAD project files rather than placing everything by hand.
+In this post, I'll walk through designing a **4-layer ESP32-S3 RF development board** in **KiCAD 8**. The board uses the bare **ESP32-S3 QFN56** die instead of a module, which means the RF path (trace impedance, antenna keepout, and ground plane) had to be designed from scratch.
 
 ---
 
