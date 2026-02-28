@@ -36,8 +36,7 @@ title: home
 <div class="grid-portfolio">
 
   <div class="filter-tabs">
-    <button class="filter-btn active" data-filter="all" onclick="filterProjects('all')">all</button>
-    <button class="filter-btn" data-filter="software" onclick="filterProjects('software')">software</button>
+    <button class="filter-btn active" data-filter="software" onclick="filterProjects('software')">software</button>
     <button class="filter-btn" data-filter="hardware" onclick="filterProjects('hardware')">hardware</button>
   </div>
 
@@ -312,11 +311,11 @@ title: home
 <script>
   function filterProjects(category) {
     document.querySelectorAll('.project-card').forEach(function(card) {
-      var show = category === 'all' || card.dataset.category === category;
-      card.style.display = show ? '' : 'none';
+      card.style.display = card.dataset.category === category ? '' : 'none';
     });
     document.querySelectorAll('.filter-btn').forEach(function(btn) {
       btn.classList.toggle('active', btn.dataset.filter === category);
     });
   }
+  filterProjects('software');
 </script>
