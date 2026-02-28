@@ -1,49 +1,61 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 140">
-  <!-- PCB board background -->
-  <rect x="10" y="10" width="180" height="120" rx="4" fill="#f5f5f5" stroke="#ccc" stroke-width="1.5"/>
-  <!-- Main chip (QFN56) -->
-  <rect x="68" y="38" width="64" height="64" rx="2" fill="#444" stroke="#222" stroke-width="1.5"/>
-  <text x="100" y="65" text-anchor="middle" fill="#aaa" font-size="7" font-family="monospace">ESP32-S3</text>
-  <text x="100" y="76" text-anchor="middle" fill="#888" font-size="6" font-family="monospace">QFN56</text>
-  <!-- Pin stubs on chip edges -->
-  <rect x="55" y="46" width="13" height="3" fill="#bbb"/>
-  <rect x="55" y="56" width="13" height="3" fill="#bbb"/>
-  <rect x="55" y="66" width="13" height="3" fill="#bbb"/>
-  <rect x="55" y="76" width="13" height="3" fill="#bbb"/>
-  <rect x="55" y="86" width="13" height="3" fill="#bbb"/>
-  <rect x="132" y="46" width="13" height="3" fill="#bbb"/>
-  <rect x="132" y="56" width="13" height="3" fill="#bbb"/>
-  <rect x="132" y="66" width="13" height="3" fill="#bbb"/>
-  <rect x="132" y="76" width="13" height="3" fill="#bbb"/>
-  <rect x="132" y="86" width="13" height="3" fill="#bbb"/>
-  <!-- Traces left -->
-  <line x1="18" y1="47" x2="55" y2="47" stroke="#999" stroke-width="0.8"/>
-  <line x1="18" y1="57" x2="55" y2="57" stroke="#999" stroke-width="0.8"/>
-  <line x1="18" y1="67" x2="55" y2="67" stroke="#999" stroke-width="0.8"/>
-  <line x1="18" y1="77" x2="55" y2="77" stroke="#999" stroke-width="0.8"/>
-  <line x1="18" y1="87" x2="55" y2="87" stroke="#999" stroke-width="0.8"/>
-  <!-- Traces right -->
-  <line x1="145" y1="47" x2="182" y2="47" stroke="#999" stroke-width="0.8"/>
-  <line x1="145" y1="57" x2="182" y2="57" stroke="#999" stroke-width="0.8"/>
-  <line x1="145" y1="67" x2="182" y2="67" stroke="#999" stroke-width="0.8"/>
-  <line x1="145" y1="77" x2="182" y2="77" stroke="#999" stroke-width="0.8"/>
-  <line x1="145" y1="87" x2="182" y2="87" stroke="#999" stroke-width="0.8"/>
-  <!-- RF trace (50-ohm microstrip) from chip to antenna -->
-  <polyline points="100,38 100,22 158,22" stroke="#c00" stroke-width="1.8" fill="none"/>
-  <!-- GND stitching vias along RF trace -->
-  <circle cx="112" cy="22" r="2.2" fill="#ccc" stroke="#999" stroke-width="0.8"/>
-  <circle cx="126" cy="22" r="2.2" fill="#ccc" stroke="#999" stroke-width="0.8"/>
-  <circle cx="140" cy="22" r="2.2" fill="#ccc" stroke="#999" stroke-width="0.8"/>
-  <!-- Chip antenna -->
-  <rect x="158" y="15" width="22" height="14" rx="2" fill="none" stroke="#c00" stroke-width="1.2"/>
-  <text x="169" y="25" text-anchor="middle" fill="#c00" font-size="6" font-family="monospace">ANT</text>
+  <!-- PCB board (classic green) -->
+  <rect x="10" y="10" width="180" height="120" rx="4" fill="#1b4d2e" stroke="#0d2e1a" stroke-width="1.5"/>
+  <!-- PCB inner area (slightly lighter) -->
+  <rect x="13" y="13" width="174" height="114" rx="3" fill="#1f5c35"/>
+
+  <!-- Gold signal traces left -->
+  <line x1="18" y1="47" x2="55" y2="47" stroke="#f9a825" stroke-width="1.2"/>
+  <line x1="18" y1="57" x2="55" y2="57" stroke="#f9a825" stroke-width="1.2"/>
+  <line x1="18" y1="67" x2="55" y2="67" stroke="#f9a825" stroke-width="1.2"/>
+  <line x1="18" y1="77" x2="55" y2="77" stroke="#f9a825" stroke-width="1.2"/>
+  <line x1="18" y1="87" x2="55" y2="87" stroke="#f9a825" stroke-width="1.2"/>
+  <!-- Gold signal traces right -->
+  <line x1="145" y1="47" x2="182" y2="47" stroke="#f9a825" stroke-width="1.2"/>
+  <line x1="145" y1="57" x2="182" y2="57" stroke="#f9a825" stroke-width="1.2"/>
+  <line x1="145" y1="67" x2="182" y2="67" stroke="#f9a825" stroke-width="1.2"/>
+  <line x1="145" y1="77" x2="182" y2="77" stroke="#f9a825" stroke-width="1.2"/>
+  <line x1="145" y1="87" x2="182" y2="87" stroke="#f9a825" stroke-width="1.2"/>
+
+  <!-- Main chip (QFN56) — navy -->
+  <rect x="68" y="38" width="64" height="64" rx="2" fill="#1a237e" stroke="#283593" stroke-width="1.5"/>
+  <text x="100" y="64" text-anchor="middle" fill="#90caf9" font-size="7.5" font-family="monospace">ESP32-S3</text>
+  <text x="100" y="75" text-anchor="middle" fill="#5c84c8" font-size="6" font-family="monospace">QFN56</text>
+  <text x="100" y="86" text-anchor="middle" fill="#3a5a90" font-size="5.5" font-family="monospace">2.4GHz · BLE 5</text>
+
+  <!-- Pin stubs on chip edges (gold) -->
+  <rect x="55" y="46" width="13" height="3" fill="#f9a825"/>
+  <rect x="55" y="56" width="13" height="3" fill="#f9a825"/>
+  <rect x="55" y="66" width="13" height="3" fill="#f9a825"/>
+  <rect x="55" y="76" width="13" height="3" fill="#f9a825"/>
+  <rect x="55" y="86" width="13" height="3" fill="#f9a825"/>
+  <rect x="132" y="46" width="13" height="3" fill="#f9a825"/>
+  <rect x="132" y="56" width="13" height="3" fill="#f9a825"/>
+  <rect x="132" y="66" width="13" height="3" fill="#f9a825"/>
+  <rect x="132" y="76" width="13" height="3" fill="#f9a825"/>
+  <rect x="132" y="86" width="13" height="3" fill="#f9a825"/>
+
+  <!-- RF trace (50-ohm microstrip) — bright red -->
+  <polyline points="100,38 100,22 158,22" stroke="#ef5350" stroke-width="2.2" fill="none"/>
+
+  <!-- GND stitching vias — silver -->
+  <circle cx="112" cy="22" r="2.5" fill="#b0bec5" stroke="#546e7a" stroke-width="0.8"/>
+  <circle cx="126" cy="22" r="2.5" fill="#b0bec5" stroke="#546e7a" stroke-width="0.8"/>
+  <circle cx="140" cy="22" r="2.5" fill="#b0bec5" stroke="#546e7a" stroke-width="0.8"/>
+
+  <!-- Chip antenna — red -->
+  <rect x="158" y="15" width="22" height="14" rx="2" fill="#3e0808" stroke="#ef5350" stroke-width="1.5"/>
+  <text x="169" y="25" text-anchor="middle" fill="#ef9a9a" font-size="6" font-family="monospace">ANT</text>
+
   <!-- u.FL test port -->
-  <circle cx="169" cy="37" r="4" fill="none" stroke="#666" stroke-width="1"/>
-  <circle cx="169" cy="37" r="1.5" fill="#666"/>
-  <!-- LDO (AP2112K) -->
-  <rect x="22" y="104" width="22" height="14" rx="1" fill="#555" stroke="#333" stroke-width="0.8"/>
-  <text x="33" y="114" text-anchor="middle" fill="#aaa" font-size="5.5" font-family="monospace">LDO</text>
-  <!-- USB-UART (CP2102) -->
-  <rect x="90" y="104" width="30" height="14" rx="1" fill="#555" stroke="#333" stroke-width="0.8"/>
-  <text x="105" y="114" text-anchor="middle" fill="#aaa" font-size="5.5" font-family="monospace">CP2102</text>
+  <circle cx="169" cy="37" r="4" fill="none" stroke="#f9a825" stroke-width="1.2"/>
+  <circle cx="169" cy="37" r="1.5" fill="#f9a825"/>
+
+  <!-- LDO (AP2112K) — orange -->
+  <rect x="22" y="104" width="24" height="14" rx="1" fill="#e65100" stroke="#bf360c" stroke-width="1"/>
+  <text x="34" y="114" text-anchor="middle" fill="#fff" font-size="5.5" font-family="monospace">LDO</text>
+
+  <!-- USB-UART (CP2102) — blue -->
+  <rect x="88" y="104" width="32" height="14" rx="1" fill="#1565c0" stroke="#0d47a1" stroke-width="1"/>
+  <text x="104" y="114" text-anchor="middle" fill="#fff" font-size="5.5" font-family="monospace">CP2102</text>
 </svg>

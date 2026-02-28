@@ -1,31 +1,39 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 140">
-  <!-- Base station -->
-  <rect x="12" y="18" width="42" height="24" rx="3" fill="#444" stroke="#222" stroke-width="1.5"/>
-  <text x="33" y="33" text-anchor="middle" fill="#fff" font-size="7.5" font-family="monospace">BASE</text>
-  <!-- Base station antenna waves -->
-  <path d="M52,14 Q62,8 52,30" stroke="#888" stroke-width="1" fill="none"/>
-  <path d="M56,10 Q70,4 56,34" stroke="#aaa" stroke-width="0.8" fill="none"/>
-  <!-- Gateway node -->
-  <rect x="78" y="52" width="44" height="28" rx="3" fill="#ddd" stroke="#333" stroke-width="1.5"/>
-  <text x="100" y="69" text-anchor="middle" fill="#333" font-size="7.5" font-family="monospace">GATEWAY</text>
-  <!-- Sensor node 1 -->
-  <circle cx="28" cy="108" r="12" fill="#f5f5f5" stroke="#333" stroke-width="1.5"/>
-  <text x="28" y="112" text-anchor="middle" fill="#333" font-size="7" font-family="monospace">S1</text>
-  <!-- Sensor node 2 -->
-  <circle cx="82" cy="120" r="12" fill="#f5f5f5" stroke="#333" stroke-width="1.5"/>
-  <text x="82" y="124" text-anchor="middle" fill="#333" font-size="7" font-family="monospace">S2</text>
-  <!-- Sensor node 3 -->
-  <circle cx="168" cy="108" r="12" fill="#f5f5f5" stroke="#333" stroke-width="1.5"/>
-  <text x="168" y="112" text-anchor="middle" fill="#333" font-size="7" font-family="monospace">S3</text>
-  <!-- Sensor node 4 (relay) -->
-  <circle cx="158" cy="48" r="12" fill="#f5f5f5" stroke="#333" stroke-width="1.5"/>
-  <text x="158" y="52" text-anchor="middle" fill="#333" font-size="7" font-family="monospace">S4</text>
-  <!-- LoRa links (dashed) -->
-  <line x1="54" y1="35" x2="80" y2="57" stroke="#555" stroke-width="1.2" stroke-dasharray="5,3"/>
-  <line x1="40" y1="96" x2="80" y2="70" stroke="#777" stroke-width="1" stroke-dasharray="4,3"/>
-  <line x1="82" y1="108" x2="100" y2="80" stroke="#777" stroke-width="1" stroke-dasharray="4,3"/>
-  <line x1="156" y1="96" x2="122" y2="76" stroke="#777" stroke-width="1" stroke-dasharray="4,3"/>
-  <line x1="158" y1="60" x2="122" y2="64" stroke="#999" stroke-width="1" stroke-dasharray="4,3"/>
+  <!-- Base station — navy -->
+  <rect x="12" y="18" width="42" height="24" rx="3" fill="#1a237e" stroke="#283593" stroke-width="1.5"/>
+  <text x="33" y="33" text-anchor="middle" fill="#e8eaf6" font-size="7.5" font-family="monospace">BASE</text>
+
+  <!-- Base station antenna waves — bright blue -->
+  <path d="M52,14 Q62,8 52,30" stroke="#42a5f5" stroke-width="1.5" fill="none"/>
+  <path d="M56,10 Q70,4 56,34" stroke="#42a5f5" stroke-width="1" fill="none" opacity="0.7"/>
+
+  <!-- Gateway node — orange -->
+  <rect x="78" y="52" width="44" height="28" rx="3" fill="#e65100" stroke="#bf360c" stroke-width="1.5"/>
+  <text x="100" y="69" text-anchor="middle" fill="#fff" font-size="7.5" font-family="monospace">GATEWAY</text>
+
+  <!-- Sensor node 1 — green -->
+  <circle cx="28" cy="108" r="12" fill="#2e7d32" stroke="#1b5e20" stroke-width="1.5"/>
+  <text x="28" y="112" text-anchor="middle" fill="#fff" font-size="7" font-family="monospace">S1</text>
+
+  <!-- Sensor node 2 — green -->
+  <circle cx="82" cy="122" r="12" fill="#2e7d32" stroke="#1b5e20" stroke-width="1.5"/>
+  <text x="82" y="126" text-anchor="middle" fill="#fff" font-size="7" font-family="monospace">S2</text>
+
+  <!-- Sensor node 3 — green -->
+  <circle cx="168" cy="108" r="12" fill="#2e7d32" stroke="#1b5e20" stroke-width="1.5"/>
+  <text x="168" y="112" text-anchor="middle" fill="#fff" font-size="7" font-family="monospace">S3</text>
+
+  <!-- Sensor node 4 relay — teal (slightly different to show relay role) -->
+  <circle cx="158" cy="48" r="12" fill="#00695c" stroke="#004d40" stroke-width="1.5"/>
+  <text x="158" y="52" text-anchor="middle" fill="#fff" font-size="7" font-family="monospace">S4</text>
+
+  <!-- LoRa links — purple dashed -->
+  <line x1="54" y1="35" x2="80" y2="57" stroke="#7b1fa2" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="40" y1="96" x2="80" y2="70" stroke="#7b1fa2" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <line x1="82" y1="110" x2="100" y2="80" stroke="#7b1fa2" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <line x1="156" y1="96" x2="122" y2="76" stroke="#7b1fa2" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <line x1="158" y1="60" x2="122" y2="64" stroke="#ab47bc" stroke-width="1" stroke-dasharray="4,3"/>
+
   <!-- Range label -->
-  <text x="100" y="136" text-anchor="middle" fill="#999" font-size="8" font-family="sans-serif">915MHz · up to 10km</text>
+  <text x="100" y="136" text-anchor="middle" fill="#7b1fa2" font-size="8" font-family="sans-serif">915MHz · up to 10km</text>
 </svg>

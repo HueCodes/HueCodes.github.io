@@ -1,40 +1,50 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 140">
-  <!-- Device outline (portable enclosure) -->
-  <rect x="8" y="8" width="184" height="124" rx="6" fill="#222" stroke="#111" stroke-width="2"/>
+  <!-- Device enclosure — dark blue-gray -->
+  <rect x="8" y="8" width="184" height="124" rx="6" fill="#263238" stroke="#1a2a30" stroke-width="2"/>
   <!-- OLED display bezel -->
-  <rect x="16" y="14" width="168" height="88" rx="3" fill="#0a0a0a" stroke="#333" stroke-width="1"/>
+  <rect x="16" y="14" width="168" height="88" rx="3" fill="#0a0e10" stroke="#37474f" stroke-width="1"/>
   <!-- Display active area -->
-  <rect x="18" y="16" width="164" height="84" rx="2" fill="#050505"/>
+  <rect x="18" y="16" width="164" height="84" rx="2" fill="#020608"/>
   <!-- Grid lines -->
-  <line x1="18" y1="44" x2="182" y2="44" stroke="#1a1a1a" stroke-width="0.6"/>
-  <line x1="18" y1="62" x2="182" y2="62" stroke="#1a1a1a" stroke-width="0.6"/>
-  <line x1="18" y1="80" x2="182" y2="80" stroke="#1a1a1a" stroke-width="0.6"/>
-  <!-- Spectrum bars -->
-  <rect x="24" y="74" width="7" height="22" fill="#00ee00" opacity="0.85"/>
-  <rect x="34" y="60" width="7" height="36" fill="#00ee00" opacity="0.85"/>
-  <rect x="44" y="42" width="7" height="54" fill="#00ee00" opacity="0.9"/>
-  <rect x="54" y="26" width="7" height="70" fill="#00ff00" opacity="0.95"/>
-  <rect x="64" y="32" width="7" height="64" fill="#00ff00" opacity="0.95"/>
-  <rect x="74" y="46" width="7" height="50" fill="#00ee00" opacity="0.9"/>
-  <rect x="84" y="58" width="7" height="38" fill="#00ee00" opacity="0.85"/>
-  <rect x="94" y="70" width="7" height="26" fill="#00ee00" opacity="0.8"/>
-  <rect x="104" y="76" width="7" height="20" fill="#00cc00" opacity="0.75"/>
-  <rect x="114" y="72" width="7" height="24" fill="#00cc00" opacity="0.75"/>
-  <rect x="124" y="66" width="7" height="30" fill="#00dd00" opacity="0.8"/>
-  <rect x="134" y="74" width="7" height="22" fill="#00cc00" opacity="0.75"/>
-  <rect x="144" y="78" width="7" height="18" fill="#00bb00" opacity="0.7"/>
-  <rect x="154" y="80" width="7" height="16" fill="#00aa00" opacity="0.65"/>
-  <rect x="164" y="76" width="7" height="20" fill="#009900" opacity="0.6"/>
-  <!-- Frequency labels on display -->
-  <text x="21" y="24" fill="#00cc00" font-size="6" font-family="monospace">2400</text>
-  <text x="156" y="24" fill="#00cc00" font-size="6" font-family="monospace">2480MHz</text>
-  <!-- dBm axis -->
-  <text x="182" y="44" fill="#00aa00" font-size="5.5" font-family="monospace" text-anchor="end">-60</text>
-  <text x="182" y="62" fill="#00aa00" font-size="5.5" font-family="monospace" text-anchor="end">-80</text>
-  <text x="182" y="80" fill="#00aa00" font-size="5.5" font-family="monospace" text-anchor="end">-100</text>
-  <!-- Bottom controls -->
-  <circle cx="40" cy="116" r="7" fill="#333" stroke="#444" stroke-width="1"/>
-  <circle cx="100" cy="116" r="7" fill="#333" stroke="#444" stroke-width="1"/>
-  <circle cx="160" cy="116" r="7" fill="#333" stroke="#444" stroke-width="1"/>
-  <text x="100" y="132" text-anchor="middle" fill="#555" font-size="7" font-family="sans-serif">ESP32 + OLED</text>
+  <line x1="18" y1="44" x2="182" y2="44" stroke="#0d1f12" stroke-width="0.6"/>
+  <line x1="18" y1="62" x2="182" y2="62" stroke="#0d1f12" stroke-width="0.6"/>
+  <line x1="18" y1="80" x2="182" y2="80" stroke="#0d1f12" stroke-width="0.6"/>
+
+  <!-- Spectrum bars — peak in bright green fading to yellow then orange at edges -->
+  <rect x="24" y="74" width="7" height="22" fill="#4caf50" opacity="0.8"/>
+  <rect x="34" y="58" width="7" height="38" fill="#66bb6a" opacity="0.85"/>
+  <rect x="44" y="40" width="7" height="56" fill="#a5d6a7" opacity="0.9"/>
+  <rect x="54" y="22" width="7" height="74" fill="#00e676" opacity="1"/>
+  <rect x="64" y="28" width="7" height="68" fill="#00e676" opacity="1"/>
+  <rect x="74" y="44" width="7" height="52" fill="#69f0ae" opacity="0.95"/>
+  <rect x="84" y="56" width="7" height="40" fill="#00e676" opacity="0.9"/>
+  <rect x="94" y="68" width="7" height="28" fill="#4caf50" opacity="0.85"/>
+  <rect x="104" y="74" width="7" height="22" fill="#43a047" opacity="0.8"/>
+  <rect x="114" y="70" width="7" height="26" fill="#4caf50" opacity="0.8"/>
+  <rect x="124" y="64" width="7" height="32" fill="#66bb6a" opacity="0.8"/>
+  <rect x="134" y="72" width="7" height="24" fill="#43a047" opacity="0.75"/>
+  <rect x="144" y="76" width="7" height="20" fill="#388e3c" opacity="0.7"/>
+  <rect x="154" y="78" width="7" height="18" fill="#2e7d32" opacity="0.65"/>
+  <rect x="164" y="74" width="7" height="22" fill="#388e3c" opacity="0.65"/>
+
+  <!-- Peak marker — yellow -->
+  <line x1="54" y1="22" x2="71" y2="22" stroke="#ffeb3b" stroke-width="1" stroke-dasharray="2,1"/>
+  <text x="73" y="25" fill="#ffeb3b" font-size="5.5" font-family="monospace">peak</text>
+
+  <!-- Frequency labels — cyan on display -->
+  <text x="21" y="24" fill="#4dd0e1" font-size="6" font-family="monospace">2400</text>
+  <text x="152" y="24" fill="#4dd0e1" font-size="6" font-family="monospace">2480MHz</text>
+
+  <!-- dBm axis — teal -->
+  <text x="182" y="44" fill="#26c6da" font-size="5.5" font-family="monospace" text-anchor="end">-60</text>
+  <text x="182" y="62" fill="#26c6da" font-size="5.5" font-family="monospace" text-anchor="end">-80</text>
+  <text x="182" y="80" fill="#26c6da" font-size="5.5" font-family="monospace" text-anchor="end">-100</text>
+
+  <!-- Bottom controls — colored knobs -->
+  <circle cx="40" cy="116" r="7" fill="#455a64" stroke="#e65100" stroke-width="1.5"/>
+  <circle cx="100" cy="116" r="7" fill="#455a64" stroke="#1565c0" stroke-width="1.5"/>
+  <circle cx="160" cy="116" r="7" fill="#455a64" stroke="#2e7d32" stroke-width="1.5"/>
+
+  <!-- Label -->
+  <text x="100" y="133" text-anchor="middle" fill="#78909c" font-size="7" font-family="sans-serif">ESP32 + OLED</text>
 </svg>
