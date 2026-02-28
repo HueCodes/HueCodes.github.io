@@ -9,11 +9,11 @@ Interrupt-driven UART driver for the STM32F401xE Nucleo in C++17. No HAL, no RTO
 
 ![UART-Cpp system overview](/assets/images/projects/uart-cpp-system.svg)
 
-CubeMX and the ST HAL work. They also generate 20,000 lines of code before you write a single line of your own. Replacing all of it with direct register access takes about 200 lines. Every decision is visible, every register write has a reason. The full source is on [GitHub](https://github.com/HueCodes/UART-cpp).
+CubeMX and the ST HAL work. They also generate 20,000 lines before you write a single line of your own. Replacing the relevant portions with direct register access takes about 200 lines. Every decision is visible, every register write has a reason. Source on [GitHub](https://github.com/HueCodes/UART-cpp).
 
 ## Clocks
 
-The Nucleo-F401RE provides an 8 MHz external oscillator (HSE). The target is 84 MHz SYSCLK, which requires the main PLL. M divides the HSE down to 1 MHz for the VCO input, the reference manual recommends keeping this between 1-2 MHz for low jitter. N multiplies the VCO input to 336 MHz. P divides that down to 84 MHz. Q is set to 7 to keep the 48 MHz USB clock in spec, even though this project doesn't use USB.
+The Nucleo-F401RE has an 8 MHz HSE. Target is 84 MHz SYSCLK via the main PLL. M divides to 1 MHz VCO input (1-2 MHz recommended for low jitter), N multiplies to 336 MHz, P divides to 84 MHz. Q=7 keeps the 48 MHz USB clock in spec.
 
 ```cpp
 RCC->PLLCFGR = (8u   << RCC_PLLCFGR_PLLM_Pos)   // /8  -> VCO_in  = 1 MHz
@@ -23,17 +23,17 @@ RCC->PLLCFGR = (8u   << RCC_PLLCFGR_PLLM_Pos)   // /8  -> VCO_in  = 1 MHz
              | (7u   << RCC_PLLCFGR_PLLQ_Pos);   // /7  -> USB     = 48 MHz
 ```
 
-Flash latency has to be configured before switching the clock source. At 3.3 V and 84 MHz the F401 needs 2 wait states. Switch first and the CPU reads corrupted instructions from flash before the latency is set. The correct order is: set latency, enable PLL, wait for lock, then switch SW to PLL and confirm via SWS. APB1 runs at SYSCLK/2 because its maximum is 45 MHz. APB2 runs at SYSCLK/1. USART2 sits on APB1 at 42 MHz, which feeds directly into the baud rate calculation.
+Flash latency must be configured before switching the clock source. At 84 MHz the F401 needs 2 wait states. Switch first and the CPU reads corrupted instructions. Correct order: set wait states, enable PLL, wait for PLLRDY, switch SW, confirm SWS. APB1 runs at SYSCLK/2 (max 45 MHz). USART2 sits on APB1 at 42 MHz.
 
 ![Clock tree: HSE to USART2](/assets/images/projects/uart-cpp-clock-tree.svg)
 
 ## GPIO and USART2 Init
 
-The Nucleo hard-wires USART2 to the ST-Link, so the pin mapping is not configurable: PA2 is TX and PA3 is RX, both on alternate function 7. Before touching any GPIO register, the AHB1 and APB1 clocks for GPIOA and USART2 must be enabled. There is a well-known errata behavior on STM32F4 where reading immediately after enabling a peripheral clock can return stale data, so the driver does a dummy read of APB1ENR to flush the write buffer before proceeding.
+The Nucleo hard-wires USART2 to the ST-Link: PA2 is TX, PA3 is RX, both AF7. AHB1 and APB1 clocks for GPIOA and USART2 must be enabled before touching any GPIO register. A dummy read of APB1ENR flushes the write buffer — an F4 errata where reading immediately after a clock enable can return stale data.
 
-Both PA2 and PA3 are set to alternate function mode (MODER = 0b10), push-pull output type, high-speed slew rate, no pull resistors, and AF7 in the low alternate function register. USART2 is disabled (UE cleared) before writing the configuration registers. Data width is fixed at 8 bits (M=0). Parity and stop bits are configurable at construction time via enum class parameters, which keeps the public API clean without magic numbers.
+PA2 and PA3 are set to alternate function mode (MODER=0b10), push-pull, high-speed, no pull resistors, AF7 in AFRL. USART2 is disabled (UE cleared) before writing config registers. Parity and stop bits are configurable at construction time via enum class parameters.
 
-The baud rate register is derived at runtime from the actual APB1 frequency rather than a hardcoded value. This matters if the prescaler changes: the driver reads CFGR, extracts the PPRE1 field, decodes the divider, and computes PCLK1 from SystemCoreClock. The rounding correction `+ baud/2` keeps the result within one LSB of the ideal.
+The baud rate register is computed at runtime from the actual APB1 frequency, not a hardcoded constant. The driver reads CFGR, extracts PPRE1, decodes the divider, and computes PCLK1. The `+baud/2` rounding keeps the result within one LSB of ideal.
 
 ```cpp
 uint32_t ppre1 = (RCC->CFGR >> RCC_CFGR_PPRE1_Pos) & 0x7u;
@@ -48,9 +48,9 @@ At 42 MHz and 115200 baud this produces BRR = 364, giving a 0.016% error against
 
 ![Interrupt-driven TX/RX flow](/assets/images/projects/uart-cpp-interrupt-flow.svg)
 
-Polling SR in a loop wastes the entire CPU while USART2 runs at its own pace. At 115200 baud each bit takes 8.7 µs and each byte takes roughly 87 µs. Interrupts give that time back. The driver uses USART2_IRQHandler at NVIC priority 5, which sits below the default SysTick priority and above any application-level IRQs.
+Polling SR in a loop wastes the CPU. At 115200 baud each byte takes ~87 µs. The driver uses USART2_IRQHandler at NVIC priority 5, below SysTick and above application IRQs.
 
-RX is always interrupt-driven. RXNEIE fires whenever the receive data register is not empty. The ISR reads DR and pushes the byte into the RX ring buffer. The application calls `receive()` which spins on the buffer, or `rx_ready()` for a non-blocking poll. TX uses on-demand TXEIE. `send()` pushes a byte into the TX ring buffer, then sets TXEIE in CR1. The ISR fires when TDR is empty, pops a byte, and writes it to DR. When the buffer drains, the ISR clears TXEIE itself. This prevents the ISR from re-firing immediately after servicing when there is nothing left to transmit.
+RX is always interrupt-driven. RXNEIE fires on each received byte; the ISR pushes it into the RX ring buffer. TX is on-demand: `send()` pushes to the TX buffer and sets TXEIE. The ISR fires when TDR is empty, pops a byte, writes it to DR. When the buffer drains, the ISR clears TXEIE — preventing it from re-firing with nothing to send.
 
 ```cpp
 void Uart::send(uint8_t byte)
@@ -84,13 +84,13 @@ void Uart::irq_handler()
 }
 ```
 
-The ISR reads both CR1 and SR before acting. Checking the enable bit alongside the status bit avoids a race where a flag is set in hardware between the point where software clears the enable and the point where the ISR exits. The ISR is declared `extern "C"` because the vector table holds a C function pointer. Without it, C++ name mangling produces a symbol the linker cannot match to the vector slot, and the slot falls back to `Default_Handler`.
+The ISR reads CR1 alongside SR before acting. Checking the enable bit with the status bit avoids a race where hardware sets a flag after software clears the enable but before the ISR exits. The ISR is `extern "C"` — C++ name mangling otherwise produces a symbol the linker cannot match to the vector slot, silently falling back to `Default_Handler`.
 
-STM32F4 USART error flags (overrun, framing, noise) require a specific two-step clear: read SR, then read DR. The driver calls `get_and_clear_errors()` at the top of every ISR invocation. If any error flags are set, DR is consumed inside that function, which also clears RXNE. The errored byte is discarded and the rest of the ISR sees a clean SR. This matches the sequence mandated in the F401 reference manual.
+STM32F4 USART error flags (overrun, framing, noise) require a two-step clear: read SR, then read DR. The driver calls `get_and_clear_errors()` at the top of every ISR. Error flags set means DR is consumed inside that function, clearing RXNE. The errored byte is discarded and the rest of the ISR sees a clean SR, per the F401 reference manual.
 
 ## Ring Buffer and SPSC Lock-Freedom
 
-Both buffers are a 256-byte power-of-two SPSC ring buffer templated over element type and capacity. The power-of-two constraint replaces modulo with a bitmask, which is relevant in an ISR where you want the shortest possible critical path.
+Both buffers are 256-byte power-of-two SPSC ring buffers templated over element type and capacity. Power-of-two replaces modulo with a bitmask, relevant in an ISR where every cycle counts.
 
 ```cpp
 template <typename T, size_t N>
@@ -105,11 +105,11 @@ class RingBuffer {
 };
 ```
 
-The SPSC property is what removes the need for atomics. For the TX buffer, the application thread is the sole producer (writes `head_`), and the ISR is the sole consumer (reads `head_`, writes `tail_`). For the RX buffer the roles reverse. Because there is exactly one writer and one reader for each index, no compare-exchange or critical section is needed. Only `head_` and `tail_` carry `volatile` because the compiler must not cache their values across reads. The buffer data itself is not volatile since the ordering guarantee comes through the index writes. Usable capacity is 255 bytes: one slot stays permanently unused to distinguish full from empty without a separate counter.
+SPSC removes the need for atomics. The TX buffer has one producer (application thread, writes `head_`) and one consumer (ISR, reads `head_`, writes `tail_`). RX reverses the roles. One writer and one reader per index means no compare-exchange or critical section. Only `head_` and `tail_` are `volatile` — the buffer data itself is not, since ordering is guaranteed through the index writes. Usable capacity is 255 bytes: one slot stays unused to distinguish full from empty without a separate counter.
 
 ## Startup
 
-There is no vendor startup file. `startup.cpp` contains the complete 98-entry vector table for the STM32F401xE (16 ARM Cortex-M4 system exceptions followed by 82 device IRQs) and `Reset_Handler`. Every slot that the application does not override gets `__attribute__((weak, alias("Default_Handler")))`, which spins in `for(;;){}`. An unhandled interrupt halts in a known location a debugger can attach to, rather than jumping through an undefined pointer.
+No vendor startup file. `startup.cpp` contains the complete 98-entry vector table for the STM32F401xE (16 Cortex-M4 system exceptions + 82 device IRQs) and `Reset_Handler`. Every unused slot gets `__attribute__((weak, alias("Default_Handler")))`, which spins in `for(;;){}`. An unhandled interrupt halts at a known address a debugger can attach to.
 
 ```cpp
 extern "C" void Reset_Handler()
@@ -128,11 +128,11 @@ extern "C" void Reset_Handler()
 }
 ```
 
-`__libc_init_array()` runs before `main()`, which matters because `s_uart` in uart.cpp is a static object whose constructor must fire to zero the ring buffer indices.
+`__libc_init_array()` runs before `main()`. `s_uart` in uart.cpp is a static object whose constructor must fire first to zero the ring buffer indices.
 
 ## Build
 
-The toolchain file targets Cortex-M4F with hardware FPU: `-mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard`. `-fno-exceptions -fno-rtti` removes the C++ runtime support code that would otherwise require heap and significantly bloat the binary. `-ffunction-sections -fdata-sections` combined with `-Wl,--gc-sections` lets the linker dead-strip anything not reachable from `Reset_Handler`. `-specs=nano.specs` links against newlib-nano instead of the full newlib, and `-specs=nosys.specs` provides stub syscalls. A custom `syscalls.cpp` overrides `_write` to forward `printf` output through the UART driver.
+Toolchain targets Cortex-M4F: `-mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard`. `-fno-exceptions -fno-rtti` strips C++ runtime overhead. `-ffunction-sections -fdata-sections` with `-Wl,--gc-sections` dead-strips anything unreachable from `Reset_Handler`. `-specs=nano.specs -specs=nosys.specs` links newlib-nano with stub syscalls. A custom `syscalls.cpp` overrides `_write` to route `printf` through the UART driver.
 
 ```bash
 cmake -B build -DCMAKE_TOOLCHAIN_FILE=cmake/arm-none-eabi.cmake

@@ -5,70 +5,87 @@ status: in progress
 github:
 ---
 
-## Overview
-
-Long-range mesh network using LoRaWAN for distributed sensor deployment across agricultural environments. Designed for low-power, wide-area coverage with multi-hop routing.
-
-## Why LoRaWAN for Agriculture?
-
-LoRaWAN provides:
-- **Range:** 1-10km line of sight (perfect for farms/orchards)
-- **Low power:** Sensors run for years on batteries
-- **Mesh capability:** Multi-hop routing for coverage extension
-- **Unlicensed spectrum:** No ongoing RF licensing costs
-
-This is the standard wireless protocol for farm-scale IoT sensor networks.
+Long-range mesh network using LoRaWAN for distributed sensor deployment across agricultural environments. Low-power, wide-area coverage with multi-hop routing.
 
 ## Hardware
 
 | Component | Description |
 |-----------|-------------|
-| LoRa modules | SX1276/SX1278 transceivers |
-| Microcontroller | ESP32 or STM32 |
-| Antenna | 915MHz (US) or 868MHz (EU) |
-| Power | Solar + LiPo battery for outdoor deployment |
+| Radio | SX1276 / SX1278 LoRa transceiver |
+| MCU | ESP32 or STM32L4 |
+| Antenna | 915MHz (US) or 868MHz (EU), 1/4-wave whip |
+| Power | Solar panel + LiPo, or primary lithium AA cells |
 
-## Architecture
+## LoRa Physical Layer
+
+LoRa uses chirp spread spectrum (CSS). The spreading factor (SF) controls the tradeoff between range, data rate, and airtime:
+
+| SF | Data Rate | Sensitivity | Range (LoS) |
+|----|-----------|-------------|-------------|
+| SF7 | ~5.5 kbps | -123 dBm | 2-3 km |
+| SF9 | ~1.8 kbps | -129 dBm | 5-7 km |
+| SF12 | ~250 bps | -137 dBm | 10-15 km |
+
+Link budget at SF12, BW125kHz: 14 dBm TX + 2 dBi antenna gain + 137 dBm Rx sensitivity = 153 dB. In practice obstacles, Fresnel zone clearance, and ground reflection eat 20-30 dB of that.
+
+Agricultural deployments use SF9 as the default. SF12 is reserved for nodes at the edge of coverage. Higher SF means longer airtime, which burns battery faster and reduces network capacity.
+
+## Node Architecture
+
+Three node types:
+
+**Sensor nodes** wake on a schedule, take a reading, transmit, and sleep. Target: <1µA sleep current, <50mA TX burst. With a 3.6V 3600mAh lithium AA cell and 10-minute reporting intervals, runtime exceeds two years.
+
+**Relay nodes** run continuously and forward packets from sensor nodes that are out of direct gateway range. Multi-hop extends coverage without moving the gateway. A relay bridges two non-overlapping coverage zones.
+
+**Gateway** aggregates traffic and bridges to TCP/IP (WiFi, Ethernet, or cellular). In large deployments a gateway covers 50-100 sensor nodes at SF9.
 
 ```
-[Sensor Node] --LoRa--> [Gateway Node] --LoRa--> [Base Station]
-                              |
-                         [Sensor Node]
+[Sensor] --LoRa--> [Gateway] --TCP--> [Server]
+                       ^
+[Sensor] --LoRa--> [Relay] --LoRa--> [Gateway]
 ```
 
-Multi-hop mesh allows sensors beyond gateway range to relay through intermediate nodes.
+## SX1276 Configuration
 
-## Use Cases
+The SX1276 is controlled over SPI. Key registers for a basic TX:
 
-- **Orchard monitoring:** Soil moisture, temperature, humidity sensors across large orchards
-- **Environmental sensing:** Weather stations distributed across farmland
-- **Asset tracking:** Equipment and livestock location tracking
+```c
+// Set LoRa mode, explicit header, SF9, BW125kHz, CR 4/5
+write_reg(REG_MODEM_CONFIG1, 0x72);  // BW=125, CR=4/5, explicit
+write_reg(REG_MODEM_CONFIG2, 0x94);  // SF=9, CRC on
+write_reg(REG_MODEM_CONFIG3, 0x04);  // LNA AGC on
 
-## Technical Details
+// Set frequency (915 MHz)
+uint64_t frf = ((uint64_t)915000000 << 19) / 32000000;
+write_reg(REG_FRF_MSB, (frf >> 16) & 0xFF);
+write_reg(REG_FRF_MID, (frf >> 8) & 0xFF);
+write_reg(REG_FRF_LSB, frf & 0xFF);
 
-- **Frequency:** 915MHz (US ISM band)
-- **Data rate:** 0.3-50 kbps (configurable)
-- **Range:** Up to 10km line-of-sight, 2-3km with obstacles
-- **Power:** <50mA transmit, <15mA receive, <1µA sleep
+// TX power: 14 dBm via PA_BOOST
+write_reg(REG_PA_CONFIG, 0x8C);
+```
 
-## Build Log
+## Power Budget
 
-### Current Progress
+Target: soil moisture + temperature node reporting every 10 minutes.
 
-*Fill in as you build:*
-- Initial hardware testing
-- Range testing results
-- Mesh routing implementation
-- Power consumption measurements
-- Field deployment results
+| State | Current | Duration | Energy |
+|-------|---------|----------|--------|
+| Sleep | 0.8 µA | 598s | 479 µAs |
+| Wake + sensor read | 12 mA | 1s | 12 mAs |
+| LoRa TX (SF9) | 45 mA | 0.18s | 8.1 mAs |
+| Total per cycle | | 600s | ~500 µAs |
 
-## What I'm Learning
+Average current: ~0.83 µA. A 3600mAh cell lasts roughly 5 years at this rate, before accounting for solar topping.
 
-*Document challenges, insights, and solutions as you work through the project.*
+## Frequency and Regulatory Notes
 
-## Relevance to Agricultural Robotics
+US 915MHz ISM band: no duty cycle limit but EIRP capped at 30 dBm. EU 868MHz: 1% duty cycle per sub-band. At SF9 airtime per packet is ~180ms, giving a 1% duty cycle budget of 18 seconds per 30-minute window — plenty for 10-minute reporting.
 
-Direct application to systems like Orchard Robotics' tractor-mounted camera networks:
-- Wireless communication across large orchards
-- Low-power sensor networks for environmental monitoring
-- Mesh networking for reliability in challenging RF environments
+## Status
+
+- SX1276 SPI driver working, basic TX/RX confirmed
+- Range testing underway, initial results ~4km LoS at SF9
+- Multi-hop relay routing in progress
+- Power profiling with PPK2 pending hardware delivery
