@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 140">
+  <!-- MCU body -->
+  <rect x="58" y="18" width="84" height="100" rx="3" fill="#3a3a3a" stroke="#222" stroke-width="1.5"/>
+  <!-- MCU label -->
+  <text x="100" y="58" text-anchor="middle" fill="#bbb" font-size="8.5" font-family="monospace">STM32F4</text>
+  <text x="100" y="71" text-anchor="middle" fill="#888" font-size="6.5" font-family="monospace">Cortex-M4</text>
+  <text x="100" y="82" text-anchor="middle" fill="#888" font-size="6.5" font-family="monospace">168MHz</text>
+  <text x="100" y="93" text-anchor="middle" fill="#777" font-size="5.5" font-family="monospace">1MB Flash · 192KB SRAM</text>
+  <!-- Left pin stubs on chip -->
+  <rect x="46" y="30" width="12" height="3.5" fill="#999"/>
+  <rect x="46" y="44" width="12" height="3.5" fill="#999"/>
+  <rect x="46" y="58" width="12" height="3.5" fill="#999"/>
+  <rect x="46" y="72" width="12" height="3.5" fill="#999"/>
+  <rect x="46" y="86" width="12" height="3.5" fill="#999"/>
+  <rect x="46" y="100" width="12" height="3.5" fill="#999"/>
+  <!-- Right pin stubs on chip -->
+  <rect x="142" y="30" width="12" height="3.5" fill="#999"/>
+  <rect x="142" y="44" width="12" height="3.5" fill="#999"/>
+  <rect x="142" y="58" width="12" height="3.5" fill="#999"/>
+  <rect x="142" y="72" width="12" height="3.5" fill="#999"/>
+  <rect x="142" y="86" width="12" height="3.5" fill="#999"/>
+  <rect x="142" y="100" width="12" height="3.5" fill="#999"/>
+  <!-- Left traces + labels -->
+  <line x1="10" y1="31" x2="46" y2="31" stroke="#bbb" stroke-width="1"/>
+  <text x="8" y="35" text-anchor="end" fill="#777" font-size="6.5" font-family="monospace">UART</text>
+  <line x1="10" y1="45" x2="46" y2="45" stroke="#bbb" stroke-width="1"/>
+  <text x="8" y="49" text-anchor="end" fill="#777" font-size="6.5" font-family="monospace">SPI</text>
+  <line x1="10" y1="59" x2="46" y2="59" stroke="#bbb" stroke-width="1"/>
+  <text x="8" y="63" text-anchor="end" fill="#777" font-size="6.5" font-family="monospace">I2C</text>
+  <line x1="10" y1="73" x2="46" y2="73" stroke="#bbb" stroke-width="1"/>
+  <text x="8" y="77" text-anchor="end" fill="#777" font-size="6.5" font-family="monospace">ADC</text>
+  <line x1="10" y1="87" x2="46" y2="87" stroke="#bbb" stroke-width="1"/>
+  <text x="8" y="91" text-anchor="end" fill="#777" font-size="6.5" font-family="monospace">PWM</text>
+  <line x1="10" y1="101" x2="46" y2="101" stroke="#bbb" stroke-width="1"/>
+  <text x="8" y="105" text-anchor="end" fill="#777" font-size="6.5" font-family="monospace">DAC</text>
+  <!-- Right traces + labels -->
+  <line x1="154" y1="31" x2="190" y2="31" stroke="#bbb" stroke-width="1"/>
+  <text x="192" y="35" fill="#777" font-size="6.5" font-family="monospace">GPIO</text>
+  <line x1="154" y1="45" x2="190" y2="45" stroke="#bbb" stroke-width="1"/>
+  <text x="192" y="49" fill="#777" font-size="6.5" font-family="monospace">TIM</text>
+  <line x1="154" y1="59" x2="190" y2="59" stroke="#bbb" stroke-width="1"/>
+  <text x="192" y="63" fill="#777" font-size="6.5" font-family="monospace">DMA</text>
+  <line x1="154" y1="73" x2="190" y2="73" stroke="#bbb" stroke-width="1"/>
+  <text x="192" y="77" fill="#777" font-size="6.5" font-family="monospace">NVIC</text>
+  <line x1="154" y1="87" x2="190" y2="87" stroke="#bbb" stroke-width="1"/>
+  <text x="192" y="91" fill="#777" font-size="6.5" font-family="monospace">USB</text>
+  <line x1="154" y1="101" x2="190" y2="101" stroke="#bbb" stroke-width="1"/>
+  <text x="192" y="105" fill="#777" font-size="6.5" font-family="monospace">FPU</text>
+  <!-- VCC rail top -->
+  <line x1="86" y1="8" x2="86" y2="18" stroke="#c44" stroke-width="1.2"/>
+  <text x="86" y="7" text-anchor="middle" fill="#c44" font-size="6" font-family="monospace">3.3V</text>
+  <!-- GND rail bottom -->
+  <line x1="114" y1="118" x2="114" y2="130" stroke="#666" stroke-width="1.2"/>
+  <line x1="108" y1="130" x2="120" y2="130" stroke="#666" stroke-width="1.2"/>
+  <line x1="110" y1="133" x2="118" y2="133" stroke="#666" stroke-width="1"/>
+  <line x1="112" y1="136" x2="116" y2="136" stroke="#666" stroke-width="0.8"/>
+</svg>

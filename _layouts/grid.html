@@ -255,6 +255,35 @@
       text-decoration: none;
     }
 
+    .filter-tabs {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .filter-btn {
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #999;
+      cursor: pointer;
+      padding: 0 0 2px 0;
+      font-family: inherit;
+    }
+
+    .filter-btn.active {
+      color: #111;
+      border-bottom-color: #111;
+    }
+
+    .filter-btn:hover {
+      color: #111;
+    }
+
     @media (max-width: 1400px) {
       .projects-grid {
         grid-template-columns: repeat(3, 1fr);

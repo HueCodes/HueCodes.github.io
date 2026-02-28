@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 140">
+  <!-- SENSOR task -->
+  <rect x="4" y="12" width="50" height="32" rx="3" fill="#3a3a3a" stroke="#555" stroke-width="1.2"/>
+  <text x="29" y="24" text-anchor="middle" fill="#ccc" font-size="7" font-family="monospace">SENSOR</text>
+  <text x="29" y="33" text-anchor="middle" fill="#777" font-size="5.5" font-family="monospace">P=2 · 512w</text>
+  <text x="29" y="41" text-anchor="middle" fill="#666" font-size="5" font-family="monospace">BME280 I2C</text>
+
+  <!-- sensor_queue arrow -->
+  <line x1="54" y1="28" x2="72" y2="28" stroke="#888" stroke-width="1"/>
+  <polygon points="72,25 72,31 78,28" fill="#888"/>
+  <text x="65" y="24" text-anchor="middle" fill="#666" font-size="4.5" font-family="monospace">q:4</text>
+
+  <!-- PROCESSING task -->
+  <rect x="76" y="12" width="50" height="32" rx="3" fill="#3a3a3a" stroke="#555" stroke-width="1.2"/>
+  <text x="101" y="24" text-anchor="middle" fill="#ccc" font-size="7" font-family="monospace">PROCESS</text>
+  <text x="101" y="33" text-anchor="middle" fill="#777" font-size="5.5" font-family="monospace">P=2 · 512w</text>
+  <text x="101" y="41" text-anchor="middle" fill="#666" font-size="5" font-family="monospace">calibration</text>
+
+  <!-- print_queue arrow -->
+  <line x1="126" y1="28" x2="144" y2="28" stroke="#888" stroke-width="1"/>
+  <polygon points="144,25 144,31 150,28" fill="#888"/>
+  <text x="136" y="24" text-anchor="middle" fill="#666" font-size="4.5" font-family="monospace">q:8</text>
+
+  <!-- UART PRINT task -->
+  <rect x="148" y="12" width="48" height="32" rx="3" fill="#3a3a3a" stroke="#555" stroke-width="1.2"/>
+  <text x="172" y="24" text-anchor="middle" fill="#ccc" font-size="7" font-family="monospace">UART TX</text>
+  <text x="172" y="33" text-anchor="middle" fill="#777" font-size="5.5" font-family="monospace">P=1 · 256w</text>
+  <text x="172" y="41" text-anchor="middle" fill="#666" font-size="5" font-family="monospace">115200</text>
+
+  <!-- WATCHDOG task (red accent, highest priority) -->
+  <rect x="76" y="60" width="50" height="32" rx="3" fill="#2a1a1a" stroke="#c44" stroke-width="1.5"/>
+  <text x="101" y="72" text-anchor="middle" fill="#f88" font-size="7" font-family="monospace">WATCHDOG</text>
+  <text x="101" y="81" text-anchor="middle" fill="#c66" font-size="5.5" font-family="monospace">P=4 · HIGH</text>
+  <text x="101" y="89" text-anchor="middle" fill="#c66" font-size="5" font-family="monospace">feeds IWDG</text>
+
+  <!-- Watchdog supervision dashed lines to pipeline tasks -->
+  <line x1="29" y1="44" x2="88" y2="60" stroke="#c44" stroke-width="0.8" stroke-dasharray="3,2" opacity="0.5"/>
+  <line x1="101" y1="44" x2="101" y2="60" stroke="#c44" stroke-width="0.8" stroke-dasharray="3,2" opacity="0.5"/>
+  <line x1="172" y1="44" x2="114" y2="60" stroke="#c44" stroke-width="0.8" stroke-dasharray="3,2" opacity="0.5"/>
+
+  <!-- IWDG chip -->
+  <rect x="148" y="63" width="36" height="26" rx="2" fill="#1a0a0a" stroke="#c44" stroke-width="1"/>
+  <text x="166" y="74" text-anchor="middle" fill="#c44" font-size="6.5" font-family="monospace">IWDG</text>
+  <text x="166" y="83" text-anchor="middle" fill="#a33" font-size="5.5" font-family="monospace">2s timeout</text>
+  <line x1="126" y1="76" x2="148" y2="76" stroke="#c44" stroke-width="1"/>
+  <polygon points="148,73 148,79 154,76" fill="#c44"/>
+
+  <!-- CLI task -->
+  <rect x="4" y="60" width="50" height="32" rx="3" fill="#2e2e2e" stroke="#555" stroke-width="1.2"/>
+  <text x="29" y="72" text-anchor="middle" fill="#ccc" font-size="7" font-family="monospace">CLI</text>
+  <text x="29" y="81" text-anchor="middle" fill="#777" font-size="5.5" font-family="monospace">P=2 · 512w</text>
+  <text x="29" y="89" text-anchor="middle" fill="#666" font-size="5" font-family="monospace">UART shell</text>
+
+  <!-- CLI → print_queue (dashed, joins pipeline) -->
+  <polyline points="54,76 148,76" stroke="#777" stroke-width="0.8" fill="none" stroke-dasharray="3,2"/>
+
+  <!-- ISR box (dashed outline) -->
+  <rect x="4" y="104" width="50" height="26" rx="3" fill="none" stroke="#555" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="29" y="116" text-anchor="middle" fill="#666" font-size="6.5" font-family="monospace">UART RX ISR</text>
+  <text x="29" y="125" text-anchor="middle" fill="#555" font-size="5" font-family="monospace">xQueueSendFromISR</text>
+
+  <!-- ISR → CLI -->
+  <line x1="29" y1="104" x2="29" y2="92" stroke="#666" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <polygon points="26,92 29,86 32,92" fill="#666"/>
+
+  <!-- heap_4 / tick label -->
+  <text x="148" y="104" fill="#444" font-size="5" font-family="monospace">heap_4 · 24KB</text>
+  <text x="148" y="113" fill="#444" font-size="5" font-family="monospace">configTICK=1ms</text>
+  <text x="148" y="122" fill="#444" font-size="5" font-family="monospace">STM32F411RE</text>
+</svg>

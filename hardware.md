@@ -34,4 +34,12 @@ title: hardware
     <a href="/hardware/stm32-dev/">STM32 Development</a>
     <span>bare-metal microcontroller programming and embedded systems</span>
   </div>
+  <div class="project">
+    <a href="/hardware/freertos-stm32/">FreeRTOS STM32</a>
+    <span>5-task preemptive firmware with watchdog supervision, queues, and flash config on STM32F411RE</span>
+  </div>
+  <div class="project">
+    <a href="/hardware/zephyr-ble-sensor/">Zephyr BLE Sensor</a>
+    <span>BLE peripheral on nRF52840 DK with custom GATT service, device tree, and Zephyr PM sleep</span>
+  </div>
 </div>

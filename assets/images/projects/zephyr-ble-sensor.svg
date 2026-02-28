@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 140">
+  <!-- nRF52840 chip body -->
+  <rect x="14" y="28" width="76" height="84" rx="3" fill="#3a3a3a" stroke="#222" stroke-width="1.5"/>
+  <text x="52" y="52" text-anchor="middle" fill="#bbb" font-size="8" font-family="monospace">nRF52840</text>
+  <text x="52" y="63" text-anchor="middle" fill="#888" font-size="6" font-family="monospace">Cortex-M4</text>
+  <text x="52" y="72" text-anchor="middle" fill="#888" font-size="6" font-family="monospace">64MHz · BLE 5</text>
+  <text x="52" y="81" text-anchor="middle" fill="#777" font-size="5.5" font-family="monospace">1MB flash · 256KB</text>
+
+  <!-- Zephyr RTOS layer inside chip -->
+  <rect x="20" y="86" width="64" height="14" rx="2" fill="#1e3a5a" stroke="#2a5a8a" stroke-width="1"/>
+  <text x="52" y="96" text-anchor="middle" fill="#5af" font-size="6.5" font-family="monospace">Zephyr RTOS</text>
+
+  <!-- Device Tree label -->
+  <rect x="20" y="102" width="30" height="8" rx="1" fill="#1a2a1a" stroke="#3a6a3a" stroke-width="0.8"/>
+  <text x="35" y="108" text-anchor="middle" fill="#5c5" font-size="5" font-family="monospace">DeviceTree</text>
+
+  <!-- Kconfig label -->
+  <rect x="54" y="102" width="30" height="8" rx="1" fill="#2a1a2a" stroke="#6a3a6a" stroke-width="0.8"/>
+  <text x="69" y="108" text-anchor="middle" fill="#c5c" font-size="5" font-family="monospace">Kconfig</text>
+
+  <!-- BLE radio waves to the right -->
+  <path d="M90,70 Q105,55 90,40" stroke="#4af" stroke-width="1.5" fill="none"/>
+  <path d="M90,70 Q115,48 90,26" stroke="#4af" stroke-width="1.2" fill="none" opacity="0.7"/>
+  <path d="M90,70 Q125,42 90,14" stroke="#4af" stroke-width="0.8" fill="none" opacity="0.4"/>
+
+  <!-- GATT stack column (right side) -->
+  <text x="140" y="20" text-anchor="middle" fill="#888" font-size="7" font-family="monospace">GATT stack</text>
+
+  <rect x="112" y="24" width="56" height="14" rx="2" fill="#1a2a3a" stroke="#2a4a6a" stroke-width="1"/>
+  <text x="140" y="34" text-anchor="middle" fill="#7af" font-size="6" font-family="monospace">Custom Service</text>
+
+  <rect x="112" y="41" width="56" height="14" rx="2" fill="#1a2030" stroke="#2a3a50" stroke-width="1"/>
+  <text x="140" y="51" text-anchor="middle" fill="#88c" font-size="6" font-family="monospace">GATT · ATT</text>
+
+  <rect x="112" y="58" width="56" height="14" rx="2" fill="#1a1a28" stroke="#2a2a44" stroke-width="1"/>
+  <text x="140" y="68" text-anchor="middle" fill="#77a" font-size="6" font-family="monospace">L2CAP · HCI</text>
+
+  <rect x="112" y="75" width="56" height="14" rx="2" fill="#181818" stroke="#333" stroke-width="1"/>
+  <text x="140" y="85" text-anchor="middle" fill="#666" font-size="6" font-family="monospace">BLE 5 PHY</text>
+
+  <!-- BME280 sensor at bottom -->
+  <rect x="112" y="100" width="56" height="22" rx="2" fill="#2a2a2a" stroke="#444" stroke-width="1"/>
+  <text x="140" y="111" text-anchor="middle" fill="#aaa" font-size="6.5" font-family="monospace">BME280</text>
+  <text x="140" y="119" text-anchor="middle" fill="#777" font-size="5.5" font-family="monospace">I2C · DTS overlay</text>
+
+  <!-- Connection line from BME280 to chip -->
+  <line x1="112" y1="111" x2="90" y2="95" stroke="#666" stroke-width="0.8" stroke-dasharray="3,2"/>
+
+  <!-- Power sleep indicator bottom left -->
+  <rect x="4" y="118" width="80" height="16" rx="2" fill="#0a1a0a" stroke="#2a4a2a" stroke-width="0.8"/>
+  <text x="44" y="129" text-anchor="middle" fill="#4a8" font-size="6" font-family="monospace">PM sleep · nA idle · PPK2 profiled</text>
+</svg>
