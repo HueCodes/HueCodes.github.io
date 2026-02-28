@@ -259,7 +259,7 @@ title: home
           <li><strong>CLI:</strong> UART shell (status, config get/set, task suspend) via ISR-fed rx_char_queue</li>
         </ul>
         <p class="tech">`FreeRTOS` `STM32F411RE` `CMake` `BME280` `IWDG`</p>
-        <p class="blog-link"><a href="/hardware/freertos-stm32/">→ view project</a></p>
+        <p class="blog-link"><a href="/blog/freertos-stm32/">→ read more</a></p>
       </div>
     </article>
 
@@ -276,7 +276,7 @@ title: home
           <li><strong>Build:</strong> west + nRF Connect SDK, BLE 5.0, 1MB flash / 256KB RAM</li>
         </ul>
         <p class="tech">`Zephyr RTOS` `nRF52840` `BLE 5` `GATT` `Device Tree`</p>
-        <p class="blog-link"><a href="/hardware/zephyr-ble-sensor/">→ view project</a></p>
+        <p class="blog-link"><a href="/blog/zephyr-ble-sensor/">→ read more</a></p>
       </div>
     </article>
   </section>
