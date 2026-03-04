@@ -127,6 +127,22 @@ title: home
       </div>
     </article>
 
+    <!-- Elastic Collision -->
+    <article class="project-card" data-category="software">
+      <div class="card-content">
+        <h3><a href="https://github.com/HueCodes/Cpp-Particle-Sim">Elastic Collision Engine</a></h3>
+        <p class="tagline">OpenCL GPU compute + spatial hashing for 1000-particle physics</p>
+        <ul>
+          <li><strong>GPU compute:</strong> OpenCL kernels for parallel collision resolution, one work item per particle</li>
+          <li><strong>Spatial hashing:</strong> O(n) broad-phase detection via uniform grid, 9-cell neighborhood lookup</li>
+          <li><strong>Physics:</strong> Elastic collision formula with mass-weighted positional correction</li>
+          <li><strong>Architecture:</strong> CPU/GPU split — grid built CPU-side, collision resolution GPU-side</li>
+        </ul>
+        <p class="tech">`C++` `OpenCL` `SDL2` `Spatial Hashing` `Physics Simulation`</p>
+        <p class="blog-link"><a href="/blog/elastic-collision-opencl/">→ read more</a></p>
+      </div>
+    </article>
+
     <!-- UART-Cpp -->
     <article class="project-card" data-category="software">
       <img src="/assets/images/projects/uart-cpp-system.svg" alt="UART-Cpp">
