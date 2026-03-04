@@ -7,13 +7,19 @@ category: projects
 
 A 2D elastic collision simulation for 1000 particles using OpenCL GPU compute and a spatial hash grid for broad-phase collision detection, written in C++ with SDL2 rendering.
 
+![Elastic Particle Collision Simulation](/assets/images/projects/particle-sim-screenshot.png)
+
 The naive approach to collision detection checks every pair of particles against each other. With 1000 particles that means 499,500 pair checks per frame. At 60 FPS, that is 29.9 million checks per second just for broad-phase detection before any physics is computed. The problem compounds with particle count: doubling particles quadruples the work. Spatial hashing breaks this by partitioning the world into a uniform grid and only checking particles against neighbors in adjacent cells. Each particle has at most 9 cells to check regardless of total particle count, reducing the problem from O(n²) to O(n * k) where k is average particles per cell.
+
+![Spatial Hash Grid — 9-Cell Neighborhood](/assets/images/projects/particle-sim-spatial-grid.svg)
 
 ## CPU/GPU Split
 
 The simulation splits work between CPU and GPU based on data dependencies. The spatial grid is built CPU-side each frame: particles are assigned to cells, cells are sorted by index, and the resulting `GridCell` array (start offset + count) and `sortedIndices` buffer are uploaded to the GPU. Collision resolution then runs entirely on the GPU with one OpenCL work item per particle. This split exists because building the spatial grid requires knowing all particle positions before any work item can proceed, making it inherently sequential. Collision resolution is embarrassingly parallel once the grid is built.
 
 The `SpatialGrid` class manages this CPU-side pass. It iterates through all particles, hashes each position to a cell index, counts particles per cell, then builds the sorted index array using those counts as offsets. The result is a compact array of particle indices sorted by cell, with the `GridCell` array providing O(1) lookup into the correct range for any cell coordinate. Both buffers are uploaded to OpenCL device memory before the collision kernel launches.
+
+![CPU / GPU Pipeline](/assets/images/projects/particle-sim-pipeline.svg)
 
 ## Kernel Design
 

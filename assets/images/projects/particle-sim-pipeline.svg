@@ -1,0 +1,104 @@
+<svg width="800" height="340" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .box-cpu  { fill: #D4EDDA; stroke: #28A745; stroke-width: 2; rx: 6; }
+      .box-gpu  { fill: #CCE5FF; stroke: #4A90E2; stroke-width: 2; }
+      .box-data { fill: #FFF3CD; stroke: #F0AD4E; stroke-width: 1.5; }
+      .box-kern { fill: #E2D9F3; stroke: #6F42C1; stroke-width: 2; }
+      .label    { font-family: monospace; font-size: 12px; fill: #333; }
+      .label-bold { font-family: monospace; font-size: 13px; fill: #333; font-weight: bold; }
+      .label-sm { font-family: monospace; font-size: 10px; fill: #555; }
+      .arrow    { stroke: #555; stroke-width: 2; marker-end: url(#arrowhead); }
+      .arrow-upload { stroke: #E74C3C; stroke-width: 2; stroke-dasharray: 5,3; marker-end: url(#arrowred); }
+      .divider  { stroke: #aaa; stroke-width: 1.5; stroke-dasharray: 6,4; }
+    </style>
+    <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#555"/>
+    </marker>
+    <marker id="arrowred" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#E74C3C"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="400" y="24" font-family="monospace" font-size="16" font-weight="bold" text-anchor="middle" fill="#333">CPU / GPU Data Flow — Per Frame</text>
+
+  <!-- CPU band -->
+  <rect x="20" y="40" width="760" height="120" fill="#f0fff4" stroke="#28A745" stroke-width="1.5" rx="8"/>
+  <text x="35" y="60" class="label-bold" fill="#28A745">CPU</text>
+
+  <!-- GPU band -->
+  <rect x="20" y="185" width="760" height="130" fill="#EBF5FF" stroke="#4A90E2" stroke-width="1.5" rx="8"/>
+  <text x="35" y="205" class="label-bold" fill="#4A90E2">GPU (OpenCL)</text>
+
+  <!-- === CPU SIDE === -->
+
+  <!-- Box 1: Particles -->
+  <rect x="45" y="68" width="110" height="72" fill="#D4EDDA" stroke="#28A745" stroke-width="1.5" rx="5"/>
+  <text x="100" y="91" text-anchor="middle" class="label-bold">Particles</text>
+  <text x="100" y="108" text-anchor="middle" class="label-sm">pos, vel, mass</text>
+  <text x="100" y="122" text-anchor="middle" class="label-sm">radius  ×1000</text>
+
+  <!-- Arrow 1→2 -->
+  <line x1="157" y1="104" x2="188" y2="104" class="arrow"/>
+
+  <!-- Box 2: SpatialGrid::build() -->
+  <rect x="190" y="68" width="145" height="72" fill="#D4EDDA" stroke="#28A745" stroke-width="1.5" rx="5"/>
+  <text x="263" y="88" text-anchor="middle" class="label-bold">SpatialGrid</text>
+  <text x="263" y="104" text-anchor="middle" class="label-sm">::build(particles)</text>
+  <text x="263" y="120" text-anchor="middle" class="label-sm">hash pos → cell</text>
+  <text x="263" y="134" text-anchor="middle" class="label-sm">sort by cell idx</text>
+
+  <!-- Arrow 2→3 -->
+  <line x1="337" y1="104" x2="368" y2="104" class="arrow"/>
+
+  <!-- Box 3: GridCell[] -->
+  <rect x="370" y="68" width="130" height="72" fill="#FFF3CD" stroke="#F0AD4E" stroke-width="1.5" rx="5"/>
+  <text x="435" y="88" text-anchor="middle" class="label-bold">GridCell[]</text>
+  <text x="435" y="104" text-anchor="middle" class="label-sm">{ start, count }</text>
+  <text x="435" y="120" text-anchor="middle" class="label-sm">one per cell</text>
+  <text x="435" y="134" text-anchor="middle" class="label-sm">O(1) cell lookup</text>
+
+  <!-- Box 4: sortedIndices[] -->
+  <rect x="520" y="68" width="135" height="72" fill="#FFF3CD" stroke="#F0AD4E" stroke-width="1.5" rx="5"/>
+  <text x="588" y="88" text-anchor="middle" class="label-bold">sortedIndices[]</text>
+  <text x="588" y="104" text-anchor="middle" class="label-sm">particle indices</text>
+  <text x="588" y="120" text-anchor="middle" class="label-sm">sorted by cell</text>
+  <text x="588" y="134" text-anchor="middle" class="label-sm">compact, no gaps</text>
+
+  <!-- === UPLOAD ARROWS (CPU → GPU) dashed red === -->
+  <!-- particles upload -->
+  <line x1="100" y1="142" x2="100" y2="183" class="arrow-upload"/>
+  <text x="104" y="168" font-family="monospace" font-size="9" fill="#E74C3C">clEnqueueWriteBuffer</text>
+
+  <!-- GridCell upload -->
+  <line x1="435" y1="142" x2="435" y2="183" class="arrow-upload"/>
+
+  <!-- sortedIndices upload -->
+  <line x1="588" y1="142" x2="588" y2="183" class="arrow-upload"/>
+
+  <!-- === GPU SIDE === -->
+
+  <!-- Kernel 1: resolveCollisions -->
+  <rect x="45" y="210" width="350" height="88" fill="#E2D9F3" stroke="#6F42C1" stroke-width="1.5" rx="5"/>
+  <text x="220" y="230" text-anchor="middle" class="label-bold" fill="#6F42C1">resolveCollisions kernel</text>
+  <text x="220" y="248" text-anchor="middle" class="label-sm">1 work item per particle (×1000 parallel)</text>
+  <text x="220" y="264" text-anchor="middle" class="label-sm">reads 9-cell neighborhood via GridCell[]</text>
+  <text x="220" y="280" text-anchor="middle" class="label-sm">writes vel change + pos correction</text>
+  <text x="220" y="294" text-anchor="middle" class="label-sm">elastic formula: v' = v − (2m₂/m₁+m₂)·proj·n̂</text>
+
+  <!-- Arrow kernel1 → kernel2 -->
+  <line x1="397" y1="254" x2="428" y2="254" class="arrow"/>
+
+  <!-- Kernel 2: integrate -->
+  <rect x="430" y="210" width="330" height="88" fill="#E2D9F3" stroke="#6F42C1" stroke-width="1.5" rx="5"/>
+  <text x="595" y="230" text-anchor="middle" class="label-bold" fill="#6F42C1">integrate kernel</text>
+  <text x="595" y="248" text-anchor="middle" class="label-sm">1 work item per particle (×1000 parallel)</text>
+  <text x="595" y="264" text-anchor="middle" class="label-sm">Euler: pos += vel · dt</text>
+  <text x="595" y="280" text-anchor="middle" class="label-sm">reflective boundaries (clamp + negate vel)</text>
+  <text x="595" y="294" text-anchor="middle" class="label-sm">runs AFTER collision — no race condition</text>
+
+  <!-- Read back arrow -->
+  <line x1="400" y1="310" x2="400" y2="340" class="arrow"/>
+  <text x="408" y="328" font-family="monospace" font-size="9" fill="#555">clEnqueueReadBuffer → SDL2 render</text>
+</svg>

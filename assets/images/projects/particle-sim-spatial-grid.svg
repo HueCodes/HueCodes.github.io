@@ -1,0 +1,143 @@
+<svg width="800" height="420" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .grid-line   { stroke: #ccc; stroke-width: 1; }
+      .cell-hi     { fill: #FFF3CD; stroke: #F0AD4E; stroke-width: 2; }
+      .cell-check  { fill: #D4EDDA; stroke: #28A745; stroke-width: 1.5; }
+      .cell-normal { fill: #f8f9fa; stroke: #ccc; stroke-width: 1; }
+      .particle    { fill: #4A90E2; stroke: #2E5C8A; stroke-width: 1.5; }
+      .particle-hi { fill: #E74C3C; stroke: #C0392B; stroke-width: 2; }
+      .label       { font-family: monospace; font-size: 12px; fill: #333; }
+      .label-bold  { font-family: monospace; font-size: 13px; fill: #333; font-weight: bold; }
+      .label-small { font-family: monospace; font-size: 10px; fill: #666; }
+      .arrow       { stroke: #333; stroke-width: 1.5; marker-end: url(#arr); }
+    </style>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#333"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="400" y="24" font-family="monospace" font-size="16" font-weight="bold" text-anchor="middle" fill="#333">Spatial Hash Grid — 9-Cell Neighborhood Lookup</text>
+
+  <!-- Grid: 7 cols x 5 rows, cell size 70px, origin at (60, 45) -->
+
+  <!-- Normal cells first (background) -->
+  <rect x="60"  y="45"  width="70" height="70" class="cell-normal"/>
+  <rect x="130" y="45"  width="70" height="70" class="cell-normal"/>
+  <rect x="270" y="45"  width="70" height="70" class="cell-normal"/>
+  <rect x="340" y="45"  width="70" height="70" class="cell-normal"/>
+  <rect x="410" y="45"  width="70" height="70" class="cell-normal"/>
+  <rect x="480" y="45"  width="70" height="70" class="cell-normal"/>
+
+  <rect x="60"  y="115" width="70" height="70" class="cell-normal"/>
+  <rect x="410" y="115" width="70" height="70" class="cell-normal"/>
+  <rect x="480" y="115" width="70" height="70" class="cell-normal"/>
+
+  <rect x="60"  y="185" width="70" height="70" class="cell-normal"/>
+  <rect x="480" y="185" width="70" height="70" class="cell-normal"/>
+
+  <rect x="60"  y="255" width="70" height="70" class="cell-normal"/>
+  <rect x="130" y="255" width="70" height="70" class="cell-normal"/>
+  <rect x="340" y="255" width="70" height="70" class="cell-normal"/>
+  <rect x="410" y="255" width="70" height="70" class="cell-normal"/>
+  <rect x="480" y="255" width="70" height="70" class="cell-normal"/>
+
+  <rect x="60"  y="325" width="70" height="70" class="cell-normal"/>
+  <rect x="130" y="325" width="70" height="70" class="cell-normal"/>
+  <rect x="200" y="325" width="70" height="70" class="cell-normal"/>
+  <rect x="270" y="325" width="70" height="70" class="cell-normal"/>
+  <rect x="340" y="325" width="70" height="70" class="cell-normal"/>
+  <rect x="410" y="325" width="70" height="70" class="cell-normal"/>
+  <rect x="480" y="325" width="70" height="70" class="cell-normal"/>
+
+  <!-- 9 checked cells (3x3 neighborhood) highlighted green -->
+  <rect x="130" y="115" width="70" height="70" class="cell-check"/>
+  <rect x="200" y="115" width="70" height="70" class="cell-check"/>
+  <rect x="270" y="115" width="70" height="70" class="cell-check"/>
+  <rect x="130" y="185" width="70" height="70" class="cell-check"/>
+  <rect x="270" y="185" width="70" height="70" class="cell-check"/>
+  <rect x="130" y="255" width="70" height="70" class="cell-check"/>
+  <rect x="200" y="255" width="70" height="70" class="cell-check"/>
+  <rect x="270" y="255" width="70" height="70" class="cell-check"/>
+
+  <!-- Active cell (particle's own cell) highlighted yellow -->
+  <rect x="200" y="185" width="70" height="70" class="cell-hi"/>
+
+  <!-- Cell coordinates -->
+  <text x="73"  y="58"  class="label-small">(0,0)</text>
+  <text x="143" y="58"  class="label-small">(1,0)</text>
+  <text x="213" y="58"  class="label-small">(2,0)</text>
+  <text x="283" y="58"  class="label-small">(3,0)</text>
+  <text x="353" y="58"  class="label-small">(4,0)</text>
+  <text x="423" y="58"  class="label-small">(5,0)</text>
+  <text x="493" y="58"  class="label-small">(6,0)</text>
+
+  <!-- Particles — scattered across grid -->
+  <!-- In normal cells -->
+  <circle cx="95"  cy="78"  r="7" class="particle"/>
+  <circle cx="370" cy="82"  r="9" class="particle"/>
+  <circle cx="510" cy="60"  r="6" class="particle"/>
+  <circle cx="90"  cy="148" r="8" class="particle"/>
+  <circle cx="440" cy="135" r="7" class="particle"/>
+  <circle cx="505" cy="155" r="9" class="particle"/>
+  <circle cx="90"  cy="210" r="6" class="particle"/>
+  <circle cx="510" cy="220" r="8" class="particle"/>
+  <circle cx="85"  cy="290" r="7" class="particle"/>
+  <circle cx="155" cy="270" r="6" class="particle"/>
+  <circle cx="365" cy="285" r="8" class="particle"/>
+  <circle cx="445" cy="275" r="7" class="particle"/>
+  <circle cx="510" cy="280" r="9" class="particle"/>
+  <circle cx="95"  cy="350" r="7" class="particle"/>
+  <circle cx="160" cy="360" r="8" class="particle"/>
+  <circle cx="230" cy="345" r="6" class="particle"/>
+  <circle cx="300" cy="355" r="9" class="particle"/>
+  <circle cx="370" cy="340" r="7" class="particle"/>
+  <circle cx="445" cy="358" r="8" class="particle"/>
+  <circle cx="505" cy="348" r="6" class="particle"/>
+
+  <!-- Particles in the 9-cell neighborhood -->
+  <circle cx="155" cy="138" r="7" class="particle"/>
+  <circle cx="245" cy="128" r="9" class="particle"/>
+  <circle cx="295" cy="145" r="6" class="particle"/>
+  <circle cx="148" cy="205" r="8" class="particle"/>
+  <circle cx="288" cy="192" r="7" class="particle"/>
+  <circle cx="160" cy="240" r="6" class="particle"/>
+  <circle cx="248" cy="258" r="9" class="particle"/>
+  <circle cx="285" cy="245" r="7" class="particle"/>
+
+  <!-- The highlighted particle (red) in center cell -->
+  <circle cx="235" cy="218" r="9" class="particle-hi"/>
+  <text x="248" y="214" font-family="monospace" font-size="11" fill="#C0392B" font-weight="bold">p</text>
+
+  <!-- Bracket showing 9 cells -->
+  <rect x="128" y="113" width="214" height="214" fill="none" stroke="#28A745" stroke-width="2.5" stroke-dasharray="6,3" rx="3"/>
+
+  <!-- Legend -->
+  <rect x="560" y="60" width="210" height="200" fill="#f8f9fa" stroke="#ddd" stroke-width="1" rx="5"/>
+  <text x="575" y="82" class="label-bold">Legend</text>
+
+  <rect x="575" y="95"  width="18" height="18" class="cell-hi"/>
+  <text x="602" y="109" class="label">particle's cell</text>
+
+  <rect x="575" y="122" width="18" height="18" class="cell-check"/>
+  <text x="602" y="136" class="label">8 neighbor cells</text>
+
+  <circle cx="584" cy="161" r="7" class="particle-hi"/>
+  <text x="602" y="165" class="label">active particle (p)</text>
+
+  <circle cx="584" cy="191" r="7" class="particle"/>
+  <text x="602" y="195" class="label">other particles</text>
+
+  <text x="575" y="225" class="label">Only 9 cells checked</text>
+  <text x="575" y="242" class="label">regardless of n</text>
+
+  <!-- O(n²) vs O(n) annotation -->
+  <rect x="560" y="278" width="210" height="100" fill="#fff3cd" stroke="#F0AD4E" stroke-width="1" rx="5"/>
+  <text x="575" y="298" font-family="monospace" font-size="12" fill="#856404" font-weight="bold">Naive:   O(n²)</text>
+  <text x="575" y="318" font-family="monospace" font-size="12" fill="#856404">n=1000 → 499,500</text>
+  <text x="575" y="338" font-family="monospace" font-size="12" fill="#856404">pair checks/frame</text>
+  <text x="575" y="360" font-family="monospace" font-size="12" fill="#155724" font-weight="bold">Grid:    O(n·k)</text>
+  <text x="575" y="378" font-family="monospace" font-size="12" fill="#155724">k = avg particles</text>
+  <text x="575" y="394" font-family="monospace" font-size="12" fill="#155724">per cell (~3-5)</text>
+</svg>
