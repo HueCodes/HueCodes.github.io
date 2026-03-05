@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 140">
+
+  <!-- SRP CRD — deep blue, top left -->
+  <rect x="4" y="16" width="52" height="30" rx="3" fill="#0d1b3e" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="30" y="28" text-anchor="middle" fill="#90caf9" font-size="7" font-family="monospace">SRP CRD</text>
+  <text x="30" y="37" text-anchor="middle" fill="#4a78b0" font-size="5.5" font-family="monospace">cron · policy</text>
+  <text x="30" y="44" text-anchor="middle" fill="#2a5080" font-size="5" font-family="monospace">target secret</text>
+
+  <!-- Arrow SRP → Reconciler -->
+  <line x1="56" y1="31" x2="70" y2="31" stroke="#1565c0" stroke-width="1.2"/>
+  <polygon points="70,28 70,34 76,31" fill="#1565c0"/>
+
+  <!-- Reconciler — teal, center, prominent border -->
+  <rect x="74" y="12" width="58" height="34" rx="3" fill="#00251a" stroke="#00897b" stroke-width="2"/>
+  <text x="103" y="26" text-anchor="middle" fill="#80cbc4" font-size="7.5" font-family="monospace">Reconciler</text>
+  <text x="103" y="36" text-anchor="middle" fill="#009688" font-size="5.5" font-family="monospace">IsDue · Manual</text>
+  <text x="103" y="43" text-anchor="middle" fill="#005a50" font-size="5" font-family="monospace">retry · backoff</text>
+
+  <!-- Arrow Reconciler → Provider -->
+  <line x1="132" y1="29" x2="146" y2="29" stroke="#00897b" stroke-width="1.2"/>
+  <polygon points="146,26 146,32 152,29" fill="#00897b"/>
+
+  <!-- Provider — amber, top right -->
+  <rect x="150" y="16" width="46" height="30" rx="3" fill="#1a1000" stroke="#f57f17" stroke-width="1.5"/>
+  <text x="173" y="28" text-anchor="middle" fill="#ffe082" font-size="7" font-family="monospace">Provider</text>
+  <text x="173" y="37" text-anchor="middle" fill="#e65100" font-size="5.5" font-family="monospace">aws · vault</text>
+  <text x="173" y="44" text-anchor="middle" fill="#a04000" font-size="5" font-family="monospace">static · mock</text>
+
+  <!-- Arrow Reconciler down → K8s Secret -->
+  <line x1="103" y1="46" x2="103" y2="60" stroke="#00897b" stroke-width="1.2"/>
+  <polygon points="100,60 103,66 106,60" fill="#00897b"/>
+
+  <!-- Arrow Provider diagonal → K8s Secret (dashed) -->
+  <line x1="173" y1="46" x2="138" y2="62" stroke="#f57f17" stroke-width="1" stroke-dasharray="3,2"/>
+  <polygon points="135,59 138,65 141,60" fill="#f57f17"/>
+
+  <!-- Rolling Restart — purple, mid left -->
+  <rect x="4" y="64" width="46" height="26" rx="3" fill="#1a0a2a" stroke="#7b1fa2" stroke-width="1.5"/>
+  <text x="27" y="75" text-anchor="middle" fill="#ce93d8" font-size="6" font-family="monospace">Restart</text>
+  <text x="27" y="84" text-anchor="middle" fill="#7b1fa2" font-size="5" font-family="monospace">Deploy·STS·DS</text>
+
+  <!-- K8s Secret — green, center -->
+  <rect x="64" y="64" width="76" height="26" rx="3" fill="#0a1f0a" stroke="#388e3c" stroke-width="1.5"/>
+  <text x="102" y="76" text-anchor="middle" fill="#a5d6a7" font-size="7.5" font-family="monospace">K8s Secret</text>
+  <text x="102" y="85" text-anchor="middle" fill="#388e3c" font-size="5.5" font-family="monospace">upsert rotated keys</text>
+
+  <!-- Arrow K8s Secret → Rolling Restart -->
+  <line x1="64" y1="77" x2="50" y2="77" stroke="#388e3c" stroke-width="1.2"/>
+  <polygon points="50,74 44,77 50,80" fill="#388e3c"/>
+
+  <!-- RotationRecord — red-orange, mid right -->
+  <rect x="154" y="64" width="42" height="26" rx="3" fill="#1a0800" stroke="#e64a19" stroke-width="1.5"/>
+  <text x="175" y="74" text-anchor="middle" fill="#ffab91" font-size="5.5" font-family="monospace">Rotation</text>
+  <text x="175" y="83" text-anchor="middle" fill="#e64a19" font-size="5.5" font-family="monospace">Record · audit</text>
+
+  <!-- Arrow K8s Secret → RotationRecord -->
+  <line x1="140" y1="77" x2="152" y2="77" stroke="#388e3c" stroke-width="1.2"/>
+  <polygon points="152,74 158,77 152,80" fill="#388e3c"/>
+
+  <!-- Dashed connectors to bottom row -->
+  <line x1="27" y1="90" x2="32" y2="102" stroke="#7b1fa2" stroke-width="0.9" stroke-dasharray="3,2" opacity="0.7"/>
+  <line x1="103" y1="90" x2="103" y2="102" stroke="#0288d1" stroke-width="0.9" stroke-dasharray="3,2"/>
+  <line x1="175" y1="90" x2="170" y2="102" stroke="#e64a19" stroke-width="0.9" stroke-dasharray="3,2" opacity="0.7"/>
+
+  <!-- Prometheus — orange, bottom left -->
+  <rect x="4" y="102" width="56" height="22" rx="2" fill="#1a0d00" stroke="#e65100" stroke-width="1"/>
+  <text x="32" y="113" text-anchor="middle" fill="#ffcc80" font-size="6" font-family="monospace">Prometheus</text>
+  <text x="32" y="121" text-anchor="middle" fill="#a04000" font-size="4.5" font-family="monospace">rotations_total</text>
+
+  <!-- OpenTelemetry — cyan, bottom center -->
+  <rect x="72" y="102" width="62" height="22" rx="2" fill="#001428" stroke="#0288d1" stroke-width="1"/>
+  <text x="103" y="113" text-anchor="middle" fill="#81d4fa" font-size="6" font-family="monospace">OpenTelemetry</text>
+  <text x="103" y="121" text-anchor="middle" fill="#02648a" font-size="4.5" font-family="monospace">trace · spans</text>
+
+  <!-- Webhooks — indigo, bottom right -->
+  <rect x="146" y="102" width="50" height="22" rx="2" fill="#0a0a1a" stroke="#7e57c2" stroke-width="1"/>
+  <text x="171" y="113" text-anchor="middle" fill="#d1c4e9" font-size="6" font-family="monospace">Webhook</text>
+  <text x="171" y="121" text-anchor="middle" fill="#5e35b1" font-size="4.5" font-family="monospace">HTTP · notify</text>
+
+</svg>

@@ -28,7 +28,7 @@ title: home
 
 <div class="section">
   <h2>currently</h2>
-  <p>focused on systems programming and cloud infrastructure with Go and Rust. contributing to production open source projects like Cilium eBPF, tokio, and hyper. building cloud networking tools and exploring distributed systems patterns. diving into embedded systems and working on hardware projects.</p>
+  <p>building Kubernetes operators and cloud infrastructure tooling in Go and Rust. contributing to production open source projects like Cilium eBPF, tokio, and hyper. exploring embedded systems and hardware design.</p>
 </div>
 
 <hr class="divider">
@@ -42,6 +42,23 @@ title: home
 
   <!-- Projects -->
   <section class="projects-grid">
+    <!-- Keysmith -->
+    <article class="project-card" data-category="software">
+      <img src="/assets/images/projects/keysmith-operator.svg" alt="Keysmith">
+      <div class="card-content">
+        <h3><a href="https://github.com/HueCodes/keysmith">keysmith</a></h3>
+        <p class="tagline">Kubernetes operator for automated secret rotation</p>
+        <ul>
+          <li><strong>Operator:</strong> SecretRotationPolicy CRD reconciled by controller-runtime; immutable RotationRecord audit trail per attempt</li>
+          <li><strong>GitOps:</strong> declarative rotation policies live next to workload manifests; Kustomize overlays + single-manifest deploy</li>
+          <li><strong>Providers:</strong> pluggable interface — AWS Secrets Manager, HashiCorp Vault, built-in crypto/rand generator</li>
+          <li><strong>Observability:</strong> Prometheus metrics, OpenTelemetry tracing, rolling restarts of Deployments/StatefulSets/DaemonSets</li>
+        </ul>
+        <p class="tech">`Go` `Kubernetes` `controller-runtime` `CRDs` `Prometheus` `OpenTelemetry`</p>
+        <p class="blog-link"><a href="https://github.com/HueCodes/keysmith">→ view project</a></p>
+      </div>
+    </article>
+
     <!-- Go-Hunter -->
     <article class="project-card" data-category="software">
       <img src="/assets/images/projects/go-hunter-dashboard.png" alt="Go-Hunter">
@@ -129,6 +146,7 @@ title: home
 
     <!-- Elastic Collision -->
     <article class="project-card" data-category="software">
+      <img src="/assets/images/projects/elastic-collision-gpu.svg" alt="Elastic Collision Engine">
       <div class="card-content">
         <h3><a href="https://github.com/HueCodes/Cpp-Particle-Sim">Elastic Collision Engine</a></h3>
         <p class="tagline">OpenCL GPU compute + spatial hashing for 1000-particle physics</p>

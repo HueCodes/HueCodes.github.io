@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 140">
+
+  <!-- === LEFT: Spatial Hash Grid === -->
+  <text x="41" y="11" text-anchor="middle" fill="#546e7a" font-size="5.5" font-family="monospace">spatial hash grid</text>
+
+  <!-- 9-cell neighborhood background (cols 1-3, rows 1-3) -->
+  <rect x="20" y="30" width="42" height="36" rx="1" fill="#1a2a1a" opacity="0.9"/>
+
+  <!-- Center cell highlight -->
+  <rect x="34" y="42" width="14" height="12" rx="1" fill="#004d40" opacity="0.95"/>
+
+  <!-- Grid vertical lines: x = 6,20,34,48,62,76 -->
+  <line x1="6"  y1="18" x2="6"  y2="78" stroke="#1e2a34" stroke-width="0.8"/>
+  <line x1="20" y1="18" x2="20" y2="78" stroke="#2a3a44" stroke-width="0.8"/>
+  <line x1="34" y1="18" x2="34" y2="78" stroke="#2a3a44" stroke-width="0.8"/>
+  <line x1="48" y1="18" x2="48" y2="78" stroke="#2a3a44" stroke-width="0.8"/>
+  <line x1="62" y1="18" x2="62" y2="78" stroke="#2a3a44" stroke-width="0.8"/>
+  <line x1="76" y1="18" x2="76" y2="78" stroke="#1e2a34" stroke-width="0.8"/>
+
+  <!-- Grid horizontal lines: y = 18,30,42,54,66,78 -->
+  <line x1="6" y1="18" x2="76" y2="18" stroke="#1e2a34" stroke-width="0.8"/>
+  <line x1="6" y1="30" x2="76" y2="30" stroke="#2a3a44" stroke-width="0.8"/>
+  <line x1="6" y1="42" x2="76" y2="42" stroke="#2a3a44" stroke-width="0.8"/>
+  <line x1="6" y1="54" x2="76" y2="54" stroke="#2a3a44" stroke-width="0.8"/>
+  <line x1="6" y1="66" x2="76" y2="66" stroke="#2a3a44" stroke-width="0.8"/>
+  <line x1="6" y1="78" x2="76" y2="78" stroke="#1e2a34" stroke-width="0.8"/>
+
+  <!-- 9-cell neighborhood dashed border -->
+  <rect x="20" y="30" width="42" height="36" fill="none" stroke="#4caf50" stroke-width="1" stroke-dasharray="2,1.5"/>
+
+  <!-- Center cell solid border -->
+  <rect x="34" y="42" width="14" height="12" fill="none" stroke="#00e5ff" stroke-width="1.2"/>
+
+  <!-- Particles: cell center x = 13+14*col, y = 24+12*row -->
+  <!-- Row 0 -->
+  <circle cx="13" cy="24" r="3" fill="#ff7043"/>
+  <circle cx="55" cy="24" r="3" fill="#ffd740"/>
+  <!-- Row 1 (in neighborhood) -->
+  <circle cx="27" cy="36" r="3" fill="#ff4081"/>
+  <circle cx="41" cy="36" r="3" fill="#ffd740"/>
+  <circle cx="69" cy="36" r="3" fill="#ff7043"/>
+  <!-- Row 2 (in neighborhood, center row) -->
+  <circle cx="27" cy="48" r="3" fill="#ff4081"/>
+  <circle cx="41" cy="48" r="3.5" fill="#00e5ff" stroke="#ffffff" stroke-width="0.5"/>
+  <circle cx="55" cy="48" r="3" fill="#ffd740"/>
+  <!-- Row 3 (in neighborhood) -->
+  <circle cx="27" cy="60" r="3" fill="#ff7043"/>
+  <circle cx="55" cy="60" r="3" fill="#ff4081"/>
+  <!-- Row 4 -->
+  <circle cx="13" cy="72" r="3" fill="#ffd740"/>
+  <circle cx="69" cy="72" r="3" fill="#ff7043"/>
+
+  <!-- Collision arrow (between two neighborhood particles) -->
+  <line x1="30" y1="48" x2="37" y2="48" stroke="#ff1744" stroke-width="1.5"/>
+  <polygon points="37,46 40,48 37,50" fill="#ff1744"/>
+
+  <!-- Bottom labels -->
+  <text x="41" y="90"  text-anchor="middle" fill="#4a6070" font-size="5.5" font-family="monospace">O(n) broad-phase</text>
+  <text x="41" y="99"  text-anchor="middle" fill="#37474f" font-size="5"   font-family="monospace">9-cell lookup</text>
+  <text x="41" y="108" text-anchor="middle" fill="#37474f" font-size="5"   font-family="monospace">1000 particles</text>
+
+  <!-- Vertical divider -->
+  <line x1="87" y1="8" x2="87" y2="132" stroke="#1e2a34" stroke-width="0.8"/>
+
+  <!-- === RIGHT: OpenCL GPU Pipeline === -->
+  <text x="144" y="11" text-anchor="middle" fill="#546e7a" font-size="5.5" font-family="monospace">OpenCL GPU pipeline</text>
+
+  <!-- CPU: build spatial hash -->
+  <rect x="93" y="16" width="104" height="22" rx="2" fill="#141c26" stroke="#546e7a" stroke-width="1"/>
+  <text x="145" y="26" text-anchor="middle" fill="#90a4ae" font-size="6.5" font-family="monospace">CPU: build spatial hash</text>
+  <text x="145" y="34" text-anchor="middle" fill="#455a64" font-size="5"   font-family="monospace">uniform grid · O(n)</text>
+
+  <!-- Arrow -->
+  <line x1="145" y1="38" x2="145" y2="46" stroke="#7e57c2" stroke-width="1.2"/>
+  <polygon points="142,46 145,52 148,46" fill="#7e57c2"/>
+
+  <!-- GPU: broad phase -->
+  <rect x="93" y="50" width="104" height="22" rx="2" fill="#16082a" stroke="#7b1fa2" stroke-width="1.5"/>
+  <text x="145" y="60" text-anchor="middle" fill="#ce93d8" font-size="6.5" font-family="monospace">GPU: broad phase</text>
+  <text x="145" y="68" text-anchor="middle" fill="#6a1fa2" font-size="5"   font-family="monospace">candidate pairs · kernel</text>
+
+  <!-- Arrow -->
+  <line x1="145" y1="72" x2="145" y2="80" stroke="#9c27b0" stroke-width="1.2"/>
+  <polygon points="142,80 145,86 148,80" fill="#9c27b0"/>
+
+  <!-- GPU: narrow phase -->
+  <rect x="93" y="84" width="104" height="22" rx="2" fill="#10002a" stroke="#9c27b0" stroke-width="1.5"/>
+  <text x="145" y="94" text-anchor="middle" fill="#e1bee7" font-size="6.5" font-family="monospace">GPU: narrow phase</text>
+  <text x="145" y="102" text-anchor="middle" fill="#7b1fa2" font-size="5"  font-family="monospace">elastic · mass-weighted</text>
+
+  <!-- Arrow -->
+  <line x1="145" y1="106" x2="145" y2="114" stroke="#9c27b0" stroke-width="1.2"/>
+  <polygon points="142,114 145,120 148,114" fill="#9c27b0"/>
+
+  <!-- GPU: integrate -->
+  <rect x="93" y="118" width="104" height="18" rx="2" fill="#0a0820" stroke="#5c6bc0" stroke-width="1"/>
+  <text x="145" y="129" text-anchor="middle" fill="#9fa8da" font-size="6.5" font-family="monospace">GPU: integrate positions</text>
+
+</svg>
