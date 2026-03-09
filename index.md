@@ -56,7 +56,7 @@ title: home
           <li><strong>Observability:</strong> Prometheus metrics, OpenTelemetry tracing, rolling restarts of Deployments/StatefulSets/DaemonSets</li>
         </ul>
         <p class="tech">`Go` `Kubernetes` `controller-runtime` `CRDs` `Prometheus` `OpenTelemetry`</p>
-        <p class="blog-link"><a href="https://github.com/HueCodes/keysmith">→ view project</a></p>
+        <p class="blog-link"><a href="/blog/keysmith/">→ blog</a></p>
       </div>
     </article>
 
