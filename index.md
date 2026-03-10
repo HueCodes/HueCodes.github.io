@@ -29,7 +29,7 @@ title: home
 
 <div class="section">
   <h2>currently</h2>
-  <p>building Kubernetes operators and cloud infrastructure tooling in Go and Rust. contributing to production open source projects like Cilium eBPF, tokio, and hyper. exploring embedded systems and hardware design.</p>
+  <p>security research and detection engineering. building infrastructure tooling in Go and Rust. contributing to Cilium eBPF, Prometheus, SigmaHQ, and hyper. exploring hardware and robotics.</p>
 </div>
 
 <hr class="divider">
