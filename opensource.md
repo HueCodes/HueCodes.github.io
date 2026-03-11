@@ -71,8 +71,13 @@ title: open source
   </div>
 
   <div class="project">
-    <a href="https://github.com/jeremyfix/torchcvnn/pull/47">torchcvnn#47</a>
+    <a href="https://github.com/jeremyfix/torchcvnn/pull/106">torchcvnn#106</a>
     <span>Added input validation to normalization layers. Prevents runtime errors by validating tensor shapes and types in PyTorch complex-valued neural network library.</span>
+  </div>
+
+  <div class="project">
+    <a href="https://github.com/mitmproxy/mitmproxy/pull/8046">mitmproxy#8046</a>
+    <span>Fix modify_body crash when replacement contains backslash sequences. Resolves crash in mitmproxy's body modification addon caused by unescaped backslash sequences in regex substitution.</span>
   </div>
 
   <div class="project">
