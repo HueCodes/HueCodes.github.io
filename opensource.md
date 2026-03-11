@@ -74,4 +74,9 @@ title: open source
     <a href="https://github.com/jeremyfix/torchcvnn/pull/47">torchcvnn#47</a>
     <span>Added input validation to normalization layers. Prevents runtime errors by validating tensor shapes and types in PyTorch complex-valued neural network library.</span>
   </div>
+
+  <div class="project">
+    <a href="https://github.com/SigmaHQ/pySigma/pull/442">pySigma#442</a>
+    <span>Fix chained boolean operators in condition expressions. Extracts all operands from pyparsing results and folds them into a left-associative binary tree, fixing silent drops in expressions like A or B or C.</span>
+  </div>
 </div>
