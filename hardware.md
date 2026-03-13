@@ -23,16 +23,16 @@ title: hardware
     <span>4-layer RF board with bare ESP32-S3 die, 50-ohm feedline, and chip antenna — designed in KiCAD</span>
   </div>
   <div class="project">
-    <a href="/hardware/lorawan-mesh/">LoRaWAN Mesh Network</a>
-    <span>long-range agricultural IoT mesh network for distributed sensor deployment</span>
+    <a href="/hardware/lorawan-mesh/">LoRa Sensor Node</a>
+    <span>raw LoRa P2P sensor link with SX1262 on Heltec WiFi LoRa 32 V3, SPI-level debugging</span>
   </div>
   <div class="project">
     <a href="/hardware/spectrum-analyzer/">ESP32 Spectrum Analyzer</a>
     <span>portable RF spectrum analyzer for learning radio fundamentals</span>
   </div>
   <div class="project">
-    <a href="/hardware/stm32-dev/">STM32 Development</a>
-    <span>bare-metal microcontroller programming and embedded systems</span>
+    <a href="/hardware/stm32-dev/">STM32 Bare-Metal UART</a>
+    <span>interrupt-driven UART driver on STM32F401 @ 84MHz, CMSIS-only, 47 Catch2 host tests</span>
   </div>
   <div class="project">
     <a href="/hardware/freertos-stm32/">FreeRTOS STM32</a>
@@ -40,6 +40,6 @@ title: hardware
   </div>
   <div class="project">
     <a href="/hardware/zephyr-ble-sensor/">Zephyr BLE Sensor</a>
-    <span>BLE peripheral on nRF52840 DK with custom GATT service, device tree, and Zephyr PM sleep</span>
+    <span>BLE environmental sensor on nRF52840 DK with standard ESS (0x181A), fast/slow advertising, watchdog</span>
   </div>
 </div>

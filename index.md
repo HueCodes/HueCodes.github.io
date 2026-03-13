@@ -37,8 +37,8 @@ title: home
 <div class="grid-portfolio">
 
   <div class="filter-tabs">
-    <button class="filter-btn active" data-filter="software" onclick="filterProjects('software')">software</button>
-    <button class="filter-btn" data-filter="hardware" onclick="filterProjects('hardware')">hardware</button>
+    <button class="filter-btn active" data-filter="software">software</button>
+    <button class="filter-btn" data-filter="hardware">hardware</button>
   </div>
 
   <!-- Projects -->
@@ -218,31 +218,31 @@ title: home
       <img src="/assets/images/projects/esp32-s3-rf-board-pcb.svg" alt="ESP32-S3 RF Board">
       <div class="card-content">
         <h3><a href="/hardware/esp32-s3-rf-board/">ESP32-S3 RF Board</a></h3>
-        <p class="tagline">4-layer KiCAD RF dev board, bare QFN56 die</p>
+        <p class="tagline">50x40mm 4-layer RF dev board, bare QFN56 die</p>
         <ul>
-          <li><strong>RF:</strong> 50-ohm microstrip trace, Johanson chip antenna + u.FL test port</li>
-          <li><strong>Stackup:</strong> JLC04161H-7628, solid GND on L2, 3.3V plane on L3</li>
-          <li><strong>Layout:</strong> GND stitching vias at 6mm (λ/10 at 2.4GHz), 5mm antenna keepout</li>
-          <li><strong>Power:</strong> AP2112K-3.3V LDO, CP2102 USB-UART, 10µF bulk + 100nF decoupling</li>
+          <li><strong>RF:</strong> 50-ohm microstrip trace (0.6mm on L1), Johanson chip antenna + u.FL test port</li>
+          <li><strong>Stackup:</strong> JLC04161H-7628, solid GND on L2, 3.3V plane on L3, 45-degree bends</li>
+          <li><strong>Layout:</strong> GND stitching vias at 6mm (λ/10 at 2.4GHz), 5mm antenna keepout, parametric Python generation</li>
+          <li><strong>Firmware:</strong> ESP-IDF v5 bring-up — dual-core WiFi scan + status LED validates RF path</li>
         </ul>
-        <p class="tech">`KiCAD 8` `ESP32-S3` `RF Design` `4-Layer PCB` `JLC04161H`</p>
+        <p class="tech">`KiCAD 8` `ESP32-S3` `RF Design` `4-Layer PCB` `ESP-IDF`</p>
         <p class="blog-link"><a href="/hardware/esp32-s3-rf-board/">→ view project</a></p>
       </div>
     </article>
 
-    <!-- LoRaWAN Mesh -->
+    <!-- LoRa Sensor Node -->
     <article class="project-card" data-category="hardware">
-      <img src="/assets/images/projects/lorawan-mesh-diagram.svg" alt="LoRaWAN Mesh">
+      <img src="/assets/images/projects/lorawan-mesh-diagram.svg" alt="LoRa Sensor Node">
       <div class="card-content">
-        <h3><a href="/hardware/lorawan-mesh/">LoRaWAN Mesh</a></h3>
-        <p class="tagline">Long-range IoT mesh for agricultural sensor deployment</p>
+        <h3><a href="/hardware/lorawan-mesh/">LoRa Sensor Node</a></h3>
+        <p class="tagline">Raw LoRa P2P sensor link with SPI-level debugging</p>
         <ul>
-          <li><strong>Range:</strong> 1–10km LoS, multi-hop mesh routing beyond gateway coverage</li>
-          <li><strong>Hardware:</strong> SX1276 LoRa transceivers, ESP32/STM32, solar + LiPo outdoor nodes</li>
-          <li><strong>Power:</strong> &lt;50mA TX, &lt;1µA sleep — year-scale battery life</li>
-          <li><strong>Frequency:</strong> 915MHz US ISM, 0.3–50 kbps configurable data rate</li>
+          <li><strong>Radio:</strong> SX1262 on 915MHz ISM, SF9/125kHz, raw LoRa modulation (not LoRaWAN)</li>
+          <li><strong>Hardware:</strong> 2x Heltec WiFi LoRa 32 V3 (ESP32-S3 + SX1262 + OLED), DHT11 sensor</li>
+          <li><strong>Debugging:</strong> 24MHz logic analyzer captures of SX1262 SPI bus with annotated command sequences</li>
+          <li><strong>Protocol:</strong> Point-to-point TX/RX with RSSI/SNR monitoring, RadioLib driver</li>
         </ul>
-        <p class="tech">`LoRaWAN` `SX1276` `ESP32` `915MHz` `Mesh Routing`</p>
+        <p class="tech">`ESP32-S3` `SX1262` `LoRa` `915MHz` `PlatformIO` `RadioLib`</p>
         <p class="blog-link"><a href="/hardware/lorawan-mesh/">→ view project</a></p>
       </div>
     </article>
@@ -268,15 +268,15 @@ title: home
     <article class="project-card" data-category="hardware">
       <img src="/assets/images/projects/stm32-dev-schematic.svg" alt="STM32 Bare-Metal">
       <div class="card-content">
-        <h3><a href="/hardware/stm32-dev/">STM32 Bare-Metal</a></h3>
-        <p class="tagline">ARM Cortex-M4 @ 168MHz, no HAL, no OS</p>
+        <h3><a href="https://github.com/HueCodes/UART-cpp">STM32 Bare-Metal</a></h3>
+        <p class="tagline">ARM Cortex-M4 @ 84MHz, no HAL, no OS</p>
         <ul>
-          <li><strong>Direct access:</strong> GPIO, timers, ADC/DAC, UART/SPI/I2C, DMA via CMSIS only</li>
-          <li><strong>UART driver:</strong> Non-blocking TX/RX with SPSC ring buffers (published)</li>
-          <li><strong>Real-time:</strong> Sub-ms timing for motor control and encoder feedback</li>
-          <li><strong>Peripherals:</strong> NVIC priority/nesting, PWM, DMA continuous sampling</li>
+          <li><strong>No HAL:</strong> Direct register access via CMSIS only, multi-USART support (USART1/2/6)</li>
+          <li><strong>Interrupt-driven:</strong> Non-blocking TX/RX with 256-byte SPSC ring buffers, volatile index semantics</li>
+          <li><strong>Clocks:</strong> 8MHz HSE → PLL → 84MHz SYSCLK with correct flash wait-state ordering</li>
+          <li><strong>Testing:</strong> 47 Catch2 unit tests on host via mock CMSIS headers, no hardware required</li>
         </ul>
-        <p class="tech">`STM32F4` `ARM Cortex-M4` `CMSIS` `Bare-metal` `C++17`</p>
+        <p class="tech">`C++17` `STM32F401` `CMSIS` `Bare-metal` `Catch2`</p>
         <p class="blog-link"><a href="/hardware/stm32-dev/">→ view project</a></p>
       </div>
     </article>
@@ -303,12 +303,12 @@ title: home
       <img src="/assets/images/projects/zephyr-ble-sensor.svg" alt="Zephyr BLE Sensor">
       <div class="card-content">
         <h3><a href="/hardware/zephyr-ble-sensor/">Zephyr BLE Sensor</a></h3>
-        <p class="tagline">BLE peripheral on nRF52840 DK with custom GATT service</p>
+        <p class="tagline">BLE environmental sensor on nRF52840 DK with GATT notifications</p>
         <ul>
-          <li><strong>GATT:</strong> Custom 128-bit UUID service notifies BME280 readings to BLE centrals</li>
-          <li><strong>Zephyr:</strong> Device tree overlay for I2C sensor, Kconfig-driven BLE + PM subsystems</li>
-          <li><strong>Power:</strong> Zephyr PM sleep between readings, profiled with Nordic PPK2 (nA resolution)</li>
-          <li><strong>Build:</strong> west + nRF Connect SDK, BLE 5.0, 1MB flash / 256KB RAM</li>
+          <li><strong>GATT:</strong> Standard Environmental Sensing Service (0x181A) + custom diagnostics service for BME280 readings</li>
+          <li><strong>Zephyr:</strong> Device tree overlay for I2C sensor, Kconfig-driven BLE + PM subsystems, hardware watchdog (2s)</li>
+          <li><strong>Power:</strong> Fast/slow advertising state machine (100ms→1000ms), connection interval negotiation, Zephyr PM sleep</li>
+          <li><strong>Architecture:</strong> Sensor thread → k_msgq → system work queue → bt_gatt_notify, atomic diagnostic counters</li>
         </ul>
         <p class="tech">`Zephyr RTOS` `nRF52840` `BLE 5` `GATT` `Device Tree`</p>
         <p class="blog-link"><a href="/blog/zephyr-ble-sensor/">→ read more</a></p>
@@ -333,8 +333,8 @@ title: home
         <p>RFC 9110 trailer compliance</p>
       </div>
     </div>
-    <p style="text-align: center; margin-top: 20px;">
-      <a href="/opensource" style="color: #0066cc; text-decoration: none; font-size: 14px;">View all contributions →</a>
+    <p class="oss-view-all">
+      <a href="/opensource">View all contributions →</a>
     </p>
   </section>
 
@@ -344,13 +344,16 @@ title: home
 </div>
 
 <script>
-  function filterProjects(category) {
-    document.querySelectorAll('.project-card').forEach(function(card) {
-      card.style.display = card.dataset.category === category ? '' : 'none';
+  document.querySelectorAll('.filter-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var category = this.dataset.filter;
+      document.querySelectorAll('.project-card').forEach(function(card) {
+        card.style.display = card.dataset.category === category ? '' : 'none';
+      });
+      document.querySelectorAll('.filter-btn').forEach(function(b) {
+        b.classList.toggle('active', b.dataset.filter === category);
+      });
     });
-    document.querySelectorAll('.filter-btn').forEach(function(btn) {
-      btn.classList.toggle('active', btn.dataset.filter === category);
-    });
-  }
-  filterProjects('software');
+  });
+  document.querySelector('.filter-btn[data-filter="software"]').click();
 </script>

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }} - {{ site.title }}</title>
+  <meta name="description" content="{{ site.description }}">
   <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | relative_url }}">
   <style>
     * {
@@ -120,12 +121,12 @@
       border: 1px solid #e0e0e0;
       border-radius: 8px;
       overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .project-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      transition: all 0.2s;
     }
 
     .project-card img {
@@ -274,6 +275,7 @@
       cursor: pointer;
       padding: 0 0 2px 0;
       font-family: inherit;
+      transition: color 0.15s ease, border-bottom-color 0.15s ease;
     }
 
     .filter-btn.active {
@@ -283,6 +285,25 @@
 
     .filter-btn:hover {
       color: #111;
+    }
+
+    /* Focus styles for keyboard navigation */
+    a:focus-visible,
+    .filter-btn:focus-visible {
+      outline: 2px solid #0066cc;
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    .oss-view-all {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .oss-view-all a {
+      color: #0066cc;
+      text-decoration: none;
+      font-size: 14px;
     }
 
     @media (max-width: 1400px) {
