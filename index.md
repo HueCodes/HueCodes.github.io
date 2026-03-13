@@ -43,37 +43,20 @@ title: home
 
   <!-- Projects -->
   <section class="projects-grid">
-    <!-- Keysmith -->
+    <!-- ServiceMesh -->
     <article class="project-card" data-category="software">
-      <img src="/assets/images/projects/keysmith-operator.svg" alt="Keysmith">
+      <img src="/assets/images/projects/servicemesh-architecture.png" alt="ServiceMesh">
       <div class="card-content">
-        <h3><a href="https://github.com/HueCodes/keysmith">keysmith</a></h3>
-        <p class="tagline">Kubernetes operator for automated secret rotation</p>
+        <h3><a href="https://github.com/HueCodes/Rust-ServiceMesh">ServiceMesh</a></h3>
+        <p class="tagline">L7 proxy with circuit breakers</p>
         <ul>
-          <li><strong>Operator:</strong> SecretRotationPolicy CRD reconciled by controller-runtime; immutable RotationRecord audit trail per attempt</li>
-          <li><strong>GitOps:</strong> declarative rotation policies live next to workload manifests; Kustomize overlays + single-manifest deploy</li>
-          <li><strong>Providers:</strong> pluggable interface — AWS Secrets Manager, HashiCorp Vault, built-in crypto/rand generator</li>
-          <li><strong>Observability:</strong> Prometheus metrics, OpenTelemetry tracing, rolling restarts of Deployments/StatefulSets/DaemonSets</li>
+          <li><strong>Throughput:</strong> 52M ops/sec using lock-free atomics + DashMap</li>
+          <li><strong>Protocols:</strong> HTTP/2 and gRPC with full streaming support (Hyper/Tonic)</li>
+          <li><strong>Reliability:</strong> Circuit breaker with configurable thresholds, exponential backoff</li>
+          <li><strong>Observability:</strong> Prometheus metrics, graceful shutdown, connection pooling</li>
         </ul>
-        <p class="tech">`Go` `Kubernetes` `controller-runtime` `CRDs` `Prometheus` `OpenTelemetry`</p>
-        <p class="blog-link"><a href="/blog/keysmith/">→ blog</a></p>
-      </div>
-    </article>
-
-    <!-- Go-Hunter -->
-    <article class="project-card" data-category="software">
-      <img src="/assets/images/projects/go-hunter-dashboard.png" alt="Go-Hunter">
-      <div class="card-content">
-        <h3><a href="https://github.com/HueCodes/Go-Hunter">Go-Hunter</a></h3>
-        <p class="tagline">Multi-cloud attack surface management</p>
-        <ul>
-          <li><strong>Scale:</strong> 1,000 assets/min across 5 cloud providers (AWS, GCP, Azure, Cloudflare, DO)</li>
-          <li><strong>Architecture:</strong> Multi-tenant SaaS with encrypted credential storage and audit logging</li>
-          <li><strong>Performance:</strong> Concurrent goroutine workers with per-provider rate limiting</li>
-          <li><strong>Security:</strong> SHA256 drift detection, age encryption, row-level tenant isolation</li>
-        </ul>
-        <p class="tech">`Go` `PostgreSQL` `Redis` `AWS` `GCP` `Azure`</p>
-        <p class="blog-link"><a href="/blog/go-hunter/">→ read more</a></p>
+        <p class="tech">`Rust` `Tokio` `gRPC` `HTTP/2` `Prometheus`</p>
+        <p class="blog-link"><a href="/blog/rust-servicemesh/">→ read more</a></p>
       </div>
     </article>
 
@@ -94,20 +77,37 @@ title: home
       </div>
     </article>
 
-    <!-- Nodix -->
+    <!-- Go-Hunter -->
     <article class="project-card" data-category="software">
-      <img src="/assets/images/projects/nodix-sensor-fusion.png" alt="Nodix">
+      <img src="/assets/images/projects/go-hunter-dashboard.png" alt="Go-Hunter">
       <div class="card-content">
-        <h3><a href="https://github.com/HueCodes/nodix">Nodix</a></h3>
-        <p class="tagline">Real-time compute graph for robotics</p>
+        <h3><a href="https://github.com/HueCodes/Go-Hunter">Go-Hunter</a></h3>
+        <p class="tagline">Multi-cloud attack surface management</p>
         <ul>
-          <li><strong>Real-time:</strong> <1ms p99 latency with EDF/Rate Monotonic scheduling</li>
-          <li><strong>Throughput:</strong> 5,000+ iterations/sec for sensor fusion pipelines</li>
-          <li><strong>Concurrency:</strong> Zero-copy data flow using Arc and lock-free channels</li>
-          <li><strong>Correctness:</strong> DAG validation with topological sort and cycle detection</li>
+          <li><strong>Scale:</strong> 1,000 assets/min across 5 cloud providers (AWS, GCP, Azure, Cloudflare, DO)</li>
+          <li><strong>Architecture:</strong> Multi-tenant SaaS with encrypted credential storage and audit logging</li>
+          <li><strong>Performance:</strong> Concurrent goroutine workers with per-provider rate limiting</li>
+          <li><strong>Security:</strong> SHA256 drift detection, age encryption, row-level tenant isolation</li>
         </ul>
-        <p class="tech">`Rust` `Real-time` `DAG` `Lock-free` `Robotics`</p>
-        <p class="blog-link"><a href="/blog/nodix/">→ read more</a></p>
+        <p class="tech">`Go` `PostgreSQL` `Redis` `AWS` `GCP` `Azure`</p>
+        <p class="blog-link"><a href="/blog/go-hunter/">→ read more</a></p>
+      </div>
+    </article>
+
+    <!-- Forge-DB -->
+    <article class="project-card" data-category="software">
+      <img src="/assets/images/projects/forge-db-architecture.png" alt="Forge-DB">
+      <div class="card-content">
+        <h3><a href="https://github.com/HueCodes/forge-db">Forge-DB</a></h3>
+        <p class="tagline">SIMD-accelerated vector database</p>
+        <ul>
+          <li><strong>Performance:</strong> 13K QPS at 75µs latency with AVX2/AVX-512 optimization</li>
+          <li><strong>Efficiency:</strong> 32x memory compression via 8-bit quantization, 95%+ recall</li>
+          <li><strong>Portability:</strong> Pure Rust, zero external dependencies, no_std compatible</li>
+          <li><strong>Algorithms:</strong> IVF-PQ indexing + HNSW graph search for similarity queries</li>
+        </ul>
+        <p class="tech">`Rust` `SIMD` `AVX-512` `HNSW` `Vector DB`</p>
+        <p class="blog-link"><a href="/blog/forge-db/">→ read more</a></p>
       </div>
     </article>
 
@@ -128,20 +128,37 @@ title: home
       </div>
     </article>
 
-    <!-- Huffman-Cpp -->
+    <!-- Nodix -->
     <article class="project-card" data-category="software">
-      <img src="/assets/images/projects/huffman-tree.svg" alt="Huffman-Cpp">
+      <img src="/assets/images/projects/nodix-sensor-fusion.png" alt="Nodix">
       <div class="card-content">
-        <h3><a href="https://github.com/HueCodes/Compression-Algo-Huffman">Huffman-Cpp</a></h3>
-        <p class="tagline">Modern C++17 compression algorithm</p>
+        <h3><a href="https://github.com/HueCodes/nodix">Nodix</a></h3>
+        <p class="tagline">Real-time compute graph for robotics</p>
         <ul>
-          <li><strong>Modern C++:</strong> Smart pointers (unique_ptr), RAII, move semantics, string_view</li>
-          <li><strong>Algorithms:</strong> Priority queue with O(n log k) complexity, greedy tree construction</li>
-          <li><strong>Testing:</strong> 17 comprehensive unit tests, 100% pass rate, edge case coverage</li>
-          <li><strong>Best practices:</strong> Const-correctness, noexcept, [[nodiscard]] attributes</li>
+          <li><strong>Real-time:</strong> <1ms p99 latency with EDF/Rate Monotonic scheduling</li>
+          <li><strong>Throughput:</strong> 5,000+ iterations/sec for sensor fusion pipelines</li>
+          <li><strong>Concurrency:</strong> Zero-copy data flow using Arc and lock-free channels</li>
+          <li><strong>Correctness:</strong> DAG validation with topological sort and cycle detection</li>
         </ul>
-        <p class="tech">`C++17` `Smart Pointers` `Priority Queue` `RAII`</p>
-        <p class="blog-link"><a href="/blog/huffman-cpp/">→ read more</a></p>
+        <p class="tech">`Rust` `Real-time` `DAG` `Lock-free` `Robotics`</p>
+        <p class="blog-link"><a href="/blog/nodix/">→ read more</a></p>
+      </div>
+    </article>
+
+    <!-- Keysmith -->
+    <article class="project-card" data-category="software">
+      <img src="/assets/images/projects/keysmith-operator.svg" alt="Keysmith">
+      <div class="card-content">
+        <h3><a href="https://github.com/HueCodes/keysmith">keysmith</a></h3>
+        <p class="tagline">Kubernetes operator for automated secret rotation</p>
+        <ul>
+          <li><strong>Operator:</strong> SecretRotationPolicy CRD reconciled by controller-runtime; immutable RotationRecord audit trail per attempt</li>
+          <li><strong>GitOps:</strong> declarative rotation policies live next to workload manifests; Kustomize overlays + single-manifest deploy</li>
+          <li><strong>Providers:</strong> pluggable interface — AWS Secrets Manager, HashiCorp Vault, built-in crypto/rand generator</li>
+          <li><strong>Observability:</strong> Prometheus metrics, OpenTelemetry tracing, rolling restarts of Deployments/StatefulSets/DaemonSets</li>
+        </ul>
+        <p class="tech">`Go` `Kubernetes` `controller-runtime` `CRDs` `Prometheus` `OpenTelemetry`</p>
+        <p class="blog-link"><a href="/blog/keysmith/">→ blog</a></p>
       </div>
     </article>
 
@@ -179,37 +196,20 @@ title: home
       </div>
     </article>
 
-    <!-- ServiceMesh -->
+    <!-- Huffman-Cpp -->
     <article class="project-card" data-category="software">
-      <img src="/assets/images/projects/servicemesh-architecture.png" alt="ServiceMesh">
+      <img src="/assets/images/projects/huffman-tree.svg" alt="Huffman-Cpp">
       <div class="card-content">
-        <h3><a href="https://github.com/HueCodes/Rust-ServiceMesh">ServiceMesh</a></h3>
-        <p class="tagline">L7 proxy with circuit breakers</p>
+        <h3><a href="https://github.com/HueCodes/Compression-Algo-Huffman">Huffman-Cpp</a></h3>
+        <p class="tagline">Modern C++17 compression algorithm</p>
         <ul>
-          <li><strong>Throughput:</strong> 52M ops/sec using lock-free atomics + DashMap</li>
-          <li><strong>Protocols:</strong> HTTP/2 and gRPC with full streaming support (Hyper/Tonic)</li>
-          <li><strong>Reliability:</strong> Circuit breaker with configurable thresholds, exponential backoff</li>
-          <li><strong>Observability:</strong> Prometheus metrics, graceful shutdown, connection pooling</li>
+          <li><strong>Modern C++:</strong> Smart pointers (unique_ptr), RAII, move semantics, string_view</li>
+          <li><strong>Algorithms:</strong> Priority queue with O(n log k) complexity, greedy tree construction</li>
+          <li><strong>Testing:</strong> 17 comprehensive unit tests, 100% pass rate, edge case coverage</li>
+          <li><strong>Best practices:</strong> Const-correctness, noexcept, [[nodiscard]] attributes</li>
         </ul>
-        <p class="tech">`Rust` `Tokio` `gRPC` `HTTP/2` `Prometheus`</p>
-        <p class="blog-link"><a href="/blog/rust-servicemesh/">→ read more</a></p>
-      </div>
-    </article>
-
-    <!-- Forge-DB -->
-    <article class="project-card" data-category="software">
-      <img src="/assets/images/projects/forge-db-architecture.png" alt="Forge-DB">
-      <div class="card-content">
-        <h3><a href="https://github.com/HueCodes/forge-db">Forge-DB</a></h3>
-        <p class="tagline">SIMD-accelerated vector database</p>
-        <ul>
-          <li><strong>Performance:</strong> 13K QPS at 75µs latency with AVX2/AVX-512 optimization</li>
-          <li><strong>Efficiency:</strong> 32x memory compression via 8-bit quantization, 95%+ recall</li>
-          <li><strong>Portability:</strong> Pure Rust, zero external dependencies, no_std compatible</li>
-          <li><strong>Algorithms:</strong> IVF-PQ indexing + HNSW graph search for similarity queries</li>
-        </ul>
-        <p class="tech">`Rust` `SIMD` `AVX-512` `HNSW` `Vector DB`</p>
-        <p class="blog-link"><a href="/blog/forge-db/">→ read more</a></p>
+        <p class="tech">`C++17` `Smart Pointers` `Priority Queue` `RAII`</p>
+        <p class="blog-link"><a href="/blog/huffman-cpp/">→ read more</a></p>
       </div>
     </article>
 
