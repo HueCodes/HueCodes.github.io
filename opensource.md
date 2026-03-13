@@ -26,13 +26,13 @@ title: open source
   </div>
 
   <div class="project">
-    <a href="https://github.com/smoltcp-rs/smoltcp/pull/1126">smoltcp#1126</a>
-    <span>TCP challenge ACK for duplicate ACKs in LAST-ACK state (RFC 9293 §3.10.7.4). Fixes silent discard of stale acknowledgments by sending a challenge ACK response.</span>
+    <a href="https://github.com/cloudflare/agents/pull/781">cloudflare/agents#781</a>
+    <span>Fix: properly type tool error content in getAITools. Corrects TypeScript type definitions for error handling in Cloudflare's AI agent framework.</span>
   </div>
 
   <div class="project">
-    <a href="https://github.com/embassy-rs/embassy/pull/5598">embassy#5598</a>
-    <span>Align ring buffer reads to ADC scan sequence length. Fixes channel value shifting after DMA overrun recovery in STM32 ADC ring-buffered mode.</span>
+    <a href="https://github.com/hyperium/hyper/pull/4011">hyper#4011</a>
+    <span>Case-insensitive trailer field matching per RFC 9110. Fixes HTTP/2 trailer header handling to comply with spec requirements for case-insensitive field names.</span>
   </div>
 
   <div class="project">
@@ -41,8 +41,13 @@ title: open source
   </div>
 
   <div class="project">
-    <a href="https://github.com/hyperium/hyper/pull/4011">hyper#4011</a>
-    <span>Case-insensitive trailer field matching per RFC 9110. Fixes HTTP/2 trailer header handling to comply with spec requirements for case-insensitive field names.</span>
+    <a href="https://github.com/smoltcp-rs/smoltcp/pull/1126">smoltcp#1126</a>
+    <span>TCP challenge ACK for duplicate ACKs in LAST-ACK state (RFC 9293 §3.10.7.4). Fixes silent discard of stale acknowledgments by sending a challenge ACK response.</span>
+  </div>
+
+  <div class="project">
+    <a href="https://github.com/embassy-rs/embassy/pull/5598">embassy#5598</a>
+    <span>Align ring buffer reads to ADC scan sequence length. Fixes channel value shifting after DMA overrun recovery in STM32 ADC ring-buffered mode.</span>
   </div>
 
   <div class="project">
@@ -63,11 +68,6 @@ title: open source
   <div class="project">
     <a href="https://github.com/lapce/floem/pull/1025">floem#1025</a>
     <span>Cache whitespace TextLayouts in editor paint. Performance optimization that caches text layout calculations for whitespace characters in the Floem UI framework.</span>
-  </div>
-
-  <div class="project">
-    <a href="https://github.com/cloudflare/agents/pull/781">cloudflare/agents#781</a>
-    <span>Fix: properly type tool error content in getAITools. Corrects TypeScript type definitions for error handling in Cloudflare's AI agent framework.</span>
   </div>
 
   <div class="project">
