@@ -12,7 +12,7 @@ title: home
   <a href="https://github.com/HueCodes">github</a>
 </nav>
 
-<div class="intro">
+<div class="intro fade-in">
   <div class="intro-header">
     <img src="/assets/DSCN1683.jpeg" alt="Hugh's profile photo" class="photo">
     <div>
@@ -27,7 +27,7 @@ title: home
 
 <hr class="divider">
 
-<div class="section">
+<div class="section fade-in" style="animation-delay: 0.1s">
   <h2>currently</h2>
   <p>security research and detection engineering. building infrastructure tooling in Go and Rust. contributing to Cilium eBPF, Prometheus, SigmaHQ, and hyper. exploring hardware and robotics.</p>
 </div>
@@ -317,8 +317,8 @@ title: home
   </section>
 
   <!-- Open Source Highlights -->
-  <section class="oss">
-    <h2>Open Source Highlights</h2>
+  <section class="oss fade-in" style="animation-delay: 0.15s">
+    <h2>open source highlights</h2>
     <div class="oss-grid">
       <div class="oss-item">
         <a href="https://github.com/cilium/ebpf/pull/1945"><strong>cilium/ebpf</strong></a>
