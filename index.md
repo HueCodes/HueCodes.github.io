@@ -45,7 +45,7 @@ title: home
   <section class="projects-grid">
     <!-- ServiceMesh -->
     <article class="project-card" data-category="software">
-      <img src="/assets/images/projects/servicemesh-architecture.png" alt="ServiceMesh">
+      <img src="/assets/images/projects/servicemesh-demo.gif" alt="ServiceMesh">
       <div class="card-content">
         <h3><a href="https://github.com/HueCodes/Rust-ServiceMesh">ServiceMesh</a></h3>
         <p class="tagline">L7 proxy with circuit breakers</p>
@@ -96,7 +96,7 @@ title: home
 
     <!-- Forge-DB -->
     <article class="project-card" data-category="software">
-      <img src="/assets/images/projects/forge-db-architecture.png" alt="Forge-DB">
+      <img src="/assets/images/projects/forge-db-demo.gif" alt="Forge-DB">
       <div class="card-content">
         <h3><a href="https://github.com/HueCodes/forge-db">Forge-DB</a></h3>
         <p class="tagline">SIMD-accelerated vector database</p>
@@ -113,7 +113,7 @@ title: home
 
     <!-- Sensor-Bridge -->
     <article class="project-card" data-category="software">
-      <img src="/assets/images/projects/sensor-bridge-pipeline.png" alt="Sensor-Bridge">
+      <img src="/assets/images/projects/sensor-bridge-demo.gif" alt="Sensor-Bridge">
       <div class="card-content">
         <h3><a href="https://github.com/HueCodes/Sensor-Bridge">Sensor-Bridge</a></h3>
         <p class="tagline">Lock-free sensor fusion pipeline</p>
