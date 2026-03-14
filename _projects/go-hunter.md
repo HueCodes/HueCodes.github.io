@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Go-Hunter: Multi-Cloud Attack Surface Management"
-date: 2026-01-31
-category: projects
 ---
 
 Go-Hunter scans AWS, GCP, Azure, Cloudflare, and DigitalOcean for exposed infrastructure, misconfigurations, and configuration drift. It finds public S3 buckets, open ports, misconfigured services, and unauthorized changes across cloud providers from a single interface.

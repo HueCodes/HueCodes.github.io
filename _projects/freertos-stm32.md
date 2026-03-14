@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "FreeRTOS on STM32F411RE: Queues, Watchdogs, and Flash Config"
-date: 2026-02-28
-category: projects
 ---
 
 Multi-task firmware on the STM32F411RE Nucleo using FreeRTOS. Five tasks, a hardware watchdog, queue-based inter-task communication, and config stored in flash with CRC validation.

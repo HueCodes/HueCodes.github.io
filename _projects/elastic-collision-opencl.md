@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Elastic Particle Collision Engine: OpenCL GPU Compute + Spatial Hashing"
-date: 2026-03-03
-category: projects
 ---
 
 A 2D elastic collision simulation for 1000 particles using OpenCL GPU compute and a spatial hash grid for broad-phase collision detection, written in C++ with SDL2 rendering.

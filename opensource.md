@@ -14,7 +14,6 @@ title: open source
 
 <div class="section">
   <h1>Open Source Contributions</h1>
-  <p>Contributions to production open source projects focusing on performance, correctness, and systems programming.</p>
 </div>
 
 <hr class="divider">

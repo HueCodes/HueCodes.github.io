@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Huffman-Cpp: Modern C++ Implementation of Huffman Coding"
-date: 2026-02-16
-category: projects
 ---
 
 A C++17 implementation of Huffman coding for lossless data compression, demonstrating priority queue-based tree construction, smart pointer memory management, and comprehensive error handling.

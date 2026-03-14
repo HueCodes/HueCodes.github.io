@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Zephyr BLE Sensor on nRF52840: Device Tree, GATT, and PM Sleep"
-date: 2026-02-28
-category: projects
 ---
 
 BLE peripheral on the nRF52840 DK using Zephyr RTOS. Reads a BME280 sensor, exposes data over a custom GATT service, and sleeps aggressively between readings. Built to learn the Zephyr-specific stack that shows up in IoT firmware job postings.

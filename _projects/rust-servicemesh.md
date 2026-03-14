@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Rust-ServiceMesh: High-Performance L7 Proxy"
-date: 2026-01-31
-category: projects
 ---
 
 Service mesh data plane with circuit breakers, rate limiting, and gRPC support. Built on Tokio, Hyper, and Tower.

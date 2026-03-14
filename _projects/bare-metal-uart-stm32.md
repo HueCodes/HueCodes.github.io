@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Bare-Metal UART on STM32F4 Without the HAL"
-date: 2026-02-24
-category: projects
 ---
 
 Interrupt-driven UART driver for the STM32F401xE Nucleo in C++17. No HAL, no RTOS, no heap.

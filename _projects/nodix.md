@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "nodix: Real-Time Compute Graphs for Robotics"
-date: 2026-01-31
-category: projects
 ---
 
 Real-time compute graph engine for robotics applications. DAG-based execution with deterministic scheduling.

@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "gretun: GRE Tunnel Management CLI"
-date: 2026-01-31
-category: projects
 ---
 
 CLI for creating and managing GRE tunnels on Linux. Four commands covering the full tunnel lifecycle: create, list, probe, delete.

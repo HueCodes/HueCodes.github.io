@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Sensor-Bridge: Lock-Free Pipeline for Robotics"
-date: 2026-01-31
-category: projects
 ---
 
 High-throughput sensor processing pipeline for robotics. Lock-free SPSC buffers, sub-microsecond latency, `no_std` compatible for bare-metal targets.

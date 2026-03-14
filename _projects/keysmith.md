@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "keysmith: Kubernetes Operator for Automated Secret Rotation"
-date: 2026-01-31
-category: projects
 ---
 
 Kubernetes operator that automates secret rotation on a cron schedule. Declare a `SecretRotationPolicy` CR, and keysmith handles credential generation, secret updates, workload restarts, and audit logging.

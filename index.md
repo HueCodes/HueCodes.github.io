@@ -56,7 +56,7 @@ title: home
           <li><strong>Observability:</strong> Prometheus metrics, graceful shutdown, connection pooling</li>
         </ul>
         <p class="tech">`Rust` `Tokio` `gRPC` `HTTP/2` `Prometheus`</p>
-        <p class="blog-link"><a href="/blog/rust-servicemesh/">→ read more</a></p>
+        <p class="blog-link"><a href="/projects/rust-servicemesh/">→ read more</a></p>
       </div>
     </article>
 
@@ -73,7 +73,7 @@ title: home
           <li><strong>Cloud-native:</strong> Multi-cloud support (AWS, GCP, Azure virtual networks)</li>
         </ul>
         <p class="tech">`Go` `Netlink` `GRE` `VPN` `Cloud Networking`</p>
-        <p class="blog-link"><a href="/blog/gretun/">→ read more</a></p>
+        <p class="blog-link"><a href="/projects/gretun/">→ read more</a></p>
       </div>
     </article>
 
@@ -90,7 +90,7 @@ title: home
           <li><strong>Security:</strong> SHA256 drift detection, age encryption, row-level tenant isolation</li>
         </ul>
         <p class="tech">`Go` `PostgreSQL` `Redis` `AWS` `GCP` `Azure`</p>
-        <p class="blog-link"><a href="/blog/go-hunter/">→ read more</a></p>
+        <p class="blog-link"><a href="/projects/go-hunter/">→ read more</a></p>
       </div>
     </article>
 
@@ -107,7 +107,7 @@ title: home
           <li><strong>Algorithms:</strong> IVF-PQ indexing + HNSW graph search for similarity queries</li>
         </ul>
         <p class="tech">`Rust` `SIMD` `AVX-512` `HNSW` `Vector DB`</p>
-        <p class="blog-link"><a href="/blog/forge-db/">→ read more</a></p>
+        <p class="blog-link"><a href="/projects/forge-db/">→ read more</a></p>
       </div>
     </article>
 
@@ -124,7 +124,7 @@ title: home
           <li><strong>Embedded:</strong> no_std compatible for bare-metal environments</li>
         </ul>
         <p class="tech">`Rust` `Lock-free` `SPSC` `Atomics` `Embedded`</p>
-        <p class="blog-link"><a href="/blog/sensor-bridge/">→ read more</a></p>
+        <p class="blog-link"><a href="/projects/sensor-bridge/">→ read more</a></p>
       </div>
     </article>
 
@@ -141,7 +141,7 @@ title: home
           <li><strong>Correctness:</strong> DAG validation with topological sort and cycle detection</li>
         </ul>
         <p class="tech">`Rust` `Real-time` `DAG` `Lock-free` `Robotics`</p>
-        <p class="blog-link"><a href="/blog/nodix/">→ read more</a></p>
+        <p class="blog-link"><a href="/projects/nodix/">→ read more</a></p>
       </div>
     </article>
 
@@ -158,7 +158,7 @@ title: home
           <li><strong>Observability:</strong> Prometheus metrics, OpenTelemetry tracing, rolling restarts of Deployments/StatefulSets/DaemonSets</li>
         </ul>
         <p class="tech">`Go` `Kubernetes` `controller-runtime` `CRDs` `Prometheus` `OpenTelemetry`</p>
-        <p class="blog-link"><a href="/blog/keysmith/">→ blog</a></p>
+        <p class="blog-link"><a href="/projects/keysmith/">→ read more</a></p>
       </div>
     </article>
 
@@ -175,7 +175,7 @@ title: home
           <li><strong>Architecture:</strong> CPU/GPU split — grid built CPU-side, collision resolution GPU-side</li>
         </ul>
         <p class="tech">`C++` `OpenCL` `SDL2` `Spatial Hashing` `Physics Simulation`</p>
-        <p class="blog-link"><a href="/blog/elastic-collision-opencl/">→ read more</a></p>
+        <p class="blog-link"><a href="/projects/elastic-collision-opencl/">→ read more</a></p>
       </div>
     </article>
 
@@ -192,7 +192,7 @@ title: home
           <li><strong>Clocks:</strong> 8 MHz HSE to 84 MHz SYSCLK via PLL with correct flash latency ordering</li>
         </ul>
         <p class="tech">`C++17` `STM32F4` `Bare-metal` `CMSIS` `NVIC`</p>
-        <p class="blog-link"><a href="/blog/bare-metal-uart-stm32/">→ read more</a></p>
+        <p class="blog-link"><a href="/projects/bare-metal-uart-stm32/">→ read more</a></p>
       </div>
     </article>
 
@@ -209,7 +209,7 @@ title: home
           <li><strong>Best practices:</strong> Const-correctness, noexcept, [[nodiscard]] attributes</li>
         </ul>
         <p class="tech">`C++17` `Smart Pointers` `Priority Queue` `RAII`</p>
-        <p class="blog-link"><a href="/blog/huffman-cpp/">→ read more</a></p>
+        <p class="blog-link"><a href="/projects/huffman-cpp/">→ read more</a></p>
       </div>
     </article>
 
@@ -294,7 +294,7 @@ title: home
           <li><strong>CLI:</strong> UART shell (status, config get/set, task suspend) via ISR-fed rx_char_queue</li>
         </ul>
         <p class="tech">`FreeRTOS` `STM32F411RE` `CMake` `BME280` `IWDG`</p>
-        <p class="blog-link"><a href="/blog/freertos-stm32/">→ read more</a></p>
+        <p class="blog-link"><a href="/projects/freertos-stm32/">→ read more</a></p>
       </div>
     </article>
 
@@ -311,7 +311,7 @@ title: home
           <li><strong>Architecture:</strong> Sensor thread → k_msgq → system work queue → bt_gatt_notify, atomic diagnostic counters</li>
         </ul>
         <p class="tech">`Zephyr RTOS` `nRF52840` `BLE 5` `GATT` `Device Tree`</p>
-        <p class="blog-link"><a href="/blog/zephyr-ble-sensor/">→ read more</a></p>
+        <p class="blog-link"><a href="/projects/zephyr-ble-sensor/">→ read more</a></p>
       </div>
     </article>
   </section>

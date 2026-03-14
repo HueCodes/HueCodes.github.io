@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "forge-db: SIMD-Accelerated Vector Search"
-date: 2026-01-31
-category: projects
 ---
 
 High-performance vector database with IVF-PQ and HNSW indexing. Pure Rust, no external dependencies.
