@@ -29,7 +29,7 @@ title: home
 
 <div class="section fade-in" style="animation-delay: 0.1s">
   <h2>currently</h2>
-  <p>security research and detection engineering. building infrastructure tooling in Go and Rust. contributing to Cilium eBPF, Prometheus, SigmaHQ, and hyper. exploring hardware and robotics.</p>
+  <p>networking and systems in rust and go. learning hardware. contributing to open source projects i like.</p>
 </div>
 
 <hr class="divider">
