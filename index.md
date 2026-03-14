@@ -55,7 +55,7 @@ title: home
           <li><strong>Reliability:</strong> Circuit breaker with configurable thresholds, exponential backoff</li>
           <li><strong>Observability:</strong> Prometheus metrics, graceful shutdown, connection pooling</li>
         </ul>
-        <p class="tech">`Rust` `Tokio` `gRPC` `HTTP/2` `Prometheus`</p>
+        <div class="tech"><span>Rust</span><span>Tokio</span><span>gRPC</span><span>HTTP/2</span><span>Prometheus</span></div>
         <p class="blog-link"><a href="/projects/rust-servicemesh/">→ read more</a></p>
       </div>
     </article>
@@ -72,7 +72,7 @@ title: home
           <li><strong>Features:</strong> Tunnel creation, health probing (ICMP), route table manipulation</li>
           <li><strong>Cloud-native:</strong> Multi-cloud support (AWS, GCP, Azure virtual networks)</li>
         </ul>
-        <p class="tech">`Go` `Netlink` `GRE` `VPN` `Cloud Networking`</p>
+        <div class="tech"><span>Go</span><span>Netlink</span><span>GRE</span><span>VPN</span><span>Cloud Networking</span></div>
         <p class="blog-link"><a href="/projects/gretun/">→ read more</a></p>
       </div>
     </article>
@@ -89,7 +89,7 @@ title: home
           <li><strong>Performance:</strong> Concurrent goroutine workers with per-provider rate limiting</li>
           <li><strong>Security:</strong> SHA256 drift detection, age encryption, row-level tenant isolation</li>
         </ul>
-        <p class="tech">`Go` `PostgreSQL` `Redis` `AWS` `GCP` `Azure`</p>
+        <div class="tech"><span>Go</span><span>PostgreSQL</span><span>Redis</span><span>AWS</span><span>GCP</span><span>Azure</span></div>
         <p class="blog-link"><a href="/projects/go-hunter/">→ read more</a></p>
       </div>
     </article>
@@ -106,7 +106,7 @@ title: home
           <li><strong>Portability:</strong> Pure Rust, zero external dependencies, no_std compatible</li>
           <li><strong>Algorithms:</strong> IVF-PQ indexing + HNSW graph search for similarity queries</li>
         </ul>
-        <p class="tech">`Rust` `SIMD` `AVX-512` `HNSW` `Vector DB`</p>
+        <div class="tech"><span>Rust</span><span>SIMD</span><span>AVX-512</span><span>HNSW</span><span>Vector DB</span></div>
         <p class="blog-link"><a href="/projects/forge-db/">→ read more</a></p>
       </div>
     </article>
@@ -123,7 +123,7 @@ title: home
           <li><strong>Lock-free:</strong> Sub-nanosecond ring buffer ops using atomics (no CAS loops)</li>
           <li><strong>Embedded:</strong> no_std compatible for bare-metal environments</li>
         </ul>
-        <p class="tech">`Rust` `Lock-free` `SPSC` `Atomics` `Embedded`</p>
+        <div class="tech"><span>Rust</span><span>Lock-free</span><span>SPSC</span><span>Atomics</span><span>Embedded</span></div>
         <p class="blog-link"><a href="/projects/sensor-bridge/">→ read more</a></p>
       </div>
     </article>
@@ -140,7 +140,7 @@ title: home
           <li><strong>Concurrency:</strong> Zero-copy data flow using Arc and lock-free channels</li>
           <li><strong>Correctness:</strong> DAG validation with topological sort and cycle detection</li>
         </ul>
-        <p class="tech">`Rust` `Real-time` `DAG` `Lock-free` `Robotics`</p>
+        <div class="tech"><span>Rust</span><span>Real-time</span><span>DAG</span><span>Lock-free</span><span>Robotics</span></div>
         <p class="blog-link"><a href="/projects/nodix/">→ read more</a></p>
       </div>
     </article>
@@ -157,7 +157,7 @@ title: home
           <li><strong>Providers:</strong> pluggable interface — AWS Secrets Manager, HashiCorp Vault, built-in crypto/rand generator</li>
           <li><strong>Observability:</strong> Prometheus metrics, OpenTelemetry tracing, rolling restarts of Deployments/StatefulSets/DaemonSets</li>
         </ul>
-        <p class="tech">`Go` `Kubernetes` `controller-runtime` `CRDs` `Prometheus` `OpenTelemetry`</p>
+        <div class="tech"><span>Go</span><span>Kubernetes</span><span>controller-runtime</span><span>CRDs</span><span>Prometheus</span><span>OpenTelemetry</span></div>
         <p class="blog-link"><a href="/projects/keysmith/">→ read more</a></p>
       </div>
     </article>
@@ -174,7 +174,7 @@ title: home
           <li><strong>Physics:</strong> Elastic collision formula with mass-weighted positional correction</li>
           <li><strong>Architecture:</strong> CPU/GPU split — grid built CPU-side, collision resolution GPU-side</li>
         </ul>
-        <p class="tech">`C++` `OpenCL` `SDL2` `Spatial Hashing` `Physics Simulation`</p>
+        <div class="tech"><span>C++</span><span>OpenCL</span><span>SDL2</span><span>Spatial Hashing</span><span>Physics Simulation</span></div>
         <p class="blog-link"><a href="/projects/elastic-collision-opencl/">→ read more</a></p>
       </div>
     </article>
@@ -191,7 +191,7 @@ title: home
           <li><strong>Lock-free:</strong> SPSC ring buffers with volatile index semantics, no atomics or critical sections</li>
           <li><strong>Clocks:</strong> 8 MHz HSE to 84 MHz SYSCLK via PLL with correct flash latency ordering</li>
         </ul>
-        <p class="tech">`C++17` `STM32F4` `Bare-metal` `CMSIS` `NVIC`</p>
+        <div class="tech"><span>C++17</span><span>STM32F4</span><span>Bare-metal</span><span>CMSIS</span><span>NVIC</span></div>
         <p class="blog-link"><a href="/projects/bare-metal-uart-stm32/">→ read more</a></p>
       </div>
     </article>
@@ -208,7 +208,7 @@ title: home
           <li><strong>Testing:</strong> 17 comprehensive unit tests, 100% pass rate, edge case coverage</li>
           <li><strong>Best practices:</strong> Const-correctness, noexcept, [[nodiscard]] attributes</li>
         </ul>
-        <p class="tech">`C++17` `Smart Pointers` `Priority Queue` `RAII`</p>
+        <div class="tech"><span>C++17</span><span>Smart Pointers</span><span>Priority Queue</span><span>RAII</span></div>
         <p class="blog-link"><a href="/projects/huffman-cpp/">→ read more</a></p>
       </div>
     </article>
@@ -225,7 +225,7 @@ title: home
           <li><strong>Layout:</strong> GND stitching vias at 6mm (λ/10 at 2.4GHz), 5mm antenna keepout, parametric Python generation</li>
           <li><strong>Firmware:</strong> ESP-IDF v5 bring-up — dual-core WiFi scan + status LED validates RF path</li>
         </ul>
-        <p class="tech">`KiCAD 8` `ESP32-S3` `RF Design` `4-Layer PCB` `ESP-IDF`</p>
+        <div class="tech"><span>KiCAD 8</span><span>ESP32-S3</span><span>RF Design</span><span>4-Layer PCB</span><span>ESP-IDF</span></div>
         <p class="blog-link"><a href="/hardware/esp32-s3-rf-board/">→ view project</a></p>
       </div>
     </article>
@@ -242,7 +242,7 @@ title: home
           <li><strong>Debugging:</strong> 24MHz logic analyzer captures of SX1262 SPI bus with annotated command sequences</li>
           <li><strong>Protocol:</strong> Point-to-point TX/RX with RSSI/SNR monitoring, RadioLib driver</li>
         </ul>
-        <p class="tech">`ESP32-S3` `SX1262` `LoRa` `915MHz` `PlatformIO` `RadioLib`</p>
+        <div class="tech"><span>ESP32-S3</span><span>SX1262</span><span>LoRa</span><span>915MHz</span><span>PlatformIO</span><span>RadioLib</span></div>
         <p class="blog-link"><a href="/hardware/lorawan-mesh/">→ view project</a></p>
       </div>
     </article>
@@ -259,7 +259,7 @@ title: home
           <li><strong>Use case:</strong> Debugging LoRa, WiFi, and BT projects in the field</li>
           <li><strong>Goal:</strong> Hands-on tool for learning radio frequency fundamentals</li>
         </ul>
-        <p class="tech">`ESP32` `OLED` `RF` `Spectrum Analysis` `ESP-IDF`</p>
+        <div class="tech"><span>ESP32</span><span>OLED</span><span>RF</span><span>Spectrum Analysis</span><span>ESP-IDF</span></div>
         <p class="blog-link"><a href="/hardware/spectrum-analyzer/">→ view project</a></p>
       </div>
     </article>
@@ -276,7 +276,7 @@ title: home
           <li><strong>Clocks:</strong> 8MHz HSE → PLL → 84MHz SYSCLK with correct flash wait-state ordering</li>
           <li><strong>Testing:</strong> 47 Catch2 unit tests on host via mock CMSIS headers, no hardware required</li>
         </ul>
-        <p class="tech">`C++17` `STM32F401` `CMSIS` `Bare-metal` `Catch2`</p>
+        <div class="tech"><span>C++17</span><span>STM32F401</span><span>CMSIS</span><span>Bare-metal</span><span>Catch2</span></div>
         <p class="blog-link"><a href="/hardware/stm32-dev/">→ view project</a></p>
       </div>
     </article>
@@ -293,7 +293,7 @@ title: home
           <li><strong>Persistence:</strong> Config struct in flash with CRC32 validation, safe fallback to defaults</li>
           <li><strong>CLI:</strong> UART shell (status, config get/set, task suspend) via ISR-fed rx_char_queue</li>
         </ul>
-        <p class="tech">`FreeRTOS` `STM32F411RE` `CMake` `BME280` `IWDG`</p>
+        <div class="tech"><span>FreeRTOS</span><span>STM32F411RE</span><span>CMake</span><span>BME280</span><span>IWDG</span></div>
         <p class="blog-link"><a href="/projects/freertos-stm32/">→ read more</a></p>
       </div>
     </article>
@@ -310,7 +310,7 @@ title: home
           <li><strong>Power:</strong> Fast/slow advertising state machine (100ms→1000ms), connection interval negotiation, Zephyr PM sleep</li>
           <li><strong>Architecture:</strong> Sensor thread → k_msgq → system work queue → bt_gatt_notify, atomic diagnostic counters</li>
         </ul>
-        <p class="tech">`Zephyr RTOS` `nRF52840` `BLE 5` `GATT` `Device Tree`</p>
+        <div class="tech"><span>Zephyr RTOS</span><span>nRF52840</span><span>BLE 5</span><span>GATT</span><span>Device Tree</span></div>
         <p class="blog-link"><a href="/projects/zephyr-ble-sensor/">→ read more</a></p>
       </div>
     </article>
