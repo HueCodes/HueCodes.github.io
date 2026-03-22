@@ -40,6 +40,11 @@ title: open source
   </div>
 
   <div class="project">
+    <a href="https://github.com/smoltcp-rs/smoltcp/pull/1127">smoltcp#1127</a>
+    <span>Check silent_until expiry in Meta::poll_at. Fixes 100% CPU spin when a DNS query times out with an unresolved neighbor by falling through to socket_poll_at once the silence period expires.</span>
+  </div>
+
+  <div class="project">
     <a href="https://github.com/smoltcp-rs/smoltcp/pull/1126">smoltcp#1126</a>
     <span>TCP challenge ACK for duplicate ACKs in LAST-ACK state (RFC 9293 §3.10.7.4). Fixes silent discard of stale acknowledgments by sending a challenge ACK response.</span>
   </div>
