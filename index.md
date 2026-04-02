@@ -328,7 +328,7 @@ title: home
           <li><strong>Hardware:</strong> ESP32 TX/RX, TB6612FNG amp, piezo transducer for underwater path</li>
         </ul>
         <div class="tech"><span>ESP32</span><span>BFSK</span><span>Goertzel</span><span>DSP</span><span>ESP-IDF</span></div>
-        <p class="blog-link"><a href="/hardware/acoustic-modem/">→ view project</a></p>
+        <p class="blog-link"><span style="color: var(--accent); opacity: 0.6;">coming soon</span></p>
       </div>
     </article>
 
@@ -345,7 +345,7 @@ title: home
           <li><strong>Display:</strong> Real-time top-down map rendered on SSD1306 OLED, SD card persistence</li>
         </ul>
         <div class="tech"><span>STM32F411RE</span><span>EKF</span><span>FreeRTOS</span><span>MPU-6050</span><span>HC-SR04</span></div>
-        <p class="blog-link"><a href="/hardware/slam-engine/">→ view project</a></p>
+        <p class="blog-link"><span style="color: var(--accent); opacity: 0.6;">coming soon</span></p>
       </div>
     </article>
   </section>
