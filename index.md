@@ -213,6 +213,23 @@ title: home
       </div>
     </article>
 
+    <!-- PID Motor Control -->
+    <article class="project-card" data-category="hardware">
+      <img src="/assets/images/projects/pid-motor-control.svg" alt="PID Motor Control">
+      <div class="card-content">
+        <h3><a href="/hardware/pid-motor-control/">PID Motor Control</a></h3>
+        <p class="tagline">Closed-loop PID controller on STM32F411RE with IMU feedback</p>
+        <ul>
+          <li><strong>Control:</strong> 1kHz PID loop in TIM2 ISR with derivative-on-measurement and integral anti-windup</li>
+          <li><strong>Sensing:</strong> MPU-6050 IMU at 400kHz I2C, complementary filter (alpha=0.98)</li>
+          <li><strong>Actuation:</strong> TB6612FNG motor driver, 20kHz PWM, sign-magnitude drive (-1.0 to +1.0)</li>
+          <li><strong>Tuning:</strong> UART CLI for live Kp/Ki/Kd adjustment, step response CSV capture for plotting</li>
+        </ul>
+        <div class="tech"><span>STM32F411RE</span><span>PID</span><span>MPU-6050</span><span>TB6612FNG</span><span>CMake</span></div>
+        <p class="blog-link"><a href="/hardware/pid-motor-control/">→ view project</a></p>
+      </div>
+    </article>
+
     <!-- ESP32-S3 RF Board -->
     <article class="project-card" data-category="hardware">
       <img src="/assets/images/projects/esp32-s3-rf-board-pcb.svg" alt="ESP32-S3 RF Board">
@@ -222,7 +239,7 @@ title: home
         <ul>
           <li><strong>RF:</strong> 50-ohm microstrip trace (0.6mm on L1), Johanson chip antenna + u.FL test port</li>
           <li><strong>Stackup:</strong> JLC04161H-7628, solid GND on L2, 3.3V plane on L3, 45-degree bends</li>
-          <li><strong>Layout:</strong> GND stitching vias at 6mm (λ/10 at 2.4GHz), 5mm antenna keepout, parametric Python generation</li>
+          <li><strong>Layout:</strong> GND stitching vias at 6mm (lambda/10 at 2.4GHz), 5mm antenna keepout, parametric Python generation</li>
           <li><strong>Firmware:</strong> ESP-IDF v5 bring-up — dual-core WiFi scan + status LED validates RF path</li>
         </ul>
         <div class="tech"><span>KiCAD 8</span><span>ESP32-S3</span><span>RF Design</span><span>4-Layer PCB</span><span>ESP-IDF</span></div>
@@ -230,11 +247,28 @@ title: home
       </div>
     </article>
 
+    <!-- Raft Consensus MCU -->
+    <article class="project-card" data-category="hardware">
+      <img src="/assets/images/projects/raft-consensus-mcu.svg" alt="Raft Consensus MCU">
+      <div class="card-content">
+        <h3><a href="/hardware/raft-consensus-mcu/">Raft Consensus on MCUs</a></h3>
+        <p class="tagline">Distributed consensus on a 5-node ESP32-S3 cluster</p>
+        <ul>
+          <li><strong>Protocol:</strong> Full Raft implementation — leader election, log replication, InstallSnapshot</li>
+          <li><strong>Transport:</strong> ESP-NOW mesh (250B frames, 1-10ms latency), broadcast + unicast</li>
+          <li><strong>Persistence:</strong> SPI FRAM for term/vote (unlimited writes), SPI Flash for log with wear-leveling</li>
+          <li><strong>Application:</strong> Distributed sensor fusion, synchronized RGB LEDs, serial KV store</li>
+        </ul>
+        <div class="tech"><span>ESP32-S3</span><span>ESP-NOW</span><span>Raft</span><span>FRAM</span><span>ESP-IDF</span></div>
+        <p class="blog-link"><a href="/hardware/raft-consensus-mcu/">→ view project</a></p>
+      </div>
+    </article>
+
     <!-- LoRa Sensor Node -->
     <article class="project-card" data-category="hardware">
       <img src="/assets/images/projects/lorawan-mesh-diagram.svg" alt="LoRa Sensor Node">
       <div class="card-content">
-        <h3><a href="/hardware/lorawan-mesh/">LoRa Sensor Node</a></h3>
+        <h3><a href="/hardware/lora-sensor-node/">LoRa Sensor Node</a></h3>
         <p class="tagline">Raw LoRa P2P sensor link with SPI-level debugging</p>
         <ul>
           <li><strong>Radio:</strong> SX1262 on 915MHz ISM, SF9/125kHz, raw LoRa modulation (not LoRaWAN)</li>
@@ -243,7 +277,24 @@ title: home
           <li><strong>Protocol:</strong> Point-to-point TX/RX with RSSI/SNR monitoring, RadioLib driver</li>
         </ul>
         <div class="tech"><span>ESP32-S3</span><span>SX1262</span><span>LoRa</span><span>915MHz</span><span>PlatformIO</span><span>RadioLib</span></div>
-        <p class="blog-link"><a href="/hardware/lorawan-mesh/">→ view project</a></p>
+        <p class="blog-link"><a href="/hardware/lora-sensor-node/">→ view project</a></p>
+      </div>
+    </article>
+
+    <!-- FreeRTOS STM32 -->
+    <article class="project-card" data-category="hardware">
+      <img src="/assets/images/projects/freertos-stm32-tasks.svg" alt="FreeRTOS STM32">
+      <div class="card-content">
+        <h3><a href="/hardware/freertos-stm32/">FreeRTOS STM32</a></h3>
+        <p class="tagline">5-task preemptive firmware on STM32F411RE @ 100MHz</p>
+        <ul>
+          <li><strong>Pipeline:</strong> Queue-based sensor → processing → UART TX with ISR-safe xQueueSendFromISR</li>
+          <li><strong>Watchdog:</strong> Supervisor task (P=4) feeds IWDG only when all tasks check in — resets on hang</li>
+          <li><strong>Persistence:</strong> Config struct in flash with CRC32 validation, safe fallback to defaults</li>
+          <li><strong>CLI:</strong> UART shell (status, config get/set, task suspend) via ISR-fed rx_char_queue</li>
+        </ul>
+        <div class="tech"><span>FreeRTOS</span><span>STM32F411RE</span><span>CMake</span><span>BME280</span><span>IWDG</span></div>
+        <p class="blog-link"><a href="/hardware/freertos-stm32/">→ view project</a></p>
       </div>
     </article>
 
@@ -264,54 +315,37 @@ title: home
       </div>
     </article>
 
-    <!-- STM32 Bare-Metal -->
+    <!-- Underwater Acoustic Modem -->
     <article class="project-card" data-category="hardware">
-      <img src="/assets/images/projects/stm32-dev-schematic.svg" alt="STM32 Bare-Metal">
+      <img src="/assets/images/projects/acoustic-modem.svg" alt="Acoustic Modem">
       <div class="card-content">
-        <h3><a href="https://github.com/HueCodes/UART-cpp">STM32 Bare-Metal</a></h3>
-        <p class="tagline">ARM Cortex-M4 @ 84MHz, no HAL, no OS</p>
+        <h3><a href="/hardware/acoustic-modem/">Underwater Acoustic Modem</a></h3>
+        <p class="tagline">BFSK acoustic communication for UUV command links</p>
         <ul>
-          <li><strong>No HAL:</strong> Direct register access via CMSIS only, multi-USART support (USART1/2/6)</li>
-          <li><strong>Interrupt-driven:</strong> Non-blocking TX/RX with 256-byte SPSC ring buffers, volatile index semantics</li>
-          <li><strong>Clocks:</strong> 8MHz HSE → PLL → 84MHz SYSCLK with correct flash wait-state ordering</li>
-          <li><strong>Testing:</strong> 47 Catch2 unit tests on host via mock CMSIS headers, no hardware required</li>
+          <li><strong>Modulation:</strong> BFSK — 10kHz/12kHz tones, ~1000 bps raw, ~500 bps with Hamming(7,4) FEC</li>
+          <li><strong>Demodulation:</strong> Goertzel algorithm (single-bin DFT at two target frequencies)</li>
+          <li><strong>Framing:</strong> [Preamble 8 sym][Length 1B][Payload 0-255B][CRC-16 2B]</li>
+          <li><strong>Hardware:</strong> ESP32 TX/RX, TB6612FNG amp, piezo transducer for underwater path</li>
         </ul>
-        <div class="tech"><span>C++17</span><span>STM32F401</span><span>CMSIS</span><span>Bare-metal</span><span>Catch2</span></div>
-        <p class="blog-link"><a href="/hardware/stm32-dev/">→ view project</a></p>
+        <div class="tech"><span>ESP32</span><span>BFSK</span><span>Goertzel</span><span>DSP</span><span>ESP-IDF</span></div>
+        <p class="blog-link"><a href="/hardware/acoustic-modem/">→ view project</a></p>
       </div>
     </article>
 
-    <!-- FreeRTOS STM32 -->
+    <!-- SLAM Engine -->
     <article class="project-card" data-category="hardware">
-      <img src="/assets/images/projects/freertos-stm32-tasks.svg" alt="FreeRTOS STM32">
+      <img src="/assets/images/projects/slam-engine.svg" alt="SLAM Engine">
       <div class="card-content">
-        <h3><a href="/hardware/freertos-stm32/">FreeRTOS STM32</a></h3>
-        <p class="tagline">5-task preemptive firmware on STM32F411RE @ 100MHz</p>
+        <h3><a href="/hardware/slam-engine/">SLAM Engine</a></h3>
+        <p class="tagline">Indoor SLAM on STM32 with EKF and occupancy grid</p>
         <ul>
-          <li><strong>Pipeline:</strong> Queue-based sensor → processing → UART TX with ISR-safe xQueueSendFromISR</li>
-          <li><strong>Watchdog:</strong> Supervisor task (P=4) feeds IWDG only when all tasks check in — resets on hang</li>
-          <li><strong>Persistence:</strong> Config struct in flash with CRC32 validation, safe fallback to defaults</li>
-          <li><strong>CLI:</strong> UART shell (status, config get/set, task suspend) via ISR-fed rx_char_queue</li>
+          <li><strong>State estimation:</strong> Extended Kalman Filter — [x, y, theta, v], IMU predict + scan update</li>
+          <li><strong>Mapping:</strong> 80x80 log-odds occupancy grid (4m x 4m, 5cm resolution) with Bresenham raycasting</li>
+          <li><strong>Sensing:</strong> HC-SR04 ultrasonic on SG90 servo sweep (~2Hz), MPU-6050 IMU at 100Hz</li>
+          <li><strong>Display:</strong> Real-time top-down map rendered on SSD1306 OLED, SD card persistence</li>
         </ul>
-        <div class="tech"><span>FreeRTOS</span><span>STM32F411RE</span><span>CMake</span><span>BME280</span><span>IWDG</span></div>
-        <p class="blog-link"><a href="/projects/freertos-stm32/">→ read more</a></p>
-      </div>
-    </article>
-
-    <!-- Zephyr BLE Sensor -->
-    <article class="project-card" data-category="hardware">
-      <img src="/assets/images/projects/zephyr-ble-sensor.svg" alt="Zephyr BLE Sensor">
-      <div class="card-content">
-        <h3><a href="/hardware/zephyr-ble-sensor/">Zephyr BLE Sensor</a></h3>
-        <p class="tagline">BLE environmental sensor on nRF52840 DK with GATT notifications</p>
-        <ul>
-          <li><strong>GATT:</strong> Standard Environmental Sensing Service (0x181A) + custom diagnostics service for BME280 readings</li>
-          <li><strong>Zephyr:</strong> Device tree overlay for I2C sensor, Kconfig-driven BLE + PM subsystems, hardware watchdog (2s)</li>
-          <li><strong>Power:</strong> Fast/slow advertising state machine (100ms→1000ms), connection interval negotiation, Zephyr PM sleep</li>
-          <li><strong>Architecture:</strong> Sensor thread → k_msgq → system work queue → bt_gatt_notify, atomic diagnostic counters</li>
-        </ul>
-        <div class="tech"><span>Zephyr RTOS</span><span>nRF52840</span><span>BLE 5</span><span>GATT</span><span>Device Tree</span></div>
-        <p class="blog-link"><a href="/projects/zephyr-ble-sensor/">→ read more</a></p>
+        <div class="tech"><span>STM32F411RE</span><span>EKF</span><span>FreeRTOS</span><span>MPU-6050</span><span>HC-SR04</span></div>
+        <p class="blog-link"><a href="/hardware/slam-engine/">→ view project</a></p>
       </div>
     </article>
   </section>

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 140">
+  <!-- IMU -->
+  <rect x="4" y="4" width="44" height="28" rx="3" fill="#0d2a4a" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="26" y="16" text-anchor="middle" fill="#90caf9" font-size="7" font-family="monospace">MPU-6050</text>
+  <text x="26" y="25" text-anchor="middle" fill="#4a90c8" font-size="5" font-family="monospace">100Hz IMU</text>
+
+  <!-- Scanner -->
+  <rect x="4" y="40" width="44" height="28" rx="3" fill="#002a26" stroke="#00695c" stroke-width="1.5"/>
+  <text x="26" y="51" text-anchor="middle" fill="#80cbc4" font-size="6" font-family="monospace">HC-SR04</text>
+  <text x="26" y="61" text-anchor="middle" fill="#3a9090" font-size="5" font-family="monospace">SG90 sweep</text>
+
+  <!-- Arrows to EKF -->
+  <line x1="48" y1="18" x2="68" y2="32" stroke="#f9a825" stroke-width="1.2"/>
+  <polygon points="66,29 68,35 72,31" fill="#f9a825"/>
+  <line x1="48" y1="54" x2="68" y2="42" stroke="#f9a825" stroke-width="1.2"/>
+  <polygon points="66,45 68,39 72,43" fill="#f9a825"/>
+
+  <!-- EKF SLAM -->
+  <rect x="70" y="16" width="64" height="40" rx="3" fill="#3e0808" stroke="#ef5350" stroke-width="2"/>
+  <text x="102" y="28" text-anchor="middle" fill="#ff8a80" font-size="7" font-family="monospace">EKF SLAM</text>
+  <text x="102" y="38" text-anchor="middle" fill="#ef5350" font-size="5" font-family="monospace">[x, y, theta, v]</text>
+  <text x="102" y="47" text-anchor="middle" fill="#c62828" font-size="5" font-family="monospace">predict + update</text>
+
+  <!-- Arrow to occupancy grid -->
+  <line x1="102" y1="56" x2="102" y2="70" stroke="#f9a825" stroke-width="1.2"/>
+  <polygon points="99,70 105,70 102,76" fill="#f9a825"/>
+
+  <!-- Occupancy Grid (visual) -->
+  <rect x="70" y="76" width="64" height="54" rx="3" fill="#0d2a0d" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="102" y="88" text-anchor="middle" fill="#a5d6a7" font-size="6" font-family="monospace">Occupancy Grid</text>
+  <text x="102" y="97" text-anchor="middle" fill="#2a602a" font-size="5" font-family="monospace">80x80 log-odds</text>
+  <!-- Mini grid cells -->
+  <rect x="78" y="100" width="6" height="6" fill="#2e7d32" opacity="0.6"/>
+  <rect x="84" y="100" width="6" height="6" fill="#0d2a0d" stroke="#2e7d32" stroke-width="0.5"/>
+  <rect x="90" y="100" width="6" height="6" fill="#2e7d32" opacity="0.4"/>
+  <rect x="96" y="100" width="6" height="6" fill="#2e7d32" opacity="0.8"/>
+  <rect x="102" y="100" width="6" height="6" fill="#0d2a0d" stroke="#2e7d32" stroke-width="0.5"/>
+  <rect x="108" y="100" width="6" height="6" fill="#2e7d32" opacity="0.3"/>
+  <rect x="114" y="100" width="6" height="6" fill="#0d2a0d" stroke="#2e7d32" stroke-width="0.5"/>
+  <rect x="78" y="106" width="6" height="6" fill="#0d2a0d" stroke="#2e7d32" stroke-width="0.5"/>
+  <rect x="84" y="106" width="6" height="6" fill="#2e7d32" opacity="0.7"/>
+  <rect x="90" y="106" width="6" height="6" fill="#2e7d32" opacity="0.9"/>
+  <rect x="96" y="106" width="6" height="6" fill="#0d2a0d" stroke="#2e7d32" stroke-width="0.5"/>
+  <rect x="102" y="106" width="6" height="6" fill="#0d2a0d" stroke="#2e7d32" stroke-width="0.5"/>
+  <rect x="108" y="106" width="6" height="6" fill="#2e7d32" opacity="0.5"/>
+  <rect x="114" y="106" width="6" height="6" fill="#2e7d32" opacity="0.2"/>
+  <rect x="78" y="112" width="6" height="6" fill="#2e7d32" opacity="0.3"/>
+  <rect x="84" y="112" width="6" height="6" fill="#0d2a0d" stroke="#2e7d32" stroke-width="0.5"/>
+  <rect x="90" y="112" width="6" height="6" fill="#2e7d32" opacity="0.6"/>
+  <rect x="96" y="112" width="6" height="6" fill="#2e7d32" opacity="0.4"/>
+  <rect x="102" y="112" width="6" height="6" fill="#2e7d32" opacity="0.8"/>
+  <rect x="108" y="112" width="6" height="6" fill="#0d2a0d" stroke="#2e7d32" stroke-width="0.5"/>
+  <rect x="114" y="112" width="6" height="6" fill="#2e7d32" opacity="0.5"/>
+  <!-- Robot dot -->
+  <circle cx="96" cy="109" r="2" fill="#ef5350"/>
+
+  <!-- OLED display -->
+  <rect x="148" y="76" width="48" height="34" rx="3" fill="#1a0a2a" stroke="#7b1fa2" stroke-width="1.5"/>
+  <text x="172" y="90" text-anchor="middle" fill="#ce93d8" font-size="6.5" font-family="monospace">SSD1306</text>
+  <text x="172" y="100" text-anchor="middle" fill="#7b1fa2" font-size="5" font-family="monospace">OLED map</text>
+  <line x1="134" y1="100" x2="148" y2="100" stroke="#7b1fa2" stroke-width="0.9" stroke-dasharray="3,2"/>
+
+  <!-- SD Card -->
+  <rect x="148" y="116" width="48" height="18" rx="3" fill="#2a1000" stroke="#e65100" stroke-width="1.2"/>
+  <text x="172" y="128" text-anchor="middle" fill="#ffcc80" font-size="6" font-family="monospace">SD card</text>
+  <line x1="134" y1="118" x2="148" y2="126" stroke="#e65100" stroke-width="0.9" stroke-dasharray="3,2"/>
+
+  <!-- Info -->
+  <text x="148" y="16" fill="#546e7a" font-size="5" font-family="monospace">STM32F411RE</text>
+  <text x="148" y="25" fill="#546e7a" font-size="5" font-family="monospace">4m x 4m, 5cm res</text>
+  <text x="148" y="34" fill="#546e7a" font-size="5" font-family="monospace">Bresenham raycasting</text>
+  <text x="148" y="43" fill="#546e7a" font-size="5" font-family="monospace">FreeRTOS tasks</text>
+</svg>

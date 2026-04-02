@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 140">
+  <!-- Node 0 - Leader (highlighted) -->
+  <rect x="72" y="4" width="56" height="36" rx="3" fill="#0d2a0d" stroke="#2e7d32" stroke-width="2"/>
+  <text x="100" y="15" text-anchor="middle" fill="#a5d6a7" font-size="7" font-family="monospace">Node 0</text>
+  <text x="100" y="24" text-anchor="middle" fill="#2e7d32" font-size="6" font-family="monospace">LEADER</text>
+  <text x="100" y="34" text-anchor="middle" fill="#1b5e20" font-size="5" font-family="monospace">ESP32-S3</text>
+
+  <!-- Node 1 - Follower -->
+  <rect x="144" y="44" width="52" height="32" rx="3" fill="#0d2a4a" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="170" y="56" text-anchor="middle" fill="#90caf9" font-size="7" font-family="monospace">Node 1</text>
+  <text x="170" y="65" text-anchor="middle" fill="#4a90c8" font-size="5.5" font-family="monospace">FOLLOWER</text>
+  <text x="170" y="73" text-anchor="middle" fill="#2a6090" font-size="4.5" font-family="monospace">ESP32-S3</text>
+
+  <!-- Node 2 - Follower -->
+  <rect x="144" y="90" width="52" height="32" rx="3" fill="#0d2a4a" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="170" y="102" text-anchor="middle" fill="#90caf9" font-size="7" font-family="monospace">Node 2</text>
+  <text x="170" y="111" text-anchor="middle" fill="#4a90c8" font-size="5.5" font-family="monospace">FOLLOWER</text>
+  <text x="170" y="119" text-anchor="middle" fill="#2a6090" font-size="4.5" font-family="monospace">ESP32-S3</text>
+
+  <!-- Node 3 - Follower -->
+  <rect x="4" y="44" width="52" height="32" rx="3" fill="#0d2a4a" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="30" y="56" text-anchor="middle" fill="#90caf9" font-size="7" font-family="monospace">Node 3</text>
+  <text x="30" y="65" text-anchor="middle" fill="#4a90c8" font-size="5.5" font-family="monospace">FOLLOWER</text>
+  <text x="30" y="73" text-anchor="middle" fill="#2a6090" font-size="4.5" font-family="monospace">ESP32-S3</text>
+
+  <!-- Node 4 - Follower -->
+  <rect x="4" y="90" width="52" height="32" rx="3" fill="#0d2a4a" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="30" y="102" text-anchor="middle" fill="#90caf9" font-size="7" font-family="monospace">Node 4</text>
+  <text x="30" y="111" text-anchor="middle" fill="#4a90c8" font-size="5.5" font-family="monospace">FOLLOWER</text>
+  <text x="30" y="119" text-anchor="middle" fill="#2a6090" font-size="4.5" font-family="monospace">ESP32-S3</text>
+
+  <!-- Heartbeat lines from leader -->
+  <line x1="128" y1="22" x2="150" y2="50" stroke="#2e7d32" stroke-width="1" stroke-dasharray="3,2" opacity="0.7"/>
+  <line x1="72" y1="22" x2="50" y2="50" stroke="#2e7d32" stroke-width="1" stroke-dasharray="3,2" opacity="0.7"/>
+  <line x1="128" y1="35" x2="150" y2="95" stroke="#2e7d32" stroke-width="0.8" stroke-dasharray="3,2" opacity="0.5"/>
+  <line x1="72" y1="35" x2="50" y2="95" stroke="#2e7d32" stroke-width="0.8" stroke-dasharray="3,2" opacity="0.5"/>
+
+  <!-- Mesh lines between followers -->
+  <line x1="56" y1="60" x2="144" y2="60" stroke="#1565c0" stroke-width="0.7" stroke-dasharray="2,3" opacity="0.3"/>
+  <line x1="56" y1="106" x2="144" y2="106" stroke="#1565c0" stroke-width="0.7" stroke-dasharray="2,3" opacity="0.3"/>
+  <line x1="30" y1="76" x2="30" y2="90" stroke="#1565c0" stroke-width="0.7" stroke-dasharray="2,3" opacity="0.3"/>
+  <line x1="170" y1="76" x2="170" y2="90" stroke="#1565c0" stroke-width="0.7" stroke-dasharray="2,3" opacity="0.3"/>
+
+  <!-- ESP-NOW label -->
+  <rect x="62" y="56" rx="2" width="76" height="14" fill="#0d1117" stroke="#f9a825" stroke-width="0.8" opacity="0.9"/>
+  <text x="100" y="66" text-anchor="middle" fill="#f9a825" font-size="6" font-family="monospace">ESP-NOW mesh</text>
+
+  <!-- Info labels -->
+  <text x="62" y="134" fill="#546e7a" font-size="5" font-family="monospace">FRAM persistent state</text>
+  <text x="62" y="126" fill="#546e7a" font-size="5" font-family="monospace">5-node Raft consensus</text>
+</svg>

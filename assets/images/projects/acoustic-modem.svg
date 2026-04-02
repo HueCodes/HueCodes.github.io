@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 140">
+  <!-- TX ESP32 -->
+  <rect x="4" y="10" width="44" height="32" rx="3" fill="#0d2a4a" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="26" y="22" text-anchor="middle" fill="#90caf9" font-size="7" font-family="monospace">ESP32 TX</text>
+  <text x="26" y="31" text-anchor="middle" fill="#4a90c8" font-size="5.5" font-family="monospace">PWM out</text>
+  <text x="26" y="39" text-anchor="middle" fill="#2a6090" font-size="4.5" font-family="monospace">BFSK encode</text>
+
+  <!-- Arrow to amp -->
+  <line x1="48" y1="26" x2="60" y2="26" stroke="#f9a825" stroke-width="1.2"/>
+  <polygon points="60,23 60,29 66,26" fill="#f9a825"/>
+
+  <!-- TB6612 Amp -->
+  <rect x="64" y="10" width="40" height="32" rx="3" fill="#002a26" stroke="#00695c" stroke-width="1.5"/>
+  <text x="84" y="22" text-anchor="middle" fill="#80cbc4" font-size="6" font-family="monospace">TB6612</text>
+  <text x="84" y="31" text-anchor="middle" fill="#3a9090" font-size="5.5" font-family="monospace">Amp</text>
+
+  <!-- Arrow to transducer -->
+  <line x1="104" y1="26" x2="116" y2="26" stroke="#f9a825" stroke-width="1.2"/>
+  <polygon points="116,23 116,29 122,26" fill="#f9a825"/>
+
+  <!-- Transducer -->
+  <rect x="120" y="10" width="36" height="32" rx="3" fill="#1a0a2a" stroke="#7b1fa2" stroke-width="1.5"/>
+  <text x="138" y="22" text-anchor="middle" fill="#ce93d8" font-size="5.5" font-family="monospace">Piezo</text>
+  <text x="138" y="31" text-anchor="middle" fill="#7b1fa2" font-size="5.5" font-family="monospace">Speaker</text>
+
+  <!-- Water / acoustic channel -->
+  <rect x="120" y="50" width="36" height="20" rx="2" fill="#0a1628" stroke="#1565c0" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <text x="138" y="63" text-anchor="middle" fill="#4a90c8" font-size="6" font-family="monospace">water</text>
+  <!-- Wavy lines -->
+  <path d="M126,42 Q130,47 134,42 Q138,47 142,42 Q146,47 150,42" fill="none" stroke="#4a90c8" stroke-width="0.8" opacity="0.6"/>
+
+  <!-- Sensor/Hydrophone -->
+  <rect x="120" y="78" width="36" height="28" rx="3" fill="#1a0a2a" stroke="#7b1fa2" stroke-width="1.5"/>
+  <text x="138" y="89" text-anchor="middle" fill="#ce93d8" font-size="5.5" font-family="monospace">Sensor</text>
+  <text x="138" y="99" text-anchor="middle" fill="#7b1fa2" font-size="5" font-family="monospace">Hydrophone</text>
+
+  <!-- Arrow to RX -->
+  <line x1="120" y1="92" x2="108" y2="92" stroke="#f9a825" stroke-width="1.2"/>
+  <polygon points="108,89 108,95 102,92" fill="#f9a825"/>
+
+  <!-- Goertzel -->
+  <rect x="52" y="78" width="50" height="28" rx="3" fill="#0d2a0d" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="77" y="89" text-anchor="middle" fill="#a5d6a7" font-size="6.5" font-family="monospace">Goertzel</text>
+  <text x="77" y="98" text-anchor="middle" fill="#2a602a" font-size="5" font-family="monospace">10k/12k DFT</text>
+
+  <!-- Arrow to RX ESP32 -->
+  <line x1="52" y1="92" x2="40" y2="92" stroke="#f9a825" stroke-width="1.2"/>
+  <polygon points="40,89 40,95 34,92" fill="#f9a825"/>
+
+  <!-- RX ESP32 -->
+  <rect x="4" y="78" width="30" height="28" rx="3" fill="#0d2a4a" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="19" y="89" text-anchor="middle" fill="#90caf9" font-size="6" font-family="monospace">ESP32</text>
+  <text x="19" y="98" text-anchor="middle" fill="#4a90c8" font-size="5.5" font-family="monospace">RX</text>
+
+  <!-- Frame format -->
+  <rect x="4" y="116" width="30" height="14" rx="2" fill="#3e0808" stroke="#ef5350" stroke-width="0.8"/>
+  <text x="19" y="126" text-anchor="middle" fill="#ff8a80" font-size="5" font-family="monospace">Preamble</text>
+  <rect x="36" y="116" width="20" height="14" rx="2" fill="#2a1000" stroke="#e65100" stroke-width="0.8"/>
+  <text x="46" y="126" text-anchor="middle" fill="#ffcc80" font-size="5" font-family="monospace">Len</text>
+  <rect x="58" y="116" width="36" height="14" rx="2" fill="#0d2a4a" stroke="#1565c0" stroke-width="0.8"/>
+  <text x="76" y="126" text-anchor="middle" fill="#90caf9" font-size="5" font-family="monospace">Payload</text>
+  <rect x="96" y="116" width="24" height="14" rx="2" fill="#0d2a0d" stroke="#2e7d32" stroke-width="0.8"/>
+  <text x="108" y="126" text-anchor="middle" fill="#a5d6a7" font-size="5" font-family="monospace">CRC16</text>
+
+  <!-- Info -->
+  <text x="160" y="120" fill="#546e7a" font-size="5" font-family="monospace">BFSK ~1000bps</text>
+  <text x="160" y="130" fill="#546e7a" font-size="5" font-family="monospace">Hamming(7,4) FEC</text>
+</svg>
