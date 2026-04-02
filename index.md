@@ -17,7 +17,7 @@ title: home
     <img src="/assets/DSCN1683.jpeg" alt="Hugh's profile photo" class="photo">
     <div>
       <h1>hey, i'm hugh</h1>
-      <p>building security tools, networking, cloud infrastructure, and systems software. diving into hardware and robotics.</p>
+      <p>building systems software, networking, and embedded firmware. designing and building hardware.</p>
       <p>outside of engineering i like being in the mountains, grappling, and running ultra marathons. based in seattle.</p>
       <p class="tagline">i ship fast and want to solve hard problems with smart people.</p>
       <p><a href="mailto:huecodes@proton.me">huecodes@proton.me</a></p>
@@ -29,7 +29,7 @@ title: home
 
 <div class="section fade-in" style="animation-delay: 0.1s">
   <h2>currently</h2>
-  <p>networking and systems in rust and go. learning hardware. contributing to open source projects i like.</p>
+  <p>networking and embedded systems in rust, go, and c. building hardware projects. contributing to open source.</p>
 </div>
 
 <hr class="divider">
