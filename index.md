@@ -17,12 +17,19 @@ title: home
     <img src="/assets/DSCN1683.jpeg" alt="Hugh" class="photo">
     <div>
       <h1>hey, i'm hugh</h1>
-      <p>systems and networking engineer in seattle. i build infrastructure software, embedded firmware, and hardware.</p>
-      <p>currently contributing to <a href="https://github.com/cilium/ebpf/pull/1945">cilium/ebpf</a> and <a href="https://github.com/tektoncd/pipeline/pull/9590">tektoncd/pipeline</a>. building tunnel management and udp relay infrastructure in go.</p>
+      <p>building systems software, networking, and embedded firmware. designing and building hardware.</p>
+      <p>outside of engineering i like being in the mountains, grappling, and running ultra marathons. based in seattle.</p>
       <p class="tagline">i ship fast and want to solve hard problems with smart people.</p>
       <p><a href="mailto:huecodes@proton.me">huecodes@proton.me</a></p>
     </div>
   </div>
+</div>
+
+<hr class="divider">
+
+<div class="section fade-in" style="animation-delay: 0.1s">
+  <h2>currently</h2>
+  <p>networking and embedded systems in rust, go, and c. building hardware projects. contributing to open source.</p>
 </div>
 
 <hr class="divider">
