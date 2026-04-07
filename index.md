@@ -32,8 +32,3 @@ title: home
   <p>networking and embedded systems in rust, go, and c. building hardware projects. contributing to open source.</p>
 </div>
 
-<hr class="divider">
-
-<footer>
-  <p><a href="/projects">projects</a> · <a href="/opensource">open source</a> · <a href="/blog">writing</a> · <a href="/research">research</a> · <a href="/hardware">hardware</a></p>
-</footer>

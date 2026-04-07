@@ -69,7 +69,8 @@ nav {
 
 nav a {
   margin-right: 1.25rem;
-  color: var(--text-secondary);
+  color: #c9d1d9;
+  font-weight: 500;
   position: relative;
 }
 
