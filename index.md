@@ -32,3 +32,10 @@ title: home
   <p>networking and embedded systems in rust, go, and c. building hardware projects. contributing to open source.</p>
 </div>
 
+<hr class="divider">
+
+<div class="section fade-in" style="animation-delay: 0.15s">
+  <h2>about</h2>
+  <p>i got into engineering through curiosity about how things work. started with chemistry and biology as a kid, eventually landed on computers and robots. now i'm mostly focused on networking, distributed systems, and embedded hardware. lately i've been getting into rf, control theory, and building a uuv. teaching myself more math and physics along the way.</p>
+</div>
+
