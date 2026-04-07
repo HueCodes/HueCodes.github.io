@@ -28,36 +28,6 @@ title: home
 
 <hr class="divider">
 
-<div class="section fade-in" style="animation-delay: 0.15s">
-  <h2>selected work</h2>
-  <ul class="work-list">
-    <li><a href="https://github.com/HueCodes/gretun"><strong>gretun</strong></a> <span class="lang">go</span> — gre tunnel management cli via netlink for multi-cloud vpc interconnection</li>
-    <li><a href="https://github.com/HueCodes/Go-Hunter"><strong>go-hunter</strong></a> <span class="lang">go</span> — multi-cloud asset discovery platform, 1k assets/min across aws/gcp/azure</li>
-    <li><a href="https://github.com/HueCodes/udp-relay"><strong>udp-relay</strong></a> <span class="lang">go</span> — high-throughput udp ingestion server with zero-copy parsing and websocket fan-out</li>
-    <li><a href="https://github.com/HueCodes/Rust-ServiceMesh"><strong>servicemesh</strong></a> <span class="lang">rust</span> — l7 data plane proxy, 52m ops/sec circuit breaker, http/2 and grpc</li>
-    <li><a href="https://github.com/HueCodes/Sensor-Bridge"><strong>sensor-bridge</strong></a> <span class="lang">rust</span> — lock-free sensor fusion pipeline, ~20ns latency, no_std compatible</li>
-    <li><a href="https://github.com/HueCodes/forge-db"><strong>forge-db</strong></a> <span class="lang">rust</span> — simd-accelerated vector database, 13k qps with avx2/avx-512</li>
-  </ul>
-  <p class="view-all"><a href="/projects">all projects →</a></p>
-</div>
-
-<hr class="divider">
-
-<div class="section fade-in" style="animation-delay: 0.2s">
-  <h2>open source</h2>
-  <ul class="work-list">
-    <li><a href="https://github.com/cilium/ebpf/pull/1945"><strong>cilium/ebpf</strong></a> <span class="lang">go</span> — cross-platform ringbuf interfaces for windows poller support</li>
-    <li><a href="https://github.com/grpc/grpc-go"><strong>grpc-go</strong></a> <span class="lang">go</span> — target uri validation</li>
-    <li><a href="https://github.com/tektoncd/pipeline/pull/9590"><strong>tektoncd/pipeline</strong></a> <span class="lang">go</span> — strip managedfields from informer caches, 30-70% size reduction</li>
-    <li><a href="https://github.com/tokio-rs/tokio/pull/7874"><strong>tokio</strong></a> <span class="lang">rust</span> — lock-free cancellation via atomicbool, fixing >2ms mutex delays</li>
-    <li><a href="https://github.com/hyperium/hyper/pull/4011"><strong>hyper</strong></a> <span class="lang">rust</span> — rfc 9110 trailer field matching</li>
-    <li><a href="https://github.com/smoltcp-rs/smoltcp"><strong>smoltcp</strong></a> <span class="lang">rust</span> — tcp challenge ack, dns timeout fix</li>
-  </ul>
-  <p class="view-all"><a href="/opensource">all contributions →</a></p>
-</div>
-
-<hr class="divider">
-
 <footer>
-  <p><a href="/blog">writing</a> · <a href="/research">research</a> · <a href="/hardware">hardware</a></p>
+  <p><a href="/projects">projects</a> · <a href="/opensource">open source</a> · <a href="/blog">writing</a> · <a href="/research">research</a> · <a href="/hardware">hardware</a></p>
 </footer>
