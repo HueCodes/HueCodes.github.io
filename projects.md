@@ -39,6 +39,57 @@ title: projects
       </div>
     </article>
 
+    <!-- Dredge -->
+    <article class="project-card" data-category="software">
+      <img src="/assets/images/projects/dredge-demo.svg" alt="Dredge">
+      <div class="card-content">
+        <h3><a href="https://github.com/HueCodes/Dredge">Dredge</a></h3>
+        <p class="tagline">AI-powered binary vulnerability discovery</p>
+        <ul>
+          <li><strong>Pipeline:</strong> 6-stage automated flow — extract firmware, decompile with Ghidra, triage, analyze with Claude</li>
+          <li><strong>Profiles:</strong> Domain-specific heuristics and prompts for drone, server, satellite, and IoT targets</li>
+          <li><strong>Triage:</strong> Scores functions 0-100 with fast heuristics before expensive LLM calls</li>
+          <li><strong>Detection:</strong> Attack chain correlation — correlated findings boost severity (e.g., hardcoded creds + auth bypass)</li>
+        </ul>
+        <div class="tech"><span>Python</span><span>Ghidra</span><span>Claude API</span><span>binwalk</span><span>Firmware Analysis</span></div>
+        <p class="blog-link"><a href="/projects/dredge/">→ read more</a></p>
+      </div>
+    </article>
+
+    <!-- Sentinel -->
+    <article class="project-card" data-category="software">
+      <img src="/assets/images/projects/sentinel-pipeline.svg" alt="Sentinel">
+      <div class="card-content">
+        <h3><a href="https://github.com/HueCodes/sentinel">Sentinel</a></h3>
+        <p class="tagline">Embedded SIEM log pipeline</p>
+        <ul>
+          <li><strong>Ingest:</strong> Suricata EVE, Cowrie honeypot, C2 beacons, syslog (RFC 5424/3164), arbitrary JSON</li>
+          <li><strong>Enrichment:</strong> GeoIP lookups, threat intel feed matching, MITRE ATT&CK mapping</li>
+          <li><strong>Detection:</strong> TOML-driven rule engine with correlation — reconstructs kill chains across sources</li>
+          <li><strong>Output:</strong> Ratatui TUI dashboard, HMAC-signed webhooks, Prometheus metrics, REST API with CSV/JSON export</li>
+        </ul>
+        <div class="tech"><span>Rust</span><span>DuckDB</span><span>Tokio</span><span>Axum</span><span>Ratatui</span><span>Prometheus</span></div>
+        <p class="blog-link"><a href="/projects/sentinel/">→ read more</a></p>
+      </div>
+    </article>
+
+    <!-- UDP-Relay -->
+    <article class="project-card" data-category="software">
+      <img src="/assets/images/projects/udp-relay-arch.svg" alt="UDP-Relay">
+      <div class="card-content">
+        <h3><a href="https://github.com/HueCodes/udp-relay">UDP-Relay</a></h3>
+        <p class="tagline">MAVLink v2 telemetry aggregator</p>
+        <ul>
+          <li><strong>Ingest:</strong> UDP listener on :14550 with MAVLink v2 frame parsing and CRC-16/MCRF4XX validation</li>
+          <li><strong>Registry:</strong> Thread-safe drone registry tracking position, attitude, battery, and flight mode for 250 vehicles</li>
+          <li><strong>Streaming:</strong> Non-blocking pub/sub hub fans events to filtered WebSocket subscriptions</li>
+          <li><strong>Ops:</strong> Prometheus metrics, token bucket rate limiting, IP/CIDR whitelisting, distroless Docker image</li>
+        </ul>
+        <div class="tech"><span>Go</span><span>MAVLink</span><span>WebSocket</span><span>Prometheus</span><span>Docker</span></div>
+        <p class="blog-link"><a href="/projects/udp-relay/">→ read more</a></p>
+      </div>
+    </article>
+
     <!-- Gretun -->
     <article class="project-card" data-category="software">
       <img src="/assets/images/projects/gretun-tunnel.png" alt="Gretun">
@@ -172,23 +223,6 @@ title: projects
         </ul>
         <div class="tech"><span>C++17</span><span>STM32F4</span><span>Bare-metal</span><span>CMSIS</span><span>NVIC</span></div>
         <p class="blog-link"><a href="/projects/bare-metal-uart-stm32/">→ read more</a></p>
-      </div>
-    </article>
-
-    <!-- Huffman-Cpp -->
-    <article class="project-card" data-category="software">
-      <img src="/assets/images/projects/huffman-tree.svg" alt="Huffman-Cpp">
-      <div class="card-content">
-        <h3><a href="https://github.com/HueCodes/Compression-Algo-Huffman">Huffman-Cpp</a></h3>
-        <p class="tagline">Modern C++17 compression algorithm</p>
-        <ul>
-          <li><strong>Modern C++:</strong> Smart pointers (unique_ptr), RAII, move semantics, string_view</li>
-          <li><strong>Algorithms:</strong> Priority queue with O(n log k) complexity, greedy tree construction</li>
-          <li><strong>Testing:</strong> 17 comprehensive unit tests, 100% pass rate, edge case coverage</li>
-          <li><strong>Best practices:</strong> Const-correctness, noexcept, [[nodiscard]] attributes</li>
-        </ul>
-        <div class="tech"><span>C++17</span><span>Smart Pointers</span><span>Priority Queue</span><span>RAII</span></div>
-        <p class="blog-link"><a href="/projects/huffman-cpp/">→ read more</a></p>
       </div>
     </article>
 

@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" font-family="monospace">
+  <rect width="800" height="400" fill="#0d1117"/>
+
+  <!-- Sources -->
+  <text x="70" y="30" text-anchor="middle" fill="#8b949e" font-size="11">sources</text>
+  <rect x="15" y="45" width="110" height="35" rx="5" fill="none" stroke="#f85149" stroke-width="1.5"/>
+  <text x="70" y="67" text-anchor="middle" fill="#c9d1d9" font-size="11">Suricata EVE</text>
+  <rect x="15" y="90" width="110" height="35" rx="5" fill="none" stroke="#f85149" stroke-width="1.5"/>
+  <text x="70" y="112" text-anchor="middle" fill="#c9d1d9" font-size="11">Cowrie Honeypot</text>
+  <rect x="15" y="135" width="110" height="35" rx="5" fill="none" stroke="#f85149" stroke-width="1.5"/>
+  <text x="70" y="157" text-anchor="middle" fill="#c9d1d9" font-size="11">C2 Beacons</text>
+  <rect x="15" y="180" width="110" height="35" rx="5" fill="none" stroke="#f85149" stroke-width="1.5"/>
+  <text x="70" y="202" text-anchor="middle" fill="#c9d1d9" font-size="11">Syslog</text>
+
+  <!-- Arrows -->
+  <line x1="125" y1="62" x2="185" y2="120" stroke="#30363d" stroke-width="1.2"/>
+  <line x1="125" y1="107" x2="185" y2="130" stroke="#30363d" stroke-width="1.2"/>
+  <line x1="125" y1="152" x2="185" y2="140" stroke="#30363d" stroke-width="1.2"/>
+  <line x1="125" y1="197" x2="185" y2="150" stroke="#30363d" stroke-width="1.2"/>
+
+  <!-- Normalize -->
+  <rect x="185" y="95" width="110" height="75" rx="6" fill="#161b22" stroke="#58a6ff" stroke-width="1.5"/>
+  <text x="240" y="120" text-anchor="middle" fill="#58a6ff" font-size="12" font-weight="bold">normalize</text>
+  <text x="240" y="138" text-anchor="middle" fill="#8b949e" font-size="10">common schema</text>
+  <text x="240" y="155" text-anchor="middle" fill="#8b949e" font-size="10">field mapping</text>
+
+  <line x1="295" y1="132" x2="340" y2="132" stroke="#30363d" stroke-width="1.2"/>
+
+  <!-- Enrich -->
+  <rect x="340" y="95" width="110" height="75" rx="6" fill="#161b22" stroke="#58a6ff" stroke-width="1.5"/>
+  <text x="395" y="120" text-anchor="middle" fill="#58a6ff" font-size="12" font-weight="bold">enrich</text>
+  <text x="395" y="138" text-anchor="middle" fill="#8b949e" font-size="10">GeoIP lookup</text>
+  <text x="395" y="155" text-anchor="middle" fill="#8b949e" font-size="10">threat intel</text>
+
+  <line x1="450" y1="132" x2="495" y2="132" stroke="#30363d" stroke-width="1.2"/>
+
+  <!-- Detect -->
+  <rect x="495" y="95" width="110" height="75" rx="6" fill="#161b22" stroke="#d29922" stroke-width="1.5"/>
+  <text x="550" y="120" text-anchor="middle" fill="#d29922" font-size="12" font-weight="bold">detect</text>
+  <text x="550" y="138" text-anchor="middle" fill="#8b949e" font-size="10">TOML rules</text>
+  <text x="550" y="155" text-anchor="middle" fill="#8b949e" font-size="10">kill chains</text>
+
+  <!-- Store -->
+  <rect x="340" y="210" width="110" height="50" rx="6" fill="#161b22" stroke="#3fb950" stroke-width="1.5"/>
+  <text x="395" y="232" text-anchor="middle" fill="#3fb950" font-size="12" font-weight="bold">DuckDB</text>
+  <text x="395" y="248" text-anchor="middle" fill="#8b949e" font-size="10">time-series store</text>
+  <line x1="395" y1="170" x2="395" y2="210" stroke="#30363d" stroke-width="1.2"/>
+
+  <!-- Outputs -->
+  <line x1="605" y1="110" x2="650" y2="70" stroke="#30363d" stroke-width="1.2"/>
+  <line x1="605" y1="132" x2="650" y2="132" stroke="#30363d" stroke-width="1.2"/>
+  <line x1="605" y1="155" x2="650" y2="195" stroke="#30363d" stroke-width="1.2"/>
+
+  <rect x="650" y="50" width="120" height="40" rx="5" fill="none" stroke="#3fb950" stroke-width="1.5"/>
+  <text x="710" y="75" text-anchor="middle" fill="#c9d1d9" font-size="11">TUI Dashboard</text>
+
+  <rect x="650" y="112" width="120" height="40" rx="5" fill="none" stroke="#3fb950" stroke-width="1.5"/>
+  <text x="710" y="137" text-anchor="middle" fill="#c9d1d9" font-size="11">Webhooks</text>
+
+  <rect x="650" y="175" width="120" height="40" rx="5" fill="none" stroke="#3fb950" stroke-width="1.5"/>
+  <text x="710" y="200" text-anchor="middle" fill="#c9d1d9" font-size="11">REST API</text>
+
+  <!-- Title -->
+  <text x="400" y="340" text-anchor="middle" fill="#484f58" font-size="10">ingest | normalize | enrich | detect | correlate | alert</text>
+</svg>
