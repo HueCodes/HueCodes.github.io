@@ -57,6 +57,40 @@ title: projects
       </div>
     </article>
 
+    <!-- Network-Beacon -->
+    <article class="project-card" data-category="software">
+      <img src="/assets/images/projects/network-beacon-architecture.svg" alt="Network-Beacon">
+      <div class="card-content">
+        <h3><a href="https://github.com/HueCodes/Network-Beacon">Network-Beacon</a></h3>
+        <p class="tagline">C2 beacon detection via traffic analysis and TLS fingerprinting</p>
+        <ul>
+          <li><strong>Detection:</strong> CV-based jitter analysis, JA4 TLS fingerprinting, DNS tunneling, HTTP beaconing patterns</li>
+          <li><strong>Pipeline:</strong> Multi-threaded async (Tokio) packet processing with libpcap; live capture and PCAP replay</li>
+          <li><strong>Output:</strong> Ratatui TUI dashboard, webhook + syslog alerting, Prometheus metrics, JSON/JSONL for SIEM</li>
+          <li><strong>Configuration:</strong> TOML profiles (paranoid/balanced/relaxed), GeoIP enrichment via MaxMind</li>
+        </ul>
+        <div class="tech"><span>Rust</span><span>Tokio</span><span>libpcap</span><span>Ratatui</span><span>JA4</span><span>Prometheus</span></div>
+        <p class="blog-link"><a href="https://github.com/HueCodes/Network-Beacon">→ github</a></p>
+      </div>
+    </article>
+
+    <!-- Container-runtime-rs -->
+    <article class="project-card" data-category="software">
+      <img src="/assets/images/projects/container-runtime-architecture.svg" alt="Container-runtime-rs">
+      <div class="card-content">
+        <h3><a href="https://github.com/HueCodes/Container-runtime-rs">Container-runtime-rs</a></h3>
+        <p class="tagline">OCI-compliant container runtime in Rust</p>
+        <ul>
+          <li><strong>Isolation:</strong> Linux namespaces (PID/mount/UTS/IPC/net), cgroups v2 with memory/CPU/PID limits</li>
+          <li><strong>Storage:</strong> OverlayFS for layered images, OCI image pulling and layer extraction</li>
+          <li><strong>Security:</strong> Seccomp BPF filters, capability dropping, no_new_privs, user namespaces</li>
+          <li><strong>Architecture:</strong> 900+ source files, full OCI runtime spec compliance, Docker-comparable lifecycle</li>
+        </ul>
+        <div class="tech"><span>Rust</span><span>Linux Namespaces</span><span>cgroups v2</span><span>OverlayFS</span><span>seccomp</span><span>OCI</span></div>
+        <p class="blog-link"><a href="https://github.com/HueCodes/Container-runtime-rs">→ github</a></p>
+      </div>
+    </article>
+
     <!-- ServiceMesh -->
     <article class="project-card" data-category="software">
       <img src="/assets/images/projects/servicemesh-demo.gif" alt="ServiceMesh">
@@ -71,23 +105,6 @@ title: projects
         </ul>
         <div class="tech"><span>Rust</span><span>Tokio</span><span>gRPC</span><span>HTTP/2</span><span>Prometheus</span></div>
         <p class="blog-link"><a href="/projects/rust-servicemesh/">→ read more</a></p>
-      </div>
-    </article>
-
-    <!-- Dredge -->
-    <article class="project-card" data-category="software">
-      <img src="/assets/images/projects/dredge-demo.svg" alt="Dredge">
-      <div class="card-content">
-        <h3><a href="https://github.com/HueCodes/Dredge">Dredge</a></h3>
-        <p class="tagline">AI-powered binary vulnerability discovery</p>
-        <ul>
-          <li><strong>Pipeline:</strong> 6-stage automated flow — extract firmware, decompile with Ghidra, triage, analyze with Claude</li>
-          <li><strong>Profiles:</strong> Domain-specific heuristics and prompts for drone, server, satellite, and IoT targets</li>
-          <li><strong>Triage:</strong> Scores functions 0-100 with fast heuristics before expensive LLM calls</li>
-          <li><strong>Detection:</strong> Attack chain correlation — correlated findings boost severity (e.g., hardcoded creds + auth bypass)</li>
-        </ul>
-        <div class="tech"><span>Python</span><span>Ghidra</span><span>Claude API</span><span>binwalk</span><span>Firmware Analysis</span></div>
-        <p class="blog-link"><a href="/projects/dredge/">→ read more</a></p>
       </div>
     </article>
 
@@ -227,23 +244,6 @@ title: projects
       </div>
     </article>
 
-    <!-- Elastic Collision -->
-    <article class="project-card" data-category="software">
-      <img src="/assets/images/projects/elastic-collision-gpu.svg" alt="Elastic Collision Engine">
-      <div class="card-content">
-        <h3><a href="https://github.com/HueCodes/Cpp-Particle-Sim">Elastic Collision Engine</a></h3>
-        <p class="tagline">OpenCL GPU compute + spatial hashing for 1000-particle physics</p>
-        <ul>
-          <li><strong>GPU compute:</strong> OpenCL kernels for parallel collision resolution, one work item per particle</li>
-          <li><strong>Spatial hashing:</strong> O(n) broad-phase detection via uniform grid, 9-cell neighborhood lookup</li>
-          <li><strong>Physics:</strong> Elastic collision formula with mass-weighted positional correction</li>
-          <li><strong>Architecture:</strong> CPU/GPU split — grid built CPU-side, collision resolution GPU-side</li>
-        </ul>
-        <div class="tech"><span>C++</span><span>OpenCL</span><span>SDL2</span><span>Spatial Hashing</span><span>Physics Simulation</span></div>
-        <p class="blog-link"><a href="/projects/elastic-collision-opencl/">→ read more</a></p>
-      </div>
-    </article>
-
     <!-- PID Motor Control -->
     <article class="project-card" data-category="hardware">
       <img src="/assets/images/projects/pid-motor-control.svg" alt="PID Motor Control">
@@ -258,57 +258,6 @@ title: projects
         </ul>
         <div class="tech"><span>STM32F411RE</span><span>PID</span><span>MPU-6050</span><span>TB6612FNG</span><span>CMake</span></div>
         <p class="blog-link"><a href="/hardware/pid-motor-control/">→ view project</a></p>
-      </div>
-    </article>
-
-    <!-- ESP32-S3 RF Board -->
-    <article class="project-card" data-category="hardware">
-      <img src="/assets/images/projects/esp32-s3-rf-board-pcb.svg" alt="ESP32-S3 RF Board">
-      <div class="card-content">
-        <h3><a href="/hardware/esp32-s3-rf-board/">ESP32-S3 RF Board</a></h3>
-        <p class="tagline">50x40mm 4-layer RF dev board, bare QFN56 die</p>
-        <ul>
-          <li><strong>RF:</strong> 50-ohm microstrip trace (0.6mm on L1), Johanson chip antenna + u.FL test port</li>
-          <li><strong>Stackup:</strong> JLC04161H-7628, solid GND on L2, 3.3V plane on L3, 45-degree bends</li>
-          <li><strong>Layout:</strong> GND stitching vias at 6mm (lambda/10 at 2.4GHz), 5mm antenna keepout, parametric Python generation</li>
-          <li><strong>Firmware:</strong> ESP-IDF v5 bring-up — dual-core WiFi scan + status LED validates RF path</li>
-        </ul>
-        <div class="tech"><span>KiCAD 8</span><span>ESP32-S3</span><span>RF Design</span><span>4-Layer PCB</span><span>ESP-IDF</span></div>
-        <p class="blog-link"><a href="/hardware/esp32-s3-rf-board/">→ view project</a></p>
-      </div>
-    </article>
-
-    <!-- Raft Consensus MCU -->
-    <article class="project-card" data-category="hardware">
-      <img src="/assets/images/projects/raft-consensus-mcu.svg" alt="Raft Consensus MCU">
-      <div class="card-content">
-        <h3><a href="/hardware/raft-consensus-mcu/">Raft Consensus on MCUs</a></h3>
-        <p class="tagline">Distributed consensus on a 5-node ESP32-S3 cluster</p>
-        <ul>
-          <li><strong>Protocol:</strong> Full Raft implementation — leader election, log replication, InstallSnapshot</li>
-          <li><strong>Transport:</strong> ESP-NOW mesh (250B frames, 1-10ms latency), broadcast + unicast</li>
-          <li><strong>Persistence:</strong> SPI FRAM for term/vote (unlimited writes), SPI Flash for log with wear-leveling</li>
-          <li><strong>Application:</strong> Distributed sensor fusion, synchronized RGB LEDs, serial KV store</li>
-        </ul>
-        <div class="tech"><span>ESP32-S3</span><span>ESP-NOW</span><span>Raft</span><span>FRAM</span><span>ESP-IDF</span></div>
-        <p class="blog-link"><a href="/hardware/raft-consensus-mcu/">→ view project</a></p>
-      </div>
-    </article>
-
-    <!-- LoRa Sensor Node -->
-    <article class="project-card" data-category="hardware">
-      <img src="/assets/images/projects/lorawan-mesh-diagram.svg" alt="LoRa Sensor Node">
-      <div class="card-content">
-        <h3><a href="/hardware/lora-sensor-node/">LoRa Sensor Node</a></h3>
-        <p class="tagline">Raw LoRa P2P sensor link with SPI-level debugging</p>
-        <ul>
-          <li><strong>Radio:</strong> SX1262 on 915MHz ISM, SF9/125kHz, raw LoRa modulation (not LoRaWAN)</li>
-          <li><strong>Hardware:</strong> 2x Heltec WiFi LoRa 32 V3 (ESP32-S3 + SX1262 + OLED), DHT11 sensor</li>
-          <li><strong>Debugging:</strong> 24MHz logic analyzer captures of SX1262 SPI bus with annotated command sequences</li>
-          <li><strong>Protocol:</strong> Point-to-point TX/RX with RSSI/SNR monitoring, RadioLib driver</li>
-        </ul>
-        <div class="tech"><span>ESP32-S3</span><span>SX1262</span><span>LoRa</span><span>915MHz</span><span>PlatformIO</span><span>RadioLib</span></div>
-        <p class="blog-link"><a href="/hardware/lora-sensor-node/">→ view project</a></p>
       </div>
     </article>
 
@@ -329,56 +278,6 @@ title: projects
       </div>
     </article>
 
-    <!-- Spectrum Analyzer -->
-    <article class="project-card" data-category="hardware">
-      <img src="/assets/images/projects/spectrum-analyzer-display.svg" alt="Spectrum Analyzer">
-      <div class="card-content">
-        <h3><a href="/hardware/spectrum-analyzer/">Spectrum Analyzer</a></h3>
-        <p class="tagline">Portable RF spectrum analyzer with real-time OLED display</p>
-        <ul>
-          <li><strong>Display:</strong> Real-time spectrum visualization on OLED for RF debugging</li>
-          <li><strong>Hardware:</strong> ESP32 + OLED + antenna pigtail + SD card logging</li>
-          <li><strong>Use case:</strong> Debugging LoRa, WiFi, and BT projects in the field</li>
-          <li><strong>Goal:</strong> Hands-on tool for learning radio frequency fundamentals</li>
-        </ul>
-        <div class="tech"><span>ESP32</span><span>OLED</span><span>RF</span><span>Spectrum Analysis</span><span>ESP-IDF</span></div>
-        <p class="blog-link"><a href="/hardware/spectrum-analyzer/">→ view project</a></p>
-      </div>
-    </article>
-
-    <!-- Underwater Acoustic Modem -->
-    <article class="project-card" data-category="hardware">
-      <img src="/assets/images/projects/acoustic-modem.svg" alt="Acoustic Modem">
-      <div class="card-content">
-        <h3><a href="/hardware/acoustic-modem/">Underwater Acoustic Modem</a></h3>
-        <p class="tagline">BFSK acoustic communication for UUV command links</p>
-        <ul>
-          <li><strong>Modulation:</strong> BFSK — 10kHz/12kHz tones, ~1000 bps raw, ~500 bps with Hamming(7,4) FEC</li>
-          <li><strong>Demodulation:</strong> Goertzel algorithm (single-bin DFT at two target frequencies)</li>
-          <li><strong>Framing:</strong> [Preamble 8 sym][Length 1B][Payload 0-255B][CRC-16 2B]</li>
-          <li><strong>Hardware:</strong> ESP32 TX/RX, TB6612FNG amp, piezo transducer for underwater path</li>
-        </ul>
-        <div class="tech"><span>ESP32</span><span>BFSK</span><span>Goertzel</span><span>DSP</span><span>ESP-IDF</span></div>
-        <p class="blog-link"><span style="color: var(--accent); opacity: 0.6;">coming soon</span></p>
-      </div>
-    </article>
-
-    <!-- SLAM Engine -->
-    <article class="project-card" data-category="hardware">
-      <img src="/assets/images/projects/slam-engine.svg" alt="SLAM Engine">
-      <div class="card-content">
-        <h3><a href="/hardware/slam-engine/">SLAM Engine</a></h3>
-        <p class="tagline">Indoor SLAM on STM32 with EKF and occupancy grid</p>
-        <ul>
-          <li><strong>State estimation:</strong> Extended Kalman Filter — [x, y, theta, v], IMU predict + scan update</li>
-          <li><strong>Mapping:</strong> 80x80 log-odds occupancy grid (4m x 4m, 5cm resolution) with Bresenham raycasting</li>
-          <li><strong>Sensing:</strong> HC-SR04 ultrasonic on SG90 servo sweep (~2Hz), MPU-6050 IMU at 100Hz</li>
-          <li><strong>Display:</strong> Real-time top-down map rendered on SSD1306 OLED, SD card persistence</li>
-        </ul>
-        <div class="tech"><span>STM32F411RE</span><span>EKF</span><span>FreeRTOS</span><span>MPU-6050</span><span>HC-SR04</span></div>
-        <p class="blog-link"><span style="color: var(--accent); opacity: 0.6;">coming soon</span></p>
-      </div>
-    </article>
   </section>
 </div>
 
