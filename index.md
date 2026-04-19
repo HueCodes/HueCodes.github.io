@@ -28,13 +28,38 @@ title: home
 <hr class="divider">
 
 <div class="section fade-in" style="animation-delay: 0.1s">
+  <h2>selected work</h2>
+
+  <!-- moat — uncomment when repo goes public
+  <p>
+    <a href="https://github.com/HueCodes/Moat"><strong>moat</strong></a> — mtls for ai agents<br>
+    signed capability tokens, wasm sandbox, tamper-evident audit log. rust.
+  </p>
+  -->
+
+  <p>
+    <a href="https://github.com/HueCodes/Archimedes"><strong>archimedes</strong></a> — interactive computational geometry<br>
+    convex hull, delaunay, semiconductor critical-area. rust + wasm + webgpu. <a href="https://huecodes.github.io/Archimedes/">live demo →</a>
+  </p>
+
+  <!-- ping-rs — uncomment when repo is uploaded
+  <p>
+    <a href="https://github.com/HueCodes/ping-rs"><strong>ping-rs</strong></a> — servo-swept ultrasonic radar<br>
+    stm32 + async rust (embassy). polar oled display + json telemetry.
+  </p>
+  -->
+</div>
+
+<hr class="divider">
+
+<div class="section fade-in" style="animation-delay: 0.15s">
   <h2>currently</h2>
   <p>networking and embedded systems in rust, go, and c. building hardware projects. contributing to open source.</p>
 </div>
 
 <hr class="divider">
 
-<div class="section fade-in" style="animation-delay: 0.15s">
+<div class="section fade-in" style="animation-delay: 0.2s">
   <h2>about</h2>
   <p>i got into engineering through curiosity about how things work. started with chemistry and biology as a kid, eventually landed on computers and robots. now i'm mostly focused on networking, distributed systems, and embedded hardware. lately i've been getting into rf, control theory, and building a uuv. teaching myself more math and physics along the way.</p>
 </div>

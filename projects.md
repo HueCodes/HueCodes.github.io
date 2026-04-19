@@ -22,6 +22,41 @@ title: projects
 
   <!-- Projects -->
   <section class="projects-grid">
+    <!-- Moat — uncomment when repo goes public
+    <article class="project-card" data-category="software">
+      <img src="/assets/images/projects/moat-architecture.svg" alt="Moat">
+      <div class="card-content">
+        <h3><a href="https://github.com/HueCodes/Moat">Moat</a></h3>
+        <p class="tagline">mTLS for AI agents</p>
+        <ul>
+          <li><strong>Identity:</strong> Ed25519 per-agent keys; every message signed with monotonic sequence numbers for replay protection</li>
+          <li><strong>Capability tokens:</strong> Monotonic attenuation enforced by construction — children can only narrow scope, never broaden</li>
+          <li><strong>Sandbox:</strong> wasmtime + WASI with fuel limits, memory caps, default-deny filesystem and network</li>
+          <li><strong>Audit:</strong> Append-only SHA-256 hash chain — any retroactive mutation breaks all subsequent hashes</li>
+        </ul>
+        <div class="tech"><span>Rust</span><span>Ed25519</span><span>wasmtime</span><span>WASI</span><span>Tokio</span></div>
+        <p class="blog-link"><span style="color: var(--accent); opacity: 0.6;">coming soon</span></p>
+      </div>
+    </article>
+    -->
+
+    <!-- Archimedes -->
+    <article class="project-card" data-category="software">
+      <img src="/assets/images/projects/archimedes-critical-area.png" alt="Archimedes">
+      <div class="card-content">
+        <h3><a href="https://github.com/HueCodes/Archimedes">Archimedes</a></h3>
+        <p class="tagline">Interactive computational geometry in Rust + WASM + WebGPU</p>
+        <ul>
+          <li><strong>Algorithms:</strong> Andrew's monotone-chain convex hull, Bowyer-Watson Delaunay triangulation, polygon boolean ops via i_overlay</li>
+          <li><strong>Semiconductor:</strong> Critical-area analysis — Minkowski-style dilation for VLSI yield prediction (Papadopoulou & Lee, 1999)</li>
+          <li><strong>Robustness:</strong> Side-by-side naive f32 vs Shewchuk adaptive-precision predicates on near-degenerate input</li>
+          <li><strong>Stack:</strong> egui + wgpu rendering, trunk for wasm build, runs in-browser via WebAssembly</li>
+        </ul>
+        <div class="tech"><span>Rust</span><span>WebAssembly</span><span>WebGPU</span><span>egui</span><span>Computational Geometry</span></div>
+        <p class="blog-link"><a href="https://huecodes.github.io/Archimedes/">→ live demo</a></p>
+      </div>
+    </article>
+
     <!-- ServiceMesh -->
     <article class="project-card" data-category="software">
       <img src="/assets/images/projects/servicemesh-demo.gif" alt="ServiceMesh">
@@ -206,23 +241,6 @@ title: projects
         </ul>
         <div class="tech"><span>C++</span><span>OpenCL</span><span>SDL2</span><span>Spatial Hashing</span><span>Physics Simulation</span></div>
         <p class="blog-link"><a href="/projects/elastic-collision-opencl/">→ read more</a></p>
-      </div>
-    </article>
-
-    <!-- UART-Cpp -->
-    <article class="project-card" data-category="software">
-      <img src="/assets/images/projects/uart-cpp-system.svg" alt="UART-Cpp">
-      <div class="card-content">
-        <h3><a href="https://github.com/HueCodes/UART-cpp">UART-Cpp</a></h3>
-        <p class="tagline">Bare-metal UART driver for STM32F4</p>
-        <ul>
-          <li><strong>No HAL:</strong> Direct register access via CMSIS only, ~200 lines replacing 20,000+ of generated code</li>
-          <li><strong>Interrupt-driven:</strong> Non-blocking TX via on-demand TXEIE, ISR-driven RX with ring buffers</li>
-          <li><strong>Lock-free:</strong> SPSC ring buffers with volatile index semantics, no atomics or critical sections</li>
-          <li><strong>Clocks:</strong> 8 MHz HSE to 84 MHz SYSCLK via PLL with correct flash latency ordering</li>
-        </ul>
-        <div class="tech"><span>C++17</span><span>STM32F4</span><span>Bare-metal</span><span>CMSIS</span><span>NVIC</span></div>
-        <p class="blog-link"><a href="/projects/bare-metal-uart-stm32/">→ read more</a></p>
       </div>
     </article>
 

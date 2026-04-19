@@ -20,13 +20,18 @@ title: open source
 
 <div class="section">
   <div class="project">
-    <a href="https://github.com/tokio-rs/tokio/pull/7874">tokio#7874</a>
-    <span>Lock-free is_cancelled via AtomicBool for CancellationToken. Eliminates >2ms mutex contention in hot paths by replacing mutex with atomic operations.</span>
+    <a href="https://github.com/smoltcp-rs/smoltcp/pull/1127">smoltcp#1127</a>
+    <span>Check silent_until expiry in Meta::poll_at. Fixes 100% CPU spin when a DNS query times out with an unresolved neighbor by falling through to socket_poll_at once the silence period expires.</span>
   </div>
 
   <div class="project">
-    <a href="https://github.com/cloudflare/agents/pull/781">cloudflare/agents#781</a>
-    <span>Fix: properly type tool error content in getAITools. Corrects TypeScript type definitions for error handling in Cloudflare's AI agent framework.</span>
+    <a href="https://github.com/smoltcp-rs/smoltcp/pull/1126">smoltcp#1126</a>
+    <span>TCP challenge ACK for duplicate ACKs in LAST-ACK state (RFC 9293 §3.10.7.4). Fixes silent discard of stale acknowledgments by sending a challenge ACK response.</span>
+  </div>
+
+  <div class="project">
+    <a href="https://github.com/tailscale/tailscale/pull/19423">tailscale#19423</a>
+    <span><em>(open)</em> derp/derpserver,cmd/derper: support X-Real-IP header behind reverse proxy. Adds opt-in <code>--accept-proxy-headers</code> flag so DERP honors X-Real-IP / X-Forwarded-For from loopback connections, fixing client identification, admission control, and logging when running behind a reverse proxy. Validates addrs with <code>netip.ParseAddr</code>.</span>
   </div>
 
   <div class="project">
@@ -40,18 +45,23 @@ title: open source
   </div>
 
   <div class="project">
-    <a href="https://github.com/smoltcp-rs/smoltcp/pull/1127">smoltcp#1127</a>
-    <span>Check silent_until expiry in Meta::poll_at. Fixes 100% CPU spin when a DNS query times out with an unresolved neighbor by falling through to socket_poll_at once the silence period expires.</span>
-  </div>
-
-  <div class="project">
-    <a href="https://github.com/smoltcp-rs/smoltcp/pull/1126">smoltcp#1126</a>
-    <span>TCP challenge ACK for duplicate ACKs in LAST-ACK state (RFC 9293 §3.10.7.4). Fixes silent discard of stale acknowledgments by sending a challenge ACK response.</span>
+    <a href="https://github.com/tokio-rs/tokio/pull/7874">tokio#7874</a>
+    <span>Lock-free is_cancelled via AtomicBool for CancellationToken. Eliminates >2ms mutex contention in hot paths by replacing mutex with atomic operations.</span>
   </div>
 
   <div class="project">
     <a href="https://github.com/embassy-rs/embassy/pull/5598">embassy#5598</a>
     <span>Align ring buffer reads to ADC scan sequence length. Fixes channel value shifting after DMA overrun recovery in STM32 ADC ring-buffered mode.</span>
+  </div>
+
+  <div class="project">
+    <a href="https://github.com/mitmproxy/mitmproxy/pull/8046">mitmproxy#8046</a>
+    <span>Fix modify_body crash when replacement contains backslash sequences. Resolves crash in mitmproxy's body modification addon caused by unescaped backslash sequences in regex substitution.</span>
+  </div>
+
+  <div class="project">
+    <a href="https://github.com/SigmaHQ/pySigma/pull/442">pySigma#442</a>
+    <span>Fix chained boolean operators in condition expressions. Extracts all operands from pyparsing results and folds them into a left-associative binary tree, fixing silent drops in expressions like A or B or C.</span>
   </div>
 
   <div class="project">
@@ -62,6 +72,11 @@ title: open source
   <div class="project">
     <a href="https://github.com/dimforge/rapier/pull/806">rapier#806</a>
     <span>GeometricMean coefficient combine rule for friction simulation. Implements alternative friction model for more realistic physics simulation in the Rapier physics engine.</span>
+  </div>
+
+  <div class="project">
+    <a href="https://github.com/cloudflare/agents/pull/781">cloudflare/agents#781</a>
+    <span>Fix: properly type tool error content in getAITools. Corrects TypeScript type definitions for error handling in Cloudflare's AI agent framework.</span>
   </div>
 
   <div class="project">
@@ -77,15 +92,5 @@ title: open source
   <div class="project">
     <a href="https://github.com/jeremyfix/torchcvnn/pull/106">torchcvnn#106</a>
     <span>Added input validation to normalization layers. Prevents runtime errors by validating tensor shapes and types in PyTorch complex-valued neural network library.</span>
-  </div>
-
-  <div class="project">
-    <a href="https://github.com/mitmproxy/mitmproxy/pull/8046">mitmproxy#8046</a>
-    <span>Fix modify_body crash when replacement contains backslash sequences. Resolves crash in mitmproxy's body modification addon caused by unescaped backslash sequences in regex substitution.</span>
-  </div>
-
-  <div class="project">
-    <a href="https://github.com/SigmaHQ/pySigma/pull/442">pySigma#442</a>
-    <span>Fix chained boolean operators in condition expressions. Extracts all operands from pyparsing results and folds them into a left-associative binary tree, fixing silent drops in expressions like A or B or C.</span>
   </div>
 </div>
