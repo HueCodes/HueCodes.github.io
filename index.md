@@ -28,14 +28,17 @@ title: home
 <hr class="divider">
 
 <div class="section fade-in" style="animation-delay: 0.1s">
-  <h2>selected work</h2>
+  <h2>highlights</h2>
 
-  <!-- moat — uncomment when repo goes public
   <p>
     <strong>moat</strong> — mtls for ai agents<br>
     signed capability tokens, wasm sandbox, tamper-evident audit log. rust. <a href="https://github.com/HueCodes/Moat">github →</a>
   </p>
-  -->
+
+  <p>
+    <strong>gretun</strong> — nat-traversing peer-to-peer gre overlay for linux<br>
+    netlink integration, distributed peer discovery, icmp health probing. go. <a href="https://github.com/HueCodes/gretun">github →</a>
+  </p>
 
   <p>
     <a href="https://huecodes.github.io/Archimedes/"><strong>archimedes</strong></a> — interactive computational geometry<br>
@@ -44,8 +47,8 @@ title: home
 
   <!-- ping-rs — uncomment when repo is uploaded
   <p>
-    <a href="https://github.com/HueCodes/ping-rs"><strong>ping-rs</strong></a> — servo-swept ultrasonic radar<br>
-    stm32 + async rust (embassy). polar oled display + json telemetry.
+    <strong>ping-rs</strong> — servo-swept ultrasonic radar<br>
+    stm32 + async rust (embassy). polar oled display + json telemetry. <a href="https://github.com/HueCodes/ping-rs">github →</a>
   </p>
   -->
 </div>
