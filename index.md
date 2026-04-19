@@ -32,14 +32,14 @@ title: home
 
   <!-- moat — uncomment when repo goes public
   <p>
-    <a href="https://github.com/HueCodes/Moat"><strong>moat</strong></a> — mtls for ai agents<br>
-    signed capability tokens, wasm sandbox, tamper-evident audit log. rust.
+    <strong>moat</strong> — mtls for ai agents<br>
+    signed capability tokens, wasm sandbox, tamper-evident audit log. rust. <a href="https://github.com/HueCodes/Moat">github →</a>
   </p>
   -->
 
   <p>
-    <a href="https://github.com/HueCodes/Archimedes"><strong>archimedes</strong></a> — interactive computational geometry<br>
-    convex hull, delaunay, semiconductor critical-area. rust + wasm + webgpu. <a href="https://huecodes.github.io/Archimedes/">live demo →</a>
+    <a href="https://huecodes.github.io/Archimedes/"><strong>archimedes</strong></a> — interactive computational geometry<br>
+    convex hull, delaunay, semiconductor critical-area. rust + wasm + webgpu. <a href="https://github.com/HueCodes/Archimedes">github →</a>
   </p>
 
   <!-- ping-rs — uncomment when repo is uploaded
