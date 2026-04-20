@@ -29,28 +29,4 @@ title: hardware
     <a href="/hardware/uart-stm32-driver/">STM32 Bare-Metal UART Driver</a>
     <span>interrupt-driven UART with lock-free SPSC ring buffers on STM32F401 — no HAL, no RTOS, 47 host tests</span>
   </div>
-  <div class="project">
-    <a href="/hardware/raft-consensus-mcu/">Raft Consensus on Microcontrollers</a>
-    <span>distributed consensus on a 5-node ESP32-S3 cluster over ESP-NOW — leader election, log replication, fault tolerance <em>(in progress)</em></span>
-  </div>
-  <div class="project">
-    <a href="/hardware/lora-sensor-node/">LoRa Sensor Node</a>
-    <span>raw LoRa P2P link between two Heltec WiFi LoRa 32 V3 boards with SX1262, environmental sensing <em>(in progress)</em></span>
-  </div>
-  <div class="project">
-    <a href="/hardware/freertos-stm32/">FreeRTOS STM32</a>
-    <span>5-task preemptive firmware with watchdog supervision, queues, and flash config on STM32F411RE <em>(in progress)</em></span>
-  </div>
-  <div class="project">
-    <a href="/hardware/spectrum-analyzer/">ESP32 Spectrum Analyzer</a>
-    <span>portable 2.4GHz spectrum analyzer with SSD1306 OLED and SD logging <em>(in progress)</em></span>
-  </div>
-  <div class="project">
-    <a href="/hardware/acoustic-modem/">Underwater Acoustic Modem</a>
-    <span>BFSK acoustic communication link on ESP32 with Goertzel demodulation — for UUV command links <em>(updates soon)</em></span>
-  </div>
-  <div class="project">
-    <a href="/hardware/slam-engine/">SLAM Engine</a>
-    <span>indoor SLAM on STM32F411RE with ultrasonic scanning, EKF state estimation, and occupancy grid mapping <em>(updates soon)</em></span>
-  </div>
 </div>
