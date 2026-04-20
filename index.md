@@ -35,7 +35,7 @@ title: home
 
   <details>
     <summary><strong>gretun</strong> — nat-traversing peer-to-peer gre overlay for linux</summary>
-    <p>direct netlink instead of wrapping <code>ip tunnel</code>: create link → assign address → bring up → add routes, with partial-failure rollback. cap_net_admin checked upfront so errors are actionable instead of opaque netlink codes. auto-calculates tunnel mtu (physical mtu − 24 b gre/ip overhead) to avoid silent fragmentation. tested inside linux network namespaces connected by veth pairs, exercising the full encap / route / decap path. 275+ validation cases over names, cidrs, ips, ttls. ipv4-only, icmp health probes. go. <a href="https://github.com/HueCodes/gretun">github →</a></p>
+    <p>two hosts behind consumer nat run <code>gretun up --coordinator &lt;url&gt;</code> and get a direct, kernel-fastpath gre tunnel between them — no port forwarding, no static ips, no manual config. fou encapsulation wraps gre (ip proto 47) in udp so consumer nats can map it and it can be hole-punched. stun over a shared userspace udp socket discovers each node's public <code>ip:port</code>. a small http coordinator registers peers and relays sealed disco envelopes — 6-byte magic + sender curve25519 pubkey + nacl-box body, tailscale-compatible format — and holds no node private keys. hole punching: each side pings published endpoints, first pong wins; symmetric-nat detection built in. control plane: ed25519 + curve25519. data plane: pure kernel gre-over-fou. prometheus metrics, keepalives. go. <a href="https://github.com/HueCodes/gretun">github →</a></p>
   </details>
 
   <details>
