@@ -1,0 +1,98 @@
+---
+layout: default
+---
+<nav class="site-nav">
+  <a href="/">home</a>
+  <a href="/blog">blog</a>
+  <a href="/hardware">hardware</a>
+  <a href="/opensource">opensource</a>
+  <a href="https://github.com/HueCodes">github</a>
+</nav>
+
+<button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-sidebar">contents</button>
+
+<div class="layout-wide">
+  <aside id="toc-sidebar" class="toc-sidebar" aria-label="Table of contents">
+    <div class="toc-header">contents</div>
+    <nav class="toc-nav"></nav>
+  </aside>
+
+  <article class="post post--wide">
+    <header>
+      <h1>{{ page.title }}</h1>
+      <time>{{ page.date | date: "%b %Y" }}</time>
+    </header>
+
+    {{ content }}
+
+    <footer>
+      <a href="{{ '/blog' | relative_url }}">&larr; back to blog</a>
+    </footer>
+  </article>
+</div>
+
+<script>
+(function () {
+  var article = document.querySelector('.post--wide');
+  var tocNav = document.querySelector('.toc-nav');
+  var sidebar = document.getElementById('toc-sidebar');
+  var toggle = document.querySelector('.toc-toggle');
+  if (!article || !tocNav) return;
+
+  var headings = article.querySelectorAll('h2[id], h3[id]');
+  if (!headings.length) return;
+
+  var byId = {};
+  headings.forEach(function (h) {
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    a.className = 'toc-link toc-' + h.tagName.toLowerCase();
+    a.dataset.target = h.id;
+    tocNav.appendChild(a);
+    byId[h.id] = a;
+  });
+
+  var visible = new Set();
+  function refresh() {
+    var active = null;
+    for (var i = 0; i < headings.length; i++) {
+      if (visible.has(headings[i].id)) { active = headings[i].id; break; }
+    }
+    Object.keys(byId).forEach(function (id) { byId[id].classList.remove('active'); });
+    if (!active) {
+      var y = window.scrollY;
+      var last = null;
+      headings.forEach(function (h) {
+        if (h.getBoundingClientRect().top + window.scrollY - 100 <= y) last = h.id;
+      });
+      active = last || headings[0].id;
+    }
+    if (byId[active]) byId[active].classList.add('active');
+  }
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) visible.add(e.target.id);
+      else visible.delete(e.target.id);
+    });
+    refresh();
+  }, { rootMargin: '-80px 0px -70% 0px', threshold: 0 });
+
+  headings.forEach(function (h) { observer.observe(h); });
+  refresh();
+
+  if (toggle && sidebar) {
+    toggle.addEventListener('click', function () {
+      var open = sidebar.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    tocNav.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A' && window.innerWidth < 960) {
+        sidebar.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+})();
+</script>
