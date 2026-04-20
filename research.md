@@ -8,7 +8,6 @@ title: research
   <a href="/blog">blog</a>
   <a href="/opensource">opensource</a>
   <a href="/hardware">hardware</a>
-  <a href="/research">research</a>
   <a href="https://github.com/HueCodes">github</a>
 </nav>
 
@@ -17,8 +16,10 @@ title: research
 </div>
 
 <div class="section">
+  {% for item in site.research %}
   <div class="project">
-    <a href="/research/prompt-injection">Indirect Prompt Injection in Small Language Models</a>
-    <span>attack taxonomy and size analysis for 0.5B-3B models</span>
+    <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+    {% if item.summary %}<span>{{ item.summary }}</span>{% endif %}
   </div>
+  {% endfor %}
 </div>

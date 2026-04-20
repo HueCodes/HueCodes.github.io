@@ -2,6 +2,7 @@
 layout: research
 title: Indirect Prompt Injection in Small Language Models
 date: January 2026
+summary: attack taxonomy and size analysis for 0.5B-3B models
 ---
 
 ## Abstract

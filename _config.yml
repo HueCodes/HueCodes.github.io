@@ -21,3 +21,6 @@ collections:
   hardware:
     output: true
     permalink: /hardware/:name/
+  research:
+    output: true
+    permalink: /research/:name/
