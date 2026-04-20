@@ -37,7 +37,7 @@ title: blog
   {% for item in site.research %}
   <li>
     <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
-    <time>{{ item.date }}</time>
+    <time>{{ item.date | date: "%b %Y" }}</time>
   </li>
   {% endfor %}
 </ul>
