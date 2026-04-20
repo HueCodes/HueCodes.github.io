@@ -39,8 +39,8 @@ title: home
   </p>
 
   <p>
-    <strong>archimedes</strong> — interactive computational geometry<br>
-    convex hull, delaunay, semiconductor critical-area. rust + wasm + webgpu. <a href="https://huecodes.github.io/Archimedes/">try it →</a> · <a href="https://github.com/HueCodes/Archimedes">github →</a>
+    <strong><a href="https://huecodes.github.io/Archimedes/">archimedes</a></strong> — interactive computational geometry<br>
+    convex hull, delaunay, semiconductor critical-area. rust + wasm + webgpu. <a href="https://github.com/HueCodes/Archimedes">github →</a>
   </p>
 
   <!-- ping-rs — uncomment when repo is uploaded
