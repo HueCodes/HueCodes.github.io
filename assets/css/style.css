@@ -184,6 +184,58 @@ nav a:hover::after {
 
 .section a {
   margin-right: 0;
+  white-space: nowrap;
+}
+
+.section p {
+  margin-bottom: 0.9rem;
+}
+
+.section p:last-child {
+  margin-bottom: 0;
+}
+
+/* Collapsible highlight blocks */
+.section details {
+  margin-bottom: 0.35rem;
+}
+
+.section details summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 0.2rem 0;
+  color: var(--text);
+  transition: color 0.15s ease;
+}
+
+.section details summary::-webkit-details-marker {
+  display: none;
+}
+
+.section details summary::before {
+  content: '[+] ';
+  color: var(--text-secondary);
+  margin-right: 0.15rem;
+}
+
+.section details[open] summary::before {
+  content: '[-] ';
+  color: var(--link);
+}
+
+.section details summary:hover {
+  color: var(--link-hover);
+}
+
+.section details summary:hover::before {
+  color: var(--link-hover);
+}
+
+.section details > p {
+  margin: 0.4rem 0 0.6rem 1.75rem;
+  padding-left: 0.85rem;
+  border-left: 1px solid var(--border);
+  color: #c9d1d9;
 }
 
 /* Projects (open source page) */

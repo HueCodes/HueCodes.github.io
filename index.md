@@ -28,20 +28,20 @@ title: home
 <div class="section fade-in" style="animation-delay: 0.1s">
   <h2>highlights</h2>
 
-  <p>
-    <strong>moat</strong> — mtls for ai agents<br>
-    signed capability tokens, wasm sandbox, tamper-evident audit log. rust. <a href="https://github.com/HueCodes/Moat">github →</a>
-  </p>
+  <details>
+    <summary><strong>moat</strong> — mtls for ai agents</summary>
+    <p>signed capability tokens, wasm sandbox, tamper-evident audit log. rust. <a href="https://github.com/HueCodes/Moat">github →</a></p>
+  </details>
 
-  <p>
-    <strong>gretun</strong> — nat-traversing peer-to-peer gre overlay for linux<br>
-    netlink integration, distributed peer discovery, icmp health probing. go. <a href="https://github.com/HueCodes/gretun">github →</a>
-  </p>
+  <details>
+    <summary><strong>gretun</strong> — nat-traversing peer-to-peer gre overlay for linux</summary>
+    <p>netlink integration, distributed peer discovery, icmp health probing. go. <a href="https://github.com/HueCodes/gretun">github →</a></p>
+  </details>
 
-  <p>
-    <strong><a href="https://huecodes.github.io/Archimedes/">archimedes</a></strong> — interactive computational geometry<br>
-    convex hull, delaunay, semiconductor critical-area. rust + wasm + webgpu. <a href="https://github.com/HueCodes/Archimedes">github →</a>
-  </p>
+  <details>
+    <summary><strong>archimedes</strong> — interactive computational geometry</summary>
+    <p>convex hull, delaunay, semiconductor critical-area. rust + wasm + webgpu. <a href="https://huecodes.github.io/Archimedes/">live demo →</a> · <a href="https://github.com/HueCodes/Archimedes">github →</a></p>
+  </details>
 
   <!-- ping-rs — uncomment when repo is uploaded
   <p>
