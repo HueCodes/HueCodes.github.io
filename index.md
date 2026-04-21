@@ -43,11 +43,16 @@ title: home
     <p>rust → wasm32 via trunk, egui on wgpu. five tabs: andrew's monotone chain convex hull with step-through animation and point-line duality view; incremental bowyer-watson delaunay / voronoi (via <code>spade</code>) with power-diagram (weighted voronoi) mode and replay controls; polygon booleans via <code>i_overlay</code>; semiconductor critical-area dilation (minkowski offset + intersection); naive f32 vs. shewchuk adaptive <code>orient2d</code> predicate showdown rendering the untrustworthy band where the static error bound straddles zero. same source builds native desktop. <a href="https://huecodes.github.io/Archimedes/">live demo →</a> · <a href="https://github.com/HueCodes/Archimedes">github →</a></p>
   </details>
 
-  <!-- ping-rs — uncomment when repo is uploaded
-  <p>
-    <strong>ping-rs</strong> — servo-swept ultrasonic radar<br>
-    stm32 + async rust (embassy). polar oled display + json telemetry. <a href="https://github.com/HueCodes/ping-rs">github →</a>
-  </p>
+  <details>
+    <summary><strong>esp32-s3-rf-board</strong> — bare-die 2.4 ghz dev board, 4-layer controlled impedance</summary>
+    <p>50 x 40 mm, jlc04161h-7628 4-layer stackup. bare esp32-s3fn8 qfn56 (not a module) with 8 mb internal flash, 40 mhz nx3225ga crystal, johanson 2450at18a100 chip antenna, u.fl test port. 50-ohm microstrip feedline sized from ipc-2141a for h=0.2 mm prepreg, er=4.4; 5 mm copper keepout on f.cu / in1.cu / b.cu so the gnd plane doesn't load the antenna near-field; gnd stitching vias on both sides of the rf trace at 6 mm (lambda/10 at 2.4 ghz in fr4). usb-c with 5.1k cc1/cc2 pull-downs, usblc6-2sc6 esd clamp, 22r d+/d- series damping. pcb, schematic, and bom generated from python (<code>generate_board.py</code>) so trace widths, keepout radii, and component positions are version-controlled. drc: 447 -> 33 violations after programmatic cleanup; remaining are cosmetic. v1.2, layout complete, pending fab. <a href="https://huecodes.github.io/hardware/esp32-s3-rf-board/">write-up →</a></p>
+  </details>
+
+  <!-- ping-rs - uncomment when bring-up is working and repo is public
+  <details>
+    <summary><strong>ping-rs</strong> — servo-swept ultrasonic radar</summary>
+    <p>stm32f411re nucleo in async rust (embassy). hc-sr04 rangefinder on an sg90 servo sweeps 0-180-0 deg, ~6 s per scan, one ping every 50 ms. four tasks (servo, ping, display, usb) fan (angle, distance) samples through a 64-deep spsc channel to an ssd1306 128x64 polar plot over i2c and to a usb cdc acm port as json lines <code>{"t_us":..., "angle_deg":..., "dist_mm":...}</code>. drop-on-stall via <code>try_send</code>: if the display or usb lags, the radar keeps sweeping and old samples are discarded.</p>
+  </details>
   -->
 </div>
 

@@ -56,20 +56,54 @@ title: projects
       </div>
     </article>
 
-    <!-- Network-Beacon -->
+    <!-- Gretun -->
     <article class="project-card" data-category="software">
-      <img src="/assets/images/projects/network-beacon-architecture.svg" alt="Network-Beacon">
+      <img src="/assets/images/projects/gretun-tunnel.png" alt="Gretun">
       <div class="card-content">
-        <h3><a href="https://github.com/HueCodes/Network-Beacon">Network-Beacon</a></h3>
-        <p class="tagline">C2 beacon detection via traffic analysis and TLS fingerprinting</p>
+        <h3><a href="https://github.com/HueCodes/gretun">Gretun</a></h3>
+        <p class="tagline">GRE tunnel management CLI</p>
         <ul>
-          <li><strong>Detection:</strong> CV-based jitter analysis, JA4 TLS fingerprinting, DNS tunneling, HTTP beaconing patterns</li>
-          <li><strong>Pipeline:</strong> Multi-threaded async (Tokio) packet processing with libpcap; live capture and PCAP replay</li>
-          <li><strong>Output:</strong> Ratatui TUI dashboard, webhook + syslog alerting, Prometheus metrics, JSON/JSONL for SIEM</li>
-          <li><strong>Configuration:</strong> TOML profiles (paranoid/balanced/relaxed), GeoIP enrichment via MaxMind</li>
+          <li><strong>Networking:</strong> Site-to-site VPN tunnels for cloud VPC interconnection</li>
+          <li><strong>Low-level:</strong> Direct netlink integration for kernel network configuration</li>
+          <li><strong>Features:</strong> Tunnel creation, health probing (ICMP), route table manipulation</li>
+          <li><strong>Cloud-native:</strong> Multi-cloud support (AWS, GCP, Azure virtual networks)</li>
         </ul>
-        <div class="tech"><span>Rust</span><span>Tokio</span><span>libpcap</span><span>Ratatui</span><span>JA4</span><span>Prometheus</span></div>
-        <p class="blog-link"><a href="https://github.com/HueCodes/Network-Beacon">→ github</a></p>
+        <div class="tech"><span>Go</span><span>Netlink</span><span>GRE</span><span>VPN</span><span>Cloud Networking</span></div>
+        <p class="blog-link"><a href="/projects/gretun/">→ read more</a></p>
+      </div>
+    </article>
+
+    <!-- Sensor-Bridge -->
+    <article class="project-card" data-category="software">
+      <img src="/assets/images/projects/sensor-bridge-demo.gif" alt="Sensor-Bridge">
+      <div class="card-content">
+        <h3><a href="https://github.com/HueCodes/Sensor-Bridge">Sensor-Bridge</a></h3>
+        <p class="tagline">Lock-free sensor fusion pipeline</p>
+        <ul>
+          <li><strong>Throughput:</strong> 2.2B items/sec with ~20ns end-to-end latency</li>
+          <li><strong>Optimization:</strong> Cache-padded SPSC buffers to avoid false sharing</li>
+          <li><strong>Lock-free:</strong> Sub-nanosecond ring buffer ops using atomics (no CAS loops)</li>
+          <li><strong>Embedded:</strong> no_std compatible for bare-metal environments</li>
+        </ul>
+        <div class="tech"><span>Rust</span><span>Lock-free</span><span>SPSC</span><span>Atomics</span><span>Embedded</span></div>
+        <p class="blog-link"><a href="/projects/sensor-bridge/">→ read more</a></p>
+      </div>
+    </article>
+
+    <!-- ServiceMesh -->
+    <article class="project-card" data-category="software">
+      <img src="/assets/images/projects/servicemesh-demo.gif" alt="ServiceMesh">
+      <div class="card-content">
+        <h3><a href="https://github.com/HueCodes/Rust-ServiceMesh">ServiceMesh</a></h3>
+        <p class="tagline">L7 proxy with circuit breakers</p>
+        <ul>
+          <li><strong>Throughput:</strong> 52M ops/sec using lock-free atomics + DashMap</li>
+          <li><strong>Protocols:</strong> HTTP/2 and gRPC with full streaming support (Hyper/Tonic)</li>
+          <li><strong>Reliability:</strong> Circuit breaker with configurable thresholds, exponential backoff</li>
+          <li><strong>Observability:</strong> Prometheus metrics, graceful shutdown, connection pooling</li>
+        </ul>
+        <div class="tech"><span>Rust</span><span>Tokio</span><span>gRPC</span><span>HTTP/2</span><span>Prometheus</span></div>
+        <p class="blog-link"><a href="/projects/rust-servicemesh/">→ read more</a></p>
       </div>
     </article>
 
@@ -90,20 +124,54 @@ title: projects
       </div>
     </article>
 
-    <!-- ServiceMesh -->
+    <!-- Nodix -->
     <article class="project-card" data-category="software">
-      <img src="/assets/images/projects/servicemesh-demo.gif" alt="ServiceMesh">
+      <img src="/assets/images/projects/nodix-sensor-fusion.png" alt="Nodix">
       <div class="card-content">
-        <h3><a href="https://github.com/HueCodes/Rust-ServiceMesh">ServiceMesh</a></h3>
-        <p class="tagline">L7 proxy with circuit breakers</p>
+        <h3><a href="https://github.com/HueCodes/nodix">Nodix</a></h3>
+        <p class="tagline">Real-time compute graph for robotics</p>
         <ul>
-          <li><strong>Throughput:</strong> 52M ops/sec using lock-free atomics + DashMap</li>
-          <li><strong>Protocols:</strong> HTTP/2 and gRPC with full streaming support (Hyper/Tonic)</li>
-          <li><strong>Reliability:</strong> Circuit breaker with configurable thresholds, exponential backoff</li>
-          <li><strong>Observability:</strong> Prometheus metrics, graceful shutdown, connection pooling</li>
+          <li><strong>Real-time:</strong> <1ms p99 latency with EDF/Rate Monotonic scheduling</li>
+          <li><strong>Throughput:</strong> 5,000+ iterations/sec for sensor fusion pipelines</li>
+          <li><strong>Concurrency:</strong> Zero-copy data flow using Arc and lock-free channels</li>
+          <li><strong>Correctness:</strong> DAG validation with topological sort and cycle detection</li>
         </ul>
-        <div class="tech"><span>Rust</span><span>Tokio</span><span>gRPC</span><span>HTTP/2</span><span>Prometheus</span></div>
-        <p class="blog-link"><a href="/projects/rust-servicemesh/">→ read more</a></p>
+        <div class="tech"><span>Rust</span><span>Real-time</span><span>DAG</span><span>Lock-free</span><span>Robotics</span></div>
+        <p class="blog-link"><a href="/projects/nodix/">→ read more</a></p>
+      </div>
+    </article>
+
+    <!-- Network-Beacon -->
+    <article class="project-card" data-category="software">
+      <img src="/assets/images/projects/network-beacon-architecture.svg" alt="Network-Beacon">
+      <div class="card-content">
+        <h3><a href="https://github.com/HueCodes/Network-Beacon">Network-Beacon</a></h3>
+        <p class="tagline">C2 beacon detection via traffic analysis and TLS fingerprinting</p>
+        <ul>
+          <li><strong>Detection:</strong> CV-based jitter analysis, JA4 TLS fingerprinting, DNS tunneling, HTTP beaconing patterns</li>
+          <li><strong>Pipeline:</strong> Multi-threaded async (Tokio) packet processing with libpcap; live capture and PCAP replay</li>
+          <li><strong>Output:</strong> Ratatui TUI dashboard, webhook + syslog alerting, Prometheus metrics, JSON/JSONL for SIEM</li>
+          <li><strong>Configuration:</strong> TOML profiles (paranoid/balanced/relaxed), GeoIP enrichment via MaxMind</li>
+        </ul>
+        <div class="tech"><span>Rust</span><span>Tokio</span><span>libpcap</span><span>Ratatui</span><span>JA4</span><span>Prometheus</span></div>
+        <p class="blog-link"><a href="https://github.com/HueCodes/Network-Beacon">→ github</a></p>
+      </div>
+    </article>
+
+    <!-- Keysmith -->
+    <article class="project-card" data-category="software">
+      <img src="/assets/images/projects/keysmith-operator.svg" alt="Keysmith">
+      <div class="card-content">
+        <h3><a href="https://github.com/HueCodes/keysmith">keysmith</a></h3>
+        <p class="tagline">Kubernetes operator for automated secret rotation</p>
+        <ul>
+          <li><strong>Operator:</strong> SecretRotationPolicy CRD reconciled by controller-runtime; immutable RotationRecord audit trail per attempt</li>
+          <li><strong>GitOps:</strong> declarative rotation policies live next to workload manifests; Kustomize overlays + single-manifest deploy</li>
+          <li><strong>Providers:</strong> pluggable interface — AWS Secrets Manager, HashiCorp Vault, built-in crypto/rand generator</li>
+          <li><strong>Observability:</strong> Prometheus metrics, OpenTelemetry tracing, rolling restarts of Deployments/StatefulSets/DaemonSets</li>
+        </ul>
+        <div class="tech"><span>Go</span><span>Kubernetes</span><span>controller-runtime</span><span>CRDs</span><span>Prometheus</span><span>OpenTelemetry</span></div>
+        <p class="blog-link"><a href="/projects/keysmith/">→ read more</a></p>
       </div>
     </article>
 
@@ -141,23 +209,6 @@ title: projects
       </div>
     </article>
 
-    <!-- Gretun -->
-    <article class="project-card" data-category="software">
-      <img src="/assets/images/projects/gretun-tunnel.png" alt="Gretun">
-      <div class="card-content">
-        <h3><a href="https://github.com/HueCodes/gretun">Gretun</a></h3>
-        <p class="tagline">GRE tunnel management CLI</p>
-        <ul>
-          <li><strong>Networking:</strong> Site-to-site VPN tunnels for cloud VPC interconnection</li>
-          <li><strong>Low-level:</strong> Direct netlink integration for kernel network configuration</li>
-          <li><strong>Features:</strong> Tunnel creation, health probing (ICMP), route table manipulation</li>
-          <li><strong>Cloud-native:</strong> Multi-cloud support (AWS, GCP, Azure virtual networks)</li>
-        </ul>
-        <div class="tech"><span>Go</span><span>Netlink</span><span>GRE</span><span>VPN</span><span>Cloud Networking</span></div>
-        <p class="blog-link"><a href="/projects/gretun/">→ read more</a></p>
-      </div>
-    </article>
-
     <!-- Go-Hunter -->
     <article class="project-card" data-category="software">
       <img src="/assets/images/projects/go-hunter-dashboard.png" alt="Go-Hunter">
@@ -189,57 +240,6 @@ title: projects
         </ul>
         <div class="tech"><span>Rust</span><span>SIMD</span><span>AVX-512</span><span>HNSW</span><span>Vector DB</span></div>
         <p class="blog-link"><a href="/projects/forge-db/">→ read more</a></p>
-      </div>
-    </article>
-
-    <!-- Sensor-Bridge -->
-    <article class="project-card" data-category="software">
-      <img src="/assets/images/projects/sensor-bridge-demo.gif" alt="Sensor-Bridge">
-      <div class="card-content">
-        <h3><a href="https://github.com/HueCodes/Sensor-Bridge">Sensor-Bridge</a></h3>
-        <p class="tagline">Lock-free sensor fusion pipeline</p>
-        <ul>
-          <li><strong>Throughput:</strong> 2.2B items/sec with ~20ns end-to-end latency</li>
-          <li><strong>Optimization:</strong> Cache-padded SPSC buffers to avoid false sharing</li>
-          <li><strong>Lock-free:</strong> Sub-nanosecond ring buffer ops using atomics (no CAS loops)</li>
-          <li><strong>Embedded:</strong> no_std compatible for bare-metal environments</li>
-        </ul>
-        <div class="tech"><span>Rust</span><span>Lock-free</span><span>SPSC</span><span>Atomics</span><span>Embedded</span></div>
-        <p class="blog-link"><a href="/projects/sensor-bridge/">→ read more</a></p>
-      </div>
-    </article>
-
-    <!-- Nodix -->
-    <article class="project-card" data-category="software">
-      <img src="/assets/images/projects/nodix-sensor-fusion.png" alt="Nodix">
-      <div class="card-content">
-        <h3><a href="https://github.com/HueCodes/nodix">Nodix</a></h3>
-        <p class="tagline">Real-time compute graph for robotics</p>
-        <ul>
-          <li><strong>Real-time:</strong> <1ms p99 latency with EDF/Rate Monotonic scheduling</li>
-          <li><strong>Throughput:</strong> 5,000+ iterations/sec for sensor fusion pipelines</li>
-          <li><strong>Concurrency:</strong> Zero-copy data flow using Arc and lock-free channels</li>
-          <li><strong>Correctness:</strong> DAG validation with topological sort and cycle detection</li>
-        </ul>
-        <div class="tech"><span>Rust</span><span>Real-time</span><span>DAG</span><span>Lock-free</span><span>Robotics</span></div>
-        <p class="blog-link"><a href="/projects/nodix/">→ read more</a></p>
-      </div>
-    </article>
-
-    <!-- Keysmith -->
-    <article class="project-card" data-category="software">
-      <img src="/assets/images/projects/keysmith-operator.svg" alt="Keysmith">
-      <div class="card-content">
-        <h3><a href="https://github.com/HueCodes/keysmith">keysmith</a></h3>
-        <p class="tagline">Kubernetes operator for automated secret rotation</p>
-        <ul>
-          <li><strong>Operator:</strong> SecretRotationPolicy CRD reconciled by controller-runtime; immutable RotationRecord audit trail per attempt</li>
-          <li><strong>GitOps:</strong> declarative rotation policies live next to workload manifests; Kustomize overlays + single-manifest deploy</li>
-          <li><strong>Providers:</strong> pluggable interface — AWS Secrets Manager, HashiCorp Vault, built-in crypto/rand generator</li>
-          <li><strong>Observability:</strong> Prometheus metrics, OpenTelemetry tracing, rolling restarts of Deployments/StatefulSets/DaemonSets</li>
-        </ul>
-        <div class="tech"><span>Go</span><span>Kubernetes</span><span>controller-runtime</span><span>CRDs</span><span>Prometheus</span><span>OpenTelemetry</span></div>
-        <p class="blog-link"><a href="/projects/keysmith/">→ read more</a></p>
       </div>
     </article>
 
