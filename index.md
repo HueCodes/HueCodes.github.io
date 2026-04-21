@@ -44,7 +44,7 @@ title: home
   </details>
 
   <details>
-    <summary><strong>esp32-s3-rf-board</strong> — bare-die 2.4 ghz dev board, 4-layer controlled impedance</summary>
+    <summary><strong>esp32 s3 rf board</strong> — bare-die 2.4 ghz dev board, 4-layer controlled impedance</summary>
     <p>50 x 40 mm, jlc04161h-7628 4-layer stackup. bare esp32-s3fn8 qfn56 (not a module) with 8 mb internal flash, 40 mhz nx3225ga crystal, johanson 2450at18a100 chip antenna, u.fl test port. 50-ohm microstrip feedline sized from ipc-2141a for h=0.2 mm prepreg, er=4.4; 5 mm copper keepout on f.cu / in1.cu / b.cu so the gnd plane doesn't load the antenna near-field; gnd stitching vias on both sides of the rf trace at 6 mm (lambda/10 at 2.4 ghz in fr4). usb-c with 5.1k cc1/cc2 pull-downs, usblc6-2sc6 esd clamp, 22r d+/d- series damping. pcb, schematic, and bom generated from python (<code>generate_board.py</code>) so trace widths, keepout radii, and component positions are version-controlled. drc: 447 -> 33 violations after programmatic cleanup; remaining are cosmetic. v1.2, layout complete, pending fab. <a href="https://huecodes.github.io/hardware/esp32-s3-rf-board/">write-up →</a></p>
   </details>
 
