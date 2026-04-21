@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 220" width="100%" role="img" aria-label="Kubernetes attack kill chain: foothold, recon, escalate, lateral, cloud">
+  <style>
+    text { font-family: 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace; }
+    .box { fill: #161b22; stroke: #30363d; stroke-width: 1; }
+    .stage { fill: #e6edf3; font-size: 13px; font-weight: 600; }
+    .item { fill: #c9d1d9; font-size: 10px; }
+    .arrow { fill: #484f58; }
+    .sep { stroke: #30363d; stroke-width: 1; }
+  </style>
+
+  <rect class="box" x="0" y="10" width="128" height="180" rx="4"/>
+  <text class="stage" x="64" y="38" text-anchor="middle">foothold</text>
+  <line class="sep" x1="14" y1="50" x2="114" y2="50"/>
+  <text class="item" x="14" y="78">exposed kubelet</text>
+  <text class="item" x="14" y="104">pod RCE + token</text>
+  <text class="item" x="14" y="130">webhook RCE</text>
+
+  <path class="arrow" d="M 132 96 L 144 100 L 132 104 Z"/>
+
+  <rect class="box" x="148" y="10" width="128" height="180" rx="4"/>
+  <text class="stage" x="212" y="38" text-anchor="middle">recon</text>
+  <line class="sep" x1="162" y1="50" x2="262" y2="50"/>
+  <text class="item" x="162" y="78">can-i --list</text>
+  <text class="item" x="162" y="104">find admin SAs</text>
+  <text class="item" x="162" y="130">enum bindings</text>
+
+  <path class="arrow" d="M 280 96 L 292 100 L 280 104 Z"/>
+
+  <rect class="box" x="296" y="10" width="128" height="180" rx="4"/>
+  <text class="stage" x="360" y="38" text-anchor="middle">escalate</text>
+  <line class="sep" x1="310" y1="50" x2="410" y2="50"/>
+  <text class="item" x="310" y="78">bind / escalate</text>
+  <text class="item" x="310" y="104">pod creation</text>
+  <text class="item" x="310" y="130">secret access</text>
+
+  <path class="arrow" d="M 428 96 L 440 100 L 428 104 Z"/>
+
+  <rect class="box" x="444" y="10" width="128" height="180" rx="4"/>
+  <text class="stage" x="508" y="38" text-anchor="middle">lateral</text>
+  <line class="sep" x1="458" y1="50" x2="558" y2="50"/>
+  <text class="item" x="458" y="78">flat pod net</text>
+  <text class="item" x="458" y="104">cross-namespace</text>
+  <text class="item" x="458" y="130">node tokens</text>
+
+  <path class="arrow" d="M 576 96 L 588 100 L 576 104 Z"/>
+
+  <rect class="box" x="592" y="10" width="128" height="180" rx="4"/>
+  <text class="stage" x="656" y="38" text-anchor="middle">cloud</text>
+  <line class="sep" x1="606" y1="50" x2="706" y2="50"/>
+  <text class="item" x="606" y="78">IMDS / node IAM</text>
+  <text class="item" x="606" y="104">etcd + KMS</text>
+  <text class="item" x="606" y="130">cross-account</text>
+</svg>
