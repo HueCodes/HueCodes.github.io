@@ -30,7 +30,7 @@ title: open source
 
   <div class="project">
     <a href="https://github.com/tailscale/tailscale/pull/19423">tailscale#19423</a>
-    <span><em>(open)</em> derp/derpserver,cmd/derper: support X-Real-IP header behind reverse proxy. Adds opt-in <code>--accept-proxy-headers</code> flag so DERP honors X-Real-IP / X-Forwarded-For from loopback connections, fixing client identification, admission control, and logging when running behind a reverse proxy. Validates addrs with <code>netip.ParseAddr</code>.</span>
+    <span>(open) derp/derpserver,cmd/derper: support X-Real-IP header behind reverse proxy. Adds opt-in --accept-proxy-headers flag so DERP honors X-Real-IP / X-Forwarded-For from loopback connections, fixing client identification, admission control, and logging when running behind a reverse proxy. Validates addrs with netip.ParseAddr.</span>
   </div>
 
   <div class="project">
@@ -65,7 +65,7 @@ title: open source
 
   <div class="project">
     <a href="https://github.com/SigmaHQ/sigma/pull/5899">SigmaHQ/sigma#5899</a>
-    <span>Python base64 encoded inline command execution detection rules (Windows + Linux). High-confidence subset of existing <code>python -c</code> rule that matches <code>base64.b64decode</code>/<code>b64encode</code> calls to catch obfuscated reverse shells and droppers. T1059.006 + T1027.</span>
+    <span>Python base64 encoded inline command execution detection rules (Windows + Linux). High-confidence subset of existing python -c rule that matches base64.b64decode/b64encode calls to catch obfuscated reverse shells and droppers. T1059.006 + T1027.</span>
   </div>
 
   <div class="project">
