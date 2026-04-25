@@ -19,6 +19,11 @@ title: open source
 
 <div class="section">
   <div class="project">
+    <a href="https://github.com/SigmaHQ/sigma/pull/5899">SigmaHQ/sigma#5899</a>
+    <span>Python base64 encoded inline command execution detection rules (Windows + Linux). High-confidence subset of existing <code>python -c</code> rule that matches <code>base64.b64decode</code>/<code>b64encode</code> calls to catch obfuscated reverse shells and droppers. T1059.006 + T1027.</span>
+  </div>
+
+  <div class="project">
     <a href="https://github.com/smoltcp-rs/smoltcp/pull/1127">smoltcp#1127</a>
     <span>Check silent_until expiry in Meta::poll_at. Fixes 100% CPU spin when a DNS query times out with an unresolved neighbor by falling through to socket_poll_at once the silence period expires.</span>
   </div>
