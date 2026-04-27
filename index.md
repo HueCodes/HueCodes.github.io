@@ -16,7 +16,7 @@ title: home
     <img src="/assets/DSCN1683.jpeg" alt="Hugh" class="photo">
     <div>
       <h1>hey, i'm hugh</h1>
-      <p>building systems software, networking, and embedded firmware. designing and building hardware.</p>
+      <p>building systems software and networking.</p>
       <p>outside of engineering i like being in the mountains, grappling, and running ultra marathons. based in seattle.</p>
       <p><a href="mailto:huecodes@proton.me">huecodes@proton.me</a></p>
     </div>
@@ -39,13 +39,13 @@ title: home
   </details>
 
   <details>
-    <summary><strong>archimedes</strong> — interactive computational geometry in the browser</summary>
-    <p>rust → wasm32 via trunk, egui on wgpu. five tabs: andrew's monotone chain convex hull with step-through animation and point-line duality view; incremental bowyer-watson delaunay / voronoi (via <code>spade</code>) with power-diagram (weighted voronoi) mode and replay controls; polygon booleans via <code>i_overlay</code>; semiconductor critical-area dilation (minkowski offset + intersection); naive f32 vs. shewchuk adaptive <code>orient2d</code> predicate showdown rendering the untrustworthy band where the static error bound straddles zero. same source builds native desktop. <a href="https://huecodes.github.io/Archimedes/">live demo →</a> · <a href="https://github.com/HueCodes/Archimedes">github →</a></p>
+    <summary><strong>sensor-bridge</strong> — lock-free sensor processing pipeline for robotics</summary>
+    <p>4-stage pipeline (ingestion → filter → aggregation → output), each stage on its own thread, connected by wait-free spsc ring buffers with cache-line padding so the hot path has zero mutexes. zero-copy data flow via object pool, buffer pool, and arc-shared payloads. adaptive backpressure controller (block, drop, or sample) with hysteresis to avoid thrash under load. hdr-histogram latency metrics with per-stage dashboards. <code>no_std</code>-compatible core (buffer, error, sensor, stage modules) builds without <code>std</code> for embedded targets; <code>std</code> build adds channels, metrics, and the udp/tcp ingest. cargo bench on apple m-series: 2.2b items/sec stage throughput, ~20ns channel latency, 0.3ns ring-buffer push, 9ns pop. 280 tests, published on crates.io + docs.rs. mit/apache-2.0. <a href="https://github.com/HueCodes/sensor-bridge">github →</a> · <a href="https://crates.io/crates/sensor-bridge">crates.io →</a></p>
   </details>
 
   <details>
-    <summary><strong>esp32 s3 rf board</strong> — bare-die 2.4 ghz dev board, 4-layer controlled impedance</summary>
-    <p>50 x 40 mm, jlc04161h-7628 4-layer stackup. bare esp32-s3fn8 qfn56 (not a module) with 8 mb internal flash, 40 mhz nx3225ga crystal, johanson 2450at18a100 chip antenna, u.fl test port. 50-ohm microstrip feedline sized from ipc-2141a for h=0.2 mm prepreg, er=4.4; 5 mm copper keepout on f.cu / in1.cu / b.cu so the gnd plane doesn't load the antenna near-field; gnd stitching vias on both sides of the rf trace at 6 mm (lambda/10 at 2.4 ghz in fr4). usb-c with 5.1k cc1/cc2 pull-downs, usblc6-2sc6 esd clamp, 22r d+/d- series damping. pcb, schematic, and bom generated from python (<code>generate_board.py</code>) so trace widths, keepout radii, and component positions are version-controlled. drc: 447 -> 33 violations after programmatic cleanup; remaining are cosmetic. v1.2, layout complete, pending fab. <a href="https://huecodes.github.io/hardware/esp32-s3-rf-board/">write-up →</a></p>
+    <summary><strong>network-beacon</strong> — c2 beacon detection from passive network traffic</summary>
+    <p>rust + tokio cli that ingests pcap and classifies flows by coefficient-of-variation on inter-packet timing — cv &lt; 0.1 is a probable c2 beacon, &gt; 1.0 is organic human traffic. ja4-style fingerprints on tls client hellos to flag non-browser tooling. dns tunneling detection via subdomain shannon entropy (&gt; 3.5 bits/char), label length, and txt/null record abuse. http beacon heuristics on post repetition, suspicious user-agents, and payload-size variance. protocol-mismatch flag for tls on non-443 ports. maxmind geoip/asn enrichment, prometheus <code>/metrics</code>, ratatui live tui, throttled+deduped webhook alerts, json/jsonl output for siem ingestion, pcap replay for offline analysis. 218 tests across 10.5k loc. <a href="https://github.com/HueCodes/Network-Beacon">github →</a></p>
   </details>
 
   <!-- ping-rs - uncomment when bring-up is working and repo is public
@@ -60,7 +60,7 @@ title: home
 
 <div class="section fade-in" style="animation-delay: 0.15s">
   <h2>about</h2>
-  <p>i got into engineering through curiosity about how things work. started with chemistry and biology as a kid, eventually landed on computers and robots. now i'm mostly focused on networking, distributed systems, and embedded hardware. lately i've been getting into rf, control theory, and building a uuv. teaching myself more math and physics along the way.</p>
-  <p>currently: networking and distributed systems in rust + go. getting into hardware, rf, and robotics. contributing upstream to smoltcp, tokio, cilium/ebpf, and others.</p>
+  <p>i got into engineering through curiosity about how things work. started with chemistry and biology as a kid, eventually landed on computers and robots. now i'm mostly focused on networking, distributed systems, and the security and sandboxing side of ai agents. teaching myself more math and physics along the way.</p>
+  <p>currently: networking and distributed systems in rust + go. diving into ai infra and hardware on the side. contributing to projects i'm interested in.</p>
 </div>
 
