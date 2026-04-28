@@ -59,13 +59,13 @@ title: home
 <hr class="divider">
 
 <div class="section fade-in" style="animation-delay: 0.11s">
-  <h2>interactive demo</h2>
+  <h2>archimedes</h2>
   <div style="display: flex; gap: 1.25rem; align-items: flex-start; flex-wrap: wrap;">
     <a href="https://huecodes.github.io/Archimedes/" style="flex-shrink: 0;">
       <img src="/assets/images/projects/archimedes-critical-area.png" alt="Archimedes — VLSI critical-area analysis" style="width: 200px; height: auto; border-radius: 6px; border: 1px solid var(--border); display: block;">
     </a>
     <div style="flex: 1; min-width: 240px;">
-      <p style="margin: 0 0 0.4rem 0;"><a href="https://huecodes.github.io/Archimedes/"><strong>archimedes</strong> — interactive vlsi critical-area analysis →</a></p>
+      <p style="margin: 0 0 0.4rem 0;"><a href="https://huecodes.github.io/Archimedes/"><strong>interactive vlsi critical-area analysis →</strong></a></p>
       <p style="margin: 0 0 0.4rem 0; font-size: 14px; color: #c9d1d9;">minkowski-style dilation for semiconductor yield prediction (papadopoulou &amp; lee, 1999), plus convex hulls, delaunay triangulation, and polygon boolean ops with shewchuk adaptive-precision predicates. runs in-browser via webassembly.</p>
       <p style="margin: 0; font-size: 13px; color: var(--text-secondary);">rust + wasm + webgpu · <a href="https://github.com/HueCodes/Archimedes">source</a></p>
     </div>
@@ -75,7 +75,7 @@ title: home
 <hr class="divider">
 
 <div class="section fade-in" style="animation-delay: 0.12s">
-  <h2>recent open source</h2>
+  <h2>oss</h2>
 
   <div class="project">
     <a href="https://github.com/smoltcp-rs/smoltcp/pull/1126">smoltcp#1126</a>
