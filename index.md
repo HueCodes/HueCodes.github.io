@@ -78,8 +78,8 @@ title: home
   <h2>recent open source</h2>
 
   <div class="project">
-    <a href="https://github.com/rust-lang/rust-clippy/pull/16402">rust-clippy#16402</a>
-    <span>Skip <code>elidable_lifetime_names</code> lint for proc-macro generated code. Prevents incorrect warnings on procedurally generated Rust code.</span>
+    <a href="https://github.com/smoltcp-rs/smoltcp/pull/1126">smoltcp#1126</a>
+    <span>TCP challenge ACK for duplicate ACKs in LAST-ACK state (RFC 9293 §3.10.7.4). Fixes silent discard of stale acknowledgments by sending a challenge ACK response.</span>
   </div>
 
   <div class="project">
@@ -88,8 +88,8 @@ title: home
   </div>
 
   <div class="project">
-    <a href="https://github.com/smoltcp-rs/smoltcp/pull/1126">smoltcp#1126</a>
-    <span>TCP challenge ACK for duplicate ACKs in LAST-ACK state (RFC 9293 §3.10.7.4). Fixes silent discard of stale acknowledgments by sending a challenge ACK response.</span>
+    <a href="https://github.com/rust-lang/rust-clippy/pull/16402">rust-clippy#16402</a>
+    <span>Skip <code>elidable_lifetime_names</code> lint for proc-macro generated code. Prevents incorrect warnings on procedurally generated Rust code.</span>
   </div>
 
   <p><a href="/opensource">all contributions →</a></p>
