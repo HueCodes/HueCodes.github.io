@@ -16,7 +16,7 @@ title: home
     <img src="/assets/DSCN1683.jpeg" alt="Hugh" class="photo">
     <div>
       <h1>hey, i'm hugh</h1>
-      <p>building systems software and networking.</p>
+      <p>networking and distributed systems, mostly rust and go. also working on ai infra and security; building hardware on the side and contributing to projects i'm interested in.</p>
       <p>outside of engineering i like being in the mountains, grappling, and running ultra marathons. based in seattle.</p>
       <p><a href="mailto:huecodes@proton.me">huecodes@proton.me</a></p>
     </div>
@@ -72,11 +72,4 @@ title: home
   </div>
 </div>
 
-<hr class="divider">
-
-<div class="section fade-in" style="animation-delay: 0.15s">
-  <h2>about</h2>
-  <p>i got into engineering through curiosity about how things work. started with chemistry and biology as a kid, eventually landed on computers and robots. now i'm mostly focused on networking and distributed systems, plus ai infra and security. teaching myself more math and physics along the way.</p>
-  <p>currently: networking and distributed systems in rust + go. tinkering with hardware on the side. contributing to projects i'm interested in.</p>
-</div>
 
