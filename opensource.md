@@ -29,11 +29,6 @@ title: open source
   </div>
 
   <div class="project">
-    <a href="https://github.com/tailscale/tailscale/pull/19423">tailscale#19423</a>
-    <span>(open) derp/derpserver,cmd/derper: support X-Real-IP header behind reverse proxy. Adds opt-in --accept-proxy-headers flag so DERP honors X-Real-IP / X-Forwarded-For from loopback connections, fixing client identification, admission control, and logging when running behind a reverse proxy. Validates addrs with netip.ParseAddr.</span>
-  </div>
-
-  <div class="project">
     <a href="https://github.com/hyperium/hyper/pull/4011">hyper#4011</a>
     <span>Case-insensitive trailer field matching per RFC 9110. Fixes HTTP/2 trailer header handling to comply with spec requirements for case-insensitive field names.</span>
   </div>
