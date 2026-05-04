@@ -39,8 +39,8 @@ title: open source
   </div>
 
   <div class="project">
-    <a href="https://github.com/tokio-rs/tokio/pull/7874">tokio#7874</a>
-    <span>Lock-free is_cancelled via AtomicBool for CancellationToken. Eliminates >2ms mutex contention in hot paths by replacing mutex with atomic operations.</span>
+    <a href="https://github.com/tokio-rs/tokio/pull/8086">tokio#8086</a>
+    <span>Implement UCred::pid on FreeBSD via getsockopt(LOCAL_PEERCRED) reading xucred.cr_pid. Splits DragonFly into its own module since its xucred has no PID field. Closes a 5-year-old issue.</span>
   </div>
 
   <div class="project">
