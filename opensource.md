@@ -19,6 +19,11 @@ title: open source
 
 <div class="section">
   <div class="project">
+    <a href="https://github.com/bytecodealliance/wasmtime/pull/13383">wasmtime#13383</a>
+    <span>Emit .eh_frame for System V unwind info in cranelift-object. Adds ObjectBuilder::unwind_info(bool) routing cranelift-codegen's UnwindInfo::SystemV through gimli's RelocateWriter into an object-crate section, supporting ELF and COFF. Closes a 6-year-old issue.</span>
+  </div>
+
+  <div class="project">
     <a href="https://github.com/tokio-rs/tokio/pull/8086">tokio#8086</a>
     <span>Implement UCred::pid on FreeBSD via getsockopt(LOCAL_PEERCRED) reading xucred.cr_pid. Splits DragonFly into its own module since its xucred has no PID field. Closes a 5-year-old issue.</span>
   </div>
