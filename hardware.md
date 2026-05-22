@@ -18,6 +18,14 @@ title: hardware
 
 <div class="section">
   <div class="project">
+    <a href="/hardware/imu-deadreckoning/">IMU Dead Reckoning</a>
+    <span>strap-down inertial nav on STM32F411RE in async Rust (Embassy) — MPU-6050 + Madgwick AHRS + world-frame integration, with a host harness that measures the drift</span>
+  </div>
+  <div class="project">
+    <a href="/hardware/ping-rs/">ping-rs — Servo-Swept Ultrasonic Radar</a>
+    <span>HC-SR04 + SG90 + SSD1306 on STM32F411RE in async Rust — polar-plot display and JSON-over-USB telemetry, three Embassy tasks with drop-on-overflow</span>
+  </div>
+  <div class="project">
     <a href="/hardware/pid-motor-control/">PID Motor Control</a>
     <span>closed-loop PID controller on STM32F411RE with MPU-6050 IMU feedback, UART CLI tuning, and step response capture</span>
   </div>
