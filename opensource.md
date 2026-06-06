@@ -24,6 +24,11 @@ title: open source
   </div>
 
   <div class="project">
+    <a href="https://github.com/huggingface/candle/pull/3556">candle#3556</a>
+    <span>Cap allocations in the GGUF loader. Adds bounds checks for caller-controlled length fields, remaining-byte validation, a GGML_MAX_DIMS tensor dimension cap, and a recursion depth cap for nested array values.</span>
+  </div>
+
+  <div class="project">
     <a href="https://github.com/tokio-rs/tokio/pull/8086">tokio#8086</a>
     <span>Implement UCred::pid on FreeBSD via getsockopt(LOCAL_PEERCRED) reading xucred.cr_pid. Splits DragonFly into its own module since its xucred has no PID field. Closes a 5-year-old issue.</span>
   </div>
@@ -46,6 +51,11 @@ title: open source
   <div class="project">
     <a href="https://github.com/embassy-rs/embassy/pull/5598">embassy#5598</a>
     <span>Align ring buffer reads to ADC scan sequence length. Fixes channel value shifting after DMA overrun recovery in STM32 ADC ring-buffered mode.</span>
+  </div>
+
+  <div class="project">
+    <a href="https://github.com/vllm-project/vllm/pull/44591">vllm#44591</a>
+    <span>Batch Rust frontend auto-abort requests by engine before sending Abort messages. Reduces IPC round trips when many live streams are dropped at once while preserving inactive-request filtering and per-cause logging.</span>
   </div>
 
   <div class="project">
