@@ -27,9 +27,9 @@ title: home
 <div class="section fade-in" style="animation-delay: 0.1s">
   <h2>about</h2>
 
-  <p>i like small systems with real constraints: packets, sensors, runtimes, kernels, queues, motors, and machines that have to keep working when the assumptions get rough.</p>
+  <p>i'm interested in robotics, ml, infrastructure, distributed systems, and most things systems-adjacent. lately i've been spending more time with hardware, firmware, and robots.</p>
 
-  <p>right now most of my side work is around robotics infrastructure, embedded sensing, low-level performance tools, and a few ml/autonomy experiments.</p>
+  <p>i like being in the mountains, ultrarunning, and grappling.</p>
 </div>
 
 <div class="section fade-in" style="animation-delay: 0.12s">
