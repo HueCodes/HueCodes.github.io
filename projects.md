@@ -63,7 +63,7 @@ title: projects
 </div>
 
 <div class="section">
-  <h2>ml and autonomy</h2>
+  <h2>ml</h2>
 
   <div class="project">
     <a href="https://github.com/HueCodes/Gatewind">gatewind</a>
