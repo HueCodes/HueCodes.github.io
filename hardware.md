@@ -5,9 +5,9 @@ title: hardware
 
 <nav>
   <a href="/">home</a>
+  <a href="/projects">projects</a>
+  <a href="/builds">builds</a>
   <a href="/blog">blog</a>
-  <a href="/opensource">opensource</a>
-  <a href="/hardware">hardware</a>
   <a href="https://github.com/HueCodes">github</a>
 </nav>
 
@@ -18,23 +18,27 @@ title: hardware
 
 <div class="section">
   <div class="project">
-    <a href="/hardware/imu-deadreckoning/">IMU Dead Reckoning</a>
-    <span>strap-down inertial nav on STM32F411RE in async Rust (Embassy) — MPU-6050 + Madgwick AHRS + world-frame integration, with a host harness that measures the drift</span>
+    <a href="/hardware/esp32-s3-rf-board/">ESP32-S3 RF Development Board</a>
+    <span>4-layer rf board with bare ESP32-S3 die, 50-ohm feedline, and chip antenna, designed in KiCAD</span>
   </div>
   <div class="project">
-    <a href="/hardware/ping-rs/">ping-rs — Servo-Swept Ultrasonic Radar</a>
-    <span>HC-SR04 + SG90 + SSD1306 on STM32F411RE in async Rust — polar-plot display and JSON-over-USB telemetry, three Embassy tasks with drop-on-overflow</span>
+    <a href="/hardware/ping-rs/">ping-rs</a>
+    <span>hc-sr04, sg90, and ssd1306 on stm32f411re in async rust, with polar display and json-over-usb telemetry</span>
+  </div>
+  <div class="project">
+    <a href="/hardware/imu-deadreckoning/">IMU Dead Reckoning</a>
+    <span>strap-down inertial nav on stm32f411re in async rust, using mpu-6050, madgwick ahrs, and world-frame integration</span>
+  </div>
+  <div class="project">
+    <a href="/hardware/slam-engine/">SLAM Engine</a>
+    <span>stm32-scale occupancy mapping and pose estimation with an ekf, log-odds grid, and host simulator</span>
   </div>
   <div class="project">
     <a href="/hardware/pid-motor-control/">PID Motor Control</a>
-    <span>closed-loop PID controller on STM32F411RE with MPU-6050 IMU feedback, UART CLI tuning, and step response capture</span>
-  </div>
-  <div class="project">
-    <a href="/hardware/esp32-s3-rf-board/">ESP32-S3 RF Development Board</a>
-    <span>4-layer RF board with bare ESP32-S3 die, 50-ohm feedline, and chip antenna — designed in KiCAD</span>
+    <span>closed-loop pid controller on stm32f411re with imu feedback, uart tuning, and step response capture</span>
   </div>
   <div class="project">
     <a href="/hardware/uart-stm32-driver/">STM32 Bare-Metal UART Driver</a>
-    <span>interrupt-driven UART with lock-free SPSC ring buffers on STM32F401 — no HAL, no RTOS, 47 host tests</span>
+    <span>interrupt-driven uart with lock-free spsc ring buffers on stm32f401, no hal, no rtos, 47 host tests</span>
   </div>
 </div>

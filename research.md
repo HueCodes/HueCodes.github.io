@@ -5,9 +5,9 @@ title: research
 
 <nav>
   <a href="/">home</a>
+  <a href="/projects">projects</a>
+  <a href="/builds">builds</a>
   <a href="/blog">blog</a>
-  <a href="/opensource">opensource</a>
-  <a href="/hardware">hardware</a>
   <a href="https://github.com/HueCodes">github</a>
 </nav>
 

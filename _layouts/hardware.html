@@ -3,9 +3,9 @@ layout: default
 ---
 <nav>
   <a href="/">home</a>
+  <a href="/projects">projects</a>
+  <a href="/builds">builds</a>
   <a href="/blog">blog</a>
-  <a href="/opensource">opensource</a>
-  <a href="/hardware">hardware</a>
   <a href="https://github.com/HueCodes">github</a>
 </nav>
 
@@ -18,10 +18,10 @@ layout: default
   {{ content }}
 
   {% if page.github %}
-  <p><a href="{{ page.github }}">view on github &rarr;</a></p>
+  <p><a href="{{ page.github }}">view on github</a></p>
   {% endif %}
 
   <footer>
-    <a href="{{ '/hardware' | relative_url }}">&larr; back to hardware</a>
+    <a href="{{ '/hardware' | relative_url }}">back to hardware</a>
   </footer>
 </article>
