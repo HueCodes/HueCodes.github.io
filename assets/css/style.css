@@ -278,7 +278,8 @@ nav a:hover::after {
   background: var(--surface);
 }
 
-.craft-entry img {
+.craft-entry img,
+.craft-entry video {
   display: block;
   width: 100%;
   max-height: 360px;
@@ -286,7 +287,8 @@ nav a:hover::after {
   transition: filter 0.16s ease, transform 0.16s ease;
 }
 
-.craft-entry:hover img {
+.craft-entry:hover img,
+.craft-entry:hover video {
   filter: brightness(0.72);
   transform: scale(1.01);
 }
@@ -719,7 +721,8 @@ pre code {
     color: var(--text-secondary);
   }
 
-  .craft-entry:hover img {
+  .craft-entry:hover img,
+  .craft-entry:hover video {
     filter: none;
     transform: none;
   }

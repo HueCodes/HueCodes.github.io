@@ -26,22 +26,28 @@ title: builds
   </figure>
 
   <figure class="craft-entry">
+    <img src="/assets/images/builds/esp32-board-flashing.jpg" alt="esp32 development board powered over usb with status led on">
+    <figcaption class="craft-caption">
+      <span>esp32 bringup</span>
+      <small>flashing firmware and validating a board on the bench.</small>
+    </figcaption>
+  </figure>
+
+  <figure class="craft-entry">
+    <video src="/assets/images/builds/particle-collision-sim.mp4" poster="/assets/images/builds/particle-collision-sim-poster.jpg" autoplay muted loop playsinline></video>
+    <figcaption class="craft-caption">
+      <span>particle collision sim</span>
+      <small>desktop demo with dense elastic collisions, live counters, and a spatial-grid style workload.</small>
+    </figcaption>
+  </figure>
+
+  <figure class="craft-entry">
     <a href="/hardware/esp32-s3-rf-board/">
       <img src="/assets/images/projects/esp32-s3-rf-board.jpg" alt="esp32-s3 rf development board">
     </a>
     <figcaption class="craft-caption">
       <a href="/hardware/esp32-s3-rf-board/">esp32-s3 rf board</a>
       <small>bare-chip board, antenna keepout, and controlled-impedance 2.4 ghz feedline.</small>
-    </figcaption>
-  </figure>
-
-  <figure class="craft-entry">
-    <a href="/hardware/slam-engine/">
-      <img src="/assets/images/projects/slam-engine.svg" alt="slam-engine architecture sketch">
-    </a>
-    <figcaption class="craft-caption">
-      <a href="/hardware/slam-engine/">slam-engine</a>
-      <small>embedded occupancy mapping, ekf pose estimation, simulator frames, and tests.</small>
     </figcaption>
   </figure>
 
