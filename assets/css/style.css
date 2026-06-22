@@ -260,46 +260,70 @@ nav a:hover::after {
 
 /* Builds */
 .craft-stream {
-  display: grid;
-  gap: 2.25rem;
+  column-count: 2;
+  column-gap: 1.25rem;
   margin-top: 1.25rem;
 }
 
 .craft-entry {
-  margin: 0;
-}
-
-.craft-entry img {
-  display: block;
+  position: relative;
+  display: inline-block;
   width: 100%;
-  max-height: 520px;
-  object-fit: contain;
+  margin: 0;
+  margin-bottom: 1.25rem;
+  break-inside: avoid;
+  overflow: hidden;
   border: 1px solid var(--border);
   border-radius: 4px;
   background: var(--surface);
 }
 
-.craft-entry figcaption {
-  margin-top: 0.55rem;
-  color: var(--text-secondary);
-  font-size: 13px;
-  line-height: 1.55;
+.craft-entry img {
+  display: block;
+  width: 100%;
+  max-height: 360px;
+  object-fit: contain;
+  transition: filter 0.16s ease, transform 0.16s ease;
 }
 
-.craft-entry figcaption a {
-  color: var(--text);
+.craft-entry:hover img {
+  filter: brightness(0.72);
+  transform: scale(1.01);
+}
+
+.craft-caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 0.65rem 0.75rem;
+  color: #ffffff;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.74), rgba(0, 0, 0, 0));
+  opacity: 0;
+  transition: opacity 0.16s ease;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.craft-entry:hover .craft-caption {
+  opacity: 1;
+}
+
+.craft-caption a,
+.craft-caption span {
+  display: block;
+  color: #ffffff;
   font-weight: 500;
   text-decoration: none;
 }
 
-.craft-entry figcaption a::after {
-  content: " / ";
-  color: var(--text-secondary);
+.craft-caption small {
+  display: block;
+  margin-top: 0.15rem;
+  color: rgba(255, 255, 255, 0.82);
   font-weight: 400;
 }
 
-.craft-entry figcaption a:hover {
-  color: var(--link-hover);
+.craft-caption a:hover {
+  color: #ffffff;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -675,10 +699,28 @@ pre code {
   }
 
   .craft-stream {
-    gap: 1.7rem;
+    column-count: 1;
   }
 
-  .craft-entry figcaption {
+  .craft-caption {
+    position: static;
+    opacity: 1;
+    color: var(--text-secondary);
+    background: transparent;
     font-size: 12.5px;
+  }
+
+  .craft-caption a,
+  .craft-caption span {
+    color: var(--text);
+  }
+
+  .craft-caption small {
+    color: var(--text-secondary);
+  }
+
+  .craft-entry:hover img {
+    filter: none;
+    transform: none;
   }
 }
