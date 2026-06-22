@@ -260,22 +260,26 @@ nav a:hover::after {
 
 /* Builds */
 .craft-stream {
-  column-count: 2;
-  column-gap: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 1.25rem;
   margin-top: 1.25rem;
 }
 
 .craft-entry {
   position: relative;
-  display: inline-block;
   width: 100%;
   margin: 0;
-  margin-bottom: 1.25rem;
-  break-inside: avoid;
   overflow: hidden;
   border: 1px solid var(--border);
   border-radius: 4px;
   background: var(--surface);
+}
+
+.craft-entry:nth-child(4n),
+.craft-entry:nth-child(4n + 1) {
+  transform: translateY(0.65rem);
 }
 
 .craft-entry img,
@@ -701,7 +705,12 @@ pre code {
   }
 
   .craft-stream {
-    column-count: 1;
+    grid-template-columns: 1fr;
+  }
+
+  .craft-entry:nth-child(4n),
+  .craft-entry:nth-child(4n + 1) {
+    transform: none;
   }
 
   .craft-caption {

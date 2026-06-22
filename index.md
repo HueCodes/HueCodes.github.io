@@ -27,9 +27,11 @@ title: home
 <div class="section fade-in" style="animation-delay: 0.1s">
   <h2>about</h2>
 
-  <p>i'm interested in robotics, ml, infrastructure, distributed systems, and most things systems-adjacent. lately i've been spending more time with hardware, firmware, and robots.</p>
+  <p>i build systems, tools, and hardware experiments.</p>
 
-  <p>i like being in the mountains, ultrarunning, and grappling.</p>
+  <p>infra, network tools, robot firmware, sensor fusion, pcb design, model evals, and training loops.</p>
+
+  <p>outside of that i like mountains, books, movies, and grappling.</p>
 </div>
 
 <div class="section fade-in" style="animation-delay: 0.12s">

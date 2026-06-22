@@ -26,10 +26,12 @@ title: builds
   </figure>
 
   <figure class="craft-entry">
-    <img src="/assets/images/builds/esp32-board-flashing.jpg" alt="esp32 development board powered over usb with status led on">
+    <a href="/hardware/pid-motor-control/">
+      <img src="/assets/images/projects/pid-motor-control.svg" alt="pid motor control diagram">
+    </a>
     <figcaption class="craft-caption">
-      <span>esp32 bringup</span>
-      <small>flashing firmware and validating a board on the bench.</small>
+      <a href="/hardware/pid-motor-control/">pid motor control</a>
+      <small>stm32f411 closed-loop motor controller with imu feedback and step-response capture.</small>
     </figcaption>
   </figure>
 
@@ -38,6 +40,14 @@ title: builds
     <figcaption class="craft-caption">
       <span>particle collision sim</span>
       <small>desktop demo with dense elastic collisions, live counters, and a spatial-grid style workload.</small>
+    </figcaption>
+  </figure>
+
+  <figure class="craft-entry">
+    <img src="/assets/images/builds/esp32-board-flashing.jpg" alt="esp32 development board powered over usb with status led on">
+    <figcaption class="craft-caption">
+      <span>esp32 bringup</span>
+      <small>flashing firmware and validating a board on the bench.</small>
     </figcaption>
   </figure>
 
@@ -62,42 +72,12 @@ title: builds
   </figure>
 
   <figure class="craft-entry">
-    <a href="https://huecodes.github.io/Archimedes/">
-      <img src="/assets/images/projects/archimedes-critical-area.png" alt="archimedes computational geometry view">
-    </a>
-    <figcaption class="craft-caption">
-      <a href="https://huecodes.github.io/Archimedes/">archimedes</a>
-      <small>browser computational geometry in rust, wasm, and webgpu.</small>
-    </figcaption>
-  </figure>
-
-  <figure class="craft-entry">
     <a href="https://github.com/HueCodes/gretun">
       <img src="/assets/images/projects/gretun-tunnel.png" alt="gretun tunnel diagram">
     </a>
     <figcaption class="craft-caption">
       <a href="https://github.com/HueCodes/gretun">gretun</a>
       <small>nat-traversing gre-over-fou tunnels with sealed discovery and linux netlink integration.</small>
-    </figcaption>
-  </figure>
-
-  <figure class="craft-entry">
-    <a href="/hardware/pid-motor-control/">
-      <img src="/assets/images/projects/pid-motor-control.svg" alt="pid motor control diagram">
-    </a>
-    <figcaption class="craft-caption">
-      <a href="/hardware/pid-motor-control/">pid motor control</a>
-      <small>stm32f411 closed-loop motor controller with imu feedback and step-response capture.</small>
-    </figcaption>
-  </figure>
-
-  <figure class="craft-entry">
-    <a href="/hardware/raft-consensus-mcu/">
-      <img src="/assets/images/projects/raft-consensus-mcu.svg" alt="raft consensus mcu cluster diagram">
-    </a>
-    <figcaption class="craft-caption">
-      <a href="/hardware/raft-consensus-mcu/">raft-consensus-mcu</a>
-      <small>raft leader election and replicated state over a small esp32-s3 cluster.</small>
     </figcaption>
   </figure>
 
@@ -128,6 +108,16 @@ title: builds
     <figcaption class="craft-caption">
       <a href="/projects/go-hunter/">go-hunter</a>
       <small>multi-cloud asset discovery, drift detection, background scanning, and dashboard work.</small>
+    </figcaption>
+  </figure>
+
+  <figure class="craft-entry">
+    <a href="https://huecodes.github.io/Archimedes/">
+      <img src="/assets/images/projects/archimedes-critical-area.png" alt="archimedes computational geometry view">
+    </a>
+    <figcaption class="craft-caption">
+      <a href="https://huecodes.github.io/Archimedes/">archimedes</a>
+      <small>browser computational geometry in rust, wasm, and webgpu.</small>
     </figcaption>
   </figure>
 </div>
