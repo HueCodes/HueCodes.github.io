@@ -36,18 +36,18 @@ title: builds
   </figure>
 
   <figure class="craft-entry">
-    <video src="/assets/images/builds/particle-collision-sim.mp4" poster="/assets/images/builds/particle-collision-sim-poster.jpg" autoplay muted loop playsinline></video>
-    <figcaption class="craft-caption">
-      <span>particle collision sim</span>
-      <small>desktop demo with dense elastic collisions, live counters, and a spatial-grid style workload.</small>
-    </figcaption>
-  </figure>
-
-  <figure class="craft-entry">
     <img src="/assets/images/builds/esp32-board-flashing.jpg" alt="esp32 development board powered over usb with status led on">
     <figcaption class="craft-caption">
       <span>esp32 bringup</span>
       <small>flashing firmware and validating a board on the bench.</small>
+    </figcaption>
+  </figure>
+
+  <figure class="craft-entry">
+    <video src="/assets/images/builds/particle-collision-sim.mp4" poster="/assets/images/builds/particle-collision-sim-poster.jpg" autoplay muted loop playsinline></video>
+    <figcaption class="craft-caption">
+      <span>particle collision sim</span>
+      <small>desktop demo with dense elastic collisions, live counters, and a spatial-grid style workload.</small>
     </figcaption>
   </figure>
 

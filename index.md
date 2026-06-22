@@ -42,14 +42,6 @@ title: home
     <span>the stable things worth judging</span>
   </div>
   <div class="project">
-    <a href="/builds/">builds</a>
-    <span>rough notes, hardware photos, current experiments, and work in progress</span>
-  </div>
-  <div class="project">
-    <a href="/blog/">blog</a>
-    <span>finished writeups and longer notes</span>
-  </div>
-  <div class="project">
     <a href="/opensource/">open source</a>
     <span>upstream patches and contribution notes</span>
   </div>
