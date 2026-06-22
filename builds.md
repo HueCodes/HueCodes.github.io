@@ -13,62 +13,115 @@ title: builds
 
 <div class="intro">
   <h1>builds</h1>
-  <p>workbench notes, hardware bits, software experiments, and things in motion.</p>
+  <p>photos, diagrams, demos, and notes from things i have been making.</p>
 </div>
 
-<div class="build-stream">
-  <article class="build-entry">
-    <div class="build-meta">jun 2026</div>
-    <div class="build-body">
-      <h2>ringtuner</h2>
-      <p>working on a small c simulator for nic rx interrupt coalescing. the fun part is the tradeoff: low interrupt delay helps latency until cpu overhead and ring pressure start hurting everything else.</p>
-      <p>current pass is docs and comparison work: fixed baselines, tuned thresholds, trace replay notes, and a napi polling model.</p>
-    </div>
-  </article>
+<div class="craft-stream">
+  <figure class="craft-entry">
+    <img src="/assets/images/builds/workbench-setup.png" alt="workbench with laptop, monitor, hardware, and terminal sessions">
+    <figcaption>
+      workbench
+      daily setup for firmware, hardware notes, terminal sessions, and whatever project is currently spilling onto the desk.
+    </figcaption>
+  </figure>
 
-  <article class="build-entry">
-    <div class="build-meta">may 2026</div>
-    <div class="build-body">
-      <h2>slam-engine</h2>
-      <p>reframing this as embedded occupancy mapping and pose estimation instead of pretending cheap ultrasonic sensors make a clean full slam story.</p>
-      <p>the host c core already has an ekf, log-odds grid, simulator frames, and tests. next useful step is feeding it real scans and encoder-ish odometry.</p>
-      <img src="/assets/images/projects/slam-engine.svg" alt="slam-engine architecture sketch" class="build-media">
-    </div>
-  </article>
+  <figure class="craft-entry">
+    <a href="/hardware/esp32-s3-rf-board/">
+      <img src="/assets/images/projects/esp32-s3-rf-board.jpg" alt="esp32-s3 rf development board">
+    </a>
+    <figcaption>
+      <a href="/hardware/esp32-s3-rf-board/">esp32-s3 rf board</a>
+      bare-chip esp32-s3 board, usb-uart, power, antenna keepout, and controlled-impedance 2.4 ghz feedline.
+    </figcaption>
+  </figure>
 
-  <article class="build-entry">
-    <div class="build-meta">apr 2026</div>
-    <div class="build-body">
-      <h2>esp32-s3 rf board</h2>
-      <p>cleaning up the bare-chip esp32-s3 board before treating it as a real hardware artifact. mostly drc triage, manufacturing handoff notes, and making the rf story easy to inspect.</p>
-      <img src="/assets/images/projects/esp32-s3-rf-board.jpg" alt="esp32-s3 rf development board" class="build-media">
-    </div>
-  </article>
+  <figure class="craft-entry">
+    <a href="/hardware/slam-engine/">
+      <img src="/assets/images/projects/slam-engine.svg" alt="slam-engine architecture sketch">
+    </a>
+    <figcaption>
+      <a href="/hardware/slam-engine/">slam-engine</a>
+      embedded occupancy mapping and pose estimation with an ekf, log-odds grid, simulator frames, and tests.
+    </figcaption>
+  </figure>
 
-  <article class="build-entry">
-    <div class="build-meta">mar 2026</div>
-    <div class="build-body">
-      <h2>ping-rs</h2>
-      <p>servo-swept ultrasonic radar on an stm32f411re in async rust. hc-sr04 readings go to an oled polar plot and usb serial telemetry.</p>
-      <p>i want one clean demo artifact from this: the physical sweep, the oled output, and a host-side replay of the json stream.</p>
-    </div>
-  </article>
+  <figure class="craft-entry">
+    <a href="/projects/sensor-bridge/">
+      <img src="/assets/images/projects/sensor-bridge-demo.gif" alt="sensor-bridge pipeline demo">
+    </a>
+    <figcaption>
+      <a href="/projects/sensor-bridge/">sensor-bridge</a>
+      lock-free sensor processing pipeline with no_std-compatible core pieces, benchmarks, and robotics-oriented backpressure paths.
+    </figcaption>
+  </figure>
 
-  <article class="build-entry">
-    <div class="build-meta">feb 2026</div>
-    <div class="build-body">
-      <h2>gatewind</h2>
-      <p>drone rl environment work: procedural gates, wind disturbance, baseline controllers, ppo training, and portable trajectory artifacts.</p>
-      <p>next cleanup is picking the best replay and writing the short version of what the environment is actually testing.</p>
-    </div>
-  </article>
+  <figure class="craft-entry">
+    <a href="https://huecodes.github.io/Archimedes/">
+      <img src="/assets/images/projects/archimedes-critical-area.png" alt="archimedes computational geometry view">
+    </a>
+    <figcaption>
+      <a href="https://huecodes.github.io/Archimedes/">archimedes</a>
+      browser computational geometry in rust, wasm, and webgpu.
+    </figcaption>
+  </figure>
 
-  <article class="build-entry">
-    <div class="build-meta">jan 2026</div>
-    <div class="build-body">
-      <h2>archimedes</h2>
-      <p>browser computational geometry in rust, wasm, and webgpu. convex hulls, delaunay, polygon ops, robust predicates, and crdt-backed collaboration.</p>
-      <img src="/assets/images/projects/archimedes-critical-area.png" alt="archimedes critical area view" class="build-media">
-    </div>
-  </article>
+  <figure class="craft-entry">
+    <a href="https://github.com/HueCodes/gretun">
+      <img src="/assets/images/projects/gretun-tunnel.png" alt="gretun tunnel diagram">
+    </a>
+    <figcaption>
+      <a href="https://github.com/HueCodes/gretun">gretun</a>
+      nat-traversing gre-over-fou tunnels, sealed discovery messages, metrics, and linux netlink integration.
+    </figcaption>
+  </figure>
+
+  <figure class="craft-entry">
+    <a href="/hardware/pid-motor-control/">
+      <img src="/assets/images/projects/pid-motor-control.svg" alt="pid motor control diagram">
+    </a>
+    <figcaption>
+      <a href="/hardware/pid-motor-control/">pid motor control</a>
+      stm32f411 closed-loop motor controller with imu feedback, uart tuning, and step-response capture.
+    </figcaption>
+  </figure>
+
+  <figure class="craft-entry">
+    <a href="/hardware/raft-consensus-mcu/">
+      <img src="/assets/images/projects/raft-consensus-mcu.svg" alt="raft consensus mcu cluster diagram">
+    </a>
+    <figcaption>
+      <a href="/hardware/raft-consensus-mcu/">raft-consensus-mcu</a>
+      raft leader election and replicated state over a small esp32-s3 cluster.
+    </figcaption>
+  </figure>
+
+  <figure class="craft-entry">
+    <a href="/projects/udp-relay/">
+      <img src="/assets/images/projects/udp-relay-arch.svg" alt="udp relay architecture">
+    </a>
+    <figcaption>
+      <a href="/projects/udp-relay/">udp-relay</a>
+      mavlink telemetry fan-out, rate limiting, geojson/kml export, and a field tui.
+    </figcaption>
+  </figure>
+
+  <figure class="craft-entry">
+    <a href="/projects/dredge/">
+      <img src="/assets/images/projects/dredge-demo.svg" alt="dredge firmware analysis demo">
+    </a>
+    <figcaption>
+      <a href="/projects/dredge/">dredge</a>
+      firmware and binary vulnerability triage with ghidra decompilation, profile heuristics, and reports.
+    </figcaption>
+  </figure>
+
+  <figure class="craft-entry">
+    <a href="/projects/go-hunter/">
+      <img src="/assets/images/projects/go-hunter-dashboard.png" alt="go-hunter dashboard">
+    </a>
+    <figcaption>
+      <a href="/projects/go-hunter/">go-hunter</a>
+      multi-cloud asset discovery, drift detection, background scanning, and dashboard work.
+    </figcaption>
+  </figure>
 </div>

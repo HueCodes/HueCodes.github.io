@@ -70,7 +70,7 @@ title: projects
     <span>fast 3d drone rl environments with vectorized dynamics, procedural gates, wind disturbances, baseline controllers, ppo training, and portable trajectory artifacts</span>
   </div>
   <div class="project">
-    <a href="https://github.com/HueCodes/Crucible">crucible</a>
+    <a href="https://github.com/HueCodes/crucible-rl">crucible</a>
     <span>grpo reasoning trainer for small instruct models on local hardware, with verifier rewards, mps supervision, tests, and phase-one training curves</span>
   </div>
 </div>
