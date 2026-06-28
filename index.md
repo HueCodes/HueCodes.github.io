@@ -25,7 +25,7 @@ title: home
 <div class="section fade-in" style="animation-delay: 0.1s">
   <h2>about</h2>
 
-  <p>i build systems, tools, and hardware experiments.</p>
+  <p>i build systems, tools, and hardware.</p>
 
   <p>outside of that i like mountains, books, movies, and grappling.</p>
 </div>
