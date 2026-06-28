@@ -15,6 +15,7 @@ title: home
     <img src="/assets/DSCN1683.jpeg" alt="Hugh" class="photo">
     <div>
       <h1>hey, i'm hugh</h1>
+      <p><a href="mailto:huecodes@proton.me">huecodes@proton.me</a></p>
     </div>
   </div>
 </div>
@@ -34,6 +35,9 @@ title: home
 
   <div class="project">
     <a href="/projects/">projects</a>
+  </div>
+  <div class="project">
+    <a href="/builds/">builds</a>
   </div>
   <div class="project">
     <a href="/opensource/">open source</a>
