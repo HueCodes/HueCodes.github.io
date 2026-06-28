@@ -15,9 +15,6 @@ title: home
     <img src="/assets/DSCN1683.jpeg" alt="Hugh" class="photo">
     <div>
       <h1>hey, i'm hugh</h1>
-      <p>i build systems software, embedded robotics projects, and networking tools.</p>
-      <p>mostly rust, go, c, and python. based in seattle.</p>
-      <p><a href="mailto:huecodes@proton.me">huecodes@proton.me</a></p>
     </div>
   </div>
 </div>
@@ -29,8 +26,6 @@ title: home
 
   <p>i build systems, tools, and hardware experiments.</p>
 
-  <p>infra, network tools, robot firmware, sensor fusion, pcb design, model evals, and training loops.</p>
-
   <p>outside of that i like mountains, books, movies, and grappling.</p>
 </div>
 
@@ -39,10 +34,8 @@ title: home
 
   <div class="project">
     <a href="/projects/">projects</a>
-    <span>the stable things worth judging</span>
   </div>
   <div class="project">
     <a href="/opensource/">open source</a>
-    <span>upstream patches and contribution notes</span>
   </div>
 </div>
